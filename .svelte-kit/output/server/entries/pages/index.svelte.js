@@ -1,7 +1,7 @@
 import { c as create_ssr_component, b as add_attribute, e as escape, v as validate_component, a as each } from "../../chunks/index-fa0ff56f.js";
 var Anchor_svelte_svelte_type_style_lang = "";
 const css$1 = {
-  code: ":root{--tint:0.5}.ttt.svelte-1744017:first-letter{text-transform:capitalize }.snap-start.svelte-1744017{scroll-snap-align:start /* .snap-center `scroll-snap-align: center` */\n}.always-stop.svelte-1744017{scroll-snap-stop:always}",
+  code: ":root{--alpha:0.6}.ttt.svelte-bj2yn4:first-letter{text-transform:capitalize }.snap-start.svelte-bj2yn4{scroll-snap-align:start /* .snap-center `scroll-snap-align: center` */\n}.always-stop.svelte-bj2yn4{scroll-snap-stop:always}",
   map: null
 };
 const Anchor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -33,17 +33,18 @@ const Anchor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.component === void 0 && $$bindings.component && component !== void 0)
     $$bindings.component(component);
   $$result.css.add(css$1);
-  return `<figure${add_attribute("id", id, 0)} class="${"flex-column flex flex-none white cover debug"}" style="${"min-width: 100%; background-position: 40% 0; background-image: linear-gradient( rgba(0, 0, 0, var(--tint)) 30%, rgba(0, 0, 0, var(--tint)) 100%), url(" + escape(JSON.stringify(src)) + ")"}"><div class="${"w-100 snap-start always-stop svelte-1744017"}">
-		<svg style="${"transform: scale(150%)"}" class="${"vh-50 vh-50-ns vh-50-m vh-50-l w-100 pa0 ma0 s--accent sw2 transparent"}"><use xlink:href="${"#" + escape(id)}"></use></svg>
-	<div class="${"flex items-center w-100 f5 f4-ns f3-m f3-l measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pv0 mv0"}"><span class="${"golden-brown tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f6-l fw5 ttu tc mv0"}"${add_attribute("data-en", headingEn, 0)}>${escape(headingIt)}</span>
+  return `<figure${add_attribute("id", id, 0)} class="${"flex-column flex flex-none white cover ma0"}" style="${"min-width: 100%; background-position: 0% 80%; background-image: linear-gradient( var(--cocoa) 30%, var(--cocoa) 100%), url(" + escape(JSON.stringify(src)) + ")"}"><div class="${"w-100 snap-start always-stop svelte-bj2yn4"}">
+		<svg style="${"transform: scale(150%)"}" class="${"vh-50 w-100 pa0 ma0 s--accent sw2 transparent"}"><use xlink:href="${"#" + escape(id)}"></use></svg>
+	<div class="${"flex items-center w-100 f5 f4-ns f3-m f3-l measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pv0 mv0"}"><span class="${"dark-beige tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f6-l fw5 ttu tc mv0"}"${add_attribute("data-en", headingEn, 0)}><!-- HTML_TAG_START -->${headingIt}<!-- HTML_TAG_END --></span>
 			
-			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid fraunces"}">${escape(title2)}</h2>
-			<a${add_attribute("href", slug, 0)} class="${"transition link pointer br-pill b--white ba bw1 ph3 pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc w-75 w-50-ns w-third-m w-third-l ts1-dark-gray f5 f5-ns f7-m f5-l bg-transparent ttt mv3 svelte-1744017"}" en="${"Discover The Americas"}" lang="${"it"}">scopri le destinazioni</a></div></div>
+			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid fraunces"}"><!-- HTML_TAG_START -->${title2}<!-- HTML_TAG_END --></h2>
+			<a${add_attribute("href", slug, 0)} class="${"transition link pointer br-pill b--white ba bw1 ph3 ph4-l pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc ts1-dark-gray f5 f5-ns f7-m f5-l bg-transparent ttt mv3 svelte-bj2yn4"}" en="${"Discover The Americas"}" lang="${"it"}">scopri le destinazioni</a>
+			</div></div>
 
 
 
 	</div>
-	<figcaption class="${"flex items-center w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto vh-05 landscape-vh-15-l"}"><div class="${"flex flex-column w-100 pb0 pb0-l"}"><span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw5 mv0"}">${escape(figCaption)}</span></div></figcaption>
+	<figcaption class="${"flex items-center w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto vh-05 landscape-vh-15-l"}"><div class="${"flex flex-column w-100 pb0 pb0-l"}"><span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3"}"><!-- HTML_TAG_START -->${figCaption}<!-- HTML_TAG_END --></span></div></figcaption>
 </figure>`;
 });
 const Africa = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -54,10 +55,11 @@ var items = [
     id: "africa",
     title: "Africa",
     bg: "bg-gray",
-    src: "./images/bg-africa.jpg",
+    src: "./images/king-lewanika-lodge-liuwa-plain-national-park.webp",
+    imageCredit: "",
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
-    figCaption: "Some location",
+    figCaption: "King Lewanika Lodge, Liuwa Plain National Park \u2013 Zambia, Africa",
     slug: "/",
     component: Africa
   },
@@ -65,10 +67,11 @@ var items = [
     id: "asia-oceania",
     title: "Asia Oceania",
     bg: "bg-light-red",
-    src: "./images/bg-asia-oceania.jpg",
+    src: "./images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg",
+    imageCredit: "This image is from: https://www.molon.de/galleries/Malaysia/Sabah/Islands/",
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
-    figCaption: "Asia goes here.",
+    figCaption: "Bodgaya Island, Tun Sakaran Marine Park \u2013 Sulu Sea, Malaysia",
     slug: "/",
     component: Africa
   },
@@ -76,10 +79,10 @@ var items = [
     id: "europa",
     title: "Europa",
     bg: "bg-light-yellow",
-    src: "./images/bg-europa.jpg",
+    src: "./images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg",
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
-    figCaption: "Europa notes...",
+    figCaption: "Lake Skadar National Park - Albania, South East Europe",
     slug: "/",
     component: Africa
   },
@@ -87,10 +90,10 @@ var items = [
     id: "americhe",
     title: "Americhe",
     bg: "bg-light-blue",
-    src: "./images/Torres.del.Paine.National.Park.original.3288.jpg",
+    src: "./images/Tineye.Torres.del.Paine.National.Park.jpeg",
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
-    figCaption: "Lago Grey - Torres del Paine National Park - Cile",
+    figCaption: "Lago Grey, Torres del Paine National Park - Cile, South Westerly tip of South America",
     slug: "/",
     component: Africa
   },
@@ -98,10 +101,10 @@ var items = [
     id: "medio-oriente",
     title: "Medio Oriente",
     bg: "bg-light-pink",
-    src: "./images/bg-europa.jpg",
+    src: "./images/lake-urmia-south-caspian-sea-iran.jpeg",
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
-    figCaption: "Orient notes...",
+    figCaption: "Lake Urmia, East Azerbaijan &amp; West Azerbaijan - South of the Caspian Sea, Iran",
     slug: "/",
     component: Africa
   },
@@ -109,10 +112,10 @@ var items = [
     id: "grande-nord",
     title: "Grande Nord",
     bg: "bg-red",
-    src: "./images/bg-ru.jpg",
+    src: "./images/russia-largest-freshwater-lake-ladoga.jpeg",
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
-    figCaption: "FN, SE, DM, Ru notes...",
+    figCaption: "Freshwater Lake Ladoga \u2013 Russia, &amp; Finland's boarder",
     slug: "/",
     component: Africa
   }
@@ -122,13 +125,16 @@ const Defs = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 var Snapper_svelte_svelte_type_style_lang = "";
 const css = {
-  code: "a{text-decoration:none!important\n		}.touch-scroll.svelte-1p27gg2{-webkit-overflow-scrolling:touch}.x-mandatory.svelte-1p27gg2{scroll-snap-type:x mandatory}:root{--time:0.6s\n	}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}html, body{padding:0 }aside.svelte-1p27gg2::-webkit-scrollbar{display:none}aside.svelte-1p27gg2{-ms-overflow-style:none;scrollbar-width:none}",
+  code: ".touch-scroll.svelte-xnfez8{-webkit-overflow-scrolling:touch}.x-mandatory.svelte-xnfez8{scroll-snap-type:x mandatory}:root{--time:0.6s\n	}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}aside.svelte-xnfez8::-webkit-scrollbar{display:none}aside.svelte-xnfez8{-ms-overflow-style:none;scrollbar-width:none}",
   map: null
 };
 const Snapper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
   return `${validate_component(Defs, "Defs").$$render($$result, {}, {}, {})}
-	<aside class="${"ma0 vh-100 vh-100-ns vh-75-m vh-75-l flex items-center x-mandatory overflow-x-auto touch-scroll w-100 ma0 pa0 backface-hidden charcoal system svelte-1p27gg2"}">${each(items, ({ id, title: title2, slug, src, headingEn, headingIt, figCaption, bg, component }) => {
+
+
+
+	<aside class="${"vh-100 vh-100-ns vh-75-m vh-75-l flex items-center x-mandatory overflow-x-auto touch-scroll w-100 ma0 pa0 backface-hidden charcoal system svelte-xnfez8"}">${each(items, ({ id, title: title2, slug, src, headingEn, headingIt, figCaption, bg, component }) => {
     return `${validate_component(Anchor, "Anchor").$$render($$result, {
       id,
       title: title2,

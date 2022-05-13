@@ -19,7 +19,7 @@ const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
   return `
 
-<main class="${"system y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 backface-hidden charcoal fixed"}">
+<main class="${"system backface-hidden charcoal"}">
 	${slots.default ? slots.default({}) : ``}</main>
 ${validate_component(Fraunces, "Fraunces").$$render($$result, {}, {}, {})}
 

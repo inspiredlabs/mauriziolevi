@@ -4,7 +4,14 @@
 	import Defs from '$lib/Defs.svelte';
 </script>
 <Defs />
-	<aside class="ma0 vh-100 vh-100-ns vh-75-m vh-75-l
+
+<!-- fix: pagination
+{#each items as { id, title }}
+	<a href="#{id}">{title}</a>
+{/each} -->
+
+	<aside
+	class="vh-100 vh-100-ns vh-75-m vh-75-l
 	flex items-center x-mandatory overflow-x-auto touch-scroll w-100 ma0 pa0 backface-hidden charcoal system">
 		{#each items as { id, title, slug, src, headingEn, headingIt, figCaption, bg, component }}
 			<Anchor
@@ -23,12 +30,9 @@
 	</aside>
 
 	<style>
-
 	/* This `.hover-ltr` can not be implemented into Tachyon Shower. It's not atomic. */
 	/* redesign with atomicity in mind: codepen.io/inspiredlabs/pen/ZEvVgdr */
-		:global(a) {
-			text-decoration: none!important
-		}
+
 
 	.touch-scroll {
 		-webkit-overflow-scrolling: touch;
@@ -190,9 +194,6 @@
 			} */
 		}
 	}
-
-	:global(html, body) { padding: 0 }
-
 
 	/* Hide scrollbar for Chrome, Safari and Opera */
 	aside::-webkit-scrollbar {

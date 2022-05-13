@@ -8,10 +8,11 @@ export default [
 		id: 'africa',
 		title: 'Africa',
 		bg: 'bg-gray',
-		src: './images/bg-africa.jpg',
+		src: './images/king-lewanika-lodge-liuwa-plain-national-park.webp',
+		imageCredit: '',
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
-		figCaption: "Some location",
+		figCaption: "King Lewanika Lodge, Liuwa Plain National Park – Zambia, Africa",
 		slug: '/',
 		component: Africa
 	},
@@ -19,10 +20,11 @@ export default [
 		id: 'asia-oceania',
 		title: 'Asia Oceania',
 		bg: 'bg-light-red',
-		src: './images/bg-asia-oceania.jpg',
+		src: './images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg',
+		imageCredit: 'This image is from: https://www.molon.de/galleries/Malaysia/Sabah/Islands/',
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
-		figCaption: "Asia goes here.",
+		figCaption: "Bodgaya Island, Tun Sakaran Marine Park – Sulu Sea, Malaysia",
 		slug: '/',
 		component: Africa
 		//component: AsiaOceania
@@ -31,10 +33,10 @@ export default [
 		id: 'europa',
 		title: 'Europa',
 		bg: 'bg-light-yellow',
-		src: './images/bg-europa.jpg',
+		src: './images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg',
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
-		figCaption: "Europa notes...",
+		figCaption: "Lake Skadar National Park - Albania, South East Europe",
 		slug: '/',
 		component: Africa
 		//component: Europa
@@ -43,10 +45,10 @@ export default [
 		id: 'americhe',
 		title: 'Americhe',
 		bg: 'bg-light-blue',
-		src: './images/Torres.del.Paine.National.Park.original.3288.jpg',
+		src: './images/Tineye.Torres.del.Paine.National.Park.jpeg',
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
-		figCaption: "Lago Grey - Torres del Paine National Park - Cile",
+		figCaption: "Lago Grey, Torres del Paine National Park - Cile, South Westerly tip of South America",
 		slug: '/',
 		component: Africa
 		//component: Americhe
@@ -55,10 +57,10 @@ export default [
 		id: 'medio-oriente',
 		title: 'Medio Oriente',
 		bg: 'bg-light-pink',
-		src: './images/bg-europa.jpg',
+		src: './images/lake-urmia-south-caspian-sea-iran.jpeg',
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
-		figCaption: "Orient notes...",
+		figCaption: "Lake Urmia, East Azerbaijan &amp; West Azerbaijan - South of the Caspian Sea, Iran",
 		slug: '/',
 		component: Africa
 		//component: MedioOriente
@@ -67,10 +69,10 @@ export default [
 		id: 'grande-nord',
 		title: 'Grande Nord',
 		bg: 'bg-red',
-		src: './images/bg-ru.jpg',
+		src: './images/russia-largest-freshwater-lake-ladoga.jpeg',
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
-		figCaption: "FN, SE, DM, Ru notes...",
+		figCaption: "Freshwater Lake Ladoga – Russia, &amp; Finland's boarder",
 		slug: '/',
 		component: Africa
 		//component: GrandeNord

@@ -12,8 +12,8 @@ import '../app.css' // <- just import your css: stackoverflow.com/questions/6363
 	</ul>
 </nav> -->
 
-<main class="system y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 backface-hidden charcoal fixed">
-	<!-- debug -->
+<main class="system backface-hidden charcoal">
+	<!-- debug: y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 fixed -->
 	<slot />
 </main>
 <Fraunces />

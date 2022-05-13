@@ -5518,7 +5518,7 @@ var init_layout_svelte = __esm({
       $$result.css.add(css);
       return `
 
-<main class="${"system y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 backface-hidden charcoal fixed"}">
+<main class="${"system backface-hidden charcoal"}">
 	${slots.default ? slots.default({}) : ``}</main>
 ${validate_component(Fraunces, "Fraunces").$$render($$result, {}, {}, {})}
 
@@ -5541,8 +5541,8 @@ var entry, js, css2;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
-    entry = "pages/__layout.svelte-de0462f1.js";
-    js = ["pages/__layout.svelte-de0462f1.js", "chunks/index-32b7ec39.js"];
+    entry = "pages/__layout.svelte-20ef13db.js";
+    js = ["pages/__layout.svelte-20ef13db.js", "chunks/index-32b7ec39.js"];
     css2 = ["assets/pages/__layout.svelte-788e4bca.css"];
   }
 });
@@ -21798,7 +21798,7 @@ function set_paths(paths) {
   base = paths.base;
   assets = paths.assets || base;
 }
-var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="ma0 pa0 ">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body class="ma0 pa0 ">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
+var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-near-white red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body class="">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
 var read = null;
 set_paths({ "base": "", "assets": "" });
 var Server = class {
@@ -21855,10 +21855,10 @@ var Server = class {
 // .svelte-kit/vercel-tmp/manifest.js
 var manifest = {
   appDir: "_app",
-  assets: /* @__PURE__ */ new Set([".DS_Store", "favicon.ico", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/waipio-valley-original.jpg", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
-  mimeTypes: { ".ico": "image/vnd.microsoft.icon", ".jpg": "image/jpeg", ".txt": "text/plain", ".png": "image/png", ".webp": "image/webp" },
+  assets: /* @__PURE__ */ new Set([".DS_Store", "favicon.ico", "images/.DS_Store", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
+  mimeTypes: { ".ico": "image/vnd.microsoft.icon", ".jpeg": "image/jpeg", ".jpg": "image/jpeg", ".webp": "image/webp", ".txt": "text/plain", ".png": "image/png" },
   _: {
-    entry: { "file": "start-634b9c98.js", "js": ["start-634b9c98.js", "chunks/index-32b7ec39.js"], "css": [] },
+    entry: { "file": "start-33fc43e0.js", "js": ["start-33fc43e0.js", "chunks/index-32b7ec39.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),

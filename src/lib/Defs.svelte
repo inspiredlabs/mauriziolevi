@@ -22,7 +22,7 @@
 	</style>
 -->
 
-<!-- learn: usage:
+<!-- learn: rather than `transform`, use CSS for uniform scale: stackoverflow.com/questions/45745988/scale-an-svg-element-using-a-transform-origin
 <svg class="linen">
   <use
 	transform="translate(-720, y) scale(1.62)"
