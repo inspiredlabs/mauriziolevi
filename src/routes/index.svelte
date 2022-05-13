@@ -3,6 +3,7 @@ export const prerender = true;
 </script>
 
 <script>
+import Snapper from '$lib/Snapper.svelte';
 let title = 'Maurizio Levi';
 </script>
 
@@ -10,8 +11,4 @@ let title = 'Maurizio Levi';
 	<title>{title}</title>
 </svelte:head>
 
-
-<h1>{title}</h1>
-
-<style>
-</style>
+<Snapper />

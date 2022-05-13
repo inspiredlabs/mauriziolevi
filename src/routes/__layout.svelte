@@ -3,15 +3,55 @@ export const prerender = true;
 import '../app.css' // <- just import your css: stackoverflow.com/questions/63637662/add-js-css-files-to-svelte-component
 </script>
 
+<script>
+	import Fraunces from '$lib/Fraunces.svelte';
+</script>
 <!-- <nav>
 	<ul>
 		<li><a href="/">Home</a></li>
 	</ul>
 </nav> -->
 
-<main class="system y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 backface-hidden charcoal fixed ">
+<main class="system y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 backface-hidden charcoal fixed">
+	<!-- debug -->
 	<slot />
 </main>
+<Fraunces />
+
+<style>
+	:global(svg) {
+			/* fill: inherit; */
+			stroke-width: inherit;
+			vector-effect: non-scaling-stroke;
+			/* seanrice.net/code/design-system/2018/10/12/styling-svg-icons-with-css.html */
+		}
+
+		:global(:root) {
+			--stroke-accent: white
+		}
+
+	/* .sw1{ stroke-width: .125rem } */
+	:global(.sw2) { stroke-width: .25rem }
+	/* .sw3{ stroke-width: .5rem }
+	.sw4{ stroke-width: 1rem }
+	.sw5{ stroke-width: 2rem }
+
+	.s--black {
+		stroke: black;
+	}
+	.s--white {
+		stroke: white;
+	} */
+
+	:global(.s--accent) {
+		stroke: var(--stroke-accent);
+	}
+
+	:global(.transparent) {
+		color: transparent;
+		fill: transparent;
+	}
+	</style>
 
 <!-- <style>
 	main {

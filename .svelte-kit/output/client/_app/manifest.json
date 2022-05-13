@@ -1,0 +1,82 @@
+{
+  ".svelte-kit/runtime/client/start.js": {
+    "file": "start-634b9c98.js",
+    "src": ".svelte-kit/runtime/client/start.js",
+    "isEntry": true,
+    "imports": [
+      "_index-32b7ec39.js"
+    ],
+    "dynamicImports": [
+      "src/routes/__layout.svelte",
+      ".svelte-kit/runtime/components/error.svelte",
+      "src/routes/cms.svelte",
+      "src/routes/index.svelte",
+      "src/routes/product/[slug].svelte"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "pages/__layout.svelte-de0462f1.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-32b7ec39.js"
+    ],
+    "css": [
+      "assets/pages/__layout.svelte-788e4bca.css"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "error.svelte-f94e7a06.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-32b7ec39.js"
+    ]
+  },
+  "src/routes/cms.svelte": {
+    "file": "pages/cms.svelte-e38b4e40.js",
+    "src": "src/routes/cms.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-32b7ec39.js",
+      "_index-a505a5e4.js"
+    ],
+    "css": [
+      "assets/pages/cms.svelte-bb927cc5.css"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "pages/index.svelte-d152e70c.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-32b7ec39.js"
+    ],
+    "css": [
+      "assets/pages/index.svelte-b281064f.css"
+    ]
+  },
+  "src/routes/product/[slug].svelte": {
+    "file": "pages/product/_slug_.svelte-71339e24.js",
+    "src": "src/routes/product/[slug].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-32b7ec39.js",
+      "_index-a505a5e4.js"
+    ],
+    "css": [
+      "assets/pages/product/_slug_.svelte-305f3b22.css"
+    ]
+  },
+  "_index-32b7ec39.js": {
+    "file": "chunks/index-32b7ec39.js"
+  },
+  "_index-a505a5e4.js": {
+    "file": "chunks/index-a505a5e4.js"
+  }
+}
