@@ -1,9 +1,12 @@
 import { c as create_ssr_component, b as add_attribute, e as escape, v as validate_component, a as each } from "../../chunks/index-fa0ff56f.js";
 var Anchor_svelte_svelte_type_style_lang = "";
 const css$1 = {
-  code: ":root{--alpha:0.6}.ttt.svelte-bj2yn4:first-letter{text-transform:capitalize }.snap-start.svelte-bj2yn4{scroll-snap-align:start /* .snap-center `scroll-snap-align: center` */\n}.always-stop.svelte-bj2yn4{scroll-snap-stop:always}",
+  code: ":root{--alpha:0.6}.ttt.svelte-tvdi8y:first-letter{text-transform:capitalize }.snap-start.svelte-tvdi8y{scroll-snap-align:start /* .snap-center `scroll-snap-align: center` */\n}.always-stop.svelte-tvdi8y{scroll-snap-stop:always}@media all and (orientation:portrait){.portrait-vh-75.svelte-tvdi8y{height:75vh}@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){.landscape-vh-50.svelte-tvdi8y{height:50vh}@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.portrait-vh-50-m.svelte-tvdi8y{height:50vh}}@media screen and (min-width:60em){.portrait-vh-50-l.svelte-tvdi8y{height:50vh}}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}",
   map: null
 };
+let truncate = 48;
+let truncateNS = 66;
+let truncateMedium = 108;
 const Anchor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { id } = $$props;
   let { title: title2 } = $$props;
@@ -33,18 +36,26 @@ const Anchor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.component === void 0 && $$bindings.component && component !== void 0)
     $$bindings.component(component);
   $$result.css.add(css$1);
-  return `<figure${add_attribute("id", id, 0)} class="${"flex-column flex flex-none white cover ma0"}" style="${"min-width: 100%; background-position: 0% 80%; background-image: linear-gradient( var(--cocoa) 30%, var(--cocoa) 100%), url(" + escape(JSON.stringify(src)) + ")"}"><div class="${"w-100 snap-start always-stop svelte-bj2yn4"}">
-		<svg style="${"transform: scale(150%)"}" class="${"vh-50 w-100 pa0 ma0 s--accent sw2 transparent"}"><use xlink:href="${"#" + escape(id)}"></use></svg>
+  return `<figure${add_attribute("id", id, 0)} class="${"flex-column flex flex-none white cover ma0"}" style="${"min-width: 100%; background-position-x: center; background-image: linear-gradient( var(--cocoa) 30%, var(--cocoa) 100%), url(" + escape(JSON.stringify(src)) + ")"}">
+	<div class="${"w-100 snap-start always-stop svelte-tvdi8y"}">
+		<svg style="${"transform: scale(150%)"}" class="${"portrait-vh-75 landscape-vh-50 portrait-vh-50-m portrait-vh-50-l w-100 pa0 ma0 s--accent sw2 transparent svelte-tvdi8y"}"><use xlink:href="${"#" + escape(id)}"></use></svg>
 	<div class="${"flex items-center w-100 f5 f4-ns f3-m f3-l measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pv0 mv0"}"><span class="${"dark-beige tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f6-l fw5 ttu tc mv0"}"${add_attribute("data-en", headingEn, 0)}><!-- HTML_TAG_START -->${headingIt}<!-- HTML_TAG_END --></span>
 			
 			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid fraunces"}"><!-- HTML_TAG_START -->${title2}<!-- HTML_TAG_END --></h2>
-			<a${add_attribute("href", slug, 0)} class="${"transition link pointer br-pill b--white ba bw1 ph3 ph4-l pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc ts1-dark-gray f5 f5-ns f7-m f5-l bg-transparent ttt mv3 svelte-bj2yn4"}" en="${"Discover The Americas"}" lang="${"it"}">scopri le destinazioni</a>
+			<a${add_attribute("href", slug, 0)} class="${"transition link pointer br-pill b--white ba bw1 ph4 ph3-ns ph5-m ph4-l pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc ts1-dark-gray f5 f5-ns f7-m f5-l bg-transparent ttt mv3 svelte-tvdi8y"}" en="${"Discover The Americas"}" lang="${"it"}">scopri le destinazioni</a>
 			</div></div>
 
 
 
 	</div>
-	<figcaption class="${"flex items-center w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto vh-05 landscape-vh-15-l"}"><div class="${"flex flex-column w-100 pb0 pb0-l"}"><span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3"}"><!-- HTML_TAG_START -->${figCaption}<!-- HTML_TAG_END --></span></div></figcaption>
+	<figcaption class="${"flex w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto vh-05 landscape-vh-15-l"}"><div class="${"flex flex-column w-100 pb0 pb0-l"}">
+				<span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3 db dn-ns dn-m dn-l"}"><!-- HTML_TAG_START -->${figCaption.length > truncate ? figCaption.substring(0, truncate) + "&hellip;" : figCaption}<!-- HTML_TAG_END --></span>
+
+				
+				<span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3 dn db-ns dn-m dn-l"}"><!-- HTML_TAG_START -->${figCaption.length > truncateNS ? figCaption.substring(0, truncateNS) + "&hellip;" : figCaption}<!-- HTML_TAG_END --></span>
+
+				
+				<span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3 dn dn-ns db-m db-l"}"><!-- HTML_TAG_START -->${figCaption.length > truncateMedium ? figCaption.substring(0, truncateMedium) + "&hellip;" : figCaption}<!-- HTML_TAG_END --></span></div></figcaption>
 </figure>`;
 });
 const Africa = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -125,7 +136,7 @@ const Defs = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 var Snapper_svelte_svelte_type_style_lang = "";
 const css = {
-  code: ".touch-scroll.svelte-xnfez8{-webkit-overflow-scrolling:touch}.x-mandatory.svelte-xnfez8{scroll-snap-type:x mandatory}:root{--time:0.6s\n	}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}aside.svelte-xnfez8::-webkit-scrollbar{display:none}aside.svelte-xnfez8{-ms-overflow-style:none;scrollbar-width:none}",
+  code: ".touch-scroll.svelte-solm6m{-webkit-overflow-scrolling:touch}.x-mandatory.svelte-solm6m{scroll-snap-type:x mandatory}:root{--time:0.6s\n	}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.landscape-vh-100-m.svelte-solm6m{height:100vh}}@media screen and (min-width:60em){}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.portrait-vh-75-m.svelte-solm6m{height:75vh}}@media screen and (min-width:60em){}}aside.svelte-solm6m::-webkit-scrollbar{display:none}aside.svelte-solm6m{-ms-overflow-style:none;scrollbar-width:none}",
   map: null
 };
 const Snapper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -134,7 +145,7 @@ const Snapper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 
-	<aside class="${"vh-100 vh-100-ns vh-75-m vh-75-l flex items-center x-mandatory overflow-x-auto touch-scroll w-100 ma0 pa0 backface-hidden charcoal system svelte-xnfez8"}">${each(items, ({ id, title: title2, slug, src, headingEn, headingIt, figCaption, bg, component }) => {
+	<aside class="${"vh-100 vh-100-ns landscape-vh-100-m portrait-vh-75-m vh-75-m vh-75-l flex items-center x-mandatory overflow-x-auto touch-scroll w-100 ma0 pa0 backface-hidden charcoal system svelte-solm6m"}">${each(items, ({ id, title: title2, slug, src, headingEn, headingIt, figCaption, bg, component }) => {
     return `${validate_component(Anchor, "Anchor").$$render($$result, {
       id,
       title: title2,
