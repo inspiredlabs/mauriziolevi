@@ -71,7 +71,7 @@ var items = [
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
     figCaption: "King Lewanika Lodge, Liuwa Plain National Park \u2013 Zambia, Africa",
-    slug: "/",
+    slug: "/africa",
     component: Africa
   },
   {
@@ -83,7 +83,7 @@ var items = [
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
     figCaption: "Bodgaya Island, Tun Sakaran Marine Park \u2013 Sulu Sea, Malaysia",
-    slug: "/",
+    slug: "/asia-oceania",
     component: Africa
   },
   {
@@ -94,7 +94,7 @@ var items = [
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
     figCaption: "Lake Skadar National Park - Albania, South East Europe",
-    slug: "/",
+    slug: "/europa",
     component: Africa
   },
   {
@@ -105,7 +105,7 @@ var items = [
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
     figCaption: "Lago Grey, Torres del Paine National Park - Cile, South Westerly tip of South America",
-    slug: "/",
+    slug: "/americhe",
     component: Africa
   },
   {
@@ -116,7 +116,7 @@ var items = [
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
     figCaption: "Lake Urmia, East Azerbaijan &amp; West Azerbaijan - South of the Caspian Sea, Iran",
-    slug: "/",
+    slug: "/medio-oriente",
     component: Africa
   },
   {
@@ -127,7 +127,7 @@ var items = [
     headingEn: "I want to travel",
     headingIt: "voglio viaggiare",
     figCaption: "Freshwater Lake Ladoga \u2013 Russia, &amp; Finland's boarder",
-    slug: "/",
+    slug: "/grande-nord",
     component: Africa
   }
 ];
@@ -161,11 +161,22 @@ const Snapper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   })}
 	</aside>`;
 });
-const prerender = true;
+const load = async ({ fetch }) => {
+  const res = await fetch("/api/posts.json");
+  const data = await res.json();
+  return { props: { data } };
+};
 let title = "Maurizio Levi";
 const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { data } = $$props;
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
   return `${$$result.head += `${$$result.title = `<title>${escape(title)}</title>`, ""}`, ""}
+
+<pre>${escape(JSON.stringify(data, null, 2))}</pre>
+
+
 
 ${validate_component(Snapper, "Snapper").$$render($$result, {}, {}, {})}`;
 });
-export { Routes as default, prerender };
+export { Routes as default, load };

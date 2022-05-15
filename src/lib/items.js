@@ -1,7 +1,9 @@
 import Africa from './Africa.svelte';
 //import AsiaOceania from './AsiaOceania.svelte';
 
-/* How to pass a component: https://linguinecode.com/post/how-to-pass-a-svelte-component-to-another-svelte-component */
+// Ste: {@html arrayName.length > currentFields ? arrayName.substring(0, currentFields) + '&hellip;' : arrayName }
+
+/* pass components, eg: `{#each items as item} <svelte:component this={item.component} /> {/each}`:  https://linguinecode.com/post/how-to-pass-a-svelte-component-to-another-svelte-component */
 
 export default [
 	{
@@ -13,7 +15,7 @@ export default [
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
 		figCaption: "King Lewanika Lodge, Liuwa Plain National Park – Zambia, Africa",
-		slug: '/',
+		slug: '/africa',
 		component: Africa
 	},
 	{
@@ -25,7 +27,7 @@ export default [
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
 		figCaption: "Bodgaya Island, Tun Sakaran Marine Park – Sulu Sea, Malaysia",
-		slug: '/',
+		slug: '/asia-oceania',
 		component: Africa
 		//component: AsiaOceania
 	},
@@ -37,7 +39,7 @@ export default [
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
 		figCaption: "Lake Skadar National Park - Albania, South East Europe",
-		slug: '/',
+		slug: '/europa',
 		component: Africa
 		//component: Europa
 	},
@@ -49,7 +51,7 @@ export default [
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
 		figCaption: "Lago Grey, Torres del Paine National Park - Cile, South Westerly tip of South America",
-		slug: '/',
+		slug: '/americhe',
 		component: Africa
 		//component: Americhe
 	},
@@ -61,7 +63,7 @@ export default [
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
 		figCaption: "Lake Urmia, East Azerbaijan &amp; West Azerbaijan - South of the Caspian Sea, Iran",
-		slug: '/',
+		slug: '/medio-oriente',
 		component: Africa
 		//component: MedioOriente
 	},
@@ -73,7 +75,7 @@ export default [
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
 		figCaption: "Freshwater Lake Ladoga – Russia, &amp; Finland's boarder",
-		slug: '/',
+		slug: '/grande-nord',
 		component: Africa
 		//component: GrandeNord
 	}
