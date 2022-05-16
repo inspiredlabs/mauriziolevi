@@ -1,6 +1,6 @@
 // load DATA from a server:
 export const get = async () => {
-	const res = await fetch('https://viaggilevi.vercel.app/data/destinations');
+	const res = await fetch('https://viaggilevi.vercel.app/data/destinations.json');
 
 	return {
 		status: 200,

@@ -13,12 +13,11 @@
 	<aside
 	class="vh-100 vh-100-ns landscape-vh-100-m portrait-vh-75-m vh-75-m vh-75-l
 	flex items-center x-mandatory overflow-x-auto touch-scroll w-100 ma0 pa0 backface-hidden charcoal system">
-		{#each items as { id, title, slug, src, headingEn, headingIt, figCaption, bg, component }}
+		{#each items as { id, title, src, headingEn, headingIt, figCaption, bg, component }}
 			<Anchor
 				id={id}
 				title={title}
 				src={src}
-				slug={slug}
 				component={component}
 				headingEn={headingEn}
 				headingIt={headingIt}

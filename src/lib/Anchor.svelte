@@ -2,7 +2,6 @@
   export let id
 	export let title
 	export let src
-	export let slug
 	export let bg
 	export let headingEn
 	export let headingIt
@@ -40,7 +39,7 @@ background-image:
 			<span class="dark-beige tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f6-l fw5 ttu tc mv0" data-en="{headingEn}">{@html headingIt}</span>
 			<!-- consider conditional: lang="it" -->
 			<h2 class="w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid fraunces">{@html title}</h2>
-			<a href={slug} class="transition link pointer br-pill b--white ba bw1
+			<a href={id} class="transition link pointer br-pill b--white ba bw1
 			ph4 ph3-ns ph5-m ph4-l
 			pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc ts1-dark-gray f5 f5-ns f7-m f5-l bg-transparent ttt mv3" en="Discover The Americas" lang="it">scopri le destinazioni</a>
 			<!-- w-75 w-50-ns w-third-m w-third-l -->
