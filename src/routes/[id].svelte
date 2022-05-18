@@ -1,24 +1,17 @@
 <script context="module">
+  export const prerender = true;
 
-  export const load = async ({ fetch, params, url }) => {
-    const id = params.id;
-    const res = await fetch(`/${id}.json`);
-    const data = await res.json();
-
+  // learn: `load(context)`: `context.params.id` from: youtu.be/Z8r8JTgJyj4?t=484x
+  export async function load(url) {
+    let id = url.params.id;
     return {
-      props: {
-        data
-      }
-    };
-
+      props: {id}
+    }
   }
+</script>
 
-  </script>
+<script>
+  export let id;
+</script>
 
-  <script>
-    export let data;
-  </script>
-
-  <!-- <pre>{data.title}</pre> -->
-
-  <pre>{JSON.stringify(data, null, 2)}</pre>
+<pre>{JSON.stringify(id, null, 2)}</pre>

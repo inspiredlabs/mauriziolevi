@@ -1,4 +1,4 @@
-import { c as create_ssr_component, b as add_attribute, e as escape, v as validate_component, a as each } from "../../chunks/index-fa0ff56f.js";
+import { c as create_ssr_component, a as add_attribute, e as escape, v as validate_component, b as each } from "../../chunks/index-1259f1f6.js";
 var Anchor_svelte_svelte_type_style_lang = "";
 const css$1 = {
   code: ":root{--alpha:0.6}.ttt.svelte-tvdi8y:first-letter{text-transform:capitalize }.snap-start.svelte-tvdi8y{scroll-snap-align:start /* .snap-center `scroll-snap-align: center` */\n}.always-stop.svelte-tvdi8y{scroll-snap-stop:always}@media all and (orientation:portrait){.portrait-vh-75.svelte-tvdi8y{height:75vh}@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){.landscape-vh-50.svelte-tvdi8y{height:50vh}@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.portrait-vh-50-m.svelte-tvdi8y{height:50vh}}@media screen and (min-width:60em){.portrait-vh-50-l.svelte-tvdi8y{height:50vh}}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}",
@@ -11,7 +11,6 @@ const Anchor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { id } = $$props;
   let { title: title2 } = $$props;
   let { src } = $$props;
-  let { slug } = $$props;
   let { bg } = $$props;
   let { headingEn } = $$props;
   let { headingIt } = $$props;
@@ -23,8 +22,6 @@ const Anchor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.title(title2);
   if ($$props.src === void 0 && $$bindings.src && src !== void 0)
     $$bindings.src(src);
-  if ($$props.slug === void 0 && $$bindings.slug && slug !== void 0)
-    $$bindings.slug(slug);
   if ($$props.bg === void 0 && $$bindings.bg && bg !== void 0)
     $$bindings.bg(bg);
   if ($$props.headingEn === void 0 && $$bindings.headingEn && headingEn !== void 0)
@@ -42,7 +39,7 @@ const Anchor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	<div class="${"flex items-center w-100 f5 f4-ns f3-m f3-l measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pv0 mv0"}"><span class="${"dark-beige tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f6-l fw5 ttu tc mv0"}"${add_attribute("data-en", headingEn, 0)}><!-- HTML_TAG_START -->${headingIt}<!-- HTML_TAG_END --></span>
 			
 			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid fraunces"}"><!-- HTML_TAG_START -->${title2}<!-- HTML_TAG_END --></h2>
-			<a${add_attribute("href", slug, 0)} class="${"transition link pointer br-pill b--white ba bw1 ph4 ph3-ns ph5-m ph4-l pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc ts1-dark-gray f5 f5-ns f7-m f5-l bg-transparent ttt mv3 svelte-tvdi8y"}" en="${"Discover The Americas"}" lang="${"it"}">scopri le destinazioni</a>
+			<a${add_attribute("href", id, 0)} class="${"transition link pointer br-pill b--white ba bw1 ph4 ph3-ns ph5-m ph4-l pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc ts1-dark-gray f5 f5-ns f7-m f5-l bg-transparent ttt mv3 svelte-tvdi8y"}" en="${"Discover The Americas"}" lang="${"it"}">scopri le destinazioni</a>
 			</div></div>
 
 
@@ -145,12 +142,11 @@ const Snapper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 
-	<aside class="${"vh-100 vh-100-ns landscape-vh-100-m portrait-vh-75-m vh-75-m vh-75-l flex items-center x-mandatory overflow-x-auto touch-scroll w-100 ma0 pa0 backface-hidden charcoal system svelte-solm6m"}">${each(items, ({ id, title: title2, slug, src, headingEn, headingIt, figCaption, bg, component }) => {
+	<aside class="${"vh-100 vh-100-ns landscape-vh-100-m portrait-vh-75-m vh-75-m vh-75-l flex items-center x-mandatory overflow-x-auto touch-scroll w-100 ma0 pa0 backface-hidden charcoal system svelte-solm6m"}">${each(items, ({ id, title: title2, src, headingEn, headingIt, figCaption, bg, component }) => {
     return `${validate_component(Anchor, "Anchor").$$render($$result, {
       id,
       title: title2,
       src,
-      slug,
       component,
       headingEn,
       headingIt,
@@ -161,22 +157,19 @@ const Snapper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   })}
 	</aside>`;
 });
-const load = async ({ fetch }) => {
-  const res = await fetch("/api/posts.json");
-  const data = await res.json();
-  return { props: { data } };
-};
+const prerender = true;
 let title = "Maurizio Levi";
 const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { data } = $$props;
-  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
-    $$bindings.data(data);
-  return `${$$result.head += `${$$result.title = `<title>${escape(title)}</title>`, ""}`, ""}
+  let { posts } = $$props;
+  if ($$props.posts === void 0 && $$bindings.posts && posts !== void 0)
+    $$bindings.posts(posts);
+  return `<ul>${each(posts, (post) => {
+    return `<li><a${add_attribute("href", post.id, 0)}>${escape(post.title)}</a>
+  </li>`;
+  })}</ul>
 
-<pre>${escape(JSON.stringify(data, null, 2))}</pre>
+${validate_component(Snapper, "Snapper").$$render($$result, {}, {}, {})}
 
-
-
-${validate_component(Snapper, "Snapper").$$render($$result, {}, {}, {})}`;
+${$$result.head += `${$$result.title = `<title>${escape(title)}</title>`, ""}`, ""}`;
 });
-export { Routes as default, load };
+export { Routes as default, prerender };

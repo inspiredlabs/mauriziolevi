@@ -1,34 +1,24 @@
-
 <script context="module">
-export const prerender = true;
-
-// note: ONLY call this API endpoint: `/api/data.json`, don't hit JSON directly.
-// learn: DON'T change this string! Update `static/data/destinations.json`:
-export const load = async ({ fetch }) => {
-  const res = await fetch('/data.json');
-  const data = await res.json();
-
-  return {
-    props: {
-      data
-    }
-  }
-}
+  export const prerender = true;
 </script>
 
 <script>
-import Snapper from '$lib/Snapper.svelte';
-let title = 'Maurizio Levi';
-
-export let data;
+  import Snapper from '$lib/Snapper.svelte';
+  let title = 'Maurizio Levi';
+  export let posts; //<pre>{JSON.stringify(posts, null, 2)}</pre>
 </script>
 
-<svelte:head>
-	<title>{title}</title>
-</svelte:head>
 
-<pre>{JSON.stringify(data, null, 2)}</pre>
-
-
+<ul>
+{#each posts as post}
+  <li>
+    <a href={post.id}>{post.title}</a>
+  </li>
+{/each}
+</ul>
 
 <Snapper />
+
+<svelte:head>
+  <title>{title}</title>
+</svelte:head>
