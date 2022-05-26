@@ -4,7 +4,7 @@
     "src": ".svelte-kit/build/index.js",
     "isEntry": true,
     "imports": [
-      "_index-1259f1f6.js"
+      "_index-fa0ff56f.js"
     ],
     "dynamicImports": [
       ".svelte-kit/build/hooks.js"
@@ -15,9 +15,9 @@
     "src": "src/routes/index.js",
     "isEntry": true
   },
-  "src/routes/[id].js": {
-    "file": "entries/endpoints/_id_.js",
-    "src": "src/routes/[id].js",
+  "src/routes/fragile/index.js": {
+    "file": "entries/endpoints/fragile/index.js",
+    "src": "src/routes/fragile/index.js",
     "isEntry": true
   },
   "src/routes/__layout.svelte": {
@@ -25,7 +25,7 @@
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "imports": [
-      "_index-1259f1f6.js"
+      "_index-fa0ff56f.js"
     ],
     "css": [
       "assets/entries/pages/__layout.svelte-08106d46.css"
@@ -36,15 +36,23 @@
     "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "imports": [
-      "_index-1259f1f6.js"
+      "_index-fa0ff56f.js"
     ]
   },
-  "src/routes/[id].svelte": {
-    "file": "entries/pages/_id_.svelte.js",
-    "src": "src/routes/[id].svelte",
+  "src/routes/[slug].svelte": {
+    "file": "entries/pages/_slug_.svelte.js",
+    "src": "src/routes/[slug].svelte",
     "isEntry": true,
     "imports": [
-      "_index-1259f1f6.js"
+      "_index-fa0ff56f.js"
+    ]
+  },
+  "src/routes/fragile/index.svelte": {
+    "file": "entries/pages/fragile/index.svelte.js",
+    "src": "src/routes/fragile/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-fa0ff56f.js"
     ]
   },
   "src/routes/index.svelte": {
@@ -52,14 +60,46 @@
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "imports": [
-      "_index-1259f1f6.js"
-    ],
-    "css": [
-      "assets/entries/pages/index.svelte-be5d84d3.css"
+      "_index-fa0ff56f.js",
+      "_Snapper-fad386e8.js"
     ]
   },
-  "_index-1259f1f6.js": {
-    "file": "chunks/index-1259f1f6.js"
+  "src/routes/sirv/[slug].svelte": {
+    "file": "entries/pages/sirv/_slug_.svelte.js",
+    "src": "src/routes/sirv/[slug].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-fa0ff56f.js"
+    ]
+  },
+  "src/routes/sirv/index.svelte": {
+    "file": "entries/pages/sirv/index.svelte.js",
+    "src": "src/routes/sirv/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-fa0ff56f.js"
+    ]
+  },
+  "src/routes/snapper/index.svelte": {
+    "file": "entries/pages/snapper/index.svelte.js",
+    "src": "src/routes/snapper/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-fa0ff56f.js",
+      "_Snapper-fad386e8.js"
+    ]
+  },
+  "_index-fa0ff56f.js": {
+    "file": "chunks/index-fa0ff56f.js"
+  },
+  "_Snapper-fad386e8.js": {
+    "file": "chunks/Snapper-fad386e8.js",
+    "imports": [
+      "_index-fa0ff56f.js"
+    ],
+    "css": [
+      "assets/Snapper-2f5f9467.css"
+    ]
   },
   ".svelte-kit/build/hooks.js": {
     "file": "chunks/hooks-1c45ba0b.js",

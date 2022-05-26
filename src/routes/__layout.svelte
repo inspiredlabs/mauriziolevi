@@ -1,5 +1,5 @@
 <script context="module">
-export const prerender = true;
+//export const prerender = true;
 import '../app.css' // <- just import your css: stackoverflow.com/questions/63637662/add-js-css-files-to-svelte-component
 </script>
 

@@ -1,21 +1,19 @@
 export async function get() {
 
-  /* learn: how to use fetch with method & headers:
-  const request = await fetch(`https://viaggilevi.vercel.app/data/destinations.json`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  */
+  /* fix: design work is ommited for testing endpoints */
+  const endpoint0 = await fetch(`http://kel12.therebelwatchtower.net/aree-geografiche`);
+	const endpoint1 = await fetch(`http://kel12.therebelwatchtower.net/viaggi-in-evidenza`);
+	const endpoint2 = await fetch(`http://kel12.therebelwatchtower.net/viaggi-in-partenza`);
+	// const endpoint = "http://192.168.17.129/sveltekit/json.json";
 
-  const request = await fetch(`https://viaggilevi.vercel.app/data/destinations.json`);
+  const continents = await endpoint0.json(); // areas/nations
+  const spotLight = await endpoint1.json(); // viaggi in evidenza
+  const upcomingDepartures = await endpoint2.json(); // viaggi partenza
+  /* Fix: this */
 
-  const posts = await request.json();
-
-  if (posts) {
+  if (continents, spotLight, upcomingDepartures) {
     return {
-      body: { posts }
+      body: { continents, spotLight, upcomingDepartures }
     }
   }
 

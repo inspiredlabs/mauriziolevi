@@ -1,4 +1,4 @@
-import { c as create_ssr_component, v as validate_component } from "../../chunks/index-1259f1f6.js";
+import { c as create_ssr_component, v as validate_component } from "../../chunks/index-fa0ff56f.js";
 var app = "";
 var Fraunces_svelte_svelte_type_style_lang = "";
 const css$1 = {
@@ -14,7 +14,6 @@ const css = {
   code: "svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white\n		}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
   map: null
 };
-const prerender = true;
 const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
   return `
@@ -27,4 +26,4 @@ ${validate_component(Fraunces, "Fraunces").$$render($$result, {}, {}, {})}
 
 `;
 });
-export { _layout as default, prerender };
+export { _layout as default };
