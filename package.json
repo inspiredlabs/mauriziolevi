@@ -17,6 +17,7 @@
     "prettier": "~2.3.0",
     "prettier-plugin-svelte": "^2.3.0",
     "svelte": "^3.38.2",
+    "svelte-paginate": "^0.0.1",
     "vite": "^2.3.4"
   },
   "type": "module",
