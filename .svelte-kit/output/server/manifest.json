@@ -4,7 +4,7 @@
     "src": ".svelte-kit/build/index.js",
     "isEntry": true,
     "imports": [
-      "_index-fa0ff56f.js"
+      "_index-67cca998.js"
     ],
     "dynamicImports": [
       ".svelte-kit/build/hooks.js"
@@ -25,7 +25,7 @@
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "imports": [
-      "_index-fa0ff56f.js"
+      "_index-67cca998.js"
     ],
     "css": [
       "assets/entries/pages/__layout.svelte-08106d46.css"
@@ -36,7 +36,7 @@
     "src": ".svelte-kit/runtime/components/error.svelte",
     "isEntry": true,
     "imports": [
-      "_index-fa0ff56f.js"
+      "_index-67cca998.js"
     ]
   },
   "src/routes/[slug].svelte": {
@@ -44,7 +44,7 @@
     "src": "src/routes/[slug].svelte",
     "isEntry": true,
     "imports": [
-      "_index-fa0ff56f.js"
+      "_index-67cca998.js"
     ]
   },
   "src/routes/fragile/index.svelte": {
@@ -52,7 +52,7 @@
     "src": "src/routes/fragile/index.svelte",
     "isEntry": true,
     "imports": [
-      "_index-fa0ff56f.js"
+      "_index-67cca998.js"
     ]
   },
   "src/routes/index.svelte": {
@@ -60,8 +60,11 @@
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "imports": [
-      "_index-fa0ff56f.js",
-      "_Snapper-fad386e8.js"
+      "_index-67cca998.js",
+      "_Snapper-88076d4d.js"
+    ],
+    "css": [
+      "assets/entries/pages/index.svelte-15c5f517.css"
     ]
   },
   "src/routes/sirv/[slug].svelte": {
@@ -69,7 +72,7 @@
     "src": "src/routes/sirv/[slug].svelte",
     "isEntry": true,
     "imports": [
-      "_index-fa0ff56f.js"
+      "_index-67cca998.js"
     ]
   },
   "src/routes/sirv/index.svelte": {
@@ -77,7 +80,7 @@
     "src": "src/routes/sirv/index.svelte",
     "isEntry": true,
     "imports": [
-      "_index-fa0ff56f.js"
+      "_index-67cca998.js"
     ]
   },
   "src/routes/snapper/index.svelte": {
@@ -85,17 +88,17 @@
     "src": "src/routes/snapper/index.svelte",
     "isEntry": true,
     "imports": [
-      "_index-fa0ff56f.js",
-      "_Snapper-fad386e8.js"
+      "_index-67cca998.js",
+      "_Snapper-88076d4d.js"
     ]
   },
-  "_index-fa0ff56f.js": {
-    "file": "chunks/index-fa0ff56f.js"
+  "_index-67cca998.js": {
+    "file": "chunks/index-67cca998.js"
   },
-  "_Snapper-fad386e8.js": {
-    "file": "chunks/Snapper-fad386e8.js",
+  "_Snapper-88076d4d.js": {
+    "file": "chunks/Snapper-88076d4d.js",
     "imports": [
-      "_index-fa0ff56f.js"
+      "_index-67cca998.js"
     ],
     "css": [
       "assets/Snapper-2f5f9467.css"
