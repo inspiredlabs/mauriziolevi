@@ -4,7 +4,14 @@ import path from 'path'; // dev.to/brittneypostma/make-pathing-easier-with-alias
 
 const config = {
   kit: {
-    adapter: vercel(),
+    adapter: vercel({
+			// default options are shown
+			pages: 'build',
+			assets: 'build',
+			precompress: false,
+      fallback: 'index.html',
+      // fallback: null,
+		}),
 
 		vite: {
       resolve: {
