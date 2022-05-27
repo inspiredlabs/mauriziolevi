@@ -6,6 +6,8 @@
   // debug: consider a helper function inside `index.js`: stackoverflow.com/questions/25921319/escape-new-lines-with-js#25921448
   // learn: `shadowendpoints` syntax: youtube.com/watch?v=j-9D5UDyVOM&t=133s
 
+
+  export let homepage;
   export let spotLight; // viaggi in evidenza
     //continents, // areas e nations
     //, upcomingDepartures; // viaggi partenza
@@ -22,12 +24,20 @@
   //let items = Object.keys(spotLight);
   //let items = Object.values(spotLight);
   //let items = Object.entries(spotLight); //usage: `{item[1].titolo_viaggio}`
-  let items = Object.values(spotLight);
-  console.log(items);
+
+
+  let tripSpotlight = Object.values(homepage.travels_in_evidence.travels);
+  console.log(tripSpotlight);
+
+  //let items = Object.values(spotLight);
+  let departingSoon = Object.values(homepage.departing_travels.travels);
+  console.log(departingSoon);
+
+  let items = departingSoon;
 
   /*
-  let items = Object.entries(spotLight).map(([key, value]) => value);
-  console.log(items) ;
+  let travels = Object.entries(homepage.departing_travels.travels).map(([key, value]) => value);
+  console.log(travels) ;
   */
 
   /*
@@ -41,13 +51,18 @@
   $: paginatedItems = paginate({ items, pageSize, currentPage });
 </script>
 
+
+
 <Snapper />
 
+
+<!-- <code>{JSON.stringify(my_homepage, null, 2)}</code> -->
+
 <ul class="items">
-  {#each paginatedItems as item, i}
+  {#each paginatedItems as  {cta, excerpt, image, length, starting_price, title}, i}
     <li class="item">
-      {item.titolo_viaggio}
-      {item.titolo_viaggio}
+      <p>{excerpt}</p>
+      <code>{image}</code>
     </li>
   {/each}
 </ul>
@@ -60,6 +75,7 @@
   showStepOptions="{true}"
   on:setPage="{(e) => currentPage = e.detail.page}"
 />
+
 
 
 <div class="measure-wide">
