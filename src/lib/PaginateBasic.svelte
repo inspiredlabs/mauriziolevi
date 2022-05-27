@@ -4,13 +4,21 @@
 
 
 <script>
+
+export let spotLight; // viaggi in evidenza
+    //continents, // areas e nations
+    //, upcomingDepartures; // viaggi partenza
+
+
+// debug: `Cannot read property 'slice' of undefined`
+// learn: `npm install -D svelte-paginate` from: github.com/TahaSh/svelte-paginate needs destructuring.
 import { paginate, LightPaginationNav } from 'svelte-paginate';
-export let spotLight // viaggi in evidenza
 
 let items = spotLight;
 let currentPage = 1;
 let pageSize = 3;
 $: paginatedItems = paginate({ items, pageSize, currentPage });
+
 </script>
 
 <ul class="items">
@@ -30,7 +38,9 @@ $: paginatedItems = paginate({ items, pageSize, currentPage });
   on:setPage="{(e) => currentPage = e.detail.page}"
 />
 
+
 <div class="measure-wide">
+
   <ul>
     {#each spotLight as featuredDestination, i}
       <li>{i}:

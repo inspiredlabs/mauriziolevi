@@ -1,4 +1,4 @@
-
+<!-- Note: SPA mode: reddit.com/r/sveltejs/comments/kyty1n/svelterouting_gets_404_when_manually_entering_urls/ -->
 <!-- Note: `"start": "sirv...",` is SPA mode, thus consumes `/#hash` differently
 "scripts": {
   "start": "sirv public --single",

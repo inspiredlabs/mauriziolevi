@@ -11,26 +11,43 @@
     //, upcomingDepartures; // viaggi partenza
 
 
-  //import Snapper from '$lib/Snapper.svelte'; //<Snapper />
-  //import PaginateBasic from '$lib/PaginateBasic.svelte'; //
+  import Snapper from '$lib/Snapper.svelte';
+  //import PaginateBasic from '$lib/PaginateBasic.svelte'; //<PaginateBasic />
   let title = 'Maurizio Levi';
 
   // debug: `Cannot read property 'slice' of undefined`
   // learn: `npm install -D svelte-paginate` from: github.com/TahaSh/svelte-paginate needs destructuring.
   import { paginate, LightPaginationNav } from 'svelte-paginate';
 
-  let items = spotLight;
+  //let items = Object.keys(spotLight);
+  //let items = Object.values(spotLight);
+  //let items = Object.entries(spotLight); //usage: `{item[1].titolo_viaggio}`
+  let items = Object.values(spotLight);
+  console.log(items);
+
+  /*
+  let items = Object.entries(spotLight).map(([key, value]) => value);
+  console.log(items) ;
+  */
+
+  /*
+  let i = spotLight.forEach(function(item){
+    console.log(item) ;
+  }) ;
+  */
+
   let currentPage = 1;
   let pageSize = 3;
   $: paginatedItems = paginate({ items, pageSize, currentPage });
 </script>
 
-
+<Snapper />
 
 <ul class="items">
-  {#each paginatedItems as item}
+  {#each paginatedItems as item, i}
     <li class="item">
-      {item}
+      {item.titolo_viaggio}
+      {item.titolo_viaggio}
     </li>
   {/each}
 </ul>
