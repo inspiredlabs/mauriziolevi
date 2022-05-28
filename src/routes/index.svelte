@@ -27,11 +27,11 @@
 
 
   let tripSpotlight = Object.values(homepage.travels_in_evidence.travels);
-  console.log(tripSpotlight);
+  // learn: console.log(tripSpotlight);
 
   //let items = Object.values(spotLight);
   let departingSoon = Object.values(homepage.departing_travels.travels);
-  console.log(departingSoon);
+  // learn: console.log(departingSoon);
 
   let items = departingSoon;
 

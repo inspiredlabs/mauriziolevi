@@ -1,5 +1,5 @@
-import { c as create_ssr_component, d as createEventDispatcher, a as each, e as escape, v as validate_component } from "../../chunks/index-67cca998.js";
-import { S as Snapper } from "../../chunks/Snapper-88076d4d.js";
+import { c as create_ssr_component, d as createEventDispatcher, a as each, e as escape, v as validate_component } from "../../chunks/index-bf6f8f8c.js";
+import { S as Snapper } from "../../chunks/Snapper-12a09595.js";
 function paginate({ items, pageSize: pageSize2, currentPage }) {
   return items.slice((currentPage - 1) * pageSize2, (currentPage - 1) * pageSize2 + pageSize2);
 }
@@ -173,18 +173,25 @@ let title = "Maurizio Levi";
 let pageSize = 3;
 const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let paginatedItems;
+  let { homepage } = $$props;
   let { spotLight } = $$props;
-  let items = Object.values(spotLight);
-  console.log(items);
+  Object.values(homepage.travels_in_evidence.travels);
+  let departingSoon = Object.values(homepage.departing_travels.travels);
+  let items = departingSoon;
   let currentPage = 1;
+  if ($$props.homepage === void 0 && $$bindings.homepage && homepage !== void 0)
+    $$bindings.homepage(homepage);
   if ($$props.spotLight === void 0 && $$bindings.spotLight && spotLight !== void 0)
     $$bindings.spotLight(spotLight);
   paginatedItems = paginate({ items, pageSize, currentPage });
   return `${validate_component(Snapper, "Snapper").$$render($$result, {}, {}, {})}
 
-<ul class="${"items"}">${each(paginatedItems, (item, i) => {
-    return `<li class="${"item"}">${escape(item.titolo_viaggio)}
-      ${escape(item.titolo_viaggio)}
+
+
+
+<ul class="${"items"}">${each(paginatedItems, ({ cta, excerpt, image, length, starting_price, title: title2 }, i) => {
+    return `<li class="${"item"}"><p>${escape(excerpt)}</p>
+      <code>${escape(image)}</code>
     </li>`;
   })}</ul>
 
@@ -195,6 +202,7 @@ ${validate_component(LightPaginationNav, "LightPaginationNav").$$render($$result
     limit: 1,
     showStepOptions: true
   }, {}, {})}
+
 
 
 <div class="${"measure-wide"}"><ul>${each(spotLight, (featuredDestination, i) => {

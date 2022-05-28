@@ -1,4 +1,4 @@
-import { c as create_ssr_component, v as validate_component } from "../../chunks/index-67cca998.js";
+import { c as create_ssr_component, v as validate_component } from "../../chunks/index-bf6f8f8c.js";
 var app = "";
 var Fraunces_svelte_svelte_type_style_lang = "";
 const css$1 = {
