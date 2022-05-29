@@ -5486,7 +5486,7 @@ var layout_svelte_exports = {};
 __export(layout_svelte_exports, {
   default: () => _layout
 });
-var css$1, Fraunces, css, _layout;
+var css$1, Fraunces, Outro, css, _layout;
 var init_layout_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/__layout.svelte.js"() {
     init_index_bf6f8f8c();
@@ -5498,6 +5498,9 @@ var init_layout_svelte = __esm({
       $$result.css.add(css$1);
       return ``;
     });
+    Outro = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      return `<code class="${"yellow"}">T * E * S * T</code>`;
+    });
     css = {
       code: "svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white\n		}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
       map: null
@@ -5507,7 +5510,8 @@ var init_layout_svelte = __esm({
       return `
 
 <main class="${"system backface-hidden charcoal"}">
-	${slots.default ? slots.default({}) : ``}</main>
+	${slots.default ? slots.default({}) : ``}
+	${validate_component(Outro, "Outro").$$render($$result, {}, {}, {})}</main>
 ${validate_component(Fraunces, "Fraunces").$$render($$result, {}, {}, {})}
 
 
@@ -5529,8 +5533,8 @@ var entry, js, css2;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
-    entry = "pages/__layout.svelte-c1c2a032.js";
-    js = ["pages/__layout.svelte-c1c2a032.js", "chunks/index-37d57c48.js"];
+    entry = "pages/__layout.svelte-0d183fd8.js";
+    js = ["pages/__layout.svelte-0d183fd8.js", "chunks/index-53a3af84.js"];
     css2 = ["assets/pages/__layout.svelte-788e4bca.css"];
   }
 });
@@ -5579,8 +5583,8 @@ var entry2, js2, css3;
 var init__2 = __esm({
   ".svelte-kit/output/server/nodes/1.js"() {
     init_error_svelte();
-    entry2 = "error.svelte-cacb430a.js";
-    js2 = ["error.svelte-cacb430a.js", "chunks/index-37d57c48.js"];
+    entry2 = "error.svelte-82052022.js";
+    js2 = ["error.svelte-82052022.js", "chunks/index-53a3af84.js"];
     css3 = [];
   }
 });
@@ -5627,8 +5631,8 @@ var entry3, js3, css4;
 var init__3 = __esm({
   ".svelte-kit/output/server/nodes/6.js"() {
     init_slug_svelte();
-    entry3 = "pages/sirv/_slug_.svelte-20fd861f.js";
-    js3 = ["pages/sirv/_slug_.svelte-20fd861f.js", "chunks/index-37d57c48.js"];
+    entry3 = "pages/sirv/_slug_.svelte-67952550.js";
+    js3 = ["pages/sirv/_slug_.svelte-67952550.js", "chunks/index-53a3af84.js"];
     css4 = [];
   }
 });
@@ -5672,8 +5676,8 @@ var entry4, js4, css5;
 var init__4 = __esm({
   ".svelte-kit/output/server/nodes/10.js"() {
     init_id_svelte();
-    entry4 = "pages/trip/_id_.svelte-20c9d89e.js";
-    js4 = ["pages/trip/_id_.svelte-20c9d89e.js", "chunks/index-37d57c48.js"];
+    entry4 = "pages/trip/_id_.svelte-25d063ae.js";
+    js4 = ["pages/trip/_id_.svelte-25d063ae.js", "chunks/index-53a3af84.js"];
     css5 = [];
   }
 });
@@ -5719,8 +5723,8 @@ var entry5, js5, css6;
 var init__5 = __esm({
   ".svelte-kit/output/server/nodes/2.js"() {
     init_slug_svelte2();
-    entry5 = "pages/_slug_.svelte-df95dc46.js";
-    js5 = ["pages/_slug_.svelte-df95dc46.js", "chunks/index-37d57c48.js"];
+    entry5 = "pages/_slug_.svelte-eec8d05b.js";
+    js5 = ["pages/_slug_.svelte-eec8d05b.js", "chunks/index-53a3af84.js"];
     css6 = [];
   }
 });
@@ -8072,7 +8076,7 @@ function set_paths(paths) {
   base = paths.base;
   assets = paths.assets || base;
 }
-var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-near-white red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
+var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-charcoal red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
 var read = null;
 set_paths({ "base": "", "assets": "" });
 var Server = class {
@@ -8132,7 +8136,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([".DS_Store", "data/destinations.json", "data/my_homepage.json", "data/my_nations.json", "favicon.ico", "favicon.png", "images/.DS_Store", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".json": "application/json", ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".jpeg": "image/jpeg", ".webp": "image/webp", ".jpg": "image/jpeg", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-a12f7239.js", "js": ["start-a12f7239.js", "chunks/index-37d57c48.js"], "css": [] },
+    entry: { "file": "start-01cfa426.js", "js": ["start-01cfa426.js", "chunks/index-53a3af84.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),

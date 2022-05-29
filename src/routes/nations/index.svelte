@@ -6,11 +6,12 @@
   import { page } from "$app/stores";
 
   // fix: Please add ${id}
-  const baseUrl = 'https://viaggilevi.vercel.app';
+  const baseUrl = 'https://viaggilevi.vercel.app'; // note: this isn't in `svelte.config.js`
   $: thisUrl = $page.url.pathname; // learn: webjeda.com/blog/sveltekit-highlight-menu
 
   // debug: `iSelfAccepting` error passing <Section>...</Section> with <section>
   import Row from '$lib/Row.svelte';
+  import Hero from '$lib/Hero/index.svelte';
 
   export let nations;
   let title = 'I Viaggi di Maurizio Levi';
@@ -18,14 +19,20 @@
 
 <!-- <code>{JSON.stringify(nations, null, 2)}</code> -->
 
-<!-- fix: <Hero />
-  <code class="bg-gold">
-    {nations.hero.payoff}<br>
-    {nations.hero.title}<br>
-    {nations.hero.image}<br>
-    {nations.hero.location}<br>
-  </code>
-fix: <Hero /> -->
+<!-- fix: <Hero cta={nations.hero.cta} /> -->
+<Hero
+  image={nations.hero.image}
+  payoff={nations.hero.payoff}
+  title={nations.hero.title}
+  location={nations.hero.location}
+/>
+
+<!-- <code class="bg-car">
+  {nations.hero.image}<br>
+  {nations.hero.payoff}<br>
+  {nations.hero.title}<br>
+  {nations.hero.location}<br>
+</code> -->
 
 <Row bg="bg-solitaire" id={`${nations.description.title.toLowerCase().replace(/&amp;/g, '').replace(/&nbsp;/g, '-').replace(/\s/g, '-').replace(/\,/g, '').replace(/(&gt;)(?:&nbsp;|&#8209;|<br>)+(\s?&lt;)/g,'$1$2').replace(/--/g, '-')}`}>
   <article class="ph2 ph0-ns ph0-m ph0-l">
@@ -63,6 +70,7 @@ fix: <Hero /> -->
       {:else}
         {nations.infos.title}
       {/if}
+      <!-- note: consider ternary operator: stackoverflow.com/questions/10270351#10270387 -->
       </span>
     </h5>
     {#each nations.infos.info as column}

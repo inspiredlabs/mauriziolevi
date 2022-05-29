@@ -9,6 +9,9 @@ const Fraunces = create_ssr_component(($$result, $$props, $$bindings, slots) => 
   $$result.css.add(css$1);
   return ``;
 });
+const Outro = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<code class="${"yellow"}">T * E * S * T</code>`;
+});
 var __layout_svelte_svelte_type_style_lang = "";
 const css = {
   code: "svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white\n		}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
@@ -19,7 +22,8 @@ const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `
 
 <main class="${"system backface-hidden charcoal"}">
-	${slots.default ? slots.default({}) : ``}</main>
+	${slots.default ? slots.default({}) : ``}
+	${validate_component(Outro, "Outro").$$render($$result, {}, {}, {})}</main>
 ${validate_component(Fraunces, "Fraunces").$$render($$result, {}, {}, {})}
 
 

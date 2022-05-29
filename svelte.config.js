@@ -12,6 +12,11 @@ const config = {
       fallback: 'index.html',
       // fallback: null,
 		}),
+    
+    // paths: {
+    //   assets: '',
+    //   base: '' //kit.svelte.dev/docs/configuration
+    // },
 
 		vite: {
       resolve: {

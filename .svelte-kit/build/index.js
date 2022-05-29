@@ -4,7 +4,7 @@ import { respond } from '/Users/scottphillips/Documents/GitHub/mauriziolevi/.sve
 import { set_paths, assets, base } from '/Users/scottphillips/Documents/GitHub/mauriziolevi/.svelte-kit/runtime/paths.js';
 import { set_prerendering } from '/Users/scottphillips/Documents/GitHub/mauriziolevi/.svelte-kit/runtime/env.js';
 
-const template = ({ head, body, assets, nonce }) => "<!DOCTYPE html>\n<html lang=\"en\" class=\"bg-near-white red pa0 ma0\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<link rel=\"icon\" href=\"/favicon.ico\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t" + head + "\n\t</head>\n\t<body class=\"highlight\">\n\t\t<div id=\"svelte\">" + body + "</div>\n\t</body>\n</html>\n";
+const template = ({ head, body, assets, nonce }) => "<!DOCTYPE html>\n<html lang=\"en\" class=\"bg-charcoal red pa0 ma0\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<link rel=\"icon\" href=\"/favicon.ico\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t" + head + "\n\t</head>\n\t<body class=\"highlight\">\n\t\t<div id=\"svelte\">" + body + "</div>\n\t</body>\n</html>\n";
 
 let read = null;
 

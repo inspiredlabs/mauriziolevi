@@ -5,6 +5,7 @@ import '../app.css' // <- just import your css: stackoverflow.com/questions/6363
 
 <script>
 	import Fraunces from '$lib/Fraunces.svelte';
+	import Outro from '$lib/Outro/index.svelte';
 </script>
 <!-- <nav>
 	<ul>
@@ -15,6 +16,7 @@ import '../app.css' // <- just import your css: stackoverflow.com/questions/6363
 <main class="system backface-hidden charcoal">
 	<!-- debug: y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 fixed -->
 	<slot />
+	<Outro />
 </main>
 <Fraunces />
 

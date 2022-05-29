@@ -83,6 +83,9 @@
     "isEntry": true,
     "imports": [
       "_index-bf6f8f8c.js"
+    ],
+    "css": [
+      "assets/entries/pages/nations/index.svelte-40b9bf35.css"
     ]
   },
   "src/routes/sirv/[slug].svelte": {
