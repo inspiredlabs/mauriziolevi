@@ -1,14 +1,24 @@
 <script>
 
 const imagesBaseUrl = `${import.meta.env.VITE_BASEURL}/images/`; // usage: `{imagesBaseUrl}`
-let alt = 'Maurizio Levi on location'; // `alt={alt}`
+
+// learn: from: Maurizio Levi, Chi siamo, Presentazione
+let alt = 'Presentazione di Maurizio Levi'; // `alt={alt}`
 import viewport from '$lib/useViewportAction';
+import Row from '$lib/Row.svelte';
+
 
 let visible;
 </script>
 
-<section class="bg-linen" id="viaggi-di-scoperta">
-	<article class="highlight db black-70 f5 f4-ns f3-m f3-l lh-copy pb6 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto">
+
+
+<Row
+bg="bg-linen"
+id={`${alt.toLowerCase().replace(/&amp;/g, '').replace(/&nbsp;/g, '-').replace(/\s/g, '-').replace(/\,/g, '').replace(/(&gt;)(?:&nbsp;|&#8209;|<br>)+(\s?&lt;)/g,'$1$2').replace(/--/g, '-')}`}>
+
+	<!-- note: previously <section class="cf bg-linen" id="viaggi-di-scoperta"></section> -->
+	<article id="viaggi-di-scoperta">
 		<h4 class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">
 			<small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">i viaggi di maurizio levi</small>
 			<span class="fraunces">Viaggi </span><span class="fraunces-i">di&nbsp;scoperta</span>
@@ -22,9 +32,9 @@ let visible;
 			class="montage { visible ? 'visible' : '' }
 			cf relative top-0 w-100 mr-auto ml-auto"
 		>
-			<img class="absolute shadow-5" src="{imagesBaseUrl}MaurizioLevi_Anteprima.jpg" alt={alt}>
-			<img class="absolute shadow-5" src="{imagesBaseUrl}Levi-Maurizio-768x510.jpg" alt={alt}>
-			<img class="absolute shadow-5" src="{imagesBaseUrl}Maurizio_Levi.jpg" alt={alt}>
+			<img class="absolute shadow-5" src="{imagesBaseUrl}MaurizioLevi_Anteprima.webp" alt={alt}>
+			<img class="absolute shadow-5" src="{imagesBaseUrl}Levi-Maurizio-768x510.webp" alt={alt}>
+			<img class="absolute shadow-5" src="{imagesBaseUrl}Maurizio_Levi.webp" alt={alt}>
 		</figure>
 
 		<div class="fl w-100 w-50-m w-50-l lh-copy measure ">
@@ -61,7 +71,7 @@ let visible;
 			</div>
 		</aside>
 	</article>
-</section>
+</Row>
 
 <style>
 	/****** $ BREAKOUT ABOUT MONTAGE COMPONENT $ *******/
@@ -71,6 +81,7 @@ About `.montage`, is NOT integrated into Tachyonshower.
 This req. prevent horizontal scroll css: `overflow-x-hidden`
 */
 :root {
+--alpha:1;
 --montage-img: 240px; /*   var(--montage-img) */
 --montage-duration: 1.6s; /*   var(--montage-duration) */
 }
@@ -88,8 +99,8 @@ This req. prevent horizontal scroll css: `overflow-x-hidden`
   -moz-transition: all var(--montage-duration) ease-out;
   -ms-transition: all var(--montage-duration) ease-out;
   -o-transition: all var(--montage-duration) ease-out; */
-  transition: all var(--montage-duration) ease-out;
-	transition-delay: calc(var(--montage-duration)/2); /* w3schools.com/CSSref/css3_pr_transition-delay.asp */
+  transition: all var(--montage-duration) cubic-bezier( 0.28, -0.07, 0.67, 2.00); /* fix: cssportal.com/css-cubic-bezier-generator/ */
+	transition-delay: calc(var(--montage-duration)/0.8); /* w3schools.com/CSSref/css3_pr_transition-delay.asp */
 }
 
 .montage img {

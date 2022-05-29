@@ -6,14 +6,32 @@
   import { page } from "$app/stores";
 
   // fix: Please add ${id}
-  $: thisUrl = $page.url.pathname; // learn: webjeda.com/blog/sveltekit-highlight-menu
+  $: thisUrl = $page.url.pathname;
+  // learn: webjeda.com/blog/sveltekit-highlight-menu
+  // learn: page stores: stackoverflow.com/questions/66637632/access-url-query-string-in-svelte
+  // learn: `.env` file: dev.to/danawoodman/storing-environment-variables-in-sveltekit-2of3
 
   // debug: `iSelfAccepting` error passing <Section>...</Section> with <section>
   import Row from '$lib/Row.svelte';
   import Hero from '$lib/Hero/index.svelte';
+  //import Basic from '$lib/Pagination/Basic.svelte';
 
   export let nations;
   let title = 'I Viaggi di Maurizio Levi';
+
+
+  /********* PAGINATION **********/
+  import { paginate, LightPaginationNav } from 'svelte-paginate';
+  //let tripSpotlight = Object.values(homepage.travels_in_evidence.travels);
+  // learn: console.log(tripSpotlight);
+
+  let suggestedTrips = Object.values(nations.suggested_trips.trips);
+  // learn: console.log(suggestedTrips);
+
+  let items = suggestedTrips;
+  let currentPage = 1;
+  let pageSize = 3;
+  $: paginatedItems = paginate({ items, pageSize, currentPage });
 </script>
 
 <!-- <code>{JSON.stringify(nations, null, 2)}</code> -->
@@ -43,11 +61,11 @@
 		</h4>
 
     <aside class="fl w-100 w-50-m w-50-l lh-copy measure ">
-      <!-- fix: SEO purposes {nations.description.introduction} -->
+      <!-- fix: SEO demands `{nations.description.serp || .introduction}` -->
 			<p class="pr4 fw5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna&nbsp;aliqua.</p>
 
       <!-- fix: <Montage /> -->
-      <code class="bg-gold dn">
+      <code class="bg-yellow dn">
       {#each nations.description.images as image}
         MONTAGE: {image}
       {/each}
@@ -73,7 +91,7 @@
       </span>
     </h5>
     {#each nations.infos.info as column}
-    <div class="fl w-100 w-third-m w-third-l f6 lh-copy measure ">
+    <div class="fl w-100 w-third-m w-third-l f6 lh-copy measure pb4">
 			<small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0 pb2">{column.title}</small>
 			<hr class="inherit b--golden-brown"/>
 			<p class="pr4">{column.text}</p>
@@ -97,15 +115,32 @@
       <p class="charcoal o-80 db f7 f7-ns f5-m f4-l fw4 mv0 pb2 lh-copy">{nations.suggested_trips.text}</p>
     </heading>
 
-    <!-- learn: pass this as `<BasicPagination />` -->
-    {#each nations.suggested_trips.trips as trip}
-      <code>{trip.length}<br></code>
-      <code>{trip.title}<br></code>
-      <code>{trip.excerpt}<br></code>
-      <code>{trip.cta}<br></code>
-      <code>{trip.image}<br></code>
-      <code>{trip.starting_price}<br></code>
-    {/each}
+
+
+      <ul class="items bg-red">
+        {#each paginatedItems as  {cta, excerpt, image, length, starting_price, title}, i}
+          <li class="item">
+            <code>{length}<br></code>
+            <code>{title}<br></code>
+            <code>{excerpt}<br></code>
+            <code>{cta}<br></code>
+            <code>{image}<br></code>
+            <code>{starting_price}<br></code>
+          </li>
+        {/each}
+      </ul>
+
+      <LightPaginationNav
+        totalItems="{items.length}"
+        pageSize="{pageSize}"
+        currentPage="{currentPage}"
+        limit="{1}"
+        showStepOptions="{true}"
+        on:setPage="{(e) => currentPage = e.detail.page}"
+      />
+
+
+
 
   </aside>
 </Row>
@@ -116,19 +151,25 @@
   <!-- Learn: simplified SEO these on-page optimizations pass metadata -->
   <!-- Learn: SEO: you must have a distinct, descriptive title on every page-->
   <title>{nations.description.title}, {nations.description.nation} | {title}</title>
-
   <!-- Learn: SEO entice clicks with this SERP description -->
-  <meta name="description" content={nations.description.introduction ? nations.description.introduction.substring(0, 80) : nations.description.text.substring(0, 80)}>
+  <!-- Note: why 80 chars? authorityhacker.com/seo-title-tags -->
+  <meta name="description" content={nations.description.introduction ? nations.description.introduction.substring(0, 80) : nations.description.text.substring(0, 80)} />
   <!-- fix: better syntax required -->
-  <link rel="canonical" href="{import.meta.env.VITE_BASEURL}{thisUrl}">
-  <meta property="og:locale" content="it_IT">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="{nations.description.title}, {nations.description.nation} | {title}">
-  <meta property="og:description" content={nations.description.introduction ? nations.description.introduction.substring(0, 80) : nations.description.text.substring(0, 80)}>
+  <link rel="canonical" href="{import.meta.env.VITE_BASEURL}{thisUrl}" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{nations.description.title}, {nations.description.nation} | {title}" />
+  <meta property="og:description" content={nations.description.introduction ? nations.description.introduction.substring(0, 80) : nations.description.text.substring(0, 80)} />
   <!-- fix: better syntax required -->
-  <meta property="og:url" content="{import.meta.env.VITE_BASEURL}{thisUrl}">
-  <meta property="og:site_name" content={title}>
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:description" content={nations.description.introduction ? nations.description.introduction.substring(0, 80) : nations.description.text.substring(0, 80)}>
-  <meta name="twitter:title" content="{nations.description.title}, {nations.description.nation} | {title}">
+  <meta property="og:url" content="{import.meta.env.VITE_BASEURL}{thisUrl}" />
+  <!-- fix: provide `<meta property="fb:app_id" content="your_app_id" />`: css-tricks.com/essential-meta-tags-social-media/#aa-social-media-analytics -->
+  <!-- learn: wikihow.com/Get-an-App-ID-on-Facebook from: facebook.com/I-Viaggi-di-Maurizio-Levi-207083192654850/-->
+  <meta property="og:site_name" content={title} />
+  <meta property="og:image" content={nations.hero.image} />
+  <!-- learn: generic: <meta name="twitter:card" content="summary"> -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@viaggilevi" />
+  <meta name="twitter:image" content={nations.hero.image} />
+  <meta name="twitter:description" content={nations.description.introduction ? nations.description.introduction.substring(0, 80) : nations.description.text.substring(0, 80)} />
+  <meta name="twitter:title" content="{nations.description.title}, {nations.description.nation} | {title}" />
 </svelte:head>

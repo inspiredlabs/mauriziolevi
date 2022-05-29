@@ -29,7 +29,7 @@ import '../app.css' // <- just import your css: stackoverflow.com/questions/6363
 		}
 
 		:global(:root) {
-			--stroke-accent: white
+			--stroke-accent: white;
 		}
 
 	/* .sw1{ stroke-width: .125rem } */

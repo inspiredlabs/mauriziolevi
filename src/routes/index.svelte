@@ -51,18 +51,17 @@
   $: paginatedItems = paginate({ items, pageSize, currentPage });
 </script>
 
-
-
 <Snapper />
 
-
-<!-- <code>{JSON.stringify(my_homepage, null, 2)}</code> -->
-
-<ul class="items">
+<ul class="items bg-gold ma0">
   {#each paginatedItems as  {cta, excerpt, image, length, starting_price, title}, i}
     <li class="item">
-      <p>{excerpt}</p>
-      <code>{image}</code>
+      <code>{length}<br></code>
+      <code>{title}<br></code>
+      <code>{excerpt}<br></code>
+      <code>{cta}<br></code>
+      <code>{image}<br></code>
+      <code>{starting_price}<br></code>
     </li>
   {/each}
 </ul>
