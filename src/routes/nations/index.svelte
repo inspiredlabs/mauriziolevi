@@ -6,7 +6,6 @@
   import { page } from "$app/stores";
 
   // fix: Please add ${id}
-  const baseUrl = 'https://viaggilevi.vercel.app'; // note: this isn't in `svelte.config.js`
   $: thisUrl = $page.url.pathname; // learn: webjeda.com/blog/sveltekit-highlight-menu
 
   // debug: `iSelfAccepting` error passing <Section>...</Section> with <section>
@@ -121,13 +120,13 @@
   <!-- Learn: SEO entice clicks with this SERP description -->
   <meta name="description" content={nations.description.introduction ? nations.description.introduction.substring(0, 80) : nations.description.text.substring(0, 80)}>
   <!-- fix: better syntax required -->
-  <link rel="canonical" href="{baseUrl}{thisUrl}">
+  <link rel="canonical" href="{import.meta.env.VITE_BASEURL}{thisUrl}">
   <meta property="og:locale" content="it_IT">
   <meta property="og:type" content="article">
   <meta property="og:title" content="{nations.description.title}, {nations.description.nation} | {title}">
   <meta property="og:description" content={nations.description.introduction ? nations.description.introduction.substring(0, 80) : nations.description.text.substring(0, 80)}>
   <!-- fix: better syntax required -->
-  <meta property="og:url" content="{baseUrl}{thisUrl}">
+  <meta property="og:url" content="{import.meta.env.VITE_BASEURL}{thisUrl}">
   <meta property="og:site_name" content={title}>
   <meta name="twitter:card" content="summary">
   <meta name="twitter:description" content={nations.description.introduction ? nations.description.introduction.substring(0, 80) : nations.description.text.substring(0, 80)}>
