@@ -5528,7 +5528,7 @@ var init_layout_svelte = __esm({
       return ``;
     });
     css$1 = {
-      code: ":root{--alpha:1;--montage-img:240px;--montage-duration:1.6s}.montage.svelte-1byuf16.svelte-1byuf16{width:var(--montage-img);height:var(--montage-img)}.montage.svelte-1byuf16 img.svelte-1byuf16{will-change:transform;width:var(--montage-img);transition:all var(--montage-duration) cubic-bezier( 0.28, -0.07, 0.67, 2.00);transition-delay:calc(var(--montage-duration)/0.8)}.montage.svelte-1byuf16 img.svelte-1byuf16{z-index:4;transform:scale(1.0) rotate(4.3deg)}.montage.svelte-1byuf16 img.svelte-1byuf16:nth-child(1){z-index:3;left:calc(var(--montage-img)*0.53);transform:scale(0.7) rotate(3.5deg)}.montage.svelte-1byuf16 img.svelte-1byuf16:nth-child(2){z-index:2;right:calc(var(--montage-img)*0.59);transform:scale(0.8) rotate(-5.5deg)}.montage.visible.svelte-1byuf16 img.svelte-1byuf16{transform:scale(0.9) rotate(0deg)}.montage.visible.svelte-1byuf16 img.svelte-1byuf16:nth-child(1){transform:scale(1.0) rotate(12deg);left:calc(var(--montage-img)*0.7)}.montage.visible.svelte-1byuf16 img.svelte-1byuf16:nth-child(2){transform:scale(1.0) rotate(-9.5deg);right:calc(var(--montage-img)*0.7)}.diamond.svelte-1byuf16.svelte-1byuf16{background:currentColor;transform:rotate(45deg)}",
+      code: ":root{--montage-img:240px;--montage-duration:1.6s}.montage.svelte-1fuuotw.svelte-1fuuotw{width:var(--montage-img);height:var(--montage-img)}.montage.svelte-1fuuotw img.svelte-1fuuotw{will-change:transform;width:var(--montage-img);transition:all var(--montage-duration) cubic-bezier( 0.28, -0.07, 0.67, 2.00);transition-delay:calc(var(--montage-duration)/0.8)}.montage.svelte-1fuuotw img.svelte-1fuuotw{z-index:4;transform:scale(1.0) rotate(4.3deg)}.montage.svelte-1fuuotw img.svelte-1fuuotw:nth-child(1){z-index:3;left:calc(var(--montage-img)*0.53);transform:scale(0.7) rotate(3.5deg)}.montage.svelte-1fuuotw img.svelte-1fuuotw:nth-child(2){z-index:2;right:calc(var(--montage-img)*0.59);transform:scale(0.8) rotate(-5.5deg)}.montage.visible.svelte-1fuuotw img.svelte-1fuuotw{transform:scale(0.9) rotate(0deg)}.montage.visible.svelte-1fuuotw img.svelte-1fuuotw:nth-child(1){transform:scale(1.0) rotate(12deg);left:calc(var(--montage-img)*0.7)}.montage.visible.svelte-1fuuotw img.svelte-1fuuotw:nth-child(2){transform:scale(1.0) rotate(-9.5deg);right:calc(var(--montage-img)*0.7)}.diamond.svelte-1fuuotw.svelte-1fuuotw{background:currentColor;transform:rotate(45deg)}",
       map: null
     };
     alt = "Presentazione di Maurizio Levi";
@@ -5545,9 +5545,9 @@ var init_layout_svelte = __esm({
 			<span class="${"fraunces"}">Viaggi </span><span class="${"fraunces-i"}">di\xA0scoperta</span></h4>
 
 		
-		<figure class="${"montage " + escape("") + " cf relative top-0 w-100 mr-auto ml-auto svelte-1byuf16"}"><img class="${"absolute shadow-5 svelte-1byuf16"}" src="${escape(imagesBaseUrl) + "MaurizioLevi_Anteprima.webp"}"${add_attribute("alt", alt, 0)}>
-			<img class="${"absolute shadow-5 svelte-1byuf16"}" src="${escape(imagesBaseUrl) + "Levi-Maurizio-768x510.webp"}"${add_attribute("alt", alt, 0)}>
-			<img class="${"absolute shadow-5 svelte-1byuf16"}" src="${escape(imagesBaseUrl) + "Maurizio_Levi.webp"}"${add_attribute("alt", alt, 0)}></figure>
+		<figure class="${"montage " + escape("") + " cf relative top-0 w-100 mr-auto ml-auto svelte-1fuuotw"}"><img class="${"absolute shadow-5 svelte-1fuuotw"}" src="${escape(imagesBaseUrl) + "MaurizioLevi_Anteprima.webp"}"${add_attribute("alt", alt, 0)}>
+			<img class="${"absolute shadow-5 svelte-1fuuotw"}" src="${escape(imagesBaseUrl) + "Levi-Maurizio-768x510.webp"}"${add_attribute("alt", alt, 0)}>
+			<img class="${"absolute shadow-5 svelte-1fuuotw"}" src="${escape(imagesBaseUrl) + "Maurizio_Levi.webp"}"${add_attribute("alt", alt, 0)}></figure>
 
 		<div class="${"fl w-100 w-50-m w-50-l lh-copy measure "}"><p class="${"pr3 fw5"}">Scegliamo itinerari che sono il frutto di anni di esperienza e sono il meglio possible in quel paese o in quella regione per la durata che\xA0\xE8\xA0prevista.</p></div>
 
@@ -5556,13 +5556,13 @@ var init_layout_svelte = __esm({
 				<cite class="${"fraunces-i fs-normal tr"}"><p><span class="${"fw5"}">Maurizio Levi</span> e tutto lo staff de <span class="${"db"}">I\xA0Viaggi di Maurizio Levi</span></p></cite>
 			</blockquote></div>
 
-		<aside class="${"fl w-100 lh-copy pb4"}"><div class="${"fl w-100 w-third-m w-third-l f6 lh-copy measure "}"><aside class="${"golden-brown diamond h2 w2 mb3 mr-auto ml-auto mt3 svelte-1byuf16"}"></aside>
+		<aside class="${"fl w-100 lh-copy pb4"}"><div class="${"fl w-100 w-third-m w-third-l f6 lh-copy measure "}"><aside class="${"golden-brown diamond h2 w2 mb3 mr-auto ml-auto mt3 svelte-1fuuotw"}"></aside>
 					<h5 class="${"db black-70 fraunces mv0 pb2 tc f4 fw5 h3"}">Piccoli gruppi</h5>
 				<p class="${"pr4"}">Favoriscono la coesione tra i partecipanti, riducono l&#39;impatto sull&#39;ambiente e acilitano &#39;opportunit\xE0 di instaurare rapporti con la popolazione locale.</p></div>
-			<div class="${"fl w-100 w-third-m w-third-l f6 lh-copy measure"}"><aside class="${"golden-brown diamond h2 w2 mb3 mr-auto ml-auto mt3 svelte-1byuf16"}"></aside>
+			<div class="${"fl w-100 w-third-m w-third-l f6 lh-copy measure"}"><aside class="${"golden-brown diamond h2 w2 mb3 mr-auto ml-auto mt3 svelte-1fuuotw"}"></aside>
 					<h5 class="${"db black-70 fraunces mv0 pb2 tc f4 fw5 h3"}">Spirito di esplorazione</h5>
 				<p class="${"pr3"}">Percorsi accuratamente studiati, con un contenuto culturale in senso ampio, in grado di svelare aspetti inattesi e fuori dagli stereotipi.</p></div>
-			<div class="${"fl w-100 w-third-m w-third-l ph0 f6 lh-copy measure"}"><aside class="${"golden-brown diamond h2 w2 mb3 mr-auto ml-auto mt3 svelte-1byuf16"}"></aside>
+			<div class="${"fl w-100 w-third-m w-third-l ph0 f6 lh-copy measure"}"><aside class="${"golden-brown diamond h2 w2 mb3 mr-auto ml-auto mt3 svelte-1fuuotw"}"></aside>
 					<h5 class="${"db black-70 fraunces mv0 pb2 tc f4 fw5 h3"}">Cultura dell&#39;incontro</h5>
 				<p class="${"pr4"}">Spirito di adattamento e predisposizione mentale verso realt\xE0 differenti, da rispettare e apprezzare proprio per la loro unicit\xE0.</p></div></aside></article>`;
         }
@@ -5604,9 +5604,9 @@ var entry, js, css2;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
-    entry = "pages/__layout.svelte-2021fe9b.js";
-    js = ["pages/__layout.svelte-2021fe9b.js", "chunks/index-09775ba2.js", "chunks/Row-8b6dafdf.js"];
-    css2 = ["assets/pages/__layout.svelte-6afdb5e0.css"];
+    entry = "pages/__layout.svelte-d2f41538.js";
+    js = ["pages/__layout.svelte-d2f41538.js", "chunks/index-09775ba2.js", "chunks/Row-8b6dafdf.js"];
+    css2 = ["assets/pages/__layout.svelte-03d07890.css"];
   }
 });
 
@@ -8207,7 +8207,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([".DS_Store", "data/destinations.json", "data/my_homepage.json", "data/my_nations.json", "favicon.ico", "favicon.png", "images/.DS_Store", "images/Levi-Maurizio-768x510.jpg", "images/Levi-Maurizio-768x510.webp", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/MaurizioLevi_Anteprima.jpg", "images/MaurizioLevi_Anteprima.webp", "images/Maurizio_Levi.jpg", "images/Maurizio_Levi.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/asc.png", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/boingboing-moon.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/fai.png", "images/fto.png", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lagune-altiplaniche-1.jpeg", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/levi_logo.png", "images/logo.png", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/tri.png", "images/unesco.png", "images/ungheria-repubblica-slovacca-adobestock-177932056.jpeg", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".json": "application/json", ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".jpeg": "image/jpeg", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-1c694f44.js", "js": ["start-1c694f44.js", "chunks/index-09775ba2.js"], "css": [] },
+    entry: { "file": "start-e1027ee6.js", "js": ["start-e1027ee6.js", "chunks/index-09775ba2.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),

@@ -22,6 +22,7 @@
 
   /********* PAGINATION **********/
   import { paginate, LightPaginationNav } from 'svelte-paginate';
+  import Zed from '$lib/Pagination/Zed.svelte';
   //let tripSpotlight = Object.values(homepage.travels_in_evidence.travels);
   // learn: console.log(tripSpotlight);
 
@@ -116,28 +117,30 @@
     </heading>
 
 
+    <Row bg="bg-linen">
+      <!-- debug: bg-redimport Row from '$lib/Row.svelte'; -->
+      <ul class="items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l">
+          {#each paginatedItems as  {cta, excerpt, image, length, starting_price, title}, i}
+            <Zed
+              length={length}
+              title={title}
+              excerpt={excerpt}
+              cta={cta}
+              image={image}
+              starting_price={starting_price}
+            />
+          {/each}
+        </ul>
 
-      <ul class="items bg-red">
-        {#each paginatedItems as  {cta, excerpt, image, length, starting_price, title}, i}
-          <li class="item">
-            <code>{length}<br></code>
-            <code>{title}<br></code>
-            <code>{excerpt}<br></code>
-            <code>{cta}<br></code>
-            <code>{image}<br></code>
-            <code>{starting_price}<br></code>
-          </li>
-        {/each}
-      </ul>
-
-      <LightPaginationNav
-        totalItems="{items.length}"
-        pageSize="{pageSize}"
-        currentPage="{currentPage}"
-        limit="{1}"
-        showStepOptions="{true}"
-        on:setPage="{(e) => currentPage = e.detail.page}"
-      />
+        <LightPaginationNav
+          totalItems="{items.length}"
+          pageSize="{pageSize}"
+          currentPage="{currentPage}"
+          limit="{1}"
+          showStepOptions="{true}"
+          on:setPage="{(e) => currentPage = e.detail.page}"
+        />
+      </Row>
 
 
 

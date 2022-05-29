@@ -26,7 +26,9 @@ background-image:
 		hsla(30,28.95%,14.9%, var(--alpha)) 30%,
 		hsla(30,28.95%,14.9%, var(--alpha)) 100%),
 		url({JSON.stringify(src)})">
-	<!-- fix: scoped variables in `-alpha` & `-cocoa` are global?! -->
+	<!-- fix: scoped variables should not be global?! -->
+	<!-- x -->
+	<!-- Note: see: palettes.imfeld.dev/ -->
 	<!-- background-position: 0% 80%; // horizontal, vertical from: developer.mozilla.org/en-US/docs/Web/CSS/background-position-x-->
 	<div class="w-100 snap-start always-stop">
 		<!-- overflow-x-scroll smooth-scroll h-100 vh-100 -->
