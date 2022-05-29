@@ -18,13 +18,15 @@
 id={id}
 class="flex-column flex flex-none white cover ma0 "
 style="
+--alpha:0.6;
 min-width: 100%;
 background-position-x: center;
 background-image:
 	linear-gradient(
-		var(--cocoa) 30%,
-		var(--cocoa) 100%),
+		hsla(30,28.95%,14.9%, var(--alpha)) 30%,
+		hsla(30,28.95%,14.9%, var(--alpha)) 100%),
 		url({JSON.stringify(src)})">
+	<!-- fix: scoped variables in `-alpha` & `-cocoa` are global?! -->
 	<!-- background-position: 0% 80%; // horizontal, vertical from: developer.mozilla.org/en-US/docs/Web/CSS/background-position-x-->
 	<div class="w-100 snap-start always-stop">
 		<!-- overflow-x-scroll smooth-scroll h-100 vh-100 -->
@@ -75,10 +77,6 @@ background-image:
 </figure><!-- /Page id -->
 
 <style>
-:root{
-	--alpha: 0.6;
-}
-
 /* `.ttt` is part of `~/offline/app.css`, but NOT integrated into Tachyonshower. */
 .ttt:first-letter { text-transform: capitalize }
 

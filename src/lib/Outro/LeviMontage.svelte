@@ -81,7 +81,6 @@ About `.montage`, is NOT integrated into Tachyonshower.
 This req. prevent horizontal scroll css: `overflow-x-hidden`
 */
 :root {
---alpha:1;
 --montage-img: 240px; /*   var(--montage-img) */
 --montage-duration: 1.6s; /*   var(--montage-duration) */
 }
