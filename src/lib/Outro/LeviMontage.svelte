@@ -22,9 +22,9 @@ let visible;
 			class="montage { visible ? 'visible' : '' }
 			cf relative top-0 w-100 mr-auto ml-auto"
 		>
-			<img class="absolute shadow-5" src="{imagesBaseUrl}MaurizioLevi_Anteprima.jpg" alt={alt}>
-			<img class="absolute shadow-5" src="{imagesBaseUrl}Levi-Maurizio-768x510.jpg" alt={alt}>
-			<img class="absolute shadow-5" src="{imagesBaseUrl}images/Maurizio_Levi.jpg" alt={alt}>
+			<img class="absolute shadow-5" src="{imagesBaseUrl}bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg" alt={alt}>
+			<img class="absolute shadow-5" src="{imagesBaseUrl}bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg" alt={alt}>
+			<img class="absolute shadow-5" src="{imagesBaseUrl}bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg" alt={alt}>
 		</figure>
 
 		<div class="fl w-100 w-50-m w-50-l lh-copy measure ">
