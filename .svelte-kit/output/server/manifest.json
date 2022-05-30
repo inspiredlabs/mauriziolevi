@@ -58,6 +58,17 @@
       "_index-ed6b8b8e.js"
     ]
   },
+  "src/routes/destinations/[id].svelte": {
+    "file": "entries/pages/destinations/_id_.svelte.js",
+    "src": "src/routes/destinations/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-ed6b8b8e.js",
+      "_Row-87f8cf8f.js",
+      "_index-545b079a.js",
+      "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js"
+    ]
+  },
   "src/routes/fragile/index.svelte": {
     "file": "entries/pages/fragile/index.svelte.js",
     "src": "src/routes/fragile/index.svelte",
@@ -73,7 +84,8 @@
     "imports": [
       "_index-ed6b8b8e.js",
       "_Snapper-e58c2f95.js",
-      "_Zed-b89e33b0.js",
+      "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js",
+      "_Zed-897615fd.js",
       "_Row-87f8cf8f.js"
     ]
   },
@@ -84,10 +96,9 @@
     "imports": [
       "_index-ed6b8b8e.js",
       "_Row-87f8cf8f.js",
-      "_Zed-b89e33b0.js"
-    ],
-    "css": [
-      "assets/entries/pages/nations/index.svelte-c44095e2.css"
+      "_index-545b079a.js",
+      "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js",
+      "_Zed-897615fd.js"
     ]
   },
   "src/routes/sirv/[slug].svelte": {
@@ -140,6 +151,21 @@
       "_index-ed6b8b8e.js"
     ]
   },
+  "_index-545b079a.js": {
+    "file": "chunks/index-545b079a.js",
+    "imports": [
+      "_index-ed6b8b8e.js"
+    ],
+    "css": [
+      "assets/index-eca458bd.css"
+    ]
+  },
+  "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js": {
+    "file": "chunks/Zed.svelte_svelte_type_style_lang-f1dac0c9.js",
+    "css": [
+      "assets/Zed.svelte_svelte_type_style_lang-133a7e53.css"
+    ]
+  },
   "_Snapper-e58c2f95.js": {
     "file": "chunks/Snapper-e58c2f95.js",
     "imports": [
@@ -149,13 +175,11 @@
       "assets/Snapper-dfd6898b.css"
     ]
   },
-  "_Zed-b89e33b0.js": {
-    "file": "chunks/Zed-b89e33b0.js",
+  "_Zed-897615fd.js": {
+    "file": "chunks/Zed-897615fd.js",
     "imports": [
-      "_index-ed6b8b8e.js"
-    ],
-    "css": [
-      "assets/Zed-df0e187c.css"
+      "_index-ed6b8b8e.js",
+      "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js"
     ]
   },
   ".svelte-kit/build/hooks.js": {

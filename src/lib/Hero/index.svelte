@@ -3,6 +3,9 @@ export let image;
 export let payoff;
 export let title;
 export let location;
+// fix: unused
+export let overlay_image;
+
 // fix: this component reqs: `export let cta;`
 
 import Row from '$lib/Row.svelte';
@@ -19,7 +22,7 @@ import ScrollIndicator from '$lib/ScrollIndicator.svelte';
 			<h2 class="w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid">Join the good times</h2>
 		-->
 			<h3 class="tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray ttu tc mv0">{payoff ? payoff : undefined }</h3>
-			<h2 class="w-100 mv0 ph3 f2 f2-ns f1-m f1-l ts1-dark-gray fraunces tc ">{title ? title : undefined }</h2>
+			<h2 class="w-100 mv0 ph3 f2 f2-ns f1-m f1-l ts1-dark-gray fraunces tc ttc">{title ? title.toLowerCase() : undefined }</h2>
 		</div>
 	</div>
 	<figcaption class="flex flex-column-reverse white w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto landscape-vh-10-l"><!-- vh-05 landscape-vh-15-l || vh-20  -->
@@ -27,5 +30,6 @@ import ScrollIndicator from '$lib/ScrollIndicator.svelte';
 		<ScrollIndicator />
 		<span class="tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray mv0">{location ? location : undefined }</span>
 
+		<code class="bg-charcoal top0 absolute z-1 f8">{!overlay_image ? '' : overlay_image }</code>
 	</figcaption>
 </figure>

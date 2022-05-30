@@ -56,6 +56,14 @@ const Outro = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(LeviMontage, "LeviMontage").$$render($$result, {}, {}, {})}
 `;
 });
+const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { title } = $$props;
+  if ($$props.title === void 0 && $$bindings.title && title !== void 0)
+    $$bindings.title(title);
+  return `<nav class="${"bg-red z-max fixed top0"}"><ul><li><a href="${"/"}">${escape(title ? title : void 0)}</a></li></ul>
+
+	</nav>`;
+});
 var __layout_svelte_svelte_type_style_lang = "";
 const css = {
   code: ".light-pagination-nav span.option.prev > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.next > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.prev{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:9999px 0px 0px 9999px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem;border-right:none}.light-pagination-nav span.option.next{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:0px 9999px 9999px 0px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem}.light-pagination-nav .option{border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none;text-shadow:0px 0.125rem 0.125rem white;color:var(--golden-brown)!important}.light-pagination-nav .option:hover{background-color:rgba(255,255,255, 0.8)!important;color:var(--golden-brown);border:solid 0.125rem var(--golden-brown);border-right:none}.light-pagination-nav .pagination-nav{background:transparent!important;box-shadow:none}.option.active{text-shadow:0px 0.125rem 0.125rem black;color:white!important;background-color:var(--golden-brown)!important;border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none}.option.active:hover{background-color:var(--golden-brown)!important;cursor:auto!important}svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
@@ -63,7 +71,9 @@ const css = {
 };
 const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `
+  return `${validate_component(Menu, "Menu").$$render($$result, { title: "Maurizio Levi" }, {}, {})}
+
+
 
 <main class="${"system backface-hidden charcoal"}">
 	${slots.default ? slots.default({}) : ``}

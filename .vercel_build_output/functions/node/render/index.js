@@ -1609,10 +1609,10 @@ var init_install_fetch = __esm({
           [PullSteps](readRequest) {
             const stream = this._controlledReadableByteStream;
             if (this._queueTotalSize > 0) {
-              const entry6 = this._queue.shift();
-              this._queueTotalSize -= entry6.byteLength;
+              const entry7 = this._queue.shift();
+              this._queueTotalSize -= entry7.byteLength;
               ReadableByteStreamControllerHandleQueueDrain(this);
-              const view = new Uint8Array(entry6.buffer, entry6.byteOffset, entry6.byteLength);
+              const view = new Uint8Array(entry7.buffer, entry7.byteOffset, entry7.byteLength);
               readRequest._chunkSteps(view);
               return;
             }
@@ -5451,7 +5451,7 @@ function create_ssr_component(fn) {
       return {
         html,
         css: {
-          code: Array.from(result.css).map((css7) => css7.code).join("\n"),
+          code: Array.from(result.css).map((css9) => css9.code).join("\n"),
           map: null
         },
         head: result.title + result.head
@@ -5514,7 +5514,7 @@ var layout_svelte_exports = {};
 __export(layout_svelte_exports, {
   default: () => _layout
 });
-var css$2, Fraunces, css$1, alt, LeviMontage, Outro, css, _layout;
+var css$2, Fraunces, css$1, alt, LeviMontage, Outro, Menu, css, _layout;
 var init_layout_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/__layout.svelte.js"() {
     init_index_ed6b8b8e();
@@ -5572,13 +5572,23 @@ var init_layout_svelte = __esm({
       return `${validate_component(LeviMontage, "LeviMontage").$$render($$result, {}, {}, {})}
 `;
     });
+    Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { title } = $$props;
+      if ($$props.title === void 0 && $$bindings.title && title !== void 0)
+        $$bindings.title(title);
+      return `<nav class="${"bg-red z-max fixed top0"}"><ul><li><a href="${"/"}">${escape(title ? title : void 0)}</a></li></ul>
+
+	</nav>`;
+    });
     css = {
       code: ".light-pagination-nav span.option.prev > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.next > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.prev{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:9999px 0px 0px 9999px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem;border-right:none}.light-pagination-nav span.option.next{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:0px 9999px 9999px 0px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem}.light-pagination-nav .option{border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none;text-shadow:0px 0.125rem 0.125rem white;color:var(--golden-brown)!important}.light-pagination-nav .option:hover{background-color:rgba(255,255,255, 0.8)!important;color:var(--golden-brown);border:solid 0.125rem var(--golden-brown);border-right:none}.light-pagination-nav .pagination-nav{background:transparent!important;box-shadow:none}.option.active{text-shadow:0px 0.125rem 0.125rem black;color:white!important;background-color:var(--golden-brown)!important;border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none}.option.active:hover{background-color:var(--golden-brown)!important;cursor:auto!important}svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
       map: null
     };
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       $$result.css.add(css);
-      return `
+      return `${validate_component(Menu, "Menu").$$render($$result, { title: "Maurizio Levi" }, {}, {})}
+
+
 
 <main class="${"system backface-hidden charcoal"}">
 	${slots.default ? slots.default({}) : ``}
@@ -5604,8 +5614,8 @@ var entry, js, css2;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
-    entry = "pages/__layout.svelte-8394afc8.js";
-    js = ["pages/__layout.svelte-8394afc8.js", "chunks/index-09775ba2.js", "chunks/Row-8b6dafdf.js"];
+    entry = "pages/__layout.svelte-1eeff260.js";
+    js = ["pages/__layout.svelte-1eeff260.js", "chunks/index-09775ba2.js", "chunks/Row-8b6dafdf.js"];
     css2 = ["assets/pages/__layout.svelte-436441e6.css"];
   }
 });
@@ -5660,13 +5670,145 @@ var init__2 = __esm({
   }
 });
 
+// .svelte-kit/output/server/chunks/index-545b079a.js
+var css4, ScrollIndicator, Hero;
+var init_index_545b079a = __esm({
+  ".svelte-kit/output/server/chunks/index-545b079a.js"() {
+    init_index_ed6b8b8e();
+    css4 = {
+      code: ".direction-indicator.svelte-grd4gw{display:block;margin:0 0 0 -4px;position:absolute;top:0px;left:50%;width:8px;height:8px;border-radius:50%;background:white;-webkit-animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none;animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none}@-webkit-keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}@keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}",
+      map: null
+    };
+    ScrollIndicator = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      $$result.css.add(css4);
+      return `<div class="${"h2 relative"}"><div class="${"direction-indicator svelte-grd4gw"}"></div>
+</div>`;
+    });
+    Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { image } = $$props;
+      let { payoff } = $$props;
+      let { title } = $$props;
+      let { location } = $$props;
+      let { overlay_image } = $$props;
+      if ($$props.image === void 0 && $$bindings.image && image !== void 0)
+        $$bindings.image(image);
+      if ($$props.payoff === void 0 && $$bindings.payoff && payoff !== void 0)
+        $$bindings.payoff(payoff);
+      if ($$props.title === void 0 && $$bindings.title && title !== void 0)
+        $$bindings.title(title);
+      if ($$props.location === void 0 && $$bindings.location && location !== void 0)
+        $$bindings.location(location);
+      if ($$props.overlay_image === void 0 && $$bindings.overlay_image && overlay_image !== void 0)
+        $$bindings.overlay_image(overlay_image);
+      return `<figure class="${"ma0 flex flex-column vh-75 w-100 cover"}" style="${"background-position:center 40%; background-image: url('" + escape(image ? image : void 0) + "')"}"${add_attribute("title", location ? location : void 0, 0)}>
+
+<div class="${"vh-75 flex items-center white w-100 f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pt5 pt6-l"}">
+			<h3 class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray ttu tc mv0"}">${escape(payoff ? payoff : void 0)}</h3>
+			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l ts1-dark-gray fraunces tc ttc"}">${escape(title ? title.toLowerCase() : void 0)}</h2></div></div>
+	<figcaption class="${"flex flex-column-reverse white w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto landscape-vh-10-l"}">
+
+		${validate_component(ScrollIndicator, "ScrollIndicator").$$render($$result, {}, {}, {})}
+		<span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray mv0"}">${escape(location ? location : void 0)}</span>
+
+		<code class="${"bg-charcoal top0 absolute z-1 f8"}">${escape(!overlay_image ? "" : overlay_image)}</code></figcaption></figure>`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/chunks/Zed.svelte_svelte_type_style_lang-f1dac0c9.js
+function paginate({ items, pageSize: pageSize2, currentPage: currentPage2 }) {
+  return items.slice((currentPage2 - 1) * pageSize2, (currentPage2 - 1) * pageSize2 + pageSize2);
+}
+var init_Zed_svelte_svelte_type_style_lang_f1dac0c9 = __esm({
+  ".svelte-kit/output/server/chunks/Zed.svelte_svelte_type_style_lang-f1dac0c9.js"() {
+  }
+});
+
+// .svelte-kit/output/server/entries/pages/destinations/_id_.svelte.js
+var id_svelte_exports = {};
+__export(id_svelte_exports, {
+  default: () => U5Bidu5D,
+  load: () => load2
+});
+var load2, currentPage, pageSize, U5Bidu5D;
+var init_id_svelte = __esm({
+  ".svelte-kit/output/server/entries/pages/destinations/_id_.svelte.js"() {
+    init_index_ed6b8b8e();
+    init_Row_87f8cf8f();
+    init_index_545b079a();
+    init_Zed_svelte_svelte_type_style_lang_f1dac0c9();
+    load2 = async ({ params, fetch: fetch3 }) => {
+      let id = params.id;
+      const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-destinations/${id}`);
+      const destinations = await response.json();
+      return { props: { destinations } };
+    };
+    currentPage = 1;
+    pageSize = 3;
+    U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { destinations } = $$props;
+      let suggestedTrips = Object.values(destinations.suggested_trips.trips);
+      let items = suggestedTrips;
+      if ($$props.destinations === void 0 && $$bindings.destinations && destinations !== void 0)
+        $$bindings.destinations(destinations);
+      paginate({ items, pageSize, currentPage });
+      return `
+
+
+${validate_component(Hero, "Hero").$$render($$result, {
+        image: destinations.hero.image,
+        payoff: destinations.hero.payoff,
+        title: destinations.hero.title,
+        location: destinations.hero.location,
+        overlay_image: destinations.hero.overlay_image
+      }, {}, {})}
+
+${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
+        default: () => {
+          return `
+  <aside class="${"highlight db black-70 f5 f4-ns f3-m f3-l pv5 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto"}"><heading class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">${escape(destinations.suggested_trips.payoff)}</small>
+      <h4 class="${"fraunces"}">${destinations.suggested_trips.title.includes("di viaggio") ? `${escape(destinations.suggested_trips.title.replace(/di viaggio/g, ""))}<span class="${"fraunces-i"}">di\xA0viaggio</span>` : `${escape(destinations.suggested_trips.title)}`}</h4>
+      <p class="${"charcoal o-80 db f7 f7-ns f5-m f4-l fw4 mv0 pb2 lh-copy"}">${escape(destinations.suggested_trips.text)}</p></heading>
+
+
+    ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
+            default: () => {
+              return `
+      <ul class="${"items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l"}">ZED
+        </ul>`;
+            }
+          })}</aside>`;
+        }
+      })}`;
+    });
+  }
+});
+
+// .svelte-kit/output/server/nodes/3.js
+var __exports3 = {};
+__export(__exports3, {
+  css: () => css5,
+  entry: () => entry3,
+  js: () => js3,
+  module: () => id_svelte_exports
+});
+var entry3, js3, css5;
+var init__3 = __esm({
+  ".svelte-kit/output/server/nodes/3.js"() {
+    init_id_svelte();
+    entry3 = "pages/destinations/_id_.svelte-458da852.js";
+    js3 = ["pages/destinations/_id_.svelte-458da852.js", "chunks/index-09775ba2.js", "chunks/Row-8b6dafdf.js", "chunks/index-7edf2c45.js", "chunks/Zed.svelte_svelte_type_style_lang-f1dac0c9.js"];
+    css5 = ["assets/index-b12d75c8.css", "assets/Zed.svelte_svelte_type_style_lang-33fc65f4.css"];
+  }
+});
+
 // .svelte-kit/output/server/entries/pages/sirv/_slug_.svelte.js
 var slug_svelte_exports = {};
 __export(slug_svelte_exports, {
   default: () => U5Bslugu5D,
-  load: () => load2
+  load: () => load3
 });
-async function load2(url) {
+async function load3(url) {
   let slug = url.params.slug;
   return { props: { slug } };
 }
@@ -5690,66 +5832,66 @@ var init_slug_svelte = __esm({
   }
 });
 
-// .svelte-kit/output/server/nodes/6.js
-var __exports3 = {};
-__export(__exports3, {
-  css: () => css4,
-  entry: () => entry3,
-  js: () => js3,
+// .svelte-kit/output/server/nodes/7.js
+var __exports4 = {};
+__export(__exports4, {
+  css: () => css6,
+  entry: () => entry4,
+  js: () => js4,
   module: () => slug_svelte_exports
 });
-var entry3, js3, css4;
-var init__3 = __esm({
-  ".svelte-kit/output/server/nodes/6.js"() {
+var entry4, js4, css6;
+var init__4 = __esm({
+  ".svelte-kit/output/server/nodes/7.js"() {
     init_slug_svelte();
-    entry3 = "pages/sirv/_slug_.svelte-ce2b5faa.js";
-    js3 = ["pages/sirv/_slug_.svelte-ce2b5faa.js", "chunks/index-09775ba2.js"];
-    css4 = [];
+    entry4 = "pages/sirv/_slug_.svelte-ce2b5faa.js";
+    js4 = ["pages/sirv/_slug_.svelte-ce2b5faa.js", "chunks/index-09775ba2.js"];
+    css6 = [];
   }
 });
 
 // .svelte-kit/output/server/entries/pages/trip/_id_.svelte.js
-var id_svelte_exports = {};
-__export(id_svelte_exports, {
-  default: () => U5Bidu5D,
-  load: () => load3
+var id_svelte_exports2 = {};
+__export(id_svelte_exports2, {
+  default: () => U5Bidu5D2,
+  load: () => load4
 });
-var load3, U5Bidu5D;
-var init_id_svelte = __esm({
+var load4, U5Bidu5D2;
+var init_id_svelte2 = __esm({
   ".svelte-kit/output/server/entries/pages/trip/_id_.svelte.js"() {
     init_index_ed6b8b8e();
-    load3 = async ({ params, fetch: fetch3 }) => {
+    load4 = async ({ params, fetch: fetch3 }) => {
       let id = params.id;
-      const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-nations/${id}`);
+      const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-destinations/${id}`);
       const trip = await response.json();
       return { props: { trip } };
     };
-    U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+    U5Bidu5D2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { trip } = $$props;
       if ($$props.trip === void 0 && $$bindings.trip && trip !== void 0)
         $$bindings.trip(trip);
-      return `<pre>${escape(JSON.stringify(trip, null, 2))}</pre>
+      return `<pre class="${"bg-gold"}">${escape(JSON.stringify(trip, null, 2))}</pre>
 
 `;
     });
   }
 });
 
-// .svelte-kit/output/server/nodes/10.js
-var __exports4 = {};
-__export(__exports4, {
-  css: () => css5,
-  entry: () => entry4,
-  js: () => js4,
-  module: () => id_svelte_exports
+// .svelte-kit/output/server/nodes/11.js
+var __exports5 = {};
+__export(__exports5, {
+  css: () => css7,
+  entry: () => entry5,
+  js: () => js5,
+  module: () => id_svelte_exports2
 });
-var entry4, js4, css5;
-var init__4 = __esm({
-  ".svelte-kit/output/server/nodes/10.js"() {
-    init_id_svelte();
-    entry4 = "pages/trip/_id_.svelte-ef47a4c9.js";
-    js4 = ["pages/trip/_id_.svelte-ef47a4c9.js", "chunks/index-09775ba2.js"];
-    css5 = [];
+var entry5, js5, css7;
+var init__5 = __esm({
+  ".svelte-kit/output/server/nodes/11.js"() {
+    init_id_svelte2();
+    entry5 = "pages/trip/_id_.svelte-0938a28a.js";
+    js5 = ["pages/trip/_id_.svelte-0938a28a.js", "chunks/index-09775ba2.js"];
+    css7 = [];
   }
 });
 
@@ -5757,9 +5899,9 @@ var init__4 = __esm({
 var slug_svelte_exports2 = {};
 __export(slug_svelte_exports2, {
   default: () => U5Bslugu5D2,
-  load: () => load4
+  load: () => load5
 });
-async function load4(url) {
+async function load5(url) {
   let slug = url.params.slug;
   return { props: { slug } };
 }
@@ -5783,20 +5925,20 @@ var init_slug_svelte2 = __esm({
 });
 
 // .svelte-kit/output/server/nodes/2.js
-var __exports5 = {};
-__export(__exports5, {
-  css: () => css6,
-  entry: () => entry5,
-  js: () => js5,
+var __exports6 = {};
+__export(__exports6, {
+  css: () => css8,
+  entry: () => entry6,
+  js: () => js6,
   module: () => slug_svelte_exports2
 });
-var entry5, js5, css6;
-var init__5 = __esm({
+var entry6, js6, css8;
+var init__6 = __esm({
   ".svelte-kit/output/server/nodes/2.js"() {
     init_slug_svelte2();
-    entry5 = "pages/_slug_.svelte-4d4d5e3b.js";
-    js5 = ["pages/_slug_.svelte-4d4d5e3b.js", "chunks/index-09775ba2.js"];
-    css6 = [];
+    entry6 = "pages/_slug_.svelte-4d4d5e3b.js";
+    js6 = ["pages/_slug_.svelte-4d4d5e3b.js", "chunks/index-09775ba2.js"];
+    css8 = [];
   }
 });
 
@@ -6151,12 +6293,12 @@ function devalue(value) {
   }
   walk(value);
   var names = /* @__PURE__ */ new Map();
-  Array.from(counts).filter(function(entry6) {
-    return entry6[1] > 1;
+  Array.from(counts).filter(function(entry7) {
+    return entry7[1] > 1;
   }).sort(function(a, b) {
     return b[1] - a[1];
-  }).forEach(function(entry6, i2) {
-    names.set(entry6[0], getName(i2));
+  }).forEach(function(entry7, i2) {
+    names.set(entry7[0], getName(i2));
   });
   function stringify(thing) {
     if (names.has(thing)) {
@@ -8204,18 +8346,30 @@ var Server = class {
 // .svelte-kit/vercel-tmp/manifest.js
 var manifest = {
   appDir: "_app",
-  assets: /* @__PURE__ */ new Set([".DS_Store", "data/destinations.json", "data/my_homepage.json", "data/my_nations.json", "favicon.ico", "favicon.png", "fonts/Fraunces--latin_basic.woff2", "fonts/Fraunces-Italic--latin_basic.woff2", "images/.DS_Store", "images/Levi-Maurizio-768x510.jpg", "images/Levi-Maurizio-768x510.webp", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/MaurizioLevi_Anteprima.jpg", "images/MaurizioLevi_Anteprima.webp", "images/Maurizio_Levi.jpg", "images/Maurizio_Levi.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/asc.png", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/boingboing-moon.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/fai.png", "images/fto.png", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lagune-altiplaniche-1.jpeg", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/levi_logo.png", "images/logo.png", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/tri.png", "images/unesco.png", "images/ungheria-repubblica-slovacca-adobestock-177932056.jpeg", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
+  assets: /* @__PURE__ */ new Set([".DS_Store", "data/destinations.json", "data/my_destinations_3.json", "data/my_homepage.json", "data/my_nations.json", "favicon.ico", "favicon.png", "fonts/Fraunces--latin_basic.woff2", "fonts/Fraunces-Italic--latin_basic.woff2", "images/.DS_Store", "images/Levi-Maurizio-768x510.jpg", "images/Levi-Maurizio-768x510.webp", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/MaurizioLevi_Anteprima.jpg", "images/MaurizioLevi_Anteprima.webp", "images/Maurizio_Levi.jpg", "images/Maurizio_Levi.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Tineye.Torres.del.Paine.National.Park.webp", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/adobestock-255750571.webp", "images/alba10.webp", "images/asc.png", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.webp", "images/boingboing-moon.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.webp", "images/fai.png", "images/fto.png", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lagune-altiplaniche-1.jpeg", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/lake-urmia-south-caspian-sea-iran.webp", "images/levi_logo.png", "images/logo.png", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/russia-largest-freshwater-lake-ladoga.webp", "images/tri.png", "images/unesco.png", "images/ungheria-repubblica-slovacca-adobestock-177932056.jpeg", "images/usa-banner-01.webp", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".json": "application/json", ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".woff2": "font/woff2", ".jpg": "image/jpeg", ".webp": "image/webp", ".jpeg": "image/jpeg", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-0b1c7e47.js", "js": ["start-0b1c7e47.js", "chunks/index-09775ba2.js"], "css": [] },
+    entry: { "file": "start-e79f1139.js", "js": ["start-e79f1139.js", "chunks/index-09775ba2.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),
       () => Promise.resolve().then(() => (init__3(), __exports3)),
       () => Promise.resolve().then(() => (init__4(), __exports4)),
-      () => Promise.resolve().then(() => (init__5(), __exports5))
+      () => Promise.resolve().then(() => (init__5(), __exports5)),
+      () => Promise.resolve().then(() => (init__6(), __exports6))
     ],
     routes: [
+      {
+        type: "page",
+        id: "destinations/[id]",
+        pattern: /^\/destinations\/([^/]+?)\/?$/,
+        names: ["id"],
+        types: [null],
+        path: null,
+        shadow: null,
+        a: [0, 2],
+        b: [1]
+      },
       {
         type: "page",
         id: "sirv/[slug]",
@@ -8224,7 +8378,7 @@ var manifest = {
         types: [null],
         path: null,
         shadow: null,
-        a: [0, 2],
+        a: [0, 3],
         b: [1]
       },
       {
@@ -8235,7 +8389,7 @@ var manifest = {
         types: [null],
         path: null,
         shadow: null,
-        a: [0, 3],
+        a: [0, 4],
         b: [1]
       },
       {
@@ -8246,7 +8400,7 @@ var manifest = {
         types: [null],
         path: null,
         shadow: null,
-        a: [0, 4],
+        a: [0, 5],
         b: [1]
       }
     ],

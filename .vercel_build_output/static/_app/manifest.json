@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-0b1c7e47.js",
+    "file": "start-e79f1139.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -10,6 +10,7 @@
       "src/routes/__layout.svelte",
       ".svelte-kit/runtime/components/error.svelte",
       "src/routes/[slug].svelte",
+      "src/routes/destinations/[id].svelte",
       "src/routes/fragile/index.svelte",
       "src/routes/index.svelte",
       "src/routes/nations/index.svelte",
@@ -21,7 +22,7 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-8394afc8.js",
+    "file": "pages/__layout.svelte-1eeff260.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -51,6 +52,18 @@
       "_index-09775ba2.js"
     ]
   },
+  "src/routes/destinations/[id].svelte": {
+    "file": "pages/destinations/_id_.svelte-458da852.js",
+    "src": "src/routes/destinations/[id].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-09775ba2.js",
+      "_Row-8b6dafdf.js",
+      "_index-7edf2c45.js",
+      "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js"
+    ]
+  },
   "src/routes/fragile/index.svelte": {
     "file": "pages/fragile/index.svelte-dfce0adc.js",
     "src": "src/routes/fragile/index.svelte",
@@ -61,29 +74,29 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-f911e707.js",
+    "file": "pages/index.svelte-ecb1cf8d.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-09775ba2.js",
       "_Snapper-87feb552.js",
-      "_Zed-fbfa7e01.js",
+      "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js",
+      "_Zed-dd7c5905.js",
       "_Row-8b6dafdf.js"
     ]
   },
   "src/routes/nations/index.svelte": {
-    "file": "pages/nations/index.svelte-b0521817.js",
+    "file": "pages/nations/index.svelte-1884fb73.js",
     "src": "src/routes/nations/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-09775ba2.js",
       "_Row-8b6dafdf.js",
-      "_Zed-fbfa7e01.js"
-    ],
-    "css": [
-      "assets/pages/nations/index.svelte-fe2d3544.css"
+      "_index-7edf2c45.js",
+      "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js",
+      "_Zed-dd7c5905.js"
     ]
   },
   "src/routes/sirv/[slug].svelte": {
@@ -124,7 +137,7 @@
     ]
   },
   "src/routes/trip/[id].svelte": {
-    "file": "pages/trip/_id_.svelte-ef47a4c9.js",
+    "file": "pages/trip/_id_.svelte-0938a28a.js",
     "src": "src/routes/trip/[id].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -141,6 +154,21 @@
       "_index-09775ba2.js"
     ]
   },
+  "_index-7edf2c45.js": {
+    "file": "chunks/index-7edf2c45.js",
+    "imports": [
+      "_index-09775ba2.js"
+    ],
+    "css": [
+      "assets/index-b12d75c8.css"
+    ]
+  },
+  "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js": {
+    "file": "chunks/Zed.svelte_svelte_type_style_lang-f1dac0c9.js",
+    "css": [
+      "assets/Zed.svelte_svelte_type_style_lang-33fc65f4.css"
+    ]
+  },
   "_Snapper-87feb552.js": {
     "file": "chunks/Snapper-87feb552.js",
     "imports": [
@@ -150,13 +178,11 @@
       "assets/Snapper-a0e4aff4.css"
     ]
   },
-  "_Zed-fbfa7e01.js": {
-    "file": "chunks/Zed-fbfa7e01.js",
+  "_Zed-dd7c5905.js": {
+    "file": "chunks/Zed-dd7c5905.js",
     "imports": [
-      "_index-09775ba2.js"
-    ],
-    "css": [
-      "assets/Zed-a33945b5.css"
+      "_index-09775ba2.js",
+      "_Zed.svelte_svelte_type_style_lang-f1dac0c9.js"
     ]
   }
 }
