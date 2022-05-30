@@ -13,6 +13,10 @@ const config = {
   // mdsvex(mdsvexConfig), https://el3um4s.medium.com/sveltekit-github-pages-4fe2844773de
   // perhaps you need: npmjs.com/package/glory-svelte-preprocess/v/0.2.2?activeTab=readme
   kit: {
+    prerender: {
+			// This can be false if you're using a fallback (i.e. SPA mode)
+			default: true
+		},
     adapter: vercel({
 			// default options are shown
 			pages: 'build',

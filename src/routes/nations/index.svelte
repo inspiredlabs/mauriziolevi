@@ -1,7 +1,3 @@
-<script context="module">
-  export const prerender = true;
-</script>
-
 <script>
   // learn: see: javascript.plainenglish.io/sveltekit-github-pages-4fe2844773de#7586
   import { page } from "$app/stores";

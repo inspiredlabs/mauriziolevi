@@ -7,12 +7,14 @@ import '../app.css';
 <script>
 	import Fraunces from '$lib/Fraunces.svelte';
 	import Outro from '$lib/Outro/index.svelte';
+	import Menu from '$lib/Menu/index.svelte';
 </script>
-<!-- <nav>
-	<ul>
-		<li><a href="/">Home</a></li>
-	</ul>
-</nav> -->
+
+<Menu
+title="Maurizio Levi"
+/>
+
+
 
 <main class="system backface-hidden charcoal">
 	<!-- debug: y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 fixed -->

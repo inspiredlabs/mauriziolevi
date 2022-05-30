@@ -3,7 +3,7 @@
 
   export const load = async ({ params, fetch }) => {
     let id = params.id;
-    const response = await fetch(`http://kel12.therebelwatchtower.net/levi-nations/${id}`);
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
     // from: youtube.com/watch?v=6lNrvFSRmwY
     // learn: alt. approach: youtube.com/watch?v=q-MN5eejZ1k
     // learn: launch ext. link: stackoverflow.com/questions/69378392/sveltekit-base-url-for-subdirectory-throws-404
@@ -24,7 +24,7 @@
   export let trip;
 </script>
 
-<pre>{JSON.stringify(trip, null, 2)}</pre>
+<pre class="bg-gold">{JSON.stringify(trip, null, 2)}</pre>
 
 <!-- <code>{trip.title}</code><br>
 <code>{trip.body}</code> -->

@@ -1,6 +1,6 @@
 import { c as create_ssr_component, v as validate_component, b as each, e as escape } from "../../chunks/index-ed6b8b8e.js";
 import { S as Snapper } from "../../chunks/Snapper-e58c2f95.js";
-import { p as paginate, L as LightPaginationNav, Z as Zed } from "../../chunks/Zed-46163ad4.js";
+import { p as paginate, L as LightPaginationNav, Z as Zed } from "../../chunks/Zed-b89e33b0.js";
 import { R as Row } from "../../chunks/Row-87f8cf8f.js";
 const prerender = true;
 let title = "Maurizio Levi";
