@@ -1,6 +1,5 @@
 <script context="module">
 //export const prerender = true;
-
 import '../app.css';
 	// note: just import your css: stackoverflow.com/questions/63637662/add-js-css-files-to-svelte-component
 </script>
@@ -23,6 +22,83 @@ import '../app.css';
 <Fraunces />
 
 <style>
+/***** PAGINATE *****/
+:global(.light-pagination-nav span.option.prev > svg path) {
+  fill: var(--golden-brown)!important;
+}
+
+:global(.light-pagination-nav span.option.next > svg path) {
+  fill: var(--golden-brown)!important;
+}
+
+:global(.light-pagination-nav span.option.prev) {
+  color: transparent;
+  transition: background 0.4s ease 0s;
+  -webkit-transition: background 0.4s ease 0s;
+  border: solid 0.125rem var(--golden-brown);
+  border-radius: 9999px 0px 0px 9999px;
+  font-size: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-right: none;
+}
+
+:global(.light-pagination-nav span.option.next) {
+  color: transparent;
+  transition: background 0.4s ease 0s;
+  -webkit-transition: background 0.4s ease 0s;
+  border: solid 0.125rem var(--golden-brown);
+  border-radius: 0px 9999px 9999px 0px;
+  font-size: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+:global(.light-pagination-nav .option) {
+  border-top: solid 0.125rem var(--golden-brown);
+  border-left: solid 0.125rem var(--golden-brown);
+  border-bottom: solid 0.125rem var(--golden-brown);
+  border-right: none;
+  text-shadow: 0px 0.125rem 0.125rem white;
+
+  color: var(--golden-brown)!important;
+}
+
+:global(.light-pagination-nav .option:hover) {
+	background-color: rgba(255,255,255, 0.8)!important;
+	color: var(--golden-brown);
+  border: solid 0.125rem var(--golden-brown);
+  border-right: none;
+}
+
+:global(.light-pagination-nav .pagination-nav) {
+	background: transparent!important;
+	box-shadow: none;
+}
+
+:global(.option.active) {
+  text-shadow: 0px 0.125rem 0.125rem black;
+  color:white!important;
+	background-color: var(--golden-brown)!important;
+
+  border-top: solid 0.125rem var(--golden-brown);
+  border-left: solid 0.125rem var(--golden-brown);
+  border-bottom: solid 0.125rem var(--golden-brown);
+  border-right: none;
+}
+
+:global(.option.active:hover) {
+	background-color: var(--golden-brown)!important;
+	cursor:auto!important;
+}
+
+
+
+
 	:global(svg) {
 			/* fill: inherit; */
 			stroke-width: inherit;

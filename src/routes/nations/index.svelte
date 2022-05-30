@@ -132,22 +132,21 @@
             />
           {/each}
         </ul>
-
-        <LightPaginationNav
-          totalItems="{items.length}"
-          pageSize="{pageSize}"
-          currentPage="{currentPage}"
-          limit="{1}"
-          showStepOptions="{true}"
-          on:setPage="{(e) => currentPage = e.detail.page}"
-        />
+        <nav>
+          <LightPaginationNav
+            totalItems="{items.length}"
+            pageSize="{pageSize}"
+            currentPage="{currentPage}"
+            limit="{1}"
+            showStepOptions="{true}"
+            on:setPage="{(e) => currentPage = e.detail.page}"
+          />
+        </nav>
       </Row>
-
-
-
 
   </aside>
 </Row>
+
 
 
 

@@ -6,12 +6,41 @@
 	export let image;
 	export let starting_price;
 
+
+	// learn: Helper functions: dev.to/rlc900/using-helper-functions-in-javascript-5eal
+	function transformExcerpt(excerpt) {
+		let truncate = 148;
+
+		return excerpt.length > truncate ? excerpt.substring(0, truncate) + '&hellip;' : excerpt;
+	}
+
+
+
+
+
 	let truncate = 29; /* try `Slovacchia` */
+
+	// learn: `map` transformation: freecodecamp.org/news/how-to-capitalize-words-in-javascript/
+	function transformTitle(title) {
+		return title.length > truncate ? title.toLowerCase().substring(0, truncate) + '&hellip;' : title.toLowerCase();
+	}
+
+	// function transformTitle(title) {
+	// 	const transformedTitle = title.length > truncate ? title.substring(0, truncate) + '&hellip;' : title;
+
+	// 	const words = transformedTitle.toLowerCase().split(" ");
+
+	// 	return words.map((word) => {
+	// 			return word[0].toUpperCase() + word.substring(1);
+	// 	}).join(" ");
+
+	// }
+
 </script>
 
-<!-- fix: item -->
-<li class="w-100 w-100-ns w-30-m w5-l item">
-	<a
+
+<li class="w-100 w-100-ns w-30-m w5-l pb3">
+<a
 	sveltekit:prefetch
 	title="{title}" href="{cta}"
 	class="link">
@@ -22,7 +51,7 @@
 
 	<figurecap class="white ts1-dark-gray flex flex-column lh-solid">
 		<!-- fix: `<time>` req. `datetime={date}` -->
-		<time class="f5 f6-ns f7-m f6-l fw7 ttu tracked flex-auto">{@html length} days</time>
+		<time class="f5 f6-ns f7-m f6-l fw7 ttu tracked flex-auto">{@html length} giorni</time>
 
 			<!--
 				{#if country.length >= truncate }
@@ -32,11 +61,21 @@
 				{/if}
 			-->
 
-			<h5 class="ts fraunces mv0 f-subheadline f1-ns f2-m f1-l fw5 h5 flex-auto">
-				{@html title.length > truncate ? title.substring(0, truncate) + '&hellip;' : title }
+			<h5 class="ts fraunces mv0
+			ttc
+			f1
+			f1-ns
+			f2-m
+			f1-l
+			fw5 h5 flex-auto">
+				{@html transformTitle(`${title}`)}
 			</h5>
-			<p class="mv0 pb4 f5 f6-ns f7-m f6-l fw7 ttu tracked h2 flex-auto">{@html excerpt}</p>
-			<p class="h3 mv0 pb0 f4 f5-ns f6-m f5-l fw4 flex-auto">{@html title}</p>
+
+			<p class="mv0 pb4 f5 f6-ns f7-m f6-l fw7 ttu tracked h2  flex-auto">Type</p>
+
+			<p class="h3 mv0 pb0 f4 f5-ns f6-m f5-l fw4 flex-auto">
+				{@html transformExcerpt(`${excerpt}`)}
+			</p>
 			<div class="flex items-center h4">
 				<h6 class="ts mv0 fraunces fw4 f1 f1-ns f2-m f1-l"><small>€&nbsp;</small><span class="pt0 fw5">{@html starting_price}</span><small class="pt0 f6 f5-l system">&nbsp;p.p</small>
 				</h6>
@@ -85,13 +124,14 @@
 /****** ^ BREAKOUT PAGINATOR COMPONENT ^ *******/
 
 
-/* amend tachyon.shower.css */
+/* amend tachyon.shower.css
 .truncate {
 	display: -webkit-box;
 	white-space: nowrap;
-/* overflow: hidden; */
+/* overflow: hidden;
 	text-overflow: ellipsis;
 }
+*/
 
 
 </style>
