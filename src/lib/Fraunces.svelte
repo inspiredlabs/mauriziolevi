@@ -37,14 +37,14 @@ Fraunces with vertical media queries, new to variable fonts? https://v-fonts.com
 
 @font-face {
     font-family: 'Fraunces Variable Italic';
-    src: url('../fonts/Fraunces-Italic--latin_basic.woff2') format('woff2');
+    src: url('https://viaggilevi.vercel.app/fonts/Fraunces-Italic--latin_basic.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
   font-family: 'Fraunces Variable';
-  src: url('../fonts/Fraunces--latin_basic.woff2') format('woff2');
+  src: url('https://viaggilevi.vercel.app/fonts/Fraunces--latin_basic.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 }
