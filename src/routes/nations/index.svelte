@@ -3,6 +3,7 @@
 </script>
 
 <script>
+  // learn: see: javascript.plainenglish.io/sveltekit-github-pages-4fe2844773de#7586
   import { page } from "$app/stores";
 
   // fix: Please add ${id}

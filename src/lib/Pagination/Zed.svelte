@@ -12,6 +12,7 @@
 <!-- fix: item -->
 <li class="w-100 w-100-ns w-30-m w5-l item">
 	<a
+	sveltekit:prefetch
 	title="{title}" href="{cta}"
 	class="link">
 	<figure class="ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden"

@@ -1,8 +1,17 @@
 /** @type {import('@sveltejs/kit').Config} */
 import vercel from '@sveltejs/adapter-vercel';
 import path from 'path'; // dev.to/brittneypostma/make-pathing-easier-with-aliases-in-sveltekit-37l0
+import preprocess from 'svelte-preprocess';
 
 const config = {
+  preprocess: [
+    preprocess({
+      postcss: true,
+    }),
+  ],
+  //preprocess: [preprocess()],
+  // mdsvex(mdsvexConfig), https://el3um4s.medium.com/sveltekit-github-pages-4fe2844773de
+  // perhaps you need: npmjs.com/package/glory-svelte-preprocess/v/0.2.2?activeTab=readme
   kit: {
     adapter: vercel({
 			// default options are shown
@@ -12,7 +21,7 @@ const config = {
       fallback: 'index.html',
       // fallback: null,
 		}),
-    
+
     // paths: {
     //   assets: '',
     //   base: '' //kit.svelte.dev/docs/configuration
