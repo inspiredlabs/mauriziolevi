@@ -37,7 +37,7 @@ Fraunces with vertical media queries, new to variable fonts? https://v-fonts.com
 
 /* fix: CRITICAL server response time (URL and MIME type are identical): stackoverflow.com/questions/60729107/preload-fonts-to-speed-up-website-dont-download-them-twice */
 
-@font-face {
+/* @font-face {
     font-family: 'Fraunces Variable Italic';
     src: url('https://viaggilevi.vercel.app/fonts/Fraunces-Italic--latin_basic.woff2') format('woff2');
     font-weight: normal;
@@ -49,11 +49,11 @@ Fraunces with vertical media queries, new to variable fonts? https://v-fonts.com
   src: url('https://viaggilevi.vercel.app/fonts/Fraunces--latin_basic.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
-}
+} */
 
 :global(.fraunces-i) {
 	transition: font-variation-settings .4s ease 0s!important;
-  font-family: 'Fraunces Variable Italic', serif;
+  font-family: 'Fraunces-Italic--latin_basic', serif;
 	font-variation-settings:
     'wght' 366,
 	  'opsz' 100,
@@ -63,7 +63,7 @@ Fraunces with vertical media queries, new to variable fonts? https://v-fonts.com
 
 :global(.fraunces) {
 	transition: font-variation-settings .4s ease 0s!important;
-  font-family: 'Fraunces Variable', serif;
+  font-family: 'Fraunces--latin_basic', serif;
 	/* source: https://github.com/undercasetype/Fraunces/releases */
 	/* why do some variable names get capitalized in code?
 		- SYMBOLIC_CONSTANT: stackoverflow.com/questions/1540763/capitalization-convention-for-javascript-objects
