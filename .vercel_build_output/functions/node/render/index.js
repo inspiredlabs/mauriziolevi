@@ -5614,7 +5614,7 @@ var init_layout_svelte = __esm({
       let { title: title2 } = $$props;
       if ($$props.title === void 0 && $$bindings.title && title2 !== void 0)
         $$bindings.title(title2);
-      return `<nav class="${"bg-red z-max fixed top0"}"><ul><li><a href="${"/"}">${escape(title2 ? title2 : void 0)}</a></li></ul>
+      return `<nav class="${"bg-red z-max fixed top0 pr3"}"><ul><li><a href="${"/"}">${escape(title2 ? title2 : void 0)}</a></li></ul>
 
 	</nav>`;
     });
@@ -5652,8 +5652,8 @@ var entry, js, css2;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
-    entry = "pages/__layout.svelte-efb98b95.js";
-    js = ["pages/__layout.svelte-efb98b95.js", "chunks/index-4f674e2a.js", "chunks/Row-1fafec5a.js"];
+    entry = "pages/__layout.svelte-1509cfdf.js";
+    js = ["pages/__layout.svelte-1509cfdf.js", "chunks/index-4f674e2a.js", "chunks/Row-1fafec5a.js"];
     css2 = ["assets/pages/__layout.svelte-a3aa048f.css"];
   }
 });
@@ -5778,7 +5778,7 @@ var init_index_e30cacb7 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Zed-616bb209.js
+// .svelte-kit/output/server/chunks/Zed-2a35c9e3.js
 function paginate({ items, pageSize: pageSize2, currentPage }) {
   return items.slice((currentPage - 1) * pageSize2, (currentPage - 1) * pageSize2 + pageSize2);
 }
@@ -5901,8 +5901,8 @@ function transformTitle(title2) {
   return title2.length > truncate ? title2.toLowerCase().substring(0, truncate) + "&hellip;" : title2.toLowerCase();
 }
 var PREVIOUS_PAGE, NEXT_PAGE, ELLIPSIS, PaginationNav, css$12, LightPaginationNav, css5, truncate, Zed;
-var init_Zed_616bb209 = __esm({
-  ".svelte-kit/output/server/chunks/Zed-616bb209.js"() {
+var init_Zed_2a35c9e3 = __esm({
+  ".svelte-kit/output/server/chunks/Zed-2a35c9e3.js"() {
     init_index_bf33b1d7();
     PREVIOUS_PAGE = "PREVIOUS_PAGE";
     NEXT_PAGE = "NEXT_PAGE";
@@ -6017,7 +6017,7 @@ var init_id_svelte = __esm({
     init_index_bf33b1d7();
     init_index_e30cacb7();
     init_Row_fac6ed9f();
-    init_Zed_616bb209();
+    init_Zed_2a35c9e3();
     load2 = async ({ params, fetch: fetch3 }) => {
       let id = params.id;
       const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-destinations/${id}`);
@@ -6101,8 +6101,8 @@ var entry3, js3, css6;
 var init__3 = __esm({
   ".svelte-kit/output/server/nodes/3.js"() {
     init_id_svelte();
-    entry3 = "pages/destinations/_id_.svelte-edba93c5.js";
-    js3 = ["pages/destinations/_id_.svelte-edba93c5.js", "chunks/index-4f674e2a.js", "chunks/index-ffec96eb.js", "chunks/Row-1fafec5a.js", "chunks/Zed-1a630771.js"];
+    entry3 = "pages/destinations/_id_.svelte-dd291c32.js";
+    js3 = ["pages/destinations/_id_.svelte-dd291c32.js", "chunks/index-4f674e2a.js", "chunks/index-ffec96eb.js", "chunks/Row-1fafec5a.js", "chunks/Zed-bfe63442.js"];
     css6 = ["assets/index-b12d75c8.css", "assets/Zed-a33945b5.css"];
   }
 });
@@ -8654,7 +8654,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([".DS_Store", "data/destinations.json", "data/my_destinations_3.json", "data/my_homepage.json", "data/my_nations.json", "favicon.ico", "favicon.png", "fonts/Fraunces--latin_basic.woff2", "fonts/Fraunces-Italic--latin_basic.woff2", "images/.DS_Store", "images/Levi-Maurizio-768x510.jpg", "images/Levi-Maurizio-768x510.webp", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/MaurizioLevi_Anteprima.jpg", "images/MaurizioLevi_Anteprima.webp", "images/Maurizio_Levi.jpg", "images/Maurizio_Levi.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Tineye.Torres.del.Paine.National.Park.webp", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/adobestock-255750571.webp", "images/alba10.webp", "images/asc.png", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.webp", "images/boingboing-moon.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.webp", "images/fai.png", "images/fto.png", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lagune-altiplaniche-1.jpeg", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/lake-urmia-south-caspian-sea-iran.webp", "images/levi_logo.png", "images/logo.png", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/russia-largest-freshwater-lake-ladoga.webp", "images/tri.png", "images/unesco.png", "images/ungheria-repubblica-slovacca-adobestock-177932056.jpeg", "images/usa-banner-01.webp", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".json": "application/json", ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".woff2": "font/woff2", ".jpg": "image/jpeg", ".webp": "image/webp", ".jpeg": "image/jpeg", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-03172307.js", "js": ["start-03172307.js", "chunks/index-4f674e2a.js"], "css": [] },
+    entry: { "file": "start-3ad642e8.js", "js": ["start-3ad642e8.js", "chunks/index-4f674e2a.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),

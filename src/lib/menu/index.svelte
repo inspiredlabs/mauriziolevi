@@ -2,7 +2,7 @@
 export let title;
 </script>
 
-<nav class="bg-red z-max fixed top0">
+<nav class="bg-red z-max fixed top0 pr4">
 	<ul>
 		<li><a href="/">{title ? title : undefined }</a></li>
 	</ul>

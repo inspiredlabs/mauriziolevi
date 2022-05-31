@@ -59,7 +59,7 @@ const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { title } = $$props;
   if ($$props.title === void 0 && $$bindings.title && title !== void 0)
     $$bindings.title(title);
-  return `<nav class="${"bg-red z-max fixed top0"}"><ul><li><a href="${"/"}">${escape(title ? title : void 0)}</a></li></ul>
+  return `<nav class="${"bg-red z-max fixed top0 pr3"}"><ul><li><a href="${"/"}">${escape(title ? title : void 0)}</a></li></ul>
 
 	</nav>`;
 });
