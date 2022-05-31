@@ -5552,7 +5552,7 @@ var layout_svelte_exports = {};
 __export(layout_svelte_exports, {
   default: () => _layout
 });
-var css$2, Fraunces, css$1, alt, LeviMontage, Outro, Menu, css, _layout;
+var css$2, Fraunces, css$1, alt, LeviMontage, Outro, css, _layout;
 var init_layout_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/__layout.svelte.js"() {
     init_index_bf33b1d7();
@@ -5610,21 +5610,13 @@ var init_layout_svelte = __esm({
       return `${validate_component(LeviMontage, "LeviMontage").$$render($$result, {}, {}, {})}
 `;
     });
-    Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { title: title2 } = $$props;
-      if ($$props.title === void 0 && $$bindings.title && title2 !== void 0)
-        $$bindings.title(title2);
-      return `<nav class="${"bg-red z-max fixed top0 pr3"}"><ul><li><a href="${"/"}">${escape(title2 ? title2 : void 0)}</a></li></ul>
-
-	</nav>`;
-    });
     css = {
       code: ".light-pagination-nav span.option.prev > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.next > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.prev{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:9999px 0px 0px 9999px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem;border-right:none}.light-pagination-nav span.option.next{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:0px 9999px 9999px 0px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem}.light-pagination-nav .option{border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none;text-shadow:0px 0.125rem 0.125rem white;color:hsla(30,28.95%,14.9%, 0.7)!important}.light-pagination-nav .option:hover{background-color:rgba(255,255,255, 0.8)!important;color:var(--cocoa)!important;border:solid 0.125rem var(--golden-brown);border-right:none}.light-pagination-nav .pagination-nav{background:transparent!important;box-shadow:none}.option.active{text-shadow:0px 0.125rem 0.125rem black;color:white!important;background-color:var(--golden-brown)!important;border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none}.option.active:hover{background-color:var(--golden-brown)!important;cursor:auto!important;color:white!important}svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
       map: null
     };
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       $$result.css.add(css);
-      return `${validate_component(Menu, "Menu").$$render($$result, { title: "Maurizio Levi" }, {}, {})}
+      return `
 
 
 
@@ -5652,8 +5644,8 @@ var entry, js, css2;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
-    entry = "pages/__layout.svelte-1509cfdf.js";
-    js = ["pages/__layout.svelte-1509cfdf.js", "chunks/index-4f674e2a.js", "chunks/Row-1fafec5a.js"];
+    entry = "pages/__layout.svelte-de0c76a8.js";
+    js = ["pages/__layout.svelte-de0c76a8.js", "chunks/index-2785f015.js", "chunks/Row-982cbc4b.js"];
     css2 = ["assets/pages/__layout.svelte-a3aa048f.css"];
   }
 });
@@ -5702,79 +5694,9 @@ var entry2, js2, css3;
 var init__2 = __esm({
   ".svelte-kit/output/server/nodes/1.js"() {
     init_error_svelte();
-    entry2 = "error.svelte-33e80190.js";
-    js2 = ["error.svelte-33e80190.js", "chunks/index-4f674e2a.js"];
+    entry2 = "error.svelte-f084e8fe.js";
+    js2 = ["error.svelte-f084e8fe.js", "chunks/index-2785f015.js"];
     css3 = [];
-  }
-});
-
-// .svelte-kit/output/server/chunks/index-e30cacb7.js
-var getStores, page, css4, ScrollIndicator, Hero;
-var init_index_e30cacb7 = __esm({
-  ".svelte-kit/output/server/chunks/index-e30cacb7.js"() {
-    init_index_bf33b1d7();
-    getStores = () => {
-      const stores = getContext("__svelte__");
-      return {
-        page: {
-          subscribe: stores.page.subscribe
-        },
-        navigating: {
-          subscribe: stores.navigating.subscribe
-        },
-        get preloading() {
-          console.error("stores.preloading is deprecated; use stores.navigating instead");
-          return {
-            subscribe: stores.navigating.subscribe
-          };
-        },
-        session: stores.session,
-        updated: stores.updated
-      };
-    };
-    page = {
-      subscribe(fn) {
-        const store = getStores().page;
-        return store.subscribe(fn);
-      }
-    };
-    css4 = {
-      code: ".direction-indicator.svelte-grd4gw{display:block;margin:0 0 0 -4px;position:absolute;top:0px;left:50%;width:8px;height:8px;border-radius:50%;background:white;-webkit-animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none;animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none}@-webkit-keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}@keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}",
-      map: null
-    };
-    ScrollIndicator = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      $$result.css.add(css4);
-      return `<div class="${"h2 relative"}"><div class="${"direction-indicator svelte-grd4gw"}"></div>
-</div>`;
-    });
-    Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { image } = $$props;
-      let { payoff } = $$props;
-      let { title: title2 } = $$props;
-      let { location } = $$props;
-      let { overlay_image } = $$props;
-      if ($$props.image === void 0 && $$bindings.image && image !== void 0)
-        $$bindings.image(image);
-      if ($$props.payoff === void 0 && $$bindings.payoff && payoff !== void 0)
-        $$bindings.payoff(payoff);
-      if ($$props.title === void 0 && $$bindings.title && title2 !== void 0)
-        $$bindings.title(title2);
-      if ($$props.location === void 0 && $$bindings.location && location !== void 0)
-        $$bindings.location(location);
-      if ($$props.overlay_image === void 0 && $$bindings.overlay_image && overlay_image !== void 0)
-        $$bindings.overlay_image(overlay_image);
-      return `<figure class="${"ma0 flex flex-column vh-75 w-100 cover"}" style="${"background-position:center 40%; background-image: url('" + escape(image ? image : void 0) + "')"}"${add_attribute("title", location ? location : void 0, 0)}>
-
-<div class="${"vh-75 flex items-center white w-100 f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pt5 pt6-l"}">
-			<h3 class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray ttu tc mv0"}">${escape(payoff ? payoff : void 0)}</h3>
-			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l ts1-dark-gray fraunces tc ttc"}">${escape(title2 ? title2.toLowerCase() : void 0)}</h2></div></div>
-	<figcaption class="${"flex flex-column-reverse white w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto landscape-vh-10-l"}">
-
-		${validate_component(ScrollIndicator, "ScrollIndicator").$$render($$result, {}, {}, {})}
-		<span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray mv0"}">${escape(location ? location : void 0)}</span>
-
-		<code class="${"bg-charcoal top0 absolute z-1 f8"}">${escape(!overlay_image ? "" : overlay_image)}</code></figcaption></figure>`;
-    });
   }
 });
 
@@ -5900,7 +5822,7 @@ function transformExcerpt(excerpt) {
 function transformTitle(title2) {
   return title2.length > truncate ? title2.toLowerCase().substring(0, truncate) + "&hellip;" : title2.toLowerCase();
 }
-var PREVIOUS_PAGE, NEXT_PAGE, ELLIPSIS, PaginationNav, css$12, LightPaginationNav, css5, truncate, Zed;
+var PREVIOUS_PAGE, NEXT_PAGE, ELLIPSIS, PaginationNav, css$12, LightPaginationNav, css4, truncate, Zed;
 var init_Zed_2a35c9e3 = __esm({
   ".svelte-kit/output/server/chunks/Zed-2a35c9e3.js"() {
     init_index_bf33b1d7();
@@ -5959,7 +5881,7 @@ var init_Zed_2a35c9e3 = __esm({
       return `<div class="${"light-pagination-nav svelte-17xnlxp"}">${validate_component(PaginationNav, "PaginationNav").$$render($$result, Object.assign($$props), {}, {})}
 </div>`;
     });
-    css5 = {
+    css4 = {
       code: "a.svelte-bafr6a:focus{outline:none;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.8)}a.svelte-bafr6a::-moz-focus-inner{border:0;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.8)}.transition-bs.svelte-bafr6a{transition:box-shadow 0.4s ease 0s;-webkit-transition:box-shadow 0.4s ease 0s}.transition-bg.svelte-bafr6a{transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s}:root{--tint:0.5}",
       map: null
     };
@@ -5983,7 +5905,7 @@ var init_Zed_2a35c9e3 = __esm({
         $$bindings.image(image);
       if ($$props.starting_price === void 0 && $$bindings.starting_price && starting_price !== void 0)
         $$bindings.starting_price(starting_price);
-      $$result.css.add(css5);
+      $$result.css.add(css4);
       return `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"><a sveltekit:prefetch${add_attribute("title", title2, 0)}${add_attribute("href", cta, 0)} class="${"link svelte-bafr6a"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden svelte-bafr6a"}" style="${"background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url(https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.jpeg)"}"${add_attribute("title", title2, 0)}><code class="${"f8 bg-charcoal silver"}">${escape(image)}</code>
 	
 	
@@ -6011,13 +5933,74 @@ __export(id_svelte_exports, {
   default: () => U5Bidu5D,
   load: () => load2
 });
-var load2, title, pageSize, U5Bidu5D;
+var getStores, page, css5, ScrollIndicator, Hero, load2, title, pageSize, U5Bidu5D;
 var init_id_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/destinations/_id_.svelte.js"() {
     init_index_bf33b1d7();
-    init_index_e30cacb7();
     init_Row_fac6ed9f();
     init_Zed_2a35c9e3();
+    getStores = () => {
+      const stores = getContext("__svelte__");
+      return {
+        page: {
+          subscribe: stores.page.subscribe
+        },
+        navigating: {
+          subscribe: stores.navigating.subscribe
+        },
+        get preloading() {
+          console.error("stores.preloading is deprecated; use stores.navigating instead");
+          return {
+            subscribe: stores.navigating.subscribe
+          };
+        },
+        session: stores.session,
+        updated: stores.updated
+      };
+    };
+    page = {
+      subscribe(fn) {
+        const store = getStores().page;
+        return store.subscribe(fn);
+      }
+    };
+    css5 = {
+      code: ".direction-indicator.svelte-grd4gw{display:block;margin:0 0 0 -4px;position:absolute;top:0px;left:50%;width:8px;height:8px;border-radius:50%;background:white;-webkit-animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none;animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none}@-webkit-keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}@keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}",
+      map: null
+    };
+    ScrollIndicator = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      $$result.css.add(css5);
+      return `<div class="${"h2 relative"}"><div class="${"direction-indicator svelte-grd4gw"}"></div>
+</div>`;
+    });
+    Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { image } = $$props;
+      let { payoff } = $$props;
+      let { title: title2 } = $$props;
+      let { location } = $$props;
+      let { overlay_image } = $$props;
+      if ($$props.image === void 0 && $$bindings.image && image !== void 0)
+        $$bindings.image(image);
+      if ($$props.payoff === void 0 && $$bindings.payoff && payoff !== void 0)
+        $$bindings.payoff(payoff);
+      if ($$props.title === void 0 && $$bindings.title && title2 !== void 0)
+        $$bindings.title(title2);
+      if ($$props.location === void 0 && $$bindings.location && location !== void 0)
+        $$bindings.location(location);
+      if ($$props.overlay_image === void 0 && $$bindings.overlay_image && overlay_image !== void 0)
+        $$bindings.overlay_image(overlay_image);
+      return `<figure class="${"ma0 flex flex-column vh-75 w-100 cover"}" style="${"background-position:center 40%; background-image: url('" + escape(image ? image : void 0) + "')"}"${add_attribute("title", location ? location : void 0, 0)}>
+
+<div class="${"vh-75 flex items-center white w-100 f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pt5 pt6-l"}">
+			<h3 class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray ttu tc mv0"}">${escape(payoff ? payoff : void 0)}</h3>
+			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l ts1-dark-gray fraunces tc ttc"}">${escape(title2 ? title2.toLowerCase() : void 0)}</h2></div></div>
+	<figcaption class="${"flex flex-column-reverse white w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto landscape-vh-10-l"}">
+
+		${validate_component(ScrollIndicator, "ScrollIndicator").$$render($$result, {}, {}, {})}
+		<span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray mv0"}">${escape(location ? location : void 0)}</span>
+
+		<code class="${"bg-charcoal top0 absolute z-1 f8"}">${escape(!overlay_image ? "" : overlay_image)}</code></figcaption></figure>`;
+    });
     load2 = async ({ params, fetch: fetch3 }) => {
       let id = params.id;
       const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-destinations/${id}`);
@@ -6101,9 +6084,9 @@ var entry3, js3, css6;
 var init__3 = __esm({
   ".svelte-kit/output/server/nodes/3.js"() {
     init_id_svelte();
-    entry3 = "pages/destinations/_id_.svelte-dd291c32.js";
-    js3 = ["pages/destinations/_id_.svelte-dd291c32.js", "chunks/index-4f674e2a.js", "chunks/index-ffec96eb.js", "chunks/Row-1fafec5a.js", "chunks/Zed-bfe63442.js"];
-    css6 = ["assets/index-b12d75c8.css", "assets/Zed-a33945b5.css"];
+    entry3 = "pages/destinations/_id_.svelte-0ad175f3.js";
+    js3 = ["pages/destinations/_id_.svelte-0ad175f3.js", "chunks/index-2785f015.js", "chunks/Row-982cbc4b.js", "chunks/Zed-53c99173.js"];
+    css6 = ["assets/pages/destinations/_id_.svelte-790f46b7.css", "assets/Zed-a33945b5.css"];
   }
 });
 
@@ -6137,7 +6120,7 @@ var init_slug_svelte = __esm({
   }
 });
 
-// .svelte-kit/output/server/nodes/7.js
+// .svelte-kit/output/server/nodes/6.js
 var __exports4 = {};
 __export(__exports4, {
   css: () => css7,
@@ -6147,10 +6130,10 @@ __export(__exports4, {
 });
 var entry4, js4, css7;
 var init__4 = __esm({
-  ".svelte-kit/output/server/nodes/7.js"() {
+  ".svelte-kit/output/server/nodes/6.js"() {
     init_slug_svelte();
-    entry4 = "pages/sirv/_slug_.svelte-92e866d9.js";
-    js4 = ["pages/sirv/_slug_.svelte-92e866d9.js", "chunks/index-4f674e2a.js"];
+    entry4 = "pages/sirv/_slug_.svelte-aaa873b2.js";
+    js4 = ["pages/sirv/_slug_.svelte-aaa873b2.js", "chunks/index-2785f015.js"];
     css7 = [];
   }
 });
@@ -6182,7 +6165,7 @@ var init_id_svelte2 = __esm({
   }
 });
 
-// .svelte-kit/output/server/nodes/11.js
+// .svelte-kit/output/server/nodes/10.js
 var __exports5 = {};
 __export(__exports5, {
   css: () => css8,
@@ -6192,10 +6175,10 @@ __export(__exports5, {
 });
 var entry5, js5, css8;
 var init__5 = __esm({
-  ".svelte-kit/output/server/nodes/11.js"() {
+  ".svelte-kit/output/server/nodes/10.js"() {
     init_id_svelte2();
-    entry5 = "pages/trip/_id_.svelte-22a4bc04.js";
-    js5 = ["pages/trip/_id_.svelte-22a4bc04.js", "chunks/index-4f674e2a.js"];
+    entry5 = "pages/trip/_id_.svelte-2760329b.js";
+    js5 = ["pages/trip/_id_.svelte-2760329b.js", "chunks/index-2785f015.js"];
     css8 = [];
   }
 });
@@ -6241,8 +6224,8 @@ var entry6, js6, css9;
 var init__6 = __esm({
   ".svelte-kit/output/server/nodes/2.js"() {
     init_slug_svelte2();
-    entry6 = "pages/_slug_.svelte-6169d6fd.js";
-    js6 = ["pages/_slug_.svelte-6169d6fd.js", "chunks/index-4f674e2a.js"];
+    entry6 = "pages/_slug_.svelte-c4e2b5f3.js";
+    js6 = ["pages/_slug_.svelte-c4e2b5f3.js", "chunks/index-2785f015.js"];
     css9 = [];
   }
 });
@@ -8594,7 +8577,7 @@ function set_paths(paths) {
   base = paths.base;
   assets = paths.assets || base;
 }
-var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-charcoal red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<link rel="stylesheet" href="' + assets2 + '/app.css">\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<link rel="preload" as="font" href="./fonts/Fraunces-Italic--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		<link rel="preload" as="font" href="./fonts/Fraunces--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
+var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-charcoal red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<link rel="stylesheet" href="' + assets2 + '/app.css">\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
 var read = null;
 set_paths({ "base": "", "assets": "" });
 var Server = class {
@@ -8654,7 +8637,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([".DS_Store", "data/destinations.json", "data/my_destinations_3.json", "data/my_homepage.json", "data/my_nations.json", "favicon.ico", "favicon.png", "fonts/Fraunces--latin_basic.woff2", "fonts/Fraunces-Italic--latin_basic.woff2", "images/.DS_Store", "images/Levi-Maurizio-768x510.jpg", "images/Levi-Maurizio-768x510.webp", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/MaurizioLevi_Anteprima.jpg", "images/MaurizioLevi_Anteprima.webp", "images/Maurizio_Levi.jpg", "images/Maurizio_Levi.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Tineye.Torres.del.Paine.National.Park.webp", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/adobestock-255750571.webp", "images/alba10.webp", "images/asc.png", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.webp", "images/boingboing-moon.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.webp", "images/fai.png", "images/fto.png", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lagune-altiplaniche-1.jpeg", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/lake-urmia-south-caspian-sea-iran.webp", "images/levi_logo.png", "images/logo.png", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/russia-largest-freshwater-lake-ladoga.webp", "images/tri.png", "images/unesco.png", "images/ungheria-repubblica-slovacca-adobestock-177932056.jpeg", "images/usa-banner-01.webp", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".json": "application/json", ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".woff2": "font/woff2", ".jpg": "image/jpeg", ".webp": "image/webp", ".jpeg": "image/jpeg", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-3ad642e8.js", "js": ["start-3ad642e8.js", "chunks/index-4f674e2a.js"], "css": [] },
+    entry: { "file": "start-8ac954fb.js", "js": ["start-8ac954fb.js", "chunks/index-2785f015.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),

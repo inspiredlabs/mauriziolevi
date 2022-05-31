@@ -13,7 +13,7 @@
 	<aside
 	class="vh-100 vh-100-ns landscape-vh-100-m portrait-vh-75-m vh-75-m vh-75-l
 	flex items-center x-mandatory overflow-x-auto overflow-y-hidden touch-scroll w-100 ma0 pa0 backface-hidden charcoal system">
-		{#each items as { id, title, src, headingEn, headingIt, figCaption, slug, bg }}
+		{#each items as { id, title, src, headingEn, headingIt, figCaption, slug }}
 			<Anchor
 				id={id}
 				title={title}
@@ -22,7 +22,6 @@
 				headingIt={headingIt}
 				figCaption={figCaption}
 				slug={slug}
-				bg={bg}
 			/>
 		<!-- component={component} -->
 		{/each}
@@ -68,45 +67,45 @@
 
 
 @media all and (orientation:landscape) {
-	.landscape-vh-100 {
+	/* .landscape-vh-100 {
 			height: 100vh;
 	}
 	@media screen and (min-width:30em) {
 		.landscape-vh-100-ns {
 			height: 100vh;
 		}
-	}
+	} */
 	@media screen and (min-width:30em) and (max-width:60em) {
 		.landscape-vh-100-m {
 			height: 100vh;
 		}
 	}
-	@media screen and (min-width:60em) {
+	/* @media screen and (min-width:60em) {
 		.landscape-vh-100-l {
 			height: 100vh;
 		}
-	}
+	} */
 }
 
 @media all and (orientation:portrait) {
-	.portrait-vh-75 {
+	/* .portrait-vh-75 {
 		height: 75vh;
 	}
 	@media screen and (min-width:30em) {
 		.portrait-vh-75-ns {
 			height: 75vh;
 		}
-	}
+	} */
 	@media screen and (min-width:30em) and (max-width:60em) {
 		.portrait-vh-75-m {
 			height: 75vh;
 		}
 	}
-	@media screen and (min-width:60em) {
+	/* @media screen and (min-width:60em) {
 		.portrait-vh-75-l {
 			height: 75vh;
 		}
-	}
+	} */
 }
 
 

@@ -2265,7 +2265,7 @@ function set_paths(paths) {
 }
 function set_prerendering(value) {
 }
-const template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-charcoal red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<link rel="stylesheet" href="' + assets2 + '/app.css">\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<link rel="preload" as="font" href="./fonts/Fraunces-Italic--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		<link rel="preload" as="font" href="./fonts/Fraunces--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
+const template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-charcoal red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<link rel="stylesheet" href="' + assets2 + '/app.css">\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
 let read = null;
 set_paths({ "base": "", "assets": "" });
 let default_protocol = "https";

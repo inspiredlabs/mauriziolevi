@@ -55,14 +55,6 @@ const Outro = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(LeviMontage, "LeviMontage").$$render($$result, {}, {}, {})}
 `;
 });
-const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { title } = $$props;
-  if ($$props.title === void 0 && $$bindings.title && title !== void 0)
-    $$bindings.title(title);
-  return `<nav class="${"bg-red z-max fixed top0 pr3"}"><ul><li><a href="${"/"}">${escape(title ? title : void 0)}</a></li></ul>
-
-	</nav>`;
-});
 var app = "";
 var __layout_svelte_svelte_type_style_lang = "";
 const css = {
@@ -71,7 +63,7 @@ const css = {
 };
 const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `${validate_component(Menu, "Menu").$$render($$result, { title: "Maurizio Levi" }, {}, {})}
+  return `
 
 
 

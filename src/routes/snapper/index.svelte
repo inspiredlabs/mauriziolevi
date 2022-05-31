@@ -5,7 +5,7 @@
 <script>
   import Snapper from '$lib/Snapper.svelte';
   let title = 'Maurizio Levi';
-  export let posts; //<pre>{JSON.stringify(posts, null, 2)}</pre>
+  //export let posts; //<pre>{JSON.stringify(posts, null, 2)}</pre>
 
   let routes = [
     { path: '/' },

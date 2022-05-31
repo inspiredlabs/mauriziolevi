@@ -2,7 +2,6 @@
   export let id
 	export let title
 	export let src
-	export let bg
 	export let headingEn
 	export let headingIt
 	export let figCaption
@@ -79,13 +78,15 @@ background-image:
 </figure><!-- /Page id -->
 
 <style>
+
+/* note `scroll-padding` syntax: css-tricks.com/introducing-css-scroll-snap-points/ */
+/* .snap-center {
+scroll-snap-align: center;
+} */
+
+
 /* `.ttt` is part of `~/offline/app.css`, but NOT integrated into Tachyonshower. */
 .ttt:first-letter { text-transform: capitalize }
-
-.snap-center {
-	scroll-snap-align: center;
-	/* note `scroll-padding` syntax: css-tricks.com/introducing-css-scroll-snap-points/ */
-}
 
 .snap-start {
 	scroll-snap-align: start /* .snap-center `scroll-snap-align: center` */
@@ -100,7 +101,7 @@ background-image:
 	.portrait-vh-75 {
 		height: 75vh;
 	}
-	@media screen and (min-width:30em) {
+	/* @media screen and (min-width:30em) {
 		.portrait-vh-75-ns {
 			height: 75vh;
 		}
@@ -114,14 +115,14 @@ background-image:
 		.portrait-vh-75-l {
 			height: 75vh;
 		}
-	}
+	} */
 }
 
 @media all and (orientation:landscape) {
 	.landscape-vh-50 {
 		height: 50vh;
 	}
-	@media screen and (min-width:30em) {
+	/* @media screen and (min-width:30em) {
 		.landscape-vh-50-ns {
 			height: 50vh;
 		}
@@ -135,18 +136,18 @@ background-image:
 		.landscape-vh-50-l {
 			height: 50vh;
 		}
-	}
+	} */
 }
 
 @media all and (orientation:portrait) {
-	.portrait-vh-50 {
+	/* .portrait-vh-50 {
 		height: 50vh;
-	}
-	@media screen and (min-width:30em) {
+	} */
+	/* @media screen and (min-width:30em) {
 		.portrait-vh-50-ns {
 			height: 50vh;
 		}
-	}
+	} */
 	@media screen and (min-width:30em) and (max-width:60em) {
 		.portrait-vh-50-m {
 			height: 50vh;
@@ -159,7 +160,7 @@ background-image:
 	}
 }
 
-@media all and (orientation:portrait) {
+/* @media all and (orientation:portrait) {
 	.portrait-vh-25 {
 		height: 25vh;
 	}
@@ -178,6 +179,6 @@ background-image:
 			height: 25vh;
 		}
 	}
-}
+} */
 
 </style>

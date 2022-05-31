@@ -9,11 +9,5 @@ module.exports = {
     extend: {}
   },
   plugins: [],
-  purge: {
-    content: [
-     "./src/**/*.svelte",
 
-    ],
-    enabled: production // disable purge in dev
-  },
 };

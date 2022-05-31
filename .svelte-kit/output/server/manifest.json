@@ -20,11 +20,6 @@
     "src": "src/routes/fragile/index.js",
     "isEntry": true
   },
-  "src/routes/nations/index.js": {
-    "file": "entries/endpoints/nations/index.js",
-    "src": "src/routes/nations/index.js",
-    "isEntry": true
-  },
   "src/routes/terms/index.js": {
     "file": "entries/endpoints/terms/index.js",
     "src": "src/routes/terms/index.js",
@@ -64,9 +59,11 @@
     "isEntry": true,
     "imports": [
       "_index-bf33b1d7.js",
-      "_index-e30cacb7.js",
       "_Row-fac6ed9f.js",
       "_Zed-2a35c9e3.js"
+    ],
+    "css": [
+      "assets/entries/pages/destinations/_id_.svelte-80c7ef49.css"
     ]
   },
   "src/routes/fragile/index.svelte": {
@@ -83,20 +80,9 @@
     "isEntry": true,
     "imports": [
       "_index-bf33b1d7.js",
-      "_Snapper-5dce0340.js",
+      "_Snapper-808a6257.js",
       "_Zed-2a35c9e3.js",
       "_Row-fac6ed9f.js"
-    ]
-  },
-  "src/routes/nations/index.svelte": {
-    "file": "entries/pages/nations/index.svelte.js",
-    "src": "src/routes/nations/index.svelte",
-    "isEntry": true,
-    "imports": [
-      "_index-bf33b1d7.js",
-      "_index-e30cacb7.js",
-      "_Row-fac6ed9f.js",
-      "_Zed-2a35c9e3.js"
     ]
   },
   "src/routes/sirv/[slug].svelte": {
@@ -121,7 +107,7 @@
     "isEntry": true,
     "imports": [
       "_index-bf33b1d7.js",
-      "_Snapper-5dce0340.js"
+      "_Snapper-808a6257.js"
     ]
   },
   "src/routes/terms/index.svelte": {
@@ -149,15 +135,6 @@
       "_index-bf33b1d7.js"
     ]
   },
-  "_index-e30cacb7.js": {
-    "file": "chunks/index-e30cacb7.js",
-    "imports": [
-      "_index-bf33b1d7.js"
-    ],
-    "css": [
-      "assets/index-eca458bd.css"
-    ]
-  },
   "_Zed-2a35c9e3.js": {
     "file": "chunks/Zed-2a35c9e3.js",
     "imports": [
@@ -167,13 +144,13 @@
       "assets/Zed-df0e187c.css"
     ]
   },
-  "_Snapper-5dce0340.js": {
-    "file": "chunks/Snapper-5dce0340.js",
+  "_Snapper-808a6257.js": {
+    "file": "chunks/Snapper-808a6257.js",
     "imports": [
       "_index-bf33b1d7.js"
     ],
     "css": [
-      "assets/Snapper-dfd6898b.css"
+      "assets/Snapper-87e588a0.css"
     ]
   },
   ".svelte-kit/build/hooks.js": {
