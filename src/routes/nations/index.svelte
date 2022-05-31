@@ -116,7 +116,7 @@
 
 
     <Row bg="bg-linen">
-      <!-- debug: bg-redimport Row from '$lib/Row.svelte'; -->
+      <!-- debug: bg-red import Row from '$lib/Row.svelte'; -->
       <ul class="items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l">
           {#each paginatedItems as  {cta, excerpt, image, length, starting_price, title}, i}
             <Zed

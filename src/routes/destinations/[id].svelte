@@ -22,10 +22,14 @@
 
 
 <script>
+  import { page } from "$app/stores";
+  $: thisUrl = $page.url.pathname;
+
   export let destinations;
 
   import Row from '$lib/Row.svelte';
   import Hero from '$lib/Hero/index.svelte';
+  let title = 'I Viaggi di Maurizio Levi';
 
   /********* PAGINATION **********/
   import { paginate, LightPaginationNav } from 'svelte-paginate';
@@ -67,12 +71,54 @@
 
 
     <Row bg="bg-linen">
-      <!-- debug: bg-redimport Row from '$lib/Row.svelte'; -->
       <ul class="items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l">
-          ZED
-        </ul>
 
+        {#each paginatedItems as  {cta, excerpt, image, length, starting_price, title}, i}
+          <Zed
+            length={length}
+            title={title}
+            excerpt={excerpt}
+            cta={cta}
+            image={image}
+            starting_price={starting_price}
+          />
+        {/each}
+
+        </ul>
+        <nav>
+          <LightPaginationNav
+            totalItems="{items.length}"
+            pageSize="{pageSize}"
+            currentPage="{currentPage}"
+            limit="{1}"
+            showStepOptions="{true}"
+            on:setPage="{(e) => currentPage = e.detail.page}"
+          />
+        </nav>
       </Row>
 
   </aside>
 </Row>
+
+<!-- note: `your_app_id` is essential for FB Domain Insights -->
+<svelte:head>
+  <title>{destinations.description.title}, {destinations.description.nation} | {title}</title>
+  <meta name="description" content={destinations.description.introduction ? destinations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80)} />
+
+  <link rel="canonical" href="{import.meta.env.VITE_BASEURL}{thisUrl}" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{destinations.description.title}, {destinations.description.nation} | {title}" />
+  <meta property="og:description" content={destinations.description.introduction ? nations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80)} />
+
+  <meta property="og:url" content="{import.meta.env.VITE_BASEURL}{thisUrl}" />
+  <!-- fix: provide `<meta property="fb:app_id" content="your_app_id" />`: css-tricks.com/essential-meta-tags-social-media/#aa-social-media-analytics -->
+  <!-- learn: wikihow.com/Get-an-App-ID-on-Facebook from: facebook.com/I-Viaggi-di-Maurizio-Levi-207083192654850/-->
+  <meta property="og:site_name" content={title} />
+  <meta property="og:image" content={destinations.hero.image} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@viaggilevi" />
+  <meta name="twitter:image" content={destinations.hero.image} />
+  <meta name="twitter:description" content={destinations.description.introduction ? destinations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80)} />
+  <meta name="twitter:title" content="{destinations.description.title}, {destinations.description.nation} | {title}" />
+</svelte:head>

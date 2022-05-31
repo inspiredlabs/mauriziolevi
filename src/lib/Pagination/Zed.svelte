@@ -11,7 +11,23 @@
 	function transformExcerpt(excerpt) {
 		let truncate = 148;
 
-		return excerpt.length > truncate ? excerpt.substring(0, truncate) + '&hellip;' : excerpt;
+		// fix: this regex removes any inline style:
+		function sanitiseExcerpt(excerpt) {
+			return excerpt.replace(/(\\r|\\n)/g, '')
+			.replace(/(\<(p|style|div)\>|\<\/(p|style|div)\>)/g, '')
+			.replace(/\<p/g, '').replace(/\<\/p\>/g, '').replace(/style\=\\"/g, '')
+			.replace(/margin\-(left|right)\:/g, '')
+			.replace(/\"\>/g, '')
+			.replace(/\<p style=\\\\\\\"/g, '')
+			.replace(/\\\"\>/g, '')
+			.replace(/text\-align\:justify/g, '')
+			.replace(/\\/g, '')
+			.replace(/(0cm(;|)|1\.1pt\;)/g, '')
+			.replace(/margin\-(left|right)\:0cm(;|)/g, '');
+		}
+
+		return sanitiseExcerpt(excerpt).length > truncate ? sanitiseExcerpt(excerpt).substring(0, truncate) + '&hellip;' : sanitiseExcerpt(excerpt);
+
 	}
 
 
@@ -45,8 +61,9 @@
 	title="{title}" href="{cta}"
 	class="link">
 	<figure class="ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden"
-	style='background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url({JSON.stringify(image)})'
+	style='background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url({image})'
 	title={title}>
+	<!-- debug: {JSON.stringify(image)} -->
 	<!-- learn: take care of escaped [Object object] strings: stackoverflow.com/questions/25721164/how-to-fix-an-escaped-json-string-javascript#25721227 -->
 
 	<figurecap class="white ts1-dark-gray flex flex-column lh-solid">

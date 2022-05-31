@@ -918,7 +918,7 @@ var init_install_fetch = __esm({
         factory(exports);
       })(commonjsGlobal, function(exports2) {
         const SymbolPolyfill = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? Symbol : (description) => `Symbol(${description})`;
-        function noop3() {
+        function noop4() {
           return void 0;
         }
         function getGlobals() {
@@ -935,7 +935,7 @@ var init_install_fetch = __esm({
         function typeIsObject(x2) {
           return typeof x2 === "object" && x2 !== null || typeof x2 === "function";
         }
-        const rethrowAssertionErrorRejection = noop3;
+        const rethrowAssertionErrorRejection = noop4;
         const originalPromise = Promise;
         const originalPromiseThen = Promise.prototype.then;
         const originalPromiseResolve = Promise.resolve.bind(originalPromise);
@@ -3144,7 +3144,7 @@ var init_install_fetch = __esm({
                 return newPromise((resolveRead, rejectRead) => {
                   ReadableStreamDefaultReaderRead(reader, {
                     _chunkSteps: (chunk) => {
-                      currentWrite = PerformPromiseThen(WritableStreamDefaultWriterWrite(writer, chunk), void 0, noop3);
+                      currentWrite = PerformPromiseThen(WritableStreamDefaultWriterWrite(writer, chunk), void 0, noop4);
                       resolveRead(false);
                     },
                     _closeSteps: () => resolveRead(true),
@@ -4039,7 +4039,7 @@ var init_install_fetch = __esm({
             reader._readIntoRequests = new SimpleQueue();
           }
           const sourceCancelPromise = stream._readableStreamController[CancelSteps](reason);
-          return transformPromiseWith(sourceCancelPromise, noop3);
+          return transformPromiseWith(sourceCancelPromise, noop4);
         }
         function ReadableStreamClose(stream) {
           stream._state = "closed";
@@ -5390,7 +5390,9 @@ var init_install_fetch = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/index-ed6b8b8e.js
+// .svelte-kit/output/server/chunks/index-bf33b1d7.js
+function noop2() {
+}
 function run(fn) {
   return fn();
 }
@@ -5400,6 +5402,18 @@ function blank_object() {
 function run_all(fns) {
   fns.forEach(run);
 }
+function subscribe(store, ...callbacks) {
+  if (store == null) {
+    return noop2;
+  }
+  const unsub = store.subscribe(...callbacks);
+  return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
+}
+function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
+  const e2 = document.createEvent("CustomEvent");
+  e2.initCustomEvent(type, bubbles, cancelable, detail);
+  return e2;
+}
 function set_current_component(component) {
   current_component = component;
 }
@@ -5408,15 +5422,39 @@ function get_current_component() {
     throw new Error("Function called outside component initialization");
   return current_component;
 }
+function createEventDispatcher() {
+  const component = get_current_component();
+  return (type, detail, { cancelable = false } = {}) => {
+    const callbacks = component.$$.callbacks[type];
+    if (callbacks) {
+      const event = custom_event(type, detail, { cancelable });
+      callbacks.slice().forEach((fn) => {
+        fn.call(component, event);
+      });
+      return !event.defaultPrevented;
+    }
+    return true;
+  };
+}
 function setContext(key2, context) {
   get_current_component().$$.context.set(key2, context);
   return context;
+}
+function getContext(key2) {
+  return get_current_component().$$.context.get(key2);
 }
 function escape(html) {
   return String(html).replace(/["'&<>]/g, (match) => escaped[match]);
 }
 function escape_attribute_value(value) {
   return typeof value === "string" ? escape(value) : value;
+}
+function each(items, fn) {
+  let str = "";
+  for (let i2 = 0; i2 < items.length; i2 += 1) {
+    str += fn(items[i2], i2);
+  }
+  return str;
 }
 function validate_component(component, name) {
   if (!component || !component.$$render) {
@@ -5451,7 +5489,7 @@ function create_ssr_component(fn) {
       return {
         html,
         css: {
-          code: Array.from(result.css).map((css9) => css9.code).join("\n"),
+          code: Array.from(result.css).map((css10) => css10.code).join("\n"),
           map: null
         },
         head: result.title + result.head
@@ -5467,8 +5505,8 @@ function add_attribute(name, value, boolean) {
   return ` ${name}${assignment}`;
 }
 var current_component, escaped, missing_component, on_destroy;
-var init_index_ed6b8b8e = __esm({
-  ".svelte-kit/output/server/chunks/index-ed6b8b8e.js"() {
+var init_index_bf33b1d7 = __esm({
+  ".svelte-kit/output/server/chunks/index-bf33b1d7.js"() {
     Promise.resolve();
     escaped = {
       '"': "&quot;",
@@ -5490,11 +5528,11 @@ var init_hooks_1c45ba0b = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Row-87f8cf8f.js
+// .svelte-kit/output/server/chunks/Row-fac6ed9f.js
 var Row;
-var init_Row_87f8cf8f = __esm({
-  ".svelte-kit/output/server/chunks/Row-87f8cf8f.js"() {
-    init_index_ed6b8b8e();
+var init_Row_fac6ed9f = __esm({
+  ".svelte-kit/output/server/chunks/Row-fac6ed9f.js"() {
+    init_index_bf33b1d7();
     Row = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { bg } = $$props;
       let { id } = $$props;
@@ -5517,8 +5555,8 @@ __export(layout_svelte_exports, {
 var css$2, Fraunces, css$1, alt, LeviMontage, Outro, Menu, css, _layout;
 var init_layout_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/__layout.svelte.js"() {
-    init_index_ed6b8b8e();
-    init_Row_87f8cf8f();
+    init_index_bf33b1d7();
+    init_Row_fac6ed9f();
     css$2 = {
       code: "i{font-style:normal}body{font-family:sans-serif;margin:0;padding:0}@font-face{font-family:'Fraunces Variable Italic';src:url('https://viaggilevi.vercel.app/fonts/Fraunces-Italic--latin_basic.woff2') format('woff2');font-weight:normal;font-style:normal}@font-face{font-family:'Fraunces Variable';src:url('https://viaggilevi.vercel.app/fonts/Fraunces--latin_basic.woff2') format('woff2');font-weight:normal;font-style:normal}.fraunces-i{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable Italic', serif;font-variation-settings:'wght' 366,\n	  'opsz' 100,\n	  'SOFT' 20,\n	  'WONK' 1}.fraunces{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable', serif;font-variation-settings:'wght' 366,\n		'opsz' 96,\n		'SOFT' 16,\n		'WONK' 0}.fw1{font-weight:100;font-variation-settings:'wght' 100}.fw2{font-weight:200;font-variation-settings:'wght' 200}.fw3{font-weight:300;font-variation-settings:'wght' 300}.fw4{font-weight:400;font-variation-settings:'wght' 400}.fw5{font-weight:500;font-variation-settings:'wght' 500}.fw6{font-weight:600;font-variation-settings:'wght' 600}.fw7{font-weight:700;font-variation-settings:'wght' 700}.fw8{font-weight:800;font-variation-settings:'wght' 800}.fw9{font-weight:900;font-variation-settings:'wght' 900}.hover-fw1:hover{font-variation-settings:'wght' 100}.hover-fw2:hover{font-variation-settings:'wght' 200}.hover-fw3:hover{font-variation-settings:'wght' 300}.hover-fw4:hover{font-variation-settings:'wght' 400}.hover-fw5:hover{font-variation-settings:'wght' 500}.hover-fw6:hover{font-variation-settings:'wght' 600}.hover-fw7:hover{font-variation-settings:'wght' 700}.hover-fw8:hover{font-variation-settings:'wght' 800}.hover-fw9:hover{font-variation-settings:'wght' 900}",
       map: null
@@ -5573,10 +5611,10 @@ var init_layout_svelte = __esm({
 `;
     });
     Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let { title } = $$props;
-      if ($$props.title === void 0 && $$bindings.title && title !== void 0)
-        $$bindings.title(title);
-      return `<nav class="${"bg-red z-max fixed top0"}"><ul><li><a href="${"/"}">${escape(title ? title : void 0)}</a></li></ul>
+      let { title: title2 } = $$props;
+      if ($$props.title === void 0 && $$bindings.title && title2 !== void 0)
+        $$bindings.title(title2);
+      return `<nav class="${"bg-red z-max fixed top0"}"><ul><li><a href="${"/"}">${escape(title2 ? title2 : void 0)}</a></li></ul>
 
 	</nav>`;
     });
@@ -5614,8 +5652,8 @@ var entry, js, css2;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
-    entry = "pages/__layout.svelte-1eeff260.js";
-    js = ["pages/__layout.svelte-1eeff260.js", "chunks/index-09775ba2.js", "chunks/Row-8b6dafdf.js"];
+    entry = "pages/__layout.svelte-46770b8b.js";
+    js = ["pages/__layout.svelte-46770b8b.js", "chunks/index-4f674e2a.js", "chunks/Row-1fafec5a.js"];
     css2 = ["assets/pages/__layout.svelte-436441e6.css"];
   }
 });
@@ -5632,7 +5670,7 @@ function load({ error: error2, status }) {
 var Error2;
 var init_error_svelte = __esm({
   ".svelte-kit/output/server/entries/fallbacks/error.svelte.js"() {
-    init_index_ed6b8b8e();
+    init_index_bf33b1d7();
     Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { status } = $$props;
       let { error: error2 } = $$props;
@@ -5664,17 +5702,42 @@ var entry2, js2, css3;
 var init__2 = __esm({
   ".svelte-kit/output/server/nodes/1.js"() {
     init_error_svelte();
-    entry2 = "error.svelte-0c603a38.js";
-    js2 = ["error.svelte-0c603a38.js", "chunks/index-09775ba2.js"];
+    entry2 = "error.svelte-33e80190.js";
+    js2 = ["error.svelte-33e80190.js", "chunks/index-4f674e2a.js"];
     css3 = [];
   }
 });
 
-// .svelte-kit/output/server/chunks/index-545b079a.js
-var css4, ScrollIndicator, Hero;
-var init_index_545b079a = __esm({
-  ".svelte-kit/output/server/chunks/index-545b079a.js"() {
-    init_index_ed6b8b8e();
+// .svelte-kit/output/server/chunks/index-e30cacb7.js
+var getStores, page, css4, ScrollIndicator, Hero;
+var init_index_e30cacb7 = __esm({
+  ".svelte-kit/output/server/chunks/index-e30cacb7.js"() {
+    init_index_bf33b1d7();
+    getStores = () => {
+      const stores = getContext("__svelte__");
+      return {
+        page: {
+          subscribe: stores.page.subscribe
+        },
+        navigating: {
+          subscribe: stores.navigating.subscribe
+        },
+        get preloading() {
+          console.error("stores.preloading is deprecated; use stores.navigating instead");
+          return {
+            subscribe: stores.navigating.subscribe
+          };
+        },
+        session: stores.session,
+        updated: stores.updated
+      };
+    };
+    page = {
+      subscribe(fn) {
+        const store = getStores().page;
+        return store.subscribe(fn);
+      }
+    };
     css4 = {
       code: ".direction-indicator.svelte-grd4gw{display:block;margin:0 0 0 -4px;position:absolute;top:0px;left:50%;width:8px;height:8px;border-radius:50%;background:white;-webkit-animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none;animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none}@-webkit-keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}@keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}",
       map: null
@@ -5687,15 +5750,15 @@ var init_index_545b079a = __esm({
     Hero = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { image } = $$props;
       let { payoff } = $$props;
-      let { title } = $$props;
+      let { title: title2 } = $$props;
       let { location } = $$props;
       let { overlay_image } = $$props;
       if ($$props.image === void 0 && $$bindings.image && image !== void 0)
         $$bindings.image(image);
       if ($$props.payoff === void 0 && $$bindings.payoff && payoff !== void 0)
         $$bindings.payoff(payoff);
-      if ($$props.title === void 0 && $$bindings.title && title !== void 0)
-        $$bindings.title(title);
+      if ($$props.title === void 0 && $$bindings.title && title2 !== void 0)
+        $$bindings.title(title2);
       if ($$props.location === void 0 && $$bindings.location && location !== void 0)
         $$bindings.location(location);
       if ($$props.overlay_image === void 0 && $$bindings.overlay_image && overlay_image !== void 0)
@@ -5704,7 +5767,7 @@ var init_index_545b079a = __esm({
 
 <div class="${"vh-75 flex items-center white w-100 f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pt5 pt6-l"}">
 			<h3 class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray ttu tc mv0"}">${escape(payoff ? payoff : void 0)}</h3>
-			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l ts1-dark-gray fraunces tc ttc"}">${escape(title ? title.toLowerCase() : void 0)}</h2></div></div>
+			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l ts1-dark-gray fraunces tc ttc"}">${escape(title2 ? title2.toLowerCase() : void 0)}</h2></div></div>
 	<figcaption class="${"flex flex-column-reverse white w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto landscape-vh-10-l"}">
 
 		${validate_component(ScrollIndicator, "ScrollIndicator").$$render($$result, {}, {}, {})}
@@ -5715,12 +5778,229 @@ var init_index_545b079a = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Zed.svelte_svelte_type_style_lang-f1dac0c9.js
-function paginate({ items, pageSize: pageSize2, currentPage: currentPage2 }) {
-  return items.slice((currentPage2 - 1) * pageSize2, (currentPage2 - 1) * pageSize2 + pageSize2);
+// .svelte-kit/output/server/chunks/Zed-009c6153.js
+function paginate({ items, pageSize: pageSize2, currentPage }) {
+  return items.slice((currentPage - 1) * pageSize2, (currentPage - 1) * pageSize2 + pageSize2);
 }
-var init_Zed_svelte_svelte_type_style_lang_f1dac0c9 = __esm({
-  ".svelte-kit/output/server/chunks/Zed.svelte_svelte_type_style_lang-f1dac0c9.js"() {
+function generateNavigationOptions({ totalItems, pageSize: pageSize2, currentPage, limit = null, showStepOptions = false }) {
+  const totalPages = Math.ceil(totalItems / pageSize2);
+  const limitThreshold = getLimitThreshold({ limit });
+  const limited = limit && totalPages > limitThreshold;
+  let options = limited ? generateLimitedOptions({ totalPages, limit, currentPage }) : generateUnlimitedOptions({ totalPages });
+  return showStepOptions ? addStepOptions({ options, currentPage, totalPages }) : options;
+}
+function generateUnlimitedOptions({ totalPages }) {
+  return new Array(totalPages).fill(null).map((value, index) => ({
+    type: "number",
+    value: index + 1
+  }));
+}
+function generateLimitedOptions({ totalPages, limit, currentPage }) {
+  const boundarySize = limit * 2 + 2;
+  const firstBoundary = 1 + boundarySize;
+  const lastBoundary = totalPages - boundarySize;
+  const totalShownPages = firstBoundary + 2;
+  if (currentPage <= firstBoundary - limit) {
+    return Array(totalShownPages).fill(null).map((value, index) => {
+      if (index === totalShownPages - 1) {
+        return {
+          type: "number",
+          value: totalPages
+        };
+      } else if (index === totalShownPages - 2) {
+        return {
+          type: "symbol",
+          symbol: ELLIPSIS,
+          value: firstBoundary + 1
+        };
+      }
+      return {
+        type: "number",
+        value: index + 1
+      };
+    });
+  } else if (currentPage >= lastBoundary + limit) {
+    return Array(totalShownPages).fill(null).map((value, index) => {
+      if (index === 0) {
+        return {
+          type: "number",
+          value: 1
+        };
+      } else if (index === 1) {
+        return {
+          type: "symbol",
+          symbol: ELLIPSIS,
+          value: lastBoundary - 1
+        };
+      }
+      return {
+        type: "number",
+        value: lastBoundary + index - 2
+      };
+    });
+  } else if (currentPage >= firstBoundary - limit && currentPage <= lastBoundary + limit) {
+    return Array(totalShownPages).fill(null).map((value, index) => {
+      if (index === 0) {
+        return {
+          type: "number",
+          value: 1
+        };
+      } else if (index === 1) {
+        return {
+          type: "symbol",
+          symbol: ELLIPSIS,
+          value: currentPage - limit + (index - 2)
+        };
+      } else if (index === totalShownPages - 1) {
+        return {
+          type: "number",
+          value: totalPages
+        };
+      } else if (index === totalShownPages - 2) {
+        return {
+          type: "symbol",
+          symbol: ELLIPSIS,
+          value: currentPage + limit + 1
+        };
+      }
+      return {
+        type: "number",
+        value: currentPage - limit + (index - 2)
+      };
+    });
+  }
+}
+function addStepOptions({ options, currentPage, totalPages }) {
+  return [
+    {
+      type: "symbol",
+      symbol: PREVIOUS_PAGE,
+      value: currentPage <= 1 ? 1 : currentPage - 1
+    },
+    ...options,
+    {
+      type: "symbol",
+      symbol: NEXT_PAGE,
+      value: currentPage >= totalPages ? totalPages : currentPage + 1
+    }
+  ];
+}
+function getLimitThreshold({ limit }) {
+  const maximumUnlimitedPages = 3;
+  const numberOfBoundaryPages = 2;
+  return limit * 2 + maximumUnlimitedPages + numberOfBoundaryPages;
+}
+function transformExcerpt(excerpt) {
+  let truncate2 = 148;
+  function sanitiseExcerpt(excerpt2) {
+    return excerpt2.replace(/(\\r|\\n)/g, "").replace(/(\<(p|style|div)\>|\<\/(p|style|div)\>)/g, "").replace(/\<p/g, "").replace(/\<\/p\>/g, "").replace(/style\=\\"/g, "").replace(/margin\-(left|right)\:/g, "").replace(/\"\>/g, "").replace(/\<p style=\\\\\\\"/g, "").replace(/\\\"\>/g, "").replace(/text\-align\:justify/g, "").replace(/\\/g, "").replace(/(0cm(;|)|1\.1pt\;)/g, "").replace(/margin\-(left|right)\:0cm(;|)/g, "");
+  }
+  return sanitiseExcerpt(excerpt).length > truncate2 ? sanitiseExcerpt(excerpt).substring(0, truncate2) + "&hellip;" : sanitiseExcerpt(excerpt);
+}
+function transformTitle(title2) {
+  return title2.length > truncate ? title2.toLowerCase().substring(0, truncate) + "&hellip;" : title2.toLowerCase();
+}
+var PREVIOUS_PAGE, NEXT_PAGE, ELLIPSIS, PaginationNav, css$12, LightPaginationNav, css5, truncate, Zed;
+var init_Zed_009c6153 = __esm({
+  ".svelte-kit/output/server/chunks/Zed-009c6153.js"() {
+    init_index_bf33b1d7();
+    PREVIOUS_PAGE = "PREVIOUS_PAGE";
+    NEXT_PAGE = "NEXT_PAGE";
+    ELLIPSIS = "ELLIPSIS";
+    PaginationNav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let options;
+      let totalPages;
+      createEventDispatcher();
+      let { totalItems = 0 } = $$props;
+      let { pageSize: pageSize2 = 1 } = $$props;
+      let { currentPage = 1 } = $$props;
+      let { limit = null } = $$props;
+      let { showStepOptions = false } = $$props;
+      if ($$props.totalItems === void 0 && $$bindings.totalItems && totalItems !== void 0)
+        $$bindings.totalItems(totalItems);
+      if ($$props.pageSize === void 0 && $$bindings.pageSize && pageSize2 !== void 0)
+        $$bindings.pageSize(pageSize2);
+      if ($$props.currentPage === void 0 && $$bindings.currentPage && currentPage !== void 0)
+        $$bindings.currentPage(currentPage);
+      if ($$props.limit === void 0 && $$bindings.limit && limit !== void 0)
+        $$bindings.limit(limit);
+      if ($$props.showStepOptions === void 0 && $$bindings.showStepOptions && showStepOptions !== void 0)
+        $$bindings.showStepOptions(showStepOptions);
+      options = generateNavigationOptions({
+        totalItems,
+        pageSize: pageSize2,
+        currentPage,
+        limit,
+        showStepOptions
+      });
+      totalPages = Math.ceil(totalItems / pageSize2);
+      return `<div class="${"pagination-nav"}">${each(options, (option) => {
+        return `<span class="${[
+          "option",
+          (option.type === "number" ? "number" : "") + " " + (option.type === "symbol" && option.symbol === PREVIOUS_PAGE ? "prev" : "") + " " + (option.type === "symbol" && option.symbol === NEXT_PAGE ? "next" : "") + " " + (option.type === "symbol" && option.symbol === NEXT_PAGE && currentPage >= totalPages || option.type === "symbol" && option.symbol === PREVIOUS_PAGE && currentPage <= 1 ? "disabled" : "") + " " + (option.type === "symbol" && option.symbol === ELLIPSIS ? "ellipsis" : "") + " " + (option.type === "number" && option.value === currentPage ? "active" : "")
+        ].join(" ").trim()}">${option.type === "number" ? `${slots.number ? slots.number({ value: option.value }) : `
+          <span>${escape(option.value)}</span>
+        `}` : `${option.type === "symbol" && option.symbol === ELLIPSIS ? `${slots.ellipsis ? slots.ellipsis({}) : `
+          <span>...</span>
+        `}` : `${option.type === "symbol" && option.symbol === PREVIOUS_PAGE ? `${slots.prev ? slots.prev({}) : `
+          <svg style="${"width:24px;height:24px"}" viewBox="${"0 0 24 24"}"><path fill="${"#000000"}" d="${"M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"}"></path></svg>
+        `}` : `${option.type === "symbol" && option.symbol === NEXT_PAGE ? `${slots.next ? slots.next({}) : `
+          <svg style="${"width:24px;height:24px"}" viewBox="${"0 0 24 24"}"><path fill="${"#000000"}" d="${"M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"}"></path></svg>
+        `}` : ``}`}`}`}
+    </span>`;
+      })}</div>`;
+    });
+    css$12 = {
+      code: ".light-pagination-nav.svelte-17xnlxp .pagination-nav{display:flex;justify-content:center;background:#FFF;border-radius:3px;box-shadow:0 1px 2px rgba(0, 0, 0, 0.3)}.light-pagination-nav.svelte-17xnlxp .option{padding:10px;display:flex;align-items:center;justify-content:center;transition:0.2s all ease-out;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;color:hsl(200, 90%, 10%)}.light-pagination-nav.svelte-17xnlxp .option.number,.light-pagination-nav.svelte-17xnlxp .option.ellipsis{padding:10px 15px}.light-pagination-nav.svelte-17xnlxp .option:hover{background:rgba(0, 0, 0, 0.1);cursor:pointer}.light-pagination-nav.svelte-17xnlxp .option.active{color:hsl(200, 70%, 50%)}",
+      map: null
+    };
+    LightPaginationNav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      $$result.css.add(css$12);
+      return `<div class="${"light-pagination-nav svelte-17xnlxp"}">${validate_component(PaginationNav, "PaginationNav").$$render($$result, Object.assign($$props), {}, {})}
+</div>`;
+    });
+    css5 = {
+      code: "a.svelte-bafr6a:focus{outline:none;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.8)}a.svelte-bafr6a::-moz-focus-inner{border:0;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.8)}.transition-bs.svelte-bafr6a{transition:box-shadow 0.4s ease 0s;-webkit-transition:box-shadow 0.4s ease 0s}.transition-bg.svelte-bafr6a{transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s}:root{--tint:0.5}",
+      map: null
+    };
+    truncate = 29;
+    Zed = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { length } = $$props;
+      let { title: title2 } = $$props;
+      let { excerpt } = $$props;
+      let { cta } = $$props;
+      let { image } = $$props;
+      let { starting_price } = $$props;
+      if ($$props.length === void 0 && $$bindings.length && length !== void 0)
+        $$bindings.length(length);
+      if ($$props.title === void 0 && $$bindings.title && title2 !== void 0)
+        $$bindings.title(title2);
+      if ($$props.excerpt === void 0 && $$bindings.excerpt && excerpt !== void 0)
+        $$bindings.excerpt(excerpt);
+      if ($$props.cta === void 0 && $$bindings.cta && cta !== void 0)
+        $$bindings.cta(cta);
+      if ($$props.image === void 0 && $$bindings.image && image !== void 0)
+        $$bindings.image(image);
+      if ($$props.starting_price === void 0 && $$bindings.starting_price && starting_price !== void 0)
+        $$bindings.starting_price(starting_price);
+      $$result.css.add(css5);
+      return `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"><a sveltekit:prefetch${add_attribute("title", title2, 0)}${add_attribute("href", cta, 0)} class="${"link svelte-bafr6a"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden svelte-bafr6a"}" style="${"background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url(" + escape(image) + ")"}"${add_attribute("title", title2, 0)}>
+	
+
+	<figurecap class="${"white ts1-dark-gray flex flex-column lh-solid"}">
+		<time class="${"f5 f6-ns f7-m f6-l fw7 ttu tracked flex-auto"}"><!-- HTML_TAG_START -->${length}<!-- HTML_TAG_END --> giorni</time>
+
+			
+
+			<h5 class="${"ts fraunces mv0 ttc f1 f1-ns f2-m f1-l fw5 h5 flex-auto"}"><!-- HTML_TAG_START -->${transformTitle(`${title2}`)}<!-- HTML_TAG_END --></h5>
+
+			<p class="${"mv0 pb4 f5 f6-ns f7-m f6-l fw7 ttu tracked h2 flex-auto"}">Type</p>
+
+			<p class="${"h3 mv0 pb0 f4 f5-ns f6-m f5-l fw4 flex-auto"}"><!-- HTML_TAG_START -->${transformExcerpt(`${excerpt}`)}<!-- HTML_TAG_END --></p>
+			<div class="${"flex items-center h4"}"><h6 class="${"ts mv0 fraunces fw4 f1 f1-ns f2-m f1-l"}"><small>\u20AC\xA0</small><span class="${"pt0 fw5"}"><!-- HTML_TAG_START -->${starting_price}<!-- HTML_TAG_END --></span><small class="${"pt0 f6 f5-l system"}">\xA0p.p</small></h6></div></figurecap>
+		<div class="${"pointer br-pill ba bw2 ph3 pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc w-70 w-100-ns w-90-m w-90-l ts1-dark-gray f5 f5-ns f7-m f5-l svelte-bafr6a"}">Scopri il viaggio</div></figure></a>
+</li>`;
+    });
   }
 });
 
@@ -5730,28 +6010,35 @@ __export(id_svelte_exports, {
   default: () => U5Bidu5D,
   load: () => load2
 });
-var load2, currentPage, pageSize, U5Bidu5D;
+var load2, title, pageSize, U5Bidu5D;
 var init_id_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/destinations/_id_.svelte.js"() {
-    init_index_ed6b8b8e();
-    init_Row_87f8cf8f();
-    init_index_545b079a();
-    init_Zed_svelte_svelte_type_style_lang_f1dac0c9();
+    init_index_bf33b1d7();
+    init_index_e30cacb7();
+    init_Row_fac6ed9f();
+    init_Zed_009c6153();
     load2 = async ({ params, fetch: fetch3 }) => {
       let id = params.id;
       const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-destinations/${id}`);
       const destinations = await response.json();
       return { props: { destinations } };
     };
-    currentPage = 1;
+    title = "I Viaggi di Maurizio Levi";
     pageSize = 3;
     U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let thisUrl;
+      let paginatedItems;
+      let $page, $$unsubscribe_page;
+      $$unsubscribe_page = subscribe(page, (value) => $page = value);
       let { destinations } = $$props;
       let suggestedTrips = Object.values(destinations.suggested_trips.trips);
       let items = suggestedTrips;
+      let currentPage = 1;
       if ($$props.destinations === void 0 && $$bindings.destinations && destinations !== void 0)
         $$bindings.destinations(destinations);
-      paginate({ items, pageSize, currentPage });
+      thisUrl = $page.url.pathname;
+      paginatedItems = paginate({ items, pageSize, currentPage });
+      $$unsubscribe_page();
       return `
 
 
@@ -5773,13 +6060,30 @@ ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
 
     ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
             default: () => {
-              return `
-      <ul class="${"items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l"}">ZED
-        </ul>`;
+              return `<ul class="${"items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l"}">${each(paginatedItems, ({ cta, excerpt, image, length, starting_price, title: title2 }, i2) => {
+                return `${validate_component(Zed, "Zed").$$render($$result, {
+                  length,
+                  title: title2,
+                  excerpt,
+                  cta,
+                  image,
+                  starting_price
+                }, {}, {})}`;
+              })}</ul>
+        <nav>${validate_component(LightPaginationNav, "LightPaginationNav").$$render($$result, {
+                totalItems: items.length,
+                pageSize,
+                currentPage,
+                limit: 1,
+                showStepOptions: true
+              }, {}, {})}</nav>`;
             }
           })}</aside>`;
         }
-      })}`;
+      })}
+
+
+${$$result.head += `${$$result.title = `<title>${escape(destinations.description.title)}, ${escape(destinations.description.nation)} | ${escape(title)}</title>`, ""}<meta name="${"description"}"${add_attribute("content", destinations.description.introduction ? destinations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80), 0)} data-svelte="svelte-1btrd9o"><link rel="${"canonical"}" href="${escape("https://viaggilevi.vercel.app") + escape(thisUrl)}" data-svelte="svelte-1btrd9o"><meta property="${"og:locale"}" content="${"it_IT"}" data-svelte="svelte-1btrd9o"><meta property="${"og:type"}" content="${"article"}" data-svelte="svelte-1btrd9o"><meta property="${"og:title"}" content="${escape(destinations.description.title) + ", " + escape(destinations.description.nation) + " | " + escape(title)}" data-svelte="svelte-1btrd9o"><meta property="${"og:description"}"${add_attribute("content", destinations.description.introduction ? nations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80), 0)} data-svelte="svelte-1btrd9o"><meta property="${"og:url"}" content="${escape("https://viaggilevi.vercel.app") + escape(thisUrl)}" data-svelte="svelte-1btrd9o"><meta property="${"og:site_name"}"${add_attribute("content", title, 0)} data-svelte="svelte-1btrd9o"><meta property="${"og:image"}"${add_attribute("content", destinations.hero.image, 0)} data-svelte="svelte-1btrd9o"><meta name="${"twitter:card"}" content="${"summary_large_image"}" data-svelte="svelte-1btrd9o"><meta name="${"twitter:site"}" content="${"@viaggilevi"}" data-svelte="svelte-1btrd9o"><meta name="${"twitter:image"}"${add_attribute("content", destinations.hero.image, 0)} data-svelte="svelte-1btrd9o"><meta name="${"twitter:description"}"${add_attribute("content", destinations.description.introduction ? destinations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80), 0)} data-svelte="svelte-1btrd9o"><meta name="${"twitter:title"}" content="${escape(destinations.description.title) + ", " + escape(destinations.description.nation) + " | " + escape(title)}" data-svelte="svelte-1btrd9o">`, ""}`;
     });
   }
 });
@@ -5787,18 +6091,18 @@ ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
 // .svelte-kit/output/server/nodes/3.js
 var __exports3 = {};
 __export(__exports3, {
-  css: () => css5,
+  css: () => css6,
   entry: () => entry3,
   js: () => js3,
   module: () => id_svelte_exports
 });
-var entry3, js3, css5;
+var entry3, js3, css6;
 var init__3 = __esm({
   ".svelte-kit/output/server/nodes/3.js"() {
     init_id_svelte();
-    entry3 = "pages/destinations/_id_.svelte-458da852.js";
-    js3 = ["pages/destinations/_id_.svelte-458da852.js", "chunks/index-09775ba2.js", "chunks/Row-8b6dafdf.js", "chunks/index-7edf2c45.js", "chunks/Zed.svelte_svelte_type_style_lang-f1dac0c9.js"];
-    css5 = ["assets/index-b12d75c8.css", "assets/Zed.svelte_svelte_type_style_lang-33fc65f4.css"];
+    entry3 = "pages/destinations/_id_.svelte-56f9142e.js";
+    js3 = ["pages/destinations/_id_.svelte-56f9142e.js", "chunks/index-4f674e2a.js", "chunks/index-ffec96eb.js", "chunks/Row-1fafec5a.js", "chunks/Zed-89b487b5.js"];
+    css6 = ["assets/index-b12d75c8.css", "assets/Zed-a33945b5.css"];
   }
 });
 
@@ -5815,7 +6119,7 @@ async function load3(url) {
 var U5Bslugu5D;
 var init_slug_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/sirv/_slug_.svelte.js"() {
-    init_index_ed6b8b8e();
+    init_index_bf33b1d7();
     U5Bslugu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { slug } = $$props;
       if ($$props.slug === void 0 && $$bindings.slug && slug !== void 0)
@@ -5835,18 +6139,18 @@ var init_slug_svelte = __esm({
 // .svelte-kit/output/server/nodes/7.js
 var __exports4 = {};
 __export(__exports4, {
-  css: () => css6,
+  css: () => css7,
   entry: () => entry4,
   js: () => js4,
   module: () => slug_svelte_exports
 });
-var entry4, js4, css6;
+var entry4, js4, css7;
 var init__4 = __esm({
   ".svelte-kit/output/server/nodes/7.js"() {
     init_slug_svelte();
-    entry4 = "pages/sirv/_slug_.svelte-ce2b5faa.js";
-    js4 = ["pages/sirv/_slug_.svelte-ce2b5faa.js", "chunks/index-09775ba2.js"];
-    css6 = [];
+    entry4 = "pages/sirv/_slug_.svelte-92e866d9.js";
+    js4 = ["pages/sirv/_slug_.svelte-92e866d9.js", "chunks/index-4f674e2a.js"];
+    css7 = [];
   }
 });
 
@@ -5859,7 +6163,7 @@ __export(id_svelte_exports2, {
 var load4, U5Bidu5D2;
 var init_id_svelte2 = __esm({
   ".svelte-kit/output/server/entries/pages/trip/_id_.svelte.js"() {
-    init_index_ed6b8b8e();
+    init_index_bf33b1d7();
     load4 = async ({ params, fetch: fetch3 }) => {
       let id = params.id;
       const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-destinations/${id}`);
@@ -5880,18 +6184,18 @@ var init_id_svelte2 = __esm({
 // .svelte-kit/output/server/nodes/11.js
 var __exports5 = {};
 __export(__exports5, {
-  css: () => css7,
+  css: () => css8,
   entry: () => entry5,
   js: () => js5,
   module: () => id_svelte_exports2
 });
-var entry5, js5, css7;
+var entry5, js5, css8;
 var init__5 = __esm({
   ".svelte-kit/output/server/nodes/11.js"() {
     init_id_svelte2();
-    entry5 = "pages/trip/_id_.svelte-0938a28a.js";
-    js5 = ["pages/trip/_id_.svelte-0938a28a.js", "chunks/index-09775ba2.js"];
-    css7 = [];
+    entry5 = "pages/trip/_id_.svelte-22a4bc04.js";
+    js5 = ["pages/trip/_id_.svelte-22a4bc04.js", "chunks/index-4f674e2a.js"];
+    css8 = [];
   }
 });
 
@@ -5908,7 +6212,7 @@ async function load5(url) {
 var U5Bslugu5D2;
 var init_slug_svelte2 = __esm({
   ".svelte-kit/output/server/entries/pages/_slug_.svelte.js"() {
-    init_index_ed6b8b8e();
+    init_index_bf33b1d7();
     U5Bslugu5D2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { slug } = $$props;
       if ($$props.slug === void 0 && $$bindings.slug && slug !== void 0)
@@ -5927,18 +6231,18 @@ var init_slug_svelte2 = __esm({
 // .svelte-kit/output/server/nodes/2.js
 var __exports6 = {};
 __export(__exports6, {
-  css: () => css8,
+  css: () => css9,
   entry: () => entry6,
   js: () => js6,
   module: () => slug_svelte_exports2
 });
-var entry6, js6, css8;
+var entry6, js6, css9;
 var init__6 = __esm({
   ".svelte-kit/output/server/nodes/2.js"() {
     init_slug_svelte2();
-    entry6 = "pages/_slug_.svelte-4d4d5e3b.js";
-    js6 = ["pages/_slug_.svelte-4d4d5e3b.js", "chunks/index-09775ba2.js"];
-    css8 = [];
+    entry6 = "pages/_slug_.svelte-6169d6fd.js";
+    js6 = ["pages/_slug_.svelte-6169d6fd.js", "chunks/index-4f674e2a.js"];
+    css9 = [];
   }
 });
 
@@ -6022,7 +6326,7 @@ async function setResponse(res, response) {
 }
 
 // .svelte-kit/output/server/index.js
-init_index_ed6b8b8e();
+init_index_bf33b1d7();
 var __defProp2 = Object.defineProperty;
 var __defProps = Object.defineProperties;
 var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
@@ -6058,7 +6362,7 @@ function afterUpdate() {
 }
 var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { stores } = $$props;
-  let { page } = $$props;
+  let { page: page2 } = $$props;
   let { components } = $$props;
   let { props_0 = null } = $$props;
   let { props_1 = null } = $$props;
@@ -6067,8 +6371,8 @@ var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   afterUpdate(stores.page.notify);
   if ($$props.stores === void 0 && $$bindings.stores && stores !== void 0)
     $$bindings.stores(stores);
-  if ($$props.page === void 0 && $$bindings.page && page !== void 0)
-    $$bindings.page(page);
+  if ($$props.page === void 0 && $$bindings.page && page2 !== void 0)
+    $$bindings.page(page2);
   if ($$props.components === void 0 && $$bindings.components && components !== void 0)
     $$bindings.components(components);
   if ($$props.props_0 === void 0 && $$bindings.props_0 && props_0 !== void 0)
@@ -6078,7 +6382,7 @@ var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.props_2 === void 0 && $$bindings.props_2 && props_2 !== void 0)
     $$bindings.props_2(props_2);
   {
-    stores.page.set(page);
+    stores.page.set(page2);
   }
   return `
 
@@ -6454,7 +6758,7 @@ function stringifyString(str) {
   result += '"';
   return result;
 }
-function noop2() {
+function noop3() {
 }
 function safe_not_equal(a, b) {
   return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
@@ -6466,7 +6770,7 @@ function readable(value, start) {
     subscribe: writable(value, start).subscribe
   };
 }
-function writable(value, start = noop2) {
+function writable(value, start = noop3) {
   let stop;
   const subscribers = /* @__PURE__ */ new Set();
   function set(new_value) {
@@ -6490,11 +6794,11 @@ function writable(value, start = noop2) {
   function update(fn) {
     set(fn(value));
   }
-  function subscribe(run2, invalidate = noop2) {
+  function subscribe2(run2, invalidate = noop3) {
     const subscriber = [run2, invalidate];
     subscribers.add(subscriber);
     if (subscribers.size === 1) {
-      stop = start(set) || noop2;
+      stop = start(set) || noop3;
     }
     run2(value);
     return () => {
@@ -6505,7 +6809,7 @@ function writable(value, start = noop2) {
       }
     };
   }
-  return { set, update, subscribe };
+  return { set, update, subscribe: subscribe2 };
 }
 function coalesce_to_error(err) {
   return err instanceof Error || err && err.name && err.message ? err : new Error(JSON.stringify(err));
@@ -8349,7 +8653,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([".DS_Store", "data/destinations.json", "data/my_destinations_3.json", "data/my_homepage.json", "data/my_nations.json", "favicon.ico", "favicon.png", "fonts/Fraunces--latin_basic.woff2", "fonts/Fraunces-Italic--latin_basic.woff2", "images/.DS_Store", "images/Levi-Maurizio-768x510.jpg", "images/Levi-Maurizio-768x510.webp", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/MaurizioLevi_Anteprima.jpg", "images/MaurizioLevi_Anteprima.webp", "images/Maurizio_Levi.jpg", "images/Maurizio_Levi.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Tineye.Torres.del.Paine.National.Park.webp", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/adobestock-255750571.webp", "images/alba10.webp", "images/asc.png", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.webp", "images/boingboing-moon.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.webp", "images/fai.png", "images/fto.png", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lagune-altiplaniche-1.jpeg", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/lake-urmia-south-caspian-sea-iran.webp", "images/levi_logo.png", "images/logo.png", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/russia-largest-freshwater-lake-ladoga.webp", "images/tri.png", "images/unesco.png", "images/ungheria-repubblica-slovacca-adobestock-177932056.jpeg", "images/usa-banner-01.webp", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".json": "application/json", ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".woff2": "font/woff2", ".jpg": "image/jpeg", ".webp": "image/webp", ".jpeg": "image/jpeg", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-e79f1139.js", "js": ["start-e79f1139.js", "chunks/index-09775ba2.js"], "css": [] },
+    entry: { "file": "start-0d7ad615.js", "js": ["start-0d7ad615.js", "chunks/index-4f674e2a.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),
