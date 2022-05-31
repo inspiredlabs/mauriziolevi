@@ -5558,7 +5558,7 @@ var init_layout_svelte = __esm({
     init_index_bf33b1d7();
     init_Row_fac6ed9f();
     css$2 = {
-      code: "i{font-style:normal}body{font-family:sans-serif;margin:0;padding:0}@font-face{font-family:'Fraunces Variable Italic';src:url('https://viaggilevi.vercel.app/fonts/Fraunces-Italic--latin_basic.woff2') format('woff2');font-weight:normal;font-style:normal}@font-face{font-family:'Fraunces Variable';src:url('https://viaggilevi.vercel.app/fonts/Fraunces--latin_basic.woff2') format('woff2');font-weight:normal;font-style:normal}.fraunces-i{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable Italic', serif;font-variation-settings:'wght' 366,\n	  'opsz' 100,\n	  'SOFT' 20,\n	  'WONK' 1}.fraunces{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable', serif;font-variation-settings:'wght' 366,\n		'opsz' 96,\n		'SOFT' 16,\n		'WONK' 0}.fw1{font-weight:100;font-variation-settings:'wght' 100}.fw2{font-weight:200;font-variation-settings:'wght' 200}.fw3{font-weight:300;font-variation-settings:'wght' 300}.fw4{font-weight:400;font-variation-settings:'wght' 400}.fw5{font-weight:500;font-variation-settings:'wght' 500}.fw6{font-weight:600;font-variation-settings:'wght' 600}.fw7{font-weight:700;font-variation-settings:'wght' 700}.fw8{font-weight:800;font-variation-settings:'wght' 800}.fw9{font-weight:900;font-variation-settings:'wght' 900}.hover-fw1:hover{font-variation-settings:'wght' 100}.hover-fw2:hover{font-variation-settings:'wght' 200}.hover-fw3:hover{font-variation-settings:'wght' 300}.hover-fw4:hover{font-variation-settings:'wght' 400}.hover-fw5:hover{font-variation-settings:'wght' 500}.hover-fw6:hover{font-variation-settings:'wght' 600}.hover-fw7:hover{font-variation-settings:'wght' 700}.hover-fw8:hover{font-variation-settings:'wght' 800}.hover-fw9:hover{font-variation-settings:'wght' 900}",
+      code: "i{font-style:normal}body{font-family:sans-serif;margin:0;padding:0}.fraunces-i{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable Italic', serif;font-variation-settings:'wght' 366,\n	  'opsz' 100,\n	  'SOFT' 20,\n	  'WONK' 1}.fraunces{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable', serif;font-variation-settings:'wght' 366,\n		'opsz' 96,\n		'SOFT' 16,\n		'WONK' 0}.fw1{font-weight:100;font-variation-settings:'wght' 100}.fw2{font-weight:200;font-variation-settings:'wght' 200}.fw3{font-weight:300;font-variation-settings:'wght' 300}.fw4{font-weight:400;font-variation-settings:'wght' 400}.fw5{font-weight:500;font-variation-settings:'wght' 500}.fw6{font-weight:600;font-variation-settings:'wght' 600}.fw7{font-weight:700;font-variation-settings:'wght' 700}.fw8{font-weight:800;font-variation-settings:'wght' 800}.fw9{font-weight:900;font-variation-settings:'wght' 900}.hover-fw1:hover{font-variation-settings:'wght' 100}.hover-fw2:hover{font-variation-settings:'wght' 200}.hover-fw3:hover{font-variation-settings:'wght' 300}.hover-fw4:hover{font-variation-settings:'wght' 400}.hover-fw5:hover{font-variation-settings:'wght' 500}.hover-fw6:hover{font-variation-settings:'wght' 600}.hover-fw7:hover{font-variation-settings:'wght' 700}.hover-fw8:hover{font-variation-settings:'wght' 800}.hover-fw9:hover{font-variation-settings:'wght' 900}",
       map: null
     };
     Fraunces = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -5646,7 +5646,7 @@ var init__ = __esm({
     init_layout_svelte();
     entry = "pages/__layout.svelte-de0c76a8.js";
     js = ["pages/__layout.svelte-de0c76a8.js", "chunks/index-2785f015.js", "chunks/Row-982cbc4b.js"];
-    css2 = ["assets/pages/__layout.svelte-a3aa048f.css"];
+    css2 = ["assets/pages/__layout.svelte-dcb822c4.css"];
   }
 });
 
@@ -5700,7 +5700,7 @@ var init__2 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Zed-2a35c9e3.js
+// .svelte-kit/output/server/chunks/Zed-749d767e.js
 function paginate({ items, pageSize: pageSize2, currentPage }) {
   return items.slice((currentPage - 1) * pageSize2, (currentPage - 1) * pageSize2 + pageSize2);
 }
@@ -5823,8 +5823,8 @@ function transformTitle(title2) {
   return title2.length > truncate ? title2.toLowerCase().substring(0, truncate) + "&hellip;" : title2.toLowerCase();
 }
 var PREVIOUS_PAGE, NEXT_PAGE, ELLIPSIS, PaginationNav, css$12, LightPaginationNav, css4, truncate, Zed;
-var init_Zed_2a35c9e3 = __esm({
-  ".svelte-kit/output/server/chunks/Zed-2a35c9e3.js"() {
+var init_Zed_749d767e = __esm({
+  ".svelte-kit/output/server/chunks/Zed-749d767e.js"() {
     init_index_bf33b1d7();
     PREVIOUS_PAGE = "PREVIOUS_PAGE";
     NEXT_PAGE = "NEXT_PAGE";
@@ -5906,7 +5906,7 @@ var init_Zed_2a35c9e3 = __esm({
       if ($$props.starting_price === void 0 && $$bindings.starting_price && starting_price !== void 0)
         $$bindings.starting_price(starting_price);
       $$result.css.add(css4);
-      return `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"><a sveltekit:prefetch${add_attribute("title", title2, 0)}${add_attribute("href", cta, 0)} class="${"link svelte-bafr6a"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden svelte-bafr6a"}" style="${"background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url(https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.jpeg)"}"${add_attribute("title", title2, 0)}><code class="${"f8 bg-charcoal silver"}">${escape(image)}</code>
+      return `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"><a sveltekit:prefetch${add_attribute("title", title2, 0)}${add_attribute("href", cta, 0)} class="${"link svelte-bafr6a"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden svelte-bafr6a"}" style="${"background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url(https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp)"}"${add_attribute("title", title2, 0)}><code class="${"f8 bg-charcoal silver"}">${escape(image)}</code>
 	
 	
 
@@ -5938,7 +5938,7 @@ var init_id_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/destinations/_id_.svelte.js"() {
     init_index_bf33b1d7();
     init_Row_fac6ed9f();
-    init_Zed_2a35c9e3();
+    init_Zed_749d767e();
     getStores = () => {
       const stores = getContext("__svelte__");
       return {
@@ -6084,8 +6084,8 @@ var entry3, js3, css6;
 var init__3 = __esm({
   ".svelte-kit/output/server/nodes/3.js"() {
     init_id_svelte();
-    entry3 = "pages/destinations/_id_.svelte-0ad175f3.js";
-    js3 = ["pages/destinations/_id_.svelte-0ad175f3.js", "chunks/index-2785f015.js", "chunks/Row-982cbc4b.js", "chunks/Zed-53c99173.js"];
+    entry3 = "pages/destinations/_id_.svelte-1ac8aed1.js";
+    js3 = ["pages/destinations/_id_.svelte-1ac8aed1.js", "chunks/index-2785f015.js", "chunks/Row-982cbc4b.js", "chunks/Zed-fdf0db2c.js"];
     css6 = ["assets/pages/destinations/_id_.svelte-790f46b7.css", "assets/Zed-a33945b5.css"];
   }
 });
@@ -8577,7 +8577,7 @@ function set_paths(paths) {
   base = paths.base;
   assets = paths.assets || base;
 }
-var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-charcoal red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<link rel="stylesheet" href="' + assets2 + '/app.css">\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
+var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-charcoal red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<!-- <link rel="stylesheet" href="' + assets2 + '/app.css"> -->\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<link rel="preload" as="font" href="./fonts/Fraunces-Italic--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		<link rel="preload" as="font" href="./fonts/Fraunces--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
 var read = null;
 set_paths({ "base": "", "assets": "" });
 var Server = class {
@@ -8637,7 +8637,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([".DS_Store", "data/destinations.json", "data/my_destinations_3.json", "data/my_homepage.json", "data/my_nations.json", "favicon.ico", "favicon.png", "fonts/Fraunces--latin_basic.woff2", "fonts/Fraunces-Italic--latin_basic.woff2", "images/.DS_Store", "images/Levi-Maurizio-768x510.jpg", "images/Levi-Maurizio-768x510.webp", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/MaurizioLevi_Anteprima.jpg", "images/MaurizioLevi_Anteprima.webp", "images/Maurizio_Levi.jpg", "images/Maurizio_Levi.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Tineye.Torres.del.Paine.National.Park.webp", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/adobestock-255750571.webp", "images/alba10.webp", "images/asc.png", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.webp", "images/boingboing-moon.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.webp", "images/fai.png", "images/fto.png", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lagune-altiplaniche-1.jpeg", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/lake-urmia-south-caspian-sea-iran.webp", "images/levi_logo.png", "images/logo.png", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/russia-largest-freshwater-lake-ladoga.webp", "images/tri.png", "images/unesco.png", "images/ungheria-repubblica-slovacca-adobestock-177932056.jpeg", "images/usa-banner-01.webp", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".json": "application/json", ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".woff2": "font/woff2", ".jpg": "image/jpeg", ".webp": "image/webp", ".jpeg": "image/jpeg", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-8ac954fb.js", "js": ["start-8ac954fb.js", "chunks/index-2785f015.js"], "css": [] },
+    entry: { "file": "start-8677f5ee.js", "js": ["start-8677f5ee.js", "chunks/index-2785f015.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),
