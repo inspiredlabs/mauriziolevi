@@ -5619,7 +5619,7 @@ var init_layout_svelte = __esm({
 	</nav>`;
     });
     css = {
-      code: ".light-pagination-nav span.option.prev > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.next > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.prev{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:9999px 0px 0px 9999px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem;border-right:none}.light-pagination-nav span.option.next{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:0px 9999px 9999px 0px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem}.light-pagination-nav .option{border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none;text-shadow:0px 0.125rem 0.125rem white;color:var(--golden-brown)!important}.light-pagination-nav .option:hover{background-color:rgba(255,255,255, 0.8)!important;color:var(--golden-brown);border:solid 0.125rem var(--golden-brown);border-right:none}.light-pagination-nav .pagination-nav{background:transparent!important;box-shadow:none}.option.active{text-shadow:0px 0.125rem 0.125rem black;color:white!important;background-color:var(--golden-brown)!important;border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none}.option.active:hover{background-color:var(--golden-brown)!important;cursor:auto!important}svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
+      code: ".light-pagination-nav span.option.prev > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.next > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.prev{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:9999px 0px 0px 9999px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem;border-right:none}.light-pagination-nav span.option.next{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:0px 9999px 9999px 0px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem}.light-pagination-nav .option{border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none;text-shadow:0px 0.125rem 0.125rem white;color:hsla(30,28.95%,14.9%, 0.7)!important}.light-pagination-nav .option:hover{background-color:rgba(255,255,255, 0.8)!important;color:var(--cocoa)!important;border:solid 0.125rem var(--golden-brown);border-right:none}.light-pagination-nav .pagination-nav{background:transparent!important;box-shadow:none}.option.active{text-shadow:0px 0.125rem 0.125rem black;color:white!important;background-color:var(--golden-brown)!important;border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none}.option.active:hover{background-color:var(--golden-brown)!important;cursor:auto!important;color:white!important}svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
       map: null
     };
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -5652,9 +5652,9 @@ var entry, js, css2;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
-    entry = "pages/__layout.svelte-46770b8b.js";
-    js = ["pages/__layout.svelte-46770b8b.js", "chunks/index-4f674e2a.js", "chunks/Row-1fafec5a.js"];
-    css2 = ["assets/pages/__layout.svelte-436441e6.css"];
+    entry = "pages/__layout.svelte-efb98b95.js";
+    js = ["pages/__layout.svelte-efb98b95.js", "chunks/index-4f674e2a.js", "chunks/Row-1fafec5a.js"];
+    css2 = ["assets/pages/__layout.svelte-a3aa048f.css"];
   }
 });
 
@@ -5778,7 +5778,7 @@ var init_index_e30cacb7 = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Zed-009c6153.js
+// .svelte-kit/output/server/chunks/Zed-616bb209.js
 function paginate({ items, pageSize: pageSize2, currentPage }) {
   return items.slice((currentPage - 1) * pageSize2, (currentPage - 1) * pageSize2 + pageSize2);
 }
@@ -5901,8 +5901,8 @@ function transformTitle(title2) {
   return title2.length > truncate ? title2.toLowerCase().substring(0, truncate) + "&hellip;" : title2.toLowerCase();
 }
 var PREVIOUS_PAGE, NEXT_PAGE, ELLIPSIS, PaginationNav, css$12, LightPaginationNav, css5, truncate, Zed;
-var init_Zed_009c6153 = __esm({
-  ".svelte-kit/output/server/chunks/Zed-009c6153.js"() {
+var init_Zed_616bb209 = __esm({
+  ".svelte-kit/output/server/chunks/Zed-616bb209.js"() {
     init_index_bf33b1d7();
     PREVIOUS_PAGE = "PREVIOUS_PAGE";
     NEXT_PAGE = "NEXT_PAGE";
@@ -5984,7 +5984,8 @@ var init_Zed_009c6153 = __esm({
       if ($$props.starting_price === void 0 && $$bindings.starting_price && starting_price !== void 0)
         $$bindings.starting_price(starting_price);
       $$result.css.add(css5);
-      return `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"><a sveltekit:prefetch${add_attribute("title", title2, 0)}${add_attribute("href", cta, 0)} class="${"link svelte-bafr6a"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden svelte-bafr6a"}" style="${"background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url(" + escape(image) + ")"}"${add_attribute("title", title2, 0)}>
+      return `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"><a sveltekit:prefetch${add_attribute("title", title2, 0)}${add_attribute("href", cta, 0)} class="${"link svelte-bafr6a"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden svelte-bafr6a"}" style="${"background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url(https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.jpeg)"}"${add_attribute("title", title2, 0)}><code class="${"f8 bg-charcoal silver"}">${escape(image)}</code>
+	
 	
 
 	<figurecap class="${"white ts1-dark-gray flex flex-column lh-solid"}">
@@ -6016,7 +6017,7 @@ var init_id_svelte = __esm({
     init_index_bf33b1d7();
     init_index_e30cacb7();
     init_Row_fac6ed9f();
-    init_Zed_009c6153();
+    init_Zed_616bb209();
     load2 = async ({ params, fetch: fetch3 }) => {
       let id = params.id;
       const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-destinations/${id}`);
@@ -6083,7 +6084,7 @@ ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
       })}
 
 
-${$$result.head += `${$$result.title = `<title>${escape(destinations.description.title)}, ${escape(destinations.description.nation)} | ${escape(title)}</title>`, ""}<meta name="${"description"}"${add_attribute("content", destinations.description.introduction ? destinations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80), 0)} data-svelte="svelte-1btrd9o"><link rel="${"canonical"}" href="${escape("https://viaggilevi.vercel.app") + escape(thisUrl)}" data-svelte="svelte-1btrd9o"><meta property="${"og:locale"}" content="${"it_IT"}" data-svelte="svelte-1btrd9o"><meta property="${"og:type"}" content="${"article"}" data-svelte="svelte-1btrd9o"><meta property="${"og:title"}" content="${escape(destinations.description.title) + ", " + escape(destinations.description.nation) + " | " + escape(title)}" data-svelte="svelte-1btrd9o"><meta property="${"og:description"}"${add_attribute("content", destinations.description.introduction ? nations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80), 0)} data-svelte="svelte-1btrd9o"><meta property="${"og:url"}" content="${escape("https://viaggilevi.vercel.app") + escape(thisUrl)}" data-svelte="svelte-1btrd9o"><meta property="${"og:site_name"}"${add_attribute("content", title, 0)} data-svelte="svelte-1btrd9o"><meta property="${"og:image"}"${add_attribute("content", destinations.hero.image, 0)} data-svelte="svelte-1btrd9o"><meta name="${"twitter:card"}" content="${"summary_large_image"}" data-svelte="svelte-1btrd9o"><meta name="${"twitter:site"}" content="${"@viaggilevi"}" data-svelte="svelte-1btrd9o"><meta name="${"twitter:image"}"${add_attribute("content", destinations.hero.image, 0)} data-svelte="svelte-1btrd9o"><meta name="${"twitter:description"}"${add_attribute("content", destinations.description.introduction ? destinations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80), 0)} data-svelte="svelte-1btrd9o"><meta name="${"twitter:title"}" content="${escape(destinations.description.title) + ", " + escape(destinations.description.nation) + " | " + escape(title)}" data-svelte="svelte-1btrd9o">`, ""}`;
+${$$result.head += `${$$result.title = `<title>${escape(destinations.hero.title)}, ${escape(destinations.hero.location)} | ${escape(title)}</title>`, ""}<meta name="${"description"}"${add_attribute("content", destinations.hero.payoff ? destinations.hero.payoff.substring(0, 80) : destinations.hero.location.substring(0, 80), 0)} data-svelte="svelte-ajkk3j"><link rel="${"canonical"}" href="${escape("https://viaggilevi.vercel.app") + escape(thisUrl)}" data-svelte="svelte-ajkk3j"><meta property="${"og:locale"}" content="${"it_IT"}" data-svelte="svelte-ajkk3j"><meta property="${"og:type"}" content="${"article"}" data-svelte="svelte-ajkk3j"><meta property="${"og:title"}" content="${escape(destinations.hero.title) + ", " + escape(destinations.hero.location) + " | " + escape(title)}" data-svelte="svelte-ajkk3j"><meta property="${"og:description"}"${add_attribute("content", destinations.hero.payoff ? destinations.hero.payoff.substring(0, 80) : destinations.hero.location.substring(0, 80), 0)} data-svelte="svelte-ajkk3j"><meta property="${"og:url"}" content="${escape("https://viaggilevi.vercel.app") + escape(thisUrl)}" data-svelte="svelte-ajkk3j"><meta property="${"og:site_name"}" content="${"https://viaggilevi.com"}" data-svelte="svelte-ajkk3j"><meta property="${"og:image"}"${add_attribute("content", destinations.hero.image, 0)} data-svelte="svelte-ajkk3j"><meta name="${"twitter:card"}" content="${"summary_large_image"}" data-svelte="svelte-ajkk3j"><meta name="${"twitter:site"}" content="${"@viaggilevi"}" data-svelte="svelte-ajkk3j"><meta name="${"twitter:image"}"${add_attribute("content", destinations.hero.image, 0)} data-svelte="svelte-ajkk3j"><meta name="${"twitter:description"}"${add_attribute("content", destinations.hero.payoff ? destinations.hero.payoff.substring(0, 80) : destinations.hero.location.substring(0, 80), 0)} data-svelte="svelte-ajkk3j"><meta name="${"twitter:title"}" content="${escape(destinations.hero.title) + ", " + escape(destinations.hero.location) + " | " + escape(title)}" data-svelte="svelte-ajkk3j">`, ""}`;
     });
   }
 });
@@ -6100,8 +6101,8 @@ var entry3, js3, css6;
 var init__3 = __esm({
   ".svelte-kit/output/server/nodes/3.js"() {
     init_id_svelte();
-    entry3 = "pages/destinations/_id_.svelte-56f9142e.js";
-    js3 = ["pages/destinations/_id_.svelte-56f9142e.js", "chunks/index-4f674e2a.js", "chunks/index-ffec96eb.js", "chunks/Row-1fafec5a.js", "chunks/Zed-89b487b5.js"];
+    entry3 = "pages/destinations/_id_.svelte-edba93c5.js";
+    js3 = ["pages/destinations/_id_.svelte-edba93c5.js", "chunks/index-4f674e2a.js", "chunks/index-ffec96eb.js", "chunks/Row-1fafec5a.js", "chunks/Zed-1a630771.js"];
     css6 = ["assets/index-b12d75c8.css", "assets/Zed-a33945b5.css"];
   }
 });
@@ -8593,7 +8594,7 @@ function set_paths(paths) {
   base = paths.base;
   assets = paths.assets || base;
 }
-var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-charcoal red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<link rel="preload" as="font" href="./fonts/Fraunces-Italic--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		<link rel="preload" as="font" href="./fonts/Fraunces--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
+var template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en" class="bg-charcoal red pa0 ma0">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="/favicon.ico" />\n		<link rel="stylesheet" href="' + assets2 + '/app.css">\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<link rel="preload" as="font" href="./fonts/Fraunces-Italic--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		<link rel="preload" as="font" href="./fonts/Fraunces--latin_basic.woff2" type="font/woff2" crossorigin="anonymous">\n		' + head + '\n	</head>\n	<body class="highlight">\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
 var read = null;
 set_paths({ "base": "", "assets": "" });
 var Server = class {
@@ -8653,7 +8654,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([".DS_Store", "data/destinations.json", "data/my_destinations_3.json", "data/my_homepage.json", "data/my_nations.json", "favicon.ico", "favicon.png", "fonts/Fraunces--latin_basic.woff2", "fonts/Fraunces-Italic--latin_basic.woff2", "images/.DS_Store", "images/Levi-Maurizio-768x510.jpg", "images/Levi-Maurizio-768x510.webp", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/MaurizioLevi_Anteprima.jpg", "images/MaurizioLevi_Anteprima.webp", "images/Maurizio_Levi.jpg", "images/Maurizio_Levi.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Tineye.Torres.del.Paine.National.Park.webp", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/adobestock-255750571.webp", "images/alba10.webp", "images/asc.png", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.webp", "images/boingboing-moon.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.webp", "images/fai.png", "images/fto.png", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lagune-altiplaniche-1.jpeg", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/lake-urmia-south-caspian-sea-iran.webp", "images/levi_logo.png", "images/logo.png", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/russia-largest-freshwater-lake-ladoga.webp", "images/tri.png", "images/unesco.png", "images/ungheria-repubblica-slovacca-adobestock-177932056.jpeg", "images/usa-banner-01.webp", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".json": "application/json", ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".woff2": "font/woff2", ".jpg": "image/jpeg", ".webp": "image/webp", ".jpeg": "image/jpeg", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-0d7ad615.js", "js": ["start-0d7ad615.js", "chunks/index-4f674e2a.js"], "css": [] },
+    entry: { "file": "start-03172307.js", "js": ["start-03172307.js", "chunks/index-4f674e2a.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),

@@ -1,13 +1,13 @@
 <script context="module">
 //export const prerender = true;
-import '../app.css';
-	// note: just import your css: stackoverflow.com/questions/63637662/add-js-css-files-to-svelte-component
+// note: just `import '../app.css'`: stackoverflow.com/questions/63637662/add-js-css-files-to-svelte-component
 </script>
 
 <script>
 	import Fraunces from '$lib/Fraunces.svelte';
 	import Outro from '$lib/Outro/index.svelte';
 	import Menu from '$lib/Menu/index.svelte';
+	import '../app.css';
 </script>
 
 <Menu
@@ -24,6 +24,8 @@ title="Maurizio Levi"
 <Fraunces />
 
 <style>
+/* @use '../app.css'; */
+
 /***** PAGINATE *****/
 :global(.light-pagination-nav span.option.prev > svg path) {
   fill: var(--golden-brown)!important;
@@ -67,12 +69,13 @@ title="Maurizio Levi"
   border-right: none;
   text-shadow: 0px 0.125rem 0.125rem white;
 
-  color: var(--golden-brown)!important;
+  color: hsla(30,28.95%,14.9%, 0.7)!important;
+	/* var(--golden-brown) */
 }
 
 :global(.light-pagination-nav .option:hover) {
 	background-color: rgba(255,255,255, 0.8)!important;
-	color: var(--golden-brown);
+	color:var(--cocoa)!important;
   border: solid 0.125rem var(--golden-brown);
   border-right: none;
 }
@@ -96,6 +99,7 @@ title="Maurizio Levi"
 :global(.option.active:hover) {
 	background-color: var(--golden-brown)!important;
 	cursor:auto!important;
+	color:white!important;
 }
 
 

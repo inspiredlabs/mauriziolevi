@@ -26,10 +26,11 @@
   $: thisUrl = $page.url.pathname;
 
   export let destinations;
+  let title = 'I Viaggi di Maurizio Levi';
 
   import Row from '$lib/Row.svelte';
   import Hero from '$lib/Hero/index.svelte';
-  let title = 'I Viaggi di Maurizio Levi';
+
 
   /********* PAGINATION **********/
   import { paginate, LightPaginationNav } from 'svelte-paginate';
@@ -102,23 +103,26 @@
 
 <!-- note: `your_app_id` is essential for FB Domain Insights -->
 <svelte:head>
-  <title>{destinations.description.title}, {destinations.description.nation} | {title}</title>
-  <meta name="description" content={destinations.description.introduction ? destinations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80)} />
+  <title>{destinations.hero.title}, {destinations.hero.location} | {title}</title>
+
+  <meta name="description" content={destinations.hero.payoff ? destinations.hero.payoff.substring(0, 80) : destinations.hero.location.substring(0, 80)} />
 
   <link rel="canonical" href="{import.meta.env.VITE_BASEURL}{thisUrl}" />
   <meta property="og:locale" content="it_IT" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="{destinations.description.title}, {destinations.description.nation} | {title}" />
-  <meta property="og:description" content={destinations.description.introduction ? nations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80)} />
+  <meta property="og:title" content="{destinations.hero.title}, {destinations.hero.location} | {title}" />
+  <meta property="og:description" content={destinations.hero.payoff ? destinations.hero.payoff.substring(0, 80) : destinations.hero.location.substring(0, 80)} />
 
   <meta property="og:url" content="{import.meta.env.VITE_BASEURL}{thisUrl}" />
   <!-- fix: provide `<meta property="fb:app_id" content="your_app_id" />`: css-tricks.com/essential-meta-tags-social-media/#aa-social-media-analytics -->
   <!-- learn: wikihow.com/Get-an-App-ID-on-Facebook from: facebook.com/I-Viaggi-di-Maurizio-Levi-207083192654850/-->
-  <meta property="og:site_name" content={title} />
+  <meta property="og:site_name" content="https://viaggilevi.com" />
+  <!--{title}-->
   <meta property="og:image" content={destinations.hero.image} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@viaggilevi" />
   <meta name="twitter:image" content={destinations.hero.image} />
-  <meta name="twitter:description" content={destinations.description.introduction ? destinations.description.introduction.substring(0, 80) : destinations.description.text.substring(0, 80)} />
-  <meta name="twitter:title" content="{destinations.description.title}, {destinations.description.nation} | {title}" />
+  <meta name="twitter:description" content={destinations.hero.payoff ? destinations.hero.payoff.substring(0, 80) : destinations.hero.location.substring(0, 80)} />
+  <meta name="twitter:title" content="{destinations.hero.title}, {destinations.hero.location} | {title}" />
+
 </svelte:head>
