@@ -6,13 +6,14 @@
 <script>
 	import Fraunces from '$lib/Fraunces.svelte';
 	import Outro from '$lib/Outro/index.svelte';
-	import Menu from '$lib/Menu/index.svelte';
+	//import Menu from '$lib/Menu/index.svelte';
 	import '../app.css';
 </script>
 
-<Menu
-title="Maurizio Levi"
-/>
+
+<!-- <Menu
+	title="Maurizio Levi"
+/> -->
 
 
 
