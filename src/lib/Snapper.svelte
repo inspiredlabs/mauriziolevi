@@ -2,7 +2,9 @@
 	import Anchor from '$lib/Anchor.svelte'
 	import items from '$lib/items.js';
 	import Defs from '$lib/Defs.svelte';
+	// debug: why not `<Defs />` in `__layout`?
 </script>
+
 <Defs />
 
 <!-- fix: pagination

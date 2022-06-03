@@ -3,7 +3,9 @@
 
   export const load = async ({ params, fetch }) => {
     let id = params.id;
-    const response = await fetch(`http://kel12.therebelwatchtower.net/levi-destinations/${id}`);
+
+    // fix: http://localhost:7777/trip/25070 || 25640 || 25660
+    const response = await fetch(`http://kel12.therebelwatchtower.net/levi-single/${id}`);
     // from: youtube.com/watch?v=6lNrvFSRmwY
     // learn: alt. approach: youtube.com/watch?v=q-MN5eejZ1k
     // learn: launch ext. link: stackoverflow.com/questions/69378392/sveltekit-base-url-for-subdirectory-throws-404

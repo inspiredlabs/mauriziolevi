@@ -1,26 +1,27 @@
-import { c as create_ssr_component, v as validate_component, e as escape, a as add_attribute } from "../../chunks/index-bf33b1d7.js";
-import { R as Row } from "../../chunks/Row-fac6ed9f.js";
+import { c as create_ssr_component, v as validate_component, e as escape, a as add_attribute, b as each } from "../../chunks/index-38784e15.js";
+import { R as Row } from "../../chunks/Row-a399cf4d.js";
+import { i as items, D as Defs } from "../../chunks/Defs-82001979.js";
 var Fraunces_svelte_svelte_type_style_lang = "";
-const css$2 = {
+const css$3 = {
   code: "i{font-style:normal}body{font-family:sans-serif;margin:0;padding:0}.fraunces-i{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable Italic', serif;font-variation-settings:'wght' 366,\n	  'opsz' 100,\n	  'SOFT' 20,\n	  'WONK' 1}.fraunces{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable', serif;font-variation-settings:'wght' 366,\n		'opsz' 96,\n		'SOFT' 16,\n		'WONK' 0}.fw1{font-weight:100;font-variation-settings:'wght' 100}.fw2{font-weight:200;font-variation-settings:'wght' 200}.fw3{font-weight:300;font-variation-settings:'wght' 300}.fw4{font-weight:400;font-variation-settings:'wght' 400}.fw5{font-weight:500;font-variation-settings:'wght' 500}.fw6{font-weight:600;font-variation-settings:'wght' 600}.fw7{font-weight:700;font-variation-settings:'wght' 700}.fw8{font-weight:800;font-variation-settings:'wght' 800}.fw9{font-weight:900;font-variation-settings:'wght' 900}.hover-fw1:hover{font-variation-settings:'wght' 100}.hover-fw2:hover{font-variation-settings:'wght' 200}.hover-fw3:hover{font-variation-settings:'wght' 300}.hover-fw4:hover{font-variation-settings:'wght' 400}.hover-fw5:hover{font-variation-settings:'wght' 500}.hover-fw6:hover{font-variation-settings:'wght' 600}.hover-fw7:hover{font-variation-settings:'wght' 700}.hover-fw8:hover{font-variation-settings:'wght' 800}.hover-fw9:hover{font-variation-settings:'wght' 900}",
   map: null
 };
 const Fraunces = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$2);
+  $$result.css.add(css$3);
   return ``;
 });
 var LeviMontage_svelte_svelte_type_style_lang = "";
-const css$1 = {
+const css$2 = {
   code: ":root{--montage-img:240px;--montage-duration:1.6s}.montage.svelte-1it2a4k.svelte-1it2a4k{width:var(--montage-img);height:var(--montage-img)}.montage.svelte-1it2a4k img.svelte-1it2a4k{will-change:transform;width:var(--montage-img);transition:all var(--montage-duration) cubic-bezier( 0.28, -0.07, 0.67, 2.00);transition-delay:calc(var(--montage-duration)/0.8);z-index:4;transform:scale(1.0) rotate(4.3deg)}.montage.svelte-1it2a4k img.svelte-1it2a4k:nth-child(1){z-index:3;left:calc(var(--montage-img)*0.53);transform:scale(0.7) rotate(3.5deg)}.montage.svelte-1it2a4k img.svelte-1it2a4k:nth-child(2){z-index:2;right:calc(var(--montage-img)*0.59);transform:scale(0.8) rotate(-5.5deg)}.montage.visible.svelte-1it2a4k img.svelte-1it2a4k{transform:scale(0.9) rotate(0deg)}.montage.visible.svelte-1it2a4k img.svelte-1it2a4k:nth-child(1){transform:scale(1.0) rotate(12deg);left:calc(var(--montage-img)*0.7)}.montage.visible.svelte-1it2a4k img.svelte-1it2a4k:nth-child(2){transform:scale(1.0) rotate(-9.5deg);right:calc(var(--montage-img)*0.7)}.diamond.svelte-1it2a4k.svelte-1it2a4k{background:currentColor;transform:rotate(45deg)}",
   map: null
 };
-let alt = "Presentazione di Maurizio Levi";
+let alt$1 = "Presentazione di Maurizio Levi";
 const LeviMontage = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const imagesBaseUrl = `${"https://viaggilevi.vercel.app"}/images/`;
-  $$result.css.add(css$1);
+  $$result.css.add(css$2);
   return `${validate_component(Row, "Row").$$render($$result, {
     bg: "bg-linen",
-    id: `${alt.toLowerCase().replace(/&amp;/g, "").replace(/&nbsp;/g, "-").replace(/\s/g, "-").replace(/\,/g, "").replace(/(&gt;)(?:&nbsp;|&#8209;|<br>)+(\s?&lt;)/g, "$1$2").replace(/--/g, "-")}`
+    id: `${alt$1.toLowerCase().replace(/&amp;/g, "").replace(/&nbsp;/g, "-").replace(/\s/g, "-").replace(/\,/g, "").replace(/(&gt;)(?:&nbsp;|&#8209;|<br>)+(\s?&lt;)/g, "$1$2").replace(/--/g, "-")}`
   }, {}, {
     default: () => {
       return `
@@ -28,9 +29,9 @@ const LeviMontage = create_ssr_component(($$result, $$props, $$bindings, slots) 
 			<span class="${"fraunces"}">Viaggi </span><span class="${"fraunces-i"}">di\xA0scoperta</span></h4>
 
 		
-		<figure class="${"montage " + escape("") + " cf relative top-0 w-100 mr-auto ml-auto svelte-1it2a4k"}"><img class="${"absolute shadow-5 svelte-1it2a4k"}" src="${escape(imagesBaseUrl) + "MaurizioLevi_Anteprima.webp"}"${add_attribute("alt", alt, 0)}>
-			<img class="${"absolute shadow-5 svelte-1it2a4k"}" src="${escape(imagesBaseUrl) + "Levi-Maurizio-768x510.webp"}"${add_attribute("alt", alt, 0)}>
-			<img class="${"absolute shadow-5 svelte-1it2a4k"}" src="${escape(imagesBaseUrl) + "Maurizio_Levi.webp"}"${add_attribute("alt", alt, 0)}></figure>
+		<figure class="${"montage " + escape("") + " cf relative top-0 w-100 mr-auto ml-auto svelte-1it2a4k"}"><img class="${"absolute shadow-5 svelte-1it2a4k"}" src="${escape(imagesBaseUrl) + "MaurizioLevi_Anteprima.webp"}"${add_attribute("alt", alt$1, 0)}>
+			<img class="${"absolute shadow-5 svelte-1it2a4k"}" src="${escape(imagesBaseUrl) + "Levi-Maurizio-768x510.webp"}"${add_attribute("alt", alt$1, 0)}>
+			<img class="${"absolute shadow-5 svelte-1it2a4k"}" src="${escape(imagesBaseUrl) + "Maurizio_Levi.webp"}"${add_attribute("alt", alt$1, 0)}></figure>
 
 		<div class="${"fl w-100 w-50-m w-50-l lh-copy measure "}"><p class="${"pr3 fw5"}">Scegliamo itinerari che sono il frutto di anni di esperienza e sono il meglio possible in quel paese o in quella regione per la durata che\xA0\xE8\xA0prevista.</p></div>
 
@@ -51,9 +52,107 @@ const LeviMontage = create_ssr_component(($$result, $$props, $$bindings, slots) 
     }
   })}`;
 });
+const Subscribe = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-solitaire" }, {}, {
+    default: () => {
+      return `<div class="${"highlight db black-70 f5 f4-ns f3-m f3-l lh-copy pb6 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto"}">
+	<h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">Sottoscrivere</small>
+		<span class="${"fraunces"}">Il nostro</span><span class="${"fraunces-i"}">\xA0notiziario</span></h4>
+
+	<p>Resta aggiornato e ricevi le nostre comunicazioni sui viaggi, sulle promozioni e sulle numerose novit\xE0.</p>
+
+	
+
+		</div>`;
+    }
+  })}`;
+});
+let alt = "Maurizio Levi Official Partner";
+const Partners = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let imagesBaseUrl = `${"https://viaggilevi.vercel.app"}/images/`;
+  return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-white" }, {}, {
+    default: () => {
+      return `<article class="${"highlight db black-70 f5 f4-ns f3-m f3-l lh-copy pv4 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto"}"><h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">I viaggi di maurizio levi</small>
+			<span class="${"fraunces"}">I nostri</span><span class="${"fraunces-i"}">\xA0partner</span></h4>
+		<div class="${"flex justify-between w-100"}"><img class="${"h3 db no-select"}" src="${escape(imagesBaseUrl) + "fai.png"}"${add_attribute("alt", alt, 0)}>
+			<img class="${"h2 db no-select"}" src="${escape(imagesBaseUrl) + "fto.png"}"${add_attribute("alt", alt, 0)}>
+			<img class="${"h3 db no-select"}" src="${escape(imagesBaseUrl) + "tri.png"}"${add_attribute("alt", alt, 0)}>
+			<img class="${"h3 db no-select"}" src="${escape(imagesBaseUrl) + "unesco.png"}"${add_attribute("alt", alt, 0)}>
+			<img class="${"h3 db no-select"}" src="${escape(imagesBaseUrl) + "asc.png"}"${add_attribute("alt", alt, 0)}></div>
+		</article>`;
+    }
+  })}`;
+});
+const Social = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-white" }, {}, {
+    default: () => {
+      return `<div class="${"highlight db black-70 f5 f4-ns f3-m f3-l lh-copy pv4 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto"}"><h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">I viaggi di maurizio levi</small>
+			<span class="${"fraunces"}">Seguici</span></h4>
+
+		<div class="${"flex justify-between w-100"}">
+			
+			<a class="${"link inherit pointer transition hover-golden-brown o-80 w-10 w3-ns h3-ns w-10-m w3-l h3-l"}" href="${"https://www.facebook.com/I-Viaggi-di-Maurizio-Levi-207083192654850/"}" title="${"Facebook"}"><svg viewBox="${"0 0 16 16"}" class="${"no-select"}"><use xlink:href="${"#fb"}"></use></svg></a>
+
+			<a class="${"link inherit pointer transition hover-golden-brown o-80 w-10 w3-ns h3-ns w-10-m w3-l h3-l"}" href="${"https://twitter.com/viaggilevi"}" title="${"Twitter"}"><svg viewBox="${"0 0 16 16"}" class="${"no-select"}"><use xlink:href="${"#twitter"}"></use></svg></a>
+
+			<a class="${"link inherit pointer transition hover-golden-brown o-80 w-10 w3-ns h3-ns w-10-m w3-l h3-l"}" href="${"https://www.youtube.com/user/viaggidimauriziolevi"}" title="${"YouTube"}"><svg viewBox="${"0 0 16 16"}" class="${"no-select"}"><use xlink:href="${"#yt"}"></use></svg></a>
+
+			<a class="${"link inherit pointer transition hover-golden-brown o-80 w-10 w3-ns h3-ns w-10-m w3-l h3-l"}" href="${"https://www.instagram.com/p/BKVQ5cvAvht/"}" title="${"Instagram"}"><svg viewBox="${"0 0 16 16"}" class="${"no-select"}"><use xlink:href="${"#instagram"}"></use></svg></a>
+
+			<a class="${"link inherit pointer transition hover-golden-brown o-80 w-10 w3-ns h3-ns w-10-m w3-l h3-l"}" href="${"https://za.pinterest.com/iviaggidimauriz/"}" title="${"Pintrest"}"><svg viewBox="${"0 0 16 16"}" class="${"no-select"}"><use xlink:href="${"#pintrest"}"></use></svg></a></div></div>`;
+    }
+  })}
+
+`;
+});
+var index_svelte_svelte_type_style_lang = "";
+const css$1 = {
+  code: ".hover-b--inherit.svelte-1qtd8c1{transition:all 0.4s ease 0s!important}.hover-b--inherit.svelte-1qtd8c1:hover{border-color:inherit}",
+  map: null
+};
+const Contact = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css$1);
+  return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-solitaire" }, {}, {
+    default: () => {
+      return `
+
+<div class="${"highlight db black-70 f2 f4-ns f3-m f2-l lh-copy pb6 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto pv5"}"><section class="${"fl w-100 cf"}"><div class="${"fl w-100 w-third-ns w-third-m w-two-thirds-l lh-copy measure "}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l ttu mv0 pb2"}">destinazioni</small>
+			<hr class="${"inherit b--golden-brown"}">
+			<ul class="${"list pl0 fraunces pr1 pr4-ns pr4-m pr1-l"}">${each(items, ({ title, slug }) => {
+        return `<li class="${"truncate"}"><a${add_attribute("href", `#${slug}`, 0)} class="${"link inherit o-80 fw4 hover-fw6 hover-o-100 hover-o-100 "}">${escape(title)}</a>
+						
+					</li>`;
+      })}</ul></div>
+
+	<div class="${"fl w-100 w-third-ns w-third-m w-third-l lh-copy measure"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l ttu mv0 pb2"}">contattaci</small>
+	<hr class="${"inherit b--golden-brown"}">
+		<ul class="${"list pl0 fraunces pr1 pr4-ns pr4-m pr1-l mb0-l"}"><li class="${"truncate"}"><small class="${"golden-brown o-50 db tracked-none tracked-ns tracked-m tracked-mega-l ttu pt3 pb1 system f6 f5-ns f4-m f3-l"}">chiamaci</small><small><a href="${"tel:+390234934528"}" class="${"link inherit o-80 fw4 bw1 bw2-l bb b--transparent hover-b--inherit hover-o-100  svelte-1qtd8c1"}">+39\xA002\xA034934528</a></small></li>
+			<li class="${"truncate"}"><small class="${"golden-brown o-50 db tracked-none tracked-ns tracked-m tracked-mega-l ttu pt3 pb1 system f6 f5-ns f4-m f3-l"}">scrivici</small><small><a href="${"mailto:info@viaggilevi.com"}" class="${"link inherit o-80 fw4 bw1 bw2-l bb b--transparent hover-b--inherit hover-o-100  svelte-1qtd8c1"}" style="${"letter-spacing:-0.0125em"}">info@viaggilevi.com</a></small></li>
+</ul></div>
+	<div class="${"fl w-100 w-third-ns w-third-m w-third-l ph0 lh-copy measure "}"><small class="${"golden-brown o-50 db tracked-none tracked-ns tracked-m tracked-mega-l fw5 ttu mv0 pb2 dn-l"}">\xA0</small>
+<hr class="${"inherit b--golden-brown dn-l"}">
+<address class="${"fs-normal"}"><ul class="${"list pl0 fraunces pr1 pr4-ns pr4-m pr1-l mt0-l"}"><li class="${"truncate"}"><small class="${"golden-brown o-50 db tracked-none tracked-ns tracked-m tracked-mega-l ttu pt3 pb1 system f6 f5-ns f4-m f3-l"}">trovaci</small>
+<small><a href="${"https://google.it/maps/place/Via+Francesco+Londonio,+4,+20154+Milano"}" class="${"link inherit o-80 fw4 bw1 bw2-l bb b--transparent hover-b--inherit hover-o-100  svelte-1qtd8c1"}">Via Londonio 4<br>20154 Milano</a></small></li></ul></address></div>
+</section></div>`;
+    }
+  })}`;
+});
+const Terms = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-cocoa" }, {}, {
+    default: () => {
+      return `<article class="${"highlight db black-70 f4 f5-ns f3-m f3-l lh-copy white pt4 pb7 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto"}"><section class="${"fl w-100 cf"}"><div class="${"fl w-100 w-100-ns w-third-m w-third-l f6 lh-copy measure tc tc-ns tl-m tl-l"}"><a href="${"#termini"}" class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0 pb2 link pointer inherit o-70 hover-o-100 transition"}"><span class="${"fw2"}">Cookie\xA0Policy &amp;\xA0</span>Termini</a></div>
+			<div class="${"fl w-100 w-100-ns w-third-m w-third-l f6 lh-copy measure tc"}"><a href="${"#piva"}" class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0 pb2 link pointer inherit o-70 hover-o-100 transition"}"><span class="${"fw2"}">Partita\xA0Iva </span>12819030151</a></div>
+			<div class="${"fl w-100 w-100-ns w-third-m w-third-l ph0 f6 lh-copy measure tc tc-ns tr-m tr-l"}"><a href="${"https://inspiredlabs.co.uk"}" title="${"Inspired Labs"}" class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0 pb2 link pointer inherit o-70 hover-o-100 transition"}"><span class="${"fw2"}">I Viaggi di Maurizio\xA0Levi</span>\xA0\xA9</a></div></section></article>`;
+    }
+  })}`;
+});
 const Outro = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(LeviMontage, "LeviMontage").$$render($$result, {}, {}, {})}
-`;
+${validate_component(Subscribe, "Subscribe").$$render($$result, {}, {}, {})}
+${validate_component(Partners, "Partners").$$render($$result, {}, {}, {})}
+${validate_component(Social, "Social").$$render($$result, {}, {}, {})}
+${validate_component(Contact, "Contact").$$render($$result, {}, {}, {})}
+${validate_component(Terms, "Terms").$$render($$result, {}, {}, {})}`;
 });
 var app = "";
 var __layout_svelte_svelte_type_style_lang = "";
@@ -69,7 +168,8 @@ const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <main class="${"system backface-hidden charcoal"}">
 	${slots.default ? slots.default({}) : ``}
-	${validate_component(Outro, "Outro").$$render($$result, {}, {}, {})}</main>
+	${validate_component(Outro, "Outro").$$render($$result, {}, {}, {})}
+	${validate_component(Defs, "Defs").$$render($$result, {}, {}, {})}</main>
 ${validate_component(Fraunces, "Fraunces").$$render($$result, {}, {}, {})}
 
 

@@ -6,6 +6,7 @@
 <script>
 	import Fraunces from '$lib/Fraunces.svelte';
 	import Outro from '$lib/Outro/index.svelte';
+	import Defs from '$lib/Defs.svelte';
 	//import Menu from '$lib/Menu/index.svelte';
 	import '../app.css';
 </script>
@@ -21,11 +22,19 @@
 	<!-- debug: y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 fixed -->
 	<slot />
 	<Outro />
+	<Defs />
 </main>
 <Fraunces />
 
 <style>
 /* @use '../app.css'; */
+/* "purge" "unused css" from "global style" in "sveltekit" */
+/* learn: `%svelte.assets%`: closingtags.com/global-css-in-sveltekit */
+/* learn: preprocessor: github.com/bluwy/svelte-preprocess-import-assets */
+/* learn: preprocessor: npmjs.com/package/svelte-assets-preprocessor */
+/* fix: bump global styles issue: github.com/sveltejs/kit/issues/3127 */
+/* note: kit.svelte.dev/docs/assets */
+/* learn: preprocessor runs before compilation: windicss.org/integrations/svelte.html */
 
 /***** PAGINATE *****/
 :global(.light-pagination-nav span.option.prev > svg path) {

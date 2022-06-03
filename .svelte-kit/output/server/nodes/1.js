@@ -1,6 +1,6 @@
 import * as module from '../entries/fallbacks/error.svelte.js';
 
 export { module };
-export const entry = 'error.svelte-f084e8fe.js';
-export const js = ["error.svelte-f084e8fe.js","chunks/index-2785f015.js"];
+export const entry = 'error.svelte-a4a9abb5.js';
+export const js = ["error.svelte-a4a9abb5.js","chunks/index-28618d1b.js"];
 export const css = [];

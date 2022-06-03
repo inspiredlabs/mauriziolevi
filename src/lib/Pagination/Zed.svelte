@@ -14,7 +14,7 @@
 		// fix: this regex removes any inline style:
 		function sanitiseExcerpt(excerpt) {
 			return excerpt.replace(/(\\r|\\n)/g, '')
-			.replace(/(\<(p|style|div)\>|\<\/(p|style|div)\>)/g, '')
+			.replace(/(\<(i|em|p|style|div)\>|\<\/(i|em|p|style|div)\>)/g, '')
 			.replace(/\<p/g, '').replace(/\<\/p\>/g, '').replace(/style\=\\"/g, '')
 			.replace(/margin\-(left|right)\:/g, '')
 			.replace(/\"\>/g, '')
@@ -60,22 +60,25 @@
 		// http:\/\/kel12image.com\/uploads\/(europa|americhe|africa|oceania)
 	}
 	*/
+
+
+	function transformLink(cta) {
+		return cta.replace("http:\/\/kel12.therebelwatchtower\.net\/levi-single", "trip")
+	}
 </script>
 
-
 <li class="w-100 w-100-ns w-30-m w5-l pb3">
+
+<!-- fix: sveltekit:prefetch -->
 <a
-	sveltekit:prefetch
-	title="{title}" href="{cta}"
+	title="{title}"
+	href="{cta.replace("http:\/\/kel12.therebelwatchtower\.net\/levi-single", "../trip").replace('destinations', '')}"
 	class="link">
 	<figure class="ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden"
-	style='background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url({image})'
+	style='background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url(https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp)'
 	title={title}>
 
-	<!-- debug: {JSON.stringify(image)} -->
-	<!-- https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp -->
-	<!-- <code class="f8 bg-charcoal white">{image}</code>
-	 -->
+	<!-- debug: {JSON.stringify(image, null, 2)} || <code class="absolute top-0 z-max f8 bg-charcoal white">{image}</code> -->
 
 	<!-- learn: take care of escaped [Object object] strings: stackoverflow.com/questions/25721164/how-to-fix-an-escaped-json-string-javascript#25721227 -->
 
