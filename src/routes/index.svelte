@@ -3,7 +3,7 @@
 </script>
 
 <script>
-  // debug: consider a helper function inside `index.js`: stackoverflow.com/questions/25921319/escape-new-lines-with-js#25921448
+  // note: CHECK THIS IS COMPLETE: consider a helper function inside `index.js`: stackoverflow.com/questions/25921319/escape-new-lines-with-js#25921448
   // learn: `shadowendpoints` syntax: youtube.com/watch?v=j-9D5UDyVOM&t=133s
 
 
@@ -17,8 +17,7 @@
   //import PaginateBasic from '$lib/PaginateBasic.svelte'; //<PaginateBasic />
   let title = 'Maurizio Levi';
 
-  // debug: `Cannot read property 'slice' of undefined`
-  // learn: `npm install -D svelte-paginate` from: github.com/TahaSh/svelte-paginate needs destructuring.
+// learn: `npm install -D svelte-paginate` from: github.com/TahaSh/svelte-paginate needs destructuring.
   import { paginate, LightPaginationNav } from 'svelte-paginate';
 
   import TripSpotlight from '$lib/Pagination/TripSpotlight.svelte';

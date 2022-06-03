@@ -83,7 +83,8 @@
 	<!-- learn: take care of escaped [Object object] strings: stackoverflow.com/questions/25721164/how-to-fix-an-escaped-json-string-javascript#25721227 -->
 
 	<figurecap class="white ts1-dark-gray flex flex-column lh-solid">
-		<!-- fix: `<time>` req. `datetime={date}` -->
+		<!-- fix: `<time>` req. `datetime={date}`, groups only... -->
+		<!-- learn: vallid datetime -->
 		<time class="f5 f6-ns f7-m f6-l fw7 ttu tracked flex-auto">{@html length} giorni</time>
 
 			<!--

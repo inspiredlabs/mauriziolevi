@@ -1,5 +1,3 @@
-<!-- fix: consumes `export let nations;` JSON endpoint -->
-
 <script>
 	export const length; // {length ? length : undefined }
 	export const title; // {title ? title : undefined }
