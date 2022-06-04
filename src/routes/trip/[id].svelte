@@ -29,6 +29,12 @@
   export let trip;
   let title = 'I Viaggi di Maurizio Levi';
 
+  // fix: all the regex is 😅 slow/unweildy!
+  // learn: usage`{[at]html sanitiseText(`${title}`)}`
+  function sanitiseText(title) {
+    return title.replace(/(\\r|\\n|\\\"|style=\|'\\\"'|'style=\\\"'|margin\-(left|right)\:|text\-align\:justify\\"|0cm(;|)|1\.1pt\;)/g, '');
+  }
+
 </script>
 
 <!-- fix: image={nations.hero.image} -->
@@ -64,12 +70,33 @@
 
   <code class="bg-red">{trip.departures['nr-pax']}</code>
   <code class="bg-red">{trip.departures['nr-pax-max']}</code>
-  <code>{trip.departures.text}</code>
-  <code>{trip.departures.dates.departure}</code>
-  <code>{trip.departures.dates.return}</code>
+  <code>{@html sanitiseText(`${trip.departures.text}`)}</code>
+
+
+  <!-- learn: `trip.departures.dates.leave` and `return` is more acceptable -->
+  <!-- learn: ...especially considering we have the overhead of including structured data -->
+<!-- fix: `return` is a reserved keyword in JS -->
+<!-- note: suggest replacing occurrences of `departure` with: `trip.departures.dates.inbound` and `return` with: `trip.departures.dates.outbound`, these are semantically accurate too. -->
+<p>
+  {#each trip.departures.dates as date, i}
+    <code>{date.departure} with: `dates.inbound`</code>
+    <code>{date.return}  with: `dates.outbound`</code>
+  {/each}
+</p>
+
+
+  <!-- <code>{trip.departures.dates.departure ? trip.departures.dates.departure : '' }</code> -->
+  <!-- <code>{trip.departures.dates.return ? trip.departures.dates.return : '' }</code> -->
+
+
+
+
+
 
   <code>{trip.tour_leaders.title}</code>
   <code>{trip.tour_leaders.text}</code>
+
+
 
   <!-- tour_leaders.experts -->
 </div>
