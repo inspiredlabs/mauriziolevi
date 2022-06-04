@@ -37,6 +37,9 @@
   import Zed from '$lib/Pagination/Zed.svelte';
   let suggestedTrips = Object.values(destinations.suggested_trips.trips);
 
+  // note: while `destinations.suggested_trips.trips` is acceptable, for parsing quickly: `destinations.suggested.trips` wouldn't hurt.
+  // learn: medial capitals, or `camelCase` is generally written as iPhone, eBay with a lowercase first letter, rather than `MacOs`.
+
   let items = suggestedTrips;
   let currentPage = 1;
   let pageSize = 3;

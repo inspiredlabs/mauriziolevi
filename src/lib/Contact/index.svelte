@@ -4,7 +4,8 @@ import items from '$lib/items.js';
 let baseUrl = `${import.meta.env.VITE_BASEURL}/`;
 // fix: href="{`${baseUrl}${slug}`}"
 
-// note: consider: `let mung = "&#109;&#97;&#105;&#108;&#116;&#111;&colon;&#105;&#110;&#102;&#111;&commat;&#118;&#105;&#97;&#103;&#103;&#105;&#108;&#101;&#118;&#105;&period;&#99;&#111;&#109;"` from: onlinestringtools.com/html-encode-string
+// note: consider: `let mung = myValue.escape(myValue); not: "&#109;&#97;&#105;&#108;&#116;&#111;&colon;&#105;&#110;&#102;&#111;&commat;&#118;&#105;&#97;&#103;&#103;&#105;&#108;&#101;&#118;&#105;&period;&#99;&#111;&#109;"` from: onlinestringtools.com/html-encode-string
+// learn: tutorialspoint.com/javascript-escape
 </script>
 
 <Row bg="bg-solitaire">

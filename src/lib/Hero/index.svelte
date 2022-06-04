@@ -12,11 +12,11 @@ import Row from '$lib/Row.svelte';
 import ScrollIndicator from '$lib/ScrollIndicator.svelte';
 
 function transformTitle(title) {
-	return title.replace(/(\<(h1|h2)\>|\<\/(h1|h2)\>)/g, '').replace(/\<(i|em)\>/g, '<span class="fraunces-i">').replace(/\<\/(i|em)\>/g, '<span>');
+	return title.replace(/(\<(h1|h2)\>|\<\/(h1|h2)\>)/g, '').replace(/\<(i|em)\>/g, '<span class="fraunces-i">').replace(/\<\/(i|em)\>/g, '<span>').toLowerCase();
 	}
 </script>
 
-<figure class="ma0 flex flex-column vh-75 w-100 cover" style="background-position:center 40%; background-image: url('{image ? image : undefined }')" title="{location ? location : undefined }">
+<figure class="ma0 flex flex-column vh-75 w-100 cover" style="background-position:center 40%; background-image: url('{image ? image : '' }')" title={location ? location : '' }>
 <!-- base64'd: onlinejpgtools.com/convert-jpg-to-base64 -->
 
 <div class="vh-75 flex items-center white w-100 f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
