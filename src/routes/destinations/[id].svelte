@@ -38,7 +38,7 @@
   let suggestedTrips = Object.values(destinations.suggested_trips.trips);
 
   // note: while `destinations.suggested_trips.trips` is acceptable, for parsing quickly: `destinations.suggested.trips` wouldn't hurt.
-  // learn: medial capitals, or `camelCase` is generally written as iPhone, eBay with a lowercase first letter, rather than `MacOs`.
+  // learn: medial capitals, or `camelCase` has a lowercase first letter. It's generally written as `iPhone`, `eBay and almost NEVER as `MacOs`.
 
   let items = suggestedTrips;
   let currentPage = 1;
