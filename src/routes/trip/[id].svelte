@@ -35,6 +35,14 @@
     return title.replace(/(\\r|\\n|\\\"|style=\|'\\\"'|'style=\\\"'|margin\-(left|right)\:|text\-align\:justify\\"|0cm(;|)|1\.1pt\;)/g, '');
   }
 
+
+  function sanitiseDescription(description) {
+    return description.replace('<body style=\\\\\"font\-family\:Times New Roman\; font\-size\:12pt\\\\\\\">', '').replace(/p style\=\\\\\\\"margin\-top\:0pt\;\=/g, '').replace(/(|\\r|\\n|\<body style\=\\\\\\|font-family:|Arial|Times New Roman;|font-size:|12pt)/g, '')
+    .replace(/\<(p|span|div)/g, '\<p').replace(/\<p style\=\\\\\\/g, '\<p');
+  }
+
+
+
 </script>
 
 <!-- fix: image={nations.hero.image} -->
@@ -86,8 +94,8 @@
 
 
 <p>
-  {#each trip.tour_leaders.experts as {name, title, image, social_links}, i }
-    <code>{name}</code>
+  {#each trip.tour_leaders.experts as { name, title, image, social_links }, i }
+    <code>{name.replace(' ', ', ')}</code>
     <code>{title}</code>
     <code>{image}</code>
 
@@ -101,19 +109,23 @@
   {/each}
 </p>
 
+{#each trip.day_by_day as {day, title, description_title, description}, i }
+
+  <code>{day}</code>
+
+  <code>{title}</code>
+
+  <code>{description_title}</code>
+
+  <code>{@html sanitiseDescription(`${description}`)}</code>
+
+{/each}
+
 
 
 
   <!-- <code>{trip.departures.dates.departure ? trip.departures.dates.departure : '' }</code> -->
   <!-- <code>{trip.departures.dates.return ? trip.departures.dates.return : '' }</code> -->
-
-
-
-
-
-
-  <code>{trip.tour_leaders.title}</code>
-  <code>{trip.tour_leaders.text}</code>
 
 
 
