@@ -85,6 +85,25 @@
 </p>
 
 
+<p>
+  {#each trip.tour_leaders.experts as {name, title, image, social_links}, i }
+    <code>{name}</code>
+    <code>{title}</code>
+    <code>{image}</code>
+
+    <!-- fix: `social_links`, probably more robust as `platforms` email, twitter, instagram, linkedIn, whatsApp -->
+    {#each social_links as platform, i }
+      <code>{platform}</code>
+    {/each}
+
+    <!-- fix: key contains a problematic `space` character -->
+    <code class="bg-white">{trip.tour_leaders.experts[i]['next departure']}, note: this key contains a problematic `space` character: `trip.tour_leaders.experts[i][<span class="red">'next&nbsp;departure'</span>]`</code>
+  {/each}
+</p>
+
+
+
+
   <!-- <code>{trip.departures.dates.departure ? trip.departures.dates.departure : '' }</code> -->
   <!-- <code>{trip.departures.dates.return ? trip.departures.dates.return : '' }</code> -->
 
