@@ -55,10 +55,11 @@ Fraunces with vertical media queries, new to variable fonts? https://v-fonts.com
 	transition: font-variation-settings .4s ease 0s!important;
   font-family: 'Fraunces Variable Italic', serif;
 	font-variation-settings:
-    'wght' 366,
+    'wght' 336,
 	  'opsz' 100,
-	  'SOFT' 20,
+	  'SOFT' 48,
 	  'WONK' 1;
+    /* 'wght' 366, */
 }
 
 :global(.fraunces) {
@@ -77,6 +78,7 @@ Fraunces with vertical media queries, new to variable fonts? https://v-fonts.com
 		'opsz' 96,
 		'SOFT' 16,
 		'WONK' 0;
+    /* 'wght' 366, */
 }
 
 /*

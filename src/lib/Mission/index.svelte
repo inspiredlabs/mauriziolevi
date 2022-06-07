@@ -20,6 +20,7 @@ function transformText(text) {
 
 function transformMotto(motto) {
 	return motto.replace('viaggio', '<span class="fraunces-i">viaggio</span>');
+	// style="font-variation-settings: \'wght\' 336;"
 }
 
 </script>
@@ -42,7 +43,8 @@ function transformMotto(motto) {
 		</div>
 
 		<!-- fix: SEO demands `{nations.description.serp || .introduction}` -->
-		<blockquote class="golden-brown fraunces f2 f2-ns f1-m f1-l fw4 w-70 lh-solid tc ml-auto mr-auto">{@html transformMotto(`${motto}`)}</blockquote>
+		<blockquote
+		class="golden-brown fraunces f2 f2-ns f1-m f1-l w-70 lh-solid tc ml-auto mr-auto">{@html transformMotto(`${motto}`)}</blockquote>
 
 
 

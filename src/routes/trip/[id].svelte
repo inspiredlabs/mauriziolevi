@@ -31,18 +31,19 @@
 
   // fix: all the regex is 😅 slow/unweildy!
   // learn: usage`{[at]html sanitiseText(`${title}`)}`
-  function sanitiseText(title) {
-    return title.replace(/(\\r|\\n|\\\"|style=\|'\\\"'|'style=\\\"'|margin\-(left|right)\:|text\-align\:justify\\"|0cm(;|)|1\.1pt\;)/g, '');
+  function sanitiseText(text) {
+    return text.replace(/(style[\w\W](\:|\;|\"))/g, '').replace(/(text-[\w\W](\:|\;|\"))/g, "").replace(/(font-family[\w\W](':'|';'|'"'|'>'))/g, "").replace(/(-aw-[\w\W](\:|\;|\"))/g, "").replace(/(Arial|Times New Roman|12pt)/g, '').replace(/(\\r|\\n|\\\"|style=\|'\\\"'|'style=\\\"'|margin\-(left|right)\:|text\-align\:justify\\"|0cm(;|)|1\.1pt\;)/g, '').replace(/(font-family:|style=)/g, '').replace(/(margin-top:0pt;|margin-bottom:0pt;)/g, "").replace(/; font-style: italic/g, '').replace(/-aw-import:ignore/g, '').replace(/(margin[\w\W]|bottom[\w\W]|0pt)/g, '').replace(/(<span ;[\w\W]+span>)/g, "").replace(/<[^/>][^>]*><\/[^>]+>/gim, "");
+
+      // debug: this didn't work! stackoverflow.com/questions/6953470/removing-all-empty-p-tags
+      // learn: this worked well! stackoverflow.com/questions/3129738/remove-empty-tags-using-regex
   }
 
-
-  function sanitiseDescription(description) {
-    return description.replace('<body style=\\\\\"font\-family\:Times New Roman\; font\-size\:12pt\\\\\\\">', '').replace(/p style\=\\\\\\\"margin\-top\:0pt\;\=/g, '').replace(/(|\\r|\\n|\<body style\=\\\\\\|font-family:|Arial|Times New Roman;|font-size:|12pt)/g, '')
-    .replace(/\<(p|span|div)/g, '\<p').replace(/\<p style\=\\\\\\/g, '\<p');
-  }
-
-
-
+  /*
+  .replace(/\<body style=\\\\\\\"font\-family\:Times New Roman\; font\-size\:12pt\\\\\\\"\>\<div\>\<p style=\\\\\\\"margin\-top\:0pt\; margin\-bottom\:0pt\; text\-align\:justify\\\\\\\"\>\<span style=\\\\\\\"font\-family\:Arial\\\\\\\"\>/g, '').replace(/\<\/span\>\<\/p\>\<p style=\\\\\\\"margin\-top\:0pt\; margin\-bottom\:0pt\; text\-align\:justify\\\\\\\"\>\<span style=\\\\\\\"font\-family\:Arial\; \-aw\-import\:ignore\\\\\\\">\&\#xa0\;\<\/span\>\<\/p\>\<p style=\\\\\\\"margin\-top\:0pt\; margin\-bottom\:0pt\; text\-align\:justify\\\\\\\"\>\<span style=\\\\\\\"font\-family\:Arial\; \-aw\-import\:ignore\\\\\\\"\>\&\#xa0\;\<\/span\>\<\/p\>\<\/div\>/g, '').replace(/(style\=\\\\\\\"|\\"margin-top:0pt;|margin-bottom:0pt\"||text-align:justify\\\"|-aw-import:ignore\\\"|\\r|\\n)/g, '').replace(/(Arial|Times New Roman;|)/g, '')
+  and
+  .replace(/p style\=\\\\\\\"margin\-top\:0pt\;\=/g, '').replace(/(style\=\\\\\\\"|margin\-top\:0pt\;\|\\r|\\n|font-family:|Arial|Times New Roman;|font-size:|12pt)/g, '')
+  .replace(/\<(p|span|div)/g, '\<p').replace(/\<p style\=\\\\\\/g, '\<p')
+  */
 </script>
 
 <!-- fix: image={nations.hero.image} -->
@@ -117,9 +118,10 @@
 
   <code>{description_title}</code>
 
-  <code>{@html sanitiseDescription(`${description}`)}</code>
+  <code class="bg-green">{@html sanitiseText(`${description}`)}</code>
 
 {/each}
+
 
 
 

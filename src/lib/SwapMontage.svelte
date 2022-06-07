@@ -17,12 +17,14 @@ class="w-100 swap { visible ? 'visible' : '' }
 cf relative top-0 mr-auto ml-auto"
 style="height:100vh">
 <!-- fix: MAY req. `overflow-hidden` -->
+<!-- learn: serve images correctly -->
 {#each images as image}
 	<img
-		alt={alt}
+		alt={image}
+    title={image}
 		src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 		class="shadow-5 mr-auto ml-auto"
-		style="background-image: url({image})"
+		style="background-image: url('')"
 	/>
 	<!-- w3 h4  -->
 	{/each}
