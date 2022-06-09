@@ -43,8 +43,8 @@
       <!-- w3 w3-ns w-40-m w3-l h3  -->
   		<input id="search" type="search" name="search" placeholder="Search" data-placeholder="Cerca" class="bg-transition input-reset br0 bb bw0 bg-transparent b--black f6 f5-ns db  w-100 tl h2 w-100 h-100 nowrap items-center nowrap white">
 			<!-- pv3 pa3 pl1 && form reset: codepen.io/inspiredlabs/pen/BaLRXaN  -->
-  		<button class="inherit bg-black pointer b--white br-pill ba bw2 aspect-ratio--object relative">
-	    <svg viewbox="0 0 24 24" class="no-select h2">
+  		<button class="inherit bg-black pointer b--white br-pill ba bw2 aspect-ratio--object relative w2 ph4">
+	    <svg viewbox="0 0 24 24" class="no-select h2 relative" style="left:-1rem">
 	    	<use xlink:href="#icon-search"></use>
 	    </svg>
   	</button>
@@ -83,13 +83,6 @@
 
 
 <style>
-
-/**** SHADOW ****/
-.shadow {
-  -webkit-filter: drop-shadow(3px 2px 2px rgba(0,0,0,.7) );
- filter: drop-shadow(3px 3px 2px rgba(0,0,0,.7) );
-}
-
 
 /**** MENU ****/
 
