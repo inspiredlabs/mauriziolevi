@@ -7,43 +7,43 @@
 						ph4-ns measure-ns
 						ph2-m measure-m
 						pa0-l measure-wide-l mr-auto ml-auto">
-	<h1 class="w-50 w-50-ns w-30-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0">
+	<h1 class="w-50 w-50-ns w-20-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0">
 		<img class="w4" src="https://viaggilevi.vercel.app/images/levi-logo.svg" alt="Levi" />
 		<span class="visually-hidden">I Vaggi di Maurizio Levi</span>
 	</h1>
 
 	<!-- ONLY: large & landscape -->
-	<div class="w-50-l justify-between dn landscape-flex-l"><!-- bg-red -->
-		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white">partenze</button>
-		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white">viaggi</button>
-	  <button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white nowrap">chi siamo</button>
-		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white">News</button>
+	<div class="dn dn-ns w-40-m w-40-l justify-between flex-m landscape-flex-l debug"><!-- bg-red -->
+		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">partenze</button>
+		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">viaggi</button>
+	  <button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 nowrap">chi siamo</button>
+		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">News</button>
 	</div>
 
 	<!-- debug: `outline b--blue` -->
-  <div class="w-50 w-50-ns w-70-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around">
+  <div class="w-80 w-80-ns w-40-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around debug">
     <!-- pv3 pv2-m pv2-l -->
     <div class="flex items-center justify-center-l justify-bettween-m br-pill bg-meadow nowrap hover-bg-gold pointer transition mr2">
 			<!-- ph2 pv2 pa3 w3 w3-ns w-40-m w3-l h3 -->
-		  <svg viewbox="0 0 24 24" class="no-select h2-m pv2-m h2-l pa2-l">
+		  <svg viewbox="0 0 24 24" class="no-select h2 pa2 pa2-m pr0-l pl2-l pv2">
 		    <use xlink:href="#icon-search"></use>
 		  </svg>
-		  <span class="dn dn-ns flex-m dn-l w-100 h-100 nowrap items-center f5">this is wide</span>
+		  <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5">Call</span>
 		</div>
 		<div class="flex items-center justify-center-l justify-bettween-m br-pill bg-meadow nowrap hover-bg-gold pointer transition">
 		<!-- ph2 pv2 pa3 w3 w3-ns w-40-m w3-l h3 -->
-		  <svg viewbox="0 0 24 24" class="no-select h2-m pv2-m h2-l pa2-l">
+		  <svg viewbox="0 0 24 24" class="no-select h2 pa2 pa2-m pr0-l pl2-l pv2">
 		    <use xlink:href="#icon-search"></use>
 		  </svg>
-			<span class="dn dn-ns flex-m dn-l w-100 h-100 nowrap items-center f5">this is wide</span>
+			<span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5">email</span>
 		</div>
 
-    <aside class="pl2">
-      <div class="flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l nowrap hover-bg-golden-brown bg-charcoal pointer transition pl3">
+    <aside class="pl2 w-60 w-60-ns w-100-m w-100-l">
+      <div class="flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l nowrap hover-bg-near-white bg-charcoal pointer transition pl3">
       <!-- w3 w3-ns w-40-m w3-l h3  -->
-  		<input id="search" type="search" name="search" placeholder="Search" data-placeholder="Cerca" class="bg-transition input-reset br0 bb bw0 bg-transparent b--black f6 f5-ns db  w-100 tl h2 w-100 h-100 nowrap items-center nowrap white">
+  		<input id="search" type="search" name="search" placeholder="Search" data-placeholder="Cerca" class="bg-transition input-reset br0 bb bw0 bg-transparent b--black f6 f5-ns db tl w-100 nowrap items-center nowrap white pv3">
 			<!-- pv3 pa3 pl1 && form reset: codepen.io/inspiredlabs/pen/BaLRXaN  -->
-  		<button class="inherit bg-black pointer b--white br-pill ba bw2 aspect-ratio--object relative w2 ph4">
+  		<button class="inherit bg-near-black hover-bg-golden-brown pointer b--black br-pill ba bw2 aspect-ratio--object relative w1 w1-ns ph2 ph2-ns ph4-m w1-m ph4 w2-l ph4-l ">
 	    <svg viewbox="0 0 24 24" class="no-select h2 relative" style="left:-1rem">
 	    	<use xlink:href="#icon-search"></use>
 	    </svg>

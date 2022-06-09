@@ -1,7 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1230 724">
   <!-- note: 15kb, start: 15172 -->
   <!-- note: 10kb, optimisation multipass: 9656 -->
-  <!-- learn: https://htmlbeautify.com/ -->
+  <!-- learn: htmlbeautify.com/ -->
+
+<!-- debug: filter resolution isn't correct on iOS.
+/*
+<filter id="a">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="1"/>
+    <feOffset dy="6"/>
+    <feComponentTransfer>
+      <feFuncA slope=".6" type="linear"/>
+    </feComponentTransfer>
+    <feMerge>
+      <feMergeNode/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <filter id="b">
+    <feGaussianBlur in="SourceAlpha" stdDeviation=".6"/>
+    <feOffset dy="2"/>
+    <feComponentTransfer>
+      <feFuncA slope="55" type="linear"/>
+    </feComponentTransfer>
+    <feMerge>
+      <feMergeNode/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+*/
+-->
+
+<!-- learn: sitepoint.com/css-with-svg/#portablesvgs -->
   <style>/* <![CDATA[ */
   .shadow {
     -webkit-filter: drop-shadow( 3px 2px 2px rgba(0,0,0,.7) );
