@@ -7,16 +7,11 @@
 	import Fraunces from '$lib/Fraunces.svelte';
 	import Outro from '$lib/Outro/index.svelte';
 	import Defs from '$lib/Defs.svelte';
-	//import Menu from '$lib/Menu/index.svelte';
+	import Menu from '$lib/Menu/index.svelte';
 	import '../app.css';
 </script>
 
-
-<!-- <Menu
-	title="Maurizio Levi"
-/> -->
-
-
+<Menu />
 
 <main class="system backface-hidden charcoal">
 	<!-- debug: y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 fixed -->

@@ -36,6 +36,7 @@
 
       // debug: this didn't work! stackoverflow.com/questions/6953470/removing-all-empty-p-tags
       // learn: this worked well! stackoverflow.com/questions/3129738/remove-empty-tags-using-regex
+      // learn: chars 1024 = 1kb
   }
 
   /*
