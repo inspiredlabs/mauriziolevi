@@ -1,3 +1,14 @@
+<script>
+
+/*
+learn: stackoverflow.com/questions/68187584/how-to-route-programmatically-in-sveltekit
+function routeToPage(route: string, replaceState: boolean) {
+	goto(`/${route}`, { replaceState })
+}
+*/
+import { goto } from '$app/navigation';
+</script>
+
 <nav class="levi-nav fixed z-max w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system">
 
 <div class="w-100 flex justify-between
@@ -17,33 +28,43 @@
 	w-45-m landscape-flex-m
 	w-40-l justify-between landscape-flex-l">
 	<!-- debug: portrait-dn-m landscape-flex-m -->
-		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">partenze</button>
-		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">viaggi</button>
-	  <button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 nowrap">chi siamo</button>
-		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">News</button>
+
+		<button on:click={() => goto("#partenze")} class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">partenze</button>
+
+		<button on:click={() => goto("#viaggi")} class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">viaggi</button>
+
+	  <button on:click={() => goto("#chi-siamo")} class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 nowrap">chi siamo</button>
+
+		<button on:click={() => goto("#news")} class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">News</button>
 	</div>
 
   <div class="w-80 w-80-ns w-40-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around">
     <!-- pv3 pv2-m pv2-l -->
-    <a href="tel:+390234934528" class="link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen nowrap hover-bg-gold pointer transition mr2">
+		<a  href="tel:+390234934528" class="link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2">
 			<!-- ph2 pv2 pa3 w3 w3-ns w-40-m w3-l h3 -->
-		  <svg viewbox="0 0 24 24" class="no-select h1 pa2 h2-m pa2-m pa2-ns pv2-l pr0-l pl2-l">
+		  <svg viewbox="0 0 24 24" class="no-select h1 ph2 pv2 pr0-l pa2-ns h2-m pa2-m h2-l">
 				<!-- h2 pa2 -->
 				<use xlink:href="#icon-phone"></use>
-		    <!-- <use xlink:href="#whatsapp"></use> -->
+				<!-- <use xlink:href="#whatsapp"></use> -->
 		  </svg>
 			<!-- <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">Call</span> -->
-		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f6 pv2-l" style="letter-spacing:-0.0125em">+39&nbsp;02&nbsp;34934528</span>
+		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f6 pv2-l fraunces fw4 pl0 ml0">+39&thinsp;02&thinsp;3493&thinsp;4528</span>
+			<!-- debug: `fraunces fw4` style="letter-spacing:-0.0125em" -->
 		</a>
 
-		<a href="&#109;&#97;&#105;&#108;&#116;&#111;&colon;&#105;&#110;&#102;&#111;&commat;&#118;&#105;&#97;&#103;&#103;&#105;&#108;&#101;&#118;&#105;&period;&#99;&#111;&#109;" class="link flex items-center justify-center-l justify-bettween-m br-pill bg-golden-brown hover-bg-cocoa pointer transition">
-		<!-- ph2 pv2 pa3 w3 w3-ns w-40-m w3-l h3 -->
-		  <svg viewbox="0 0 24 24" class="no-select h1 pa2 h2-m pa2-m pa2-ns pv2-l pr0-l pl2-l">
+		<a href="&#109;&#97;&#105;&#108;&#116;&#111;&colon;&#105;&#110;&#102;&#111;&commat;&#118;&#105;&#97;&#103;&#103;&#105;&#108;&#101;&#118;&#105;&period;&#99;&#111;&#109;" class="link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2">
+			<!--
+				white bg-golden-brown hover-bg-cocoa
+				ph2 pv2 pa3 w3 w3-ns w-40-m w3-l h3 -->
+		  <svg viewbox="0 0 24 24" class="no-select h1 pa2 pa2-ns h2-m pa2-m h2-l">
 				<!-- h2 pa2 -->
-		    <use xlink:href="#icon-email"></use>
+				<use xlink:href="#icon-open"></use>
 		  </svg>
-			<span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">email</span>
+			<!-- <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">Call</span> -->
+		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f6 pv2-l " style="letter-spacing:-0.0125em">info&hellip;</span>
 		</a>
+
+
 
     <aside class="pl2 w-60 w-60-ns w-100-m w-100-l">
       <div class="flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l hover-bg-near-white bg-charcoal pointer transition ">
@@ -96,13 +117,7 @@ landscape-dn-l flex tc "><!-- bg-red -->
 	</div>
 	</nav>
 
-<script>
 
-/*
-
-
-*/
-</script>
 
 
 <style>
