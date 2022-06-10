@@ -6,16 +6,15 @@
 						pa2 measure
 						ph4-ns measure-ns
 						ph2-m measure-m
-						pa0-l measure-wide-l mr-auto ml-auto
-						debug">
-	<h1 class="tl w-50 w-50-ns w-20-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0">
+						pa0-l measure-wide-l mr-auto ml-auto">
+	<h1 class="tl w-50 w-50-ns w-25-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0">
 		<img class="w4" src="https://viaggilevi.vercel.app/images/levi-logo.svg" alt="Levi" />
 		<span class="visually-hidden">I Vaggi di Maurizio Levi</span>
 	</h1>
 
 	<!-- ONLY: large & landscape -->
 	<div class="dn dn-ns
-	w-40-m landscape-flex-m
+	w-45-m landscape-flex-m
 	w-40-l justify-between landscape-flex-l">
 	<!-- debug: portrait-dn-m landscape-flex-m -->
 		<button class="w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0">partenze</button>
@@ -42,17 +41,23 @@
 		</div>
 
     <aside class="pl2 w-60 w-60-ns w-100-m w-100-l">
-      <div class="flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l nowrap hover-bg-near-white bg-charcoal pointer transition pl3">
+      <div class="flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l nowrap hover-bg-near-white bg-charcoal pointer transition ">
       <!-- w3 w3-ns w-40-m w3-l h3  -->
-  		<input id="search" type="search" name="search" placeholder="Search" data-placeholder="Cerca" class="bg-transition input-reset br0 bb bw0 bg-transparent b--black f6 f5-ns tl items-center white pv3 w-100">
-			<!-- left--1 relative -->
+  		<input id="search" type="search" name="search" placeholder="Search" data-placeholder="Cerca" class="bg-transition input-reset br0 bb bw0 bg-transparent b--black f6 f5-ns tl items-center white pv3 w-100 mr0 pr0 pl1 pl2-ns pl3-m pl3-l">
+			<!-- pr0 mr0 -->
 			<!-- pv3 pa3 pl1 && form reset: codepen.io/inspiredlabs/pen/BaLRXaN  -->
-  		<button class="inherit bg-near-black hover-bg-golden-brown pointer b--black br-pill ba bw2 aspect-ratio--object relative
-			w3 ph1
+  		<button class="inherit bg-near-black hover-bg-golden-brown pointer  br-pill bn aspect-ratio--object relative
+			w2 w3-l
+			pr0 pl0 pv2"
+			style="border-radius: 0px 9999px 9999px 0px">
+			<!--
+			w3 pv2 ph1
 			w1-ns ph2-ns
 			w3-m ph1-m
-			w2-l ph4-l">
-	    <svg viewbox="0 0 24 24" class="no-select h2 relative left-0 left--0-m left--1-l">
+			w2-l ph4-l
+			-->
+			<!-- ba b--transparent || b--black ba bw2  -->
+	    <svg viewbox="0 0 24 24" class="no-select h2 relative left-0">
 	    	<use xlink:href="#icon-search"></use>
 	    </svg>
   	</button>
@@ -65,7 +70,10 @@
 
 
 <!-- EXCEPT large & landscape -->
-<nav class="levi-nav fixed z-9999 w-100 bottom-0 portrait-bottom-0-ns portrait-bottom-0-m portrait-bottom-0-l landscape-dn-l flex tc "><!-- bg-red -->
+<nav class="levi-nav fixed z-9999 w-100
+bottom-0
+landscape-dn-m
+landscape-dn-l flex tc "><!-- bg-red -->
 	<div class="w-100 flex justify-between
 							f5 f4-ns f3-m f3-l lh-copy
 							pa2 measure
@@ -127,6 +135,14 @@
 orientation, is NOT integrated into Tachyonshower.
 */
 
+@media screen and (min-width:30em) and (max-width:60em) {
+	.w-45-m {
+		width: 45%;
+	}
+}
+
+
+
 @media all and (orientation:portrait) {
 	@media screen and (min-width:30em) {
 	  .portrait-bottom-0-ns {
@@ -148,6 +164,19 @@ orientation, is NOT integrated into Tachyonshower.
 /* .vh-05 { height: 5vh } */
 
 @media all and (orientation:landscape) {
+
+	@media screen and (min-width:30em) {
+
+	}
+	@media screen and (min-width:30em) and (max-width:60em) {
+	  .landscape-dn-m {
+	    display: none;
+	  }
+	  .landscape-flex-m {
+	    display: flex;
+	  }
+	}
+
 	@media screen and (min-width:60em) {
 	/*     .landscape-vh-10-l {
 	  	height: 10vh;
