@@ -25,25 +25,30 @@
 
   <div class="w-80 w-80-ns w-40-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around">
     <!-- pv3 pv2-m pv2-l -->
-    <div class="flex items-center justify-center-l justify-bettween-m br-pill bg-meadow nowrap hover-bg-gold pointer transition mr2">
+    <a href="tel:+390234934528" class="link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen nowrap hover-bg-gold pointer transition mr2">
 			<!-- ph2 pv2 pa3 w3 w3-ns w-40-m w3-l h3 -->
-		  <svg viewbox="0 0 24 24" class="no-select h2 pa1 pa2-m pa2-ns pv2-l pr0-l pl2-l">
-		    <use xlink:href="#icon-search"></use>
+		  <svg viewbox="0 0 24 24" class="no-select h1 pa2 h2-m pa2-m pa2-ns pv2-l pr0-l pl2-l">
+				<!-- h2 pa2 -->
+				<use xlink:href="#icon-phone"></use>
+		    <!-- <use xlink:href="#whatsapp"></use> -->
 		  </svg>
-		  <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5">Call</span>
-		</div>
-		<div class="flex items-center justify-center-l justify-bettween-m br-pill bg-meadow nowrap hover-bg-gold pointer transition">
+			<!-- <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">Call</span> -->
+		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f6 pv2-l" style="letter-spacing:-0.0125em">+39&nbsp;02&nbsp;34934528</span>
+		</a>
+
+		<a href="&#109;&#97;&#105;&#108;&#116;&#111;&colon;&#105;&#110;&#102;&#111;&commat;&#118;&#105;&#97;&#103;&#103;&#105;&#108;&#101;&#118;&#105;&period;&#99;&#111;&#109;" class="link flex items-center justify-center-l justify-bettween-m br-pill bg-golden-brown hover-bg-cocoa pointer transition">
 		<!-- ph2 pv2 pa3 w3 w3-ns w-40-m w3-l h3 -->
-		  <svg viewbox="0 0 24 24" class="no-select h2 pa1 pa2-m pa2-ns pv2-l pr0-l pl2-l">
-		    <use xlink:href="#icon-search"></use>
+		  <svg viewbox="0 0 24 24" class="no-select h1 pa2 h2-m pa2-m pa2-ns pv2-l pr0-l pl2-l">
+				<!-- h2 pa2 -->
+		    <use xlink:href="#icon-email"></use>
 		  </svg>
-			<span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5">email</span>
-		</div>
+			<span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">email</span>
+		</a>
 
     <aside class="pl2 w-60 w-60-ns w-100-m w-100-l">
-      <div class="flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l nowrap hover-bg-near-white bg-charcoal pointer transition ">
+      <div class="flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l hover-bg-near-white bg-charcoal pointer transition ">
       <!-- w3 w3-ns w-40-m w3-l h3  -->
-  		<input id="search" type="search" name="search" placeholder="Search" data-placeholder="Cerca" class="bg-transition input-reset br0 bb bw0 bg-transparent b--black f6 f5-ns tl items-center white pv3 w-100 mr0 pr0 pl1 pl2-ns pl3-m pl3-l">
+  		<input id="search" type="search" name="search" placeholder="Search" data-placeholder="Cerca" class="charcoal bg-transition input-reset br0 bb bw0 bg-transparent b--black f5 f5-ns f5-m f5-l tl items-center pv3 w-100 mr0 pr0 pl1 pl2-ns pl3-m pl3-l">
 			<!-- pr0 mr0 -->
 			<!-- pv3 pa3 pl1 && form reset: codepen.io/inspiredlabs/pen/BaLRXaN  -->
   		<button class="inherit bg-near-black hover-bg-golden-brown pointer  br-pill bn aspect-ratio--object relative

@@ -33,7 +33,8 @@
 				<span class="fraunces">{@html headline.replace('<i', '<span class="fraunces-i"').replace('</i>', '</span>')}</span>
 			</h4>
 			<p class="mt0 fw4 measure lh-copy">{serp}</p>
-			<a href={nurture} class="link pointer br-pill ba bw1 pv2 ph4 bg-transparent b--golden-brown golden-brown hover-bg-white-50 ts1-white transition-bg db tc f5 f5-ns f7-m f5-l ttu tracked w-third w-third-ns w-30-m w-20-l">esplora</a>
+			<a href={nurture} class="link pointer br-pill ba bw1 pv2 ph4 bg-transparent b--golden-brown golden-brown hover-bg-white-50 ts1-white transition-bg tc f5 f5-ns f7-m f5-l ttu tracked ">esplora</a>
+			<!-- db w-third w-third-ns w-30-m w-20-l -->
 		</header>
 		<ul class="items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l">
 			{#each paginated as {cta, excerpt, image, length, starting_price, title}, i}
