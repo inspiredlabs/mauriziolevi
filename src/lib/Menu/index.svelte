@@ -48,11 +48,11 @@ import { goto } from '$app/navigation';
 				<!-- <use xlink:href="#whatsapp"></use> -->
 		  </svg>
 			<!-- <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">Call</span> -->
-		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f6 pv2-l fraunces fw4 pl0 ml0">+39&thinsp;02&thinsp;3493&thinsp;4528</span>
+		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces fw4 pl0 ml0">+39&thinsp;02&thinsp;3493&thinsp;4528</span>
 			<!-- debug: `fraunces fw4` style="letter-spacing:-0.0125em" -->
 		</a>
 
-		<a href="&#109;&#97;&#105;&#108;&#116;&#111;&colon;&#105;&#110;&#102;&#111;&commat;&#118;&#105;&#97;&#103;&#103;&#105;&#108;&#101;&#118;&#105;&period;&#99;&#111;&#109;" class="link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2 debug">
+		<a href="&#109;&#97;&#105;&#108;&#116;&#111;&colon;&#105;&#110;&#102;&#111;&commat;&#118;&#105;&#97;&#103;&#103;&#105;&#108;&#101;&#118;&#105;&period;&#99;&#111;&#109;" class="link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2 ">
 			<!--
 				white bg-golden-brown hover-bg-cocoa
 				ph2 pv2 pa3 w3 w3-ns w-40-m w3-l h3 -->
@@ -61,7 +61,8 @@ import { goto } from '$app/navigation';
 				<use xlink:href="#icon-open"></use>
 		  </svg>
 			<!-- <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">Call</span> -->
-		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f6 pv2-l fraunces fw4 nowrap">info@</span>
+		  <span class="dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap ">info&hellip;</span>
+			<!-- h-100 truncate items-center  -->
 		</a>
 
 
@@ -121,6 +122,10 @@ landscape-dn-l flex tc "><!-- bg-red -->
 
 
 <style>
+
+.link:hover span {
+	text-decoration:underline /* note: similar to: `CONTATTACI` */
+}
 
 /**** MENU ****/
 
