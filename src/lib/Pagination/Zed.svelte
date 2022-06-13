@@ -34,6 +34,8 @@
 
 
 
+
+	// learn: line clamping: youtube.com/watch?v=GxpUp0FecEw
 	let truncate = 37; /* note: try 29 w/ `Slovacchia` */
 
 	// learn: `map` transformation: freecodecamp.org/news/how-to-capitalize-words-in-javascript/
@@ -76,7 +78,8 @@
 	class="link">
 	<figure class="ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden"
 	style='background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url(https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp)'
-	title={title}>
+	title={image}>
+
 
 	<!-- debug: {JSON.stringify(image, null, 2)} || <code class="absolute top-0 z-max f8 bg-charcoal white">{image}</code> -->
 

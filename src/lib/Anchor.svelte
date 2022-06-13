@@ -41,9 +41,14 @@ background-image:
 		style="transform: scale(150%)"
 		class="portrait-vh-75 landscape-vh-50 portrait-vh-50-m portrait-vh-50-l w-100 pa0 ma0 s--accent sw2 transparent no-select">
 			<!-- vh-50 style="height: 33%;max-height: 33%" -->
+
+			<!-- note: `#hash-name` req. -->
+			<!-- learn: svelte.dev/tutorial/else-if-blocks -->
 			{#if !id}
-				<use xlink:href="#artide-e-antartide"></use>
-				{:else}
+				<use xlink:href="#compass"></use>
+			{:else if id == "globe" }
+				<use xlink:href="#globe"></use>
+			{:else}
 				<use xlink:href="#{id}"></use>
 			{/if}
 

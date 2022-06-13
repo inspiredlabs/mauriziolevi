@@ -17,6 +17,8 @@
 	<aside
 	class="flex items-center x-mandatory overflow-x-auto overflow-y-hidden touch-scroll w-100 ma0 pa0 backface-hidden charcoal system">
 		{#each items as { id, title, src, headingEn, headingIt, figCaption, slug }}
+
+			<!-- learn: id={"globe"} -->
 			<Anchor
 				id={id}
 				title={title}

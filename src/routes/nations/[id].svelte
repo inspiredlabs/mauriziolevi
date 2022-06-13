@@ -112,6 +112,12 @@
     </heading>
 
 
+<!-- debug: paginatedItems
+{#each nations.suggested.trips as {startingPrice}, i}
+  <div class="bg-raspberry">{startingPrice}</div>
+{/each}
+-->
+
     <Row bg="bg-linen">
       <!-- debug: bg-red import Row from '$lib/Row.svelte'; -->
       <ul class="items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l">
@@ -122,7 +128,7 @@
               excerpt={excerpt}
               cta={cta}
               image={image}
-              starting_price={startingPrice}
+              startingPrice={startingPrice}
             />
           {/each}
         </ul>

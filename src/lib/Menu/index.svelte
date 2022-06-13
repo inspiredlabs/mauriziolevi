@@ -19,8 +19,10 @@ import { goto } from '$app/navigation';
 						ph2-m measure-m
 						pa0-l measure-wide-l mr-auto ml-auto">
 	<h1 class="tl w-50 w-50-ns w-25-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0">
-		<img class="w4" src="https://viaggilevi.vercel.app/images/levi-logo.svg" alt="Levi" />
-		<span class="visually-hidden">I Vaggi di Maurizio Levi</span>
+		<a href="/" class="link pointer transition hover-saturate">
+			<img class="w4" src="https://viaggilevi.vercel.app/images/levi-logo.svg" alt="Levi" />
+			<span class="visually-hidden">I Vaggi di Maurizio Levi</span>
+		</a>
 	</h1>
 
 	<!-- ONLY: large & landscape -->
@@ -48,7 +50,9 @@ import { goto } from '$app/navigation';
 				<!-- <use xlink:href="#whatsapp"></use> -->
 		  </svg>
 			<!-- <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">Call</span> -->
-		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces fw4 pl0 ml0">+39&thinsp;02&thinsp;3493&thinsp;4528</span>
+		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces pl0 ml0">
+				<span class="o-80 fw4 bw1 bw2-l bb b--transparent hover-b--inherit hover-o-100">+39&thinsp;02&thinsp;3493&thinsp;4528</span>
+			</span>
 			<!-- debug: `fraunces fw4` style="letter-spacing:-0.0125em" -->
 		</a>
 
@@ -61,7 +65,9 @@ import { goto } from '$app/navigation';
 				<use xlink:href="#icon-open"></use>
 		  </svg>
 			<!-- <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">Call</span> -->
-		  <span class="dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap ">info&hellip;</span>
+			<span class="dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap">
+				<span class="o-80 fw4 bb b--transparent hover-b--inherit hover-o-100">info&hellip;</span>
+			</span>
 			<!-- h-100 truncate items-center  -->
 		</a>
 
@@ -123,9 +129,20 @@ landscape-dn-l flex tc "><!-- bg-red -->
 
 <style>
 
-.link:hover span {
-	text-decoration:underline /* note: similar to: `CONTATTACI` */
+.hover-b--inherit {
+	border: 2px solid inherit;
+	transition: all 0.4s ease 0s!important;
+	transform: translateZ(0);
 }
+
+.hover-b--inherit:hover {
+	border-color: inherit
+}
+
+/* note: similar to: `CONTATTACI` */
+/* .link:hover span {
+	text-decoration:underline
+} */
 
 /**** MENU ****/
 
@@ -171,19 +188,19 @@ orientation, is NOT integrated into Tachyonshower.
 
 @media all and (orientation:portrait) {
 	@media screen and (min-width:30em) {
-	  .portrait-bottom-0-ns {
+	  /* .portrait-bottom-0-ns {
 	    bottom: 0;
-	  }
+	  } */
 	}
 	@media screen and (min-width:30em) and (max-width:60em) {
-	  .portrait-bottom-0-m {
+	  /* .portrait-bottom-0-m {
 	    bottom: 0;
-	  }
+	  } */
 	}
 	@media screen and (min-width:60em) {
-	  .portrait-bottom-0-l {
+	  /* .portrait-bottom-0-l {
 	    bottom: 0;
-	  }
+	  } */
 	}
 }
 
@@ -220,5 +237,10 @@ orientation, is NOT integrated into Tachyonshower.
 	    display: flex;
 	  }
 	}
+}
+
+/* learn: css-tricks.com/basics-css-blend-modes/ */
+.hover-saturate:hover {
+	filter: saturate(1.8); /*  sepia(100%) */
 }
 </style>

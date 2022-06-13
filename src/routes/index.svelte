@@ -25,7 +25,7 @@
   import Row from '$lib/Row.svelte';
   import Hero from '$lib/Hero/index.svelte';
   import Mission from '$lib/Mission/index.svelte';
-  import Bespoke from '$lib/Bespoke/index.svelte';
+  import Ways from '$lib/Ways/index.svelte';
   import News from '$lib/News/index.svelte';
 
   // learn: usage: `<DepartingSoon items={tripSpotlightItems} />`
@@ -104,7 +104,8 @@ destinationsSlider.payoff
 destinationsSlider.overlayImage -->
 <Snapper />
 
-<Bespoke
+<!-- fix: imageOverlay={homepage.travelLines.imageOverlay} -->
+<Ways
   payoff={homepage.travelLines.payoff}
   title={homepage.travelLines.title}
   text={homepage.travelLines.text}

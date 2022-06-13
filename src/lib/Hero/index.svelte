@@ -6,6 +6,7 @@ export let location;
 // fix: unused
 export let overlayImage;
 
+
 // fix: this component reqs: `export let cta;`
 
 import Row from '$lib/Row.svelte';
@@ -16,7 +17,15 @@ function transformTitle(title) {
 	}
 </script>
 
-<figure class="ma0 flex flex-column vh-75 w-100 cover" style="background-position:center 40%; background-image: url('{image ? image : '' }')" title={location ? location : '' }>
+
+<!-- fix: let overlayImage = false; -->
+<!-- note: req. ternarary operator
+	background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, 0.5) 100%) -->
+<!-- note: cocoa:hsla(30,28.95%,14.9%, 1); -->
+
+<figure class="ma0 flex flex-column vh-75 w-100 cover"
+style="background-position: center 40%; background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, 0.5) 100%), url('{image ? image : '' }')"
+title={location ? location : '' }>
 <!-- base64'd: onlinejpgtools.com/convert-jpg-to-base64 -->
 
 <div class="vh-75 flex items-center white w-100 f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
