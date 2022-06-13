@@ -6,12 +6,12 @@
 
 
 
-	export let length;
-	export let title;
-	export let excerpt;
-	export let cta; // fix: req. `/${id}`
-	export let image;
-	export let starting_price;
+	// export let length;
+	// export let title;
+	// export let excerpt;
+	// export let cta; // fix: req. `/${id}`
+	// export let image;
+	// export let startingPrice;
 
 	export let items;
 
@@ -37,14 +37,14 @@
 			<!-- db w-third w-third-ns w-30-m w-20-l -->
 		</header>
 		<ul class="items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l">
-			{#each paginated as {cta, excerpt, image, length, starting_price, title}, i}
+			{#each paginated as {cta, excerpt, image, length, startingPrice, title}, i}
 					<Zed
 						length={length}
 						title={title}
 						excerpt={excerpt}
 						cta={cta}
 						image={image}
-						starting_price={starting_price}
+						startingPrice={startingPrice}
 					/>
 			{/each}
 		</ul>

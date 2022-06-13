@@ -29,12 +29,12 @@
   import News from '$lib/News/index.svelte';
 
   // learn: usage: `<DepartingSoon items={tripSpotlightItems} />`
-  let tripSpotlight = Object.values(homepage.travels_in_evidence.travels);
+  let tripSpotlight = Object.values(homepage.inEvidence.travels);
   let tripSpotlightItems = tripSpotlight;
 
 
   // learn: usage: `<TripSpotlight items={departingSoonItems} />`
-  let departingSoon = Object.values(homepage.departing_travels.travels);
+  let departingSoon = Object.values(homepage.departing.travels);
   let departingSoonItems = departingSoon;
 
   //let items = Object.keys(spotLight);
@@ -42,7 +42,7 @@
   //let items = Object.entries(spotLight); //usage: `{item[1].titolo_viaggio}`
 
   /*
-  let travels = Object.entries(homepage.departing_travels.travels).map(([key, value]) => value);
+  let travels = Object.entries(homepage.departing.travels).map(([key, value]) => value);
   console.log(travels) ;
   */
 
@@ -66,7 +66,7 @@
   payoff={homepage.hero.payoff}
   title={homepage.hero.title}
   location={homepage.hero.location}
-  overlay_image={homepage.hero.overlay_image}
+  overlayImage={homepage.hero.overlayImage}
 />
 
 <Mission
@@ -78,38 +78,44 @@
 
 <Row bg="bg-linen">
   <TripSpotlight
-    payoff={homepage.travels_in_evidence.payoff}
-    headline={homepage.travels_in_evidence.title}
-    serp={homepage.travels_in_evidence.text}
-    nurture={homepage.travels_in_evidence.cta}
+    payoff={homepage.inEvidence.payoff}
+    headline={homepage.inEvidence.title}
+    serp={homepage.inEvidence.text}
+    nurture={homepage.inEvidence.cta}
     items={tripSpotlightItems}
   />
 
   <DepartingSoon
-    payoff={homepage.departing_travels.payoff}
-    headline={homepage.departing_travels.title}
-    serp={homepage.departing_travels.text}
-    nurture={homepage.departing_travels.cta}
+    payoff={homepage.departing.payoff}
+    headline={homepage.departing.title}
+    serp={homepage.departing.text}
+    nurture={homepage.departing.cta}
     items={departingSoonItems}
   />
   <hr />
 </Row>
 
 <!-- fix: keyboard access not integrated onto `routes`/`<Menu />` -->
+<!-- note: turn `destinationsSlider.title` into `title.replace(&urlize)`. -->
+<!-- destinationsSlider.title
+destinationsSlider.image
+destinationsSlider.location
+destinationsSlider.payoff
+destinationsSlider.overlayImage -->
 <Snapper />
 
 <Bespoke
-  payoff={homepage.travel_lines.payoff}
-  title={homepage.travel_lines.title}
-  text={homepage.travel_lines.text}
-  lines={homepage.travel_lines.lines}
+  payoff={homepage.travelLines.payoff}
+  title={homepage.travelLines.title}
+  text={homepage.travelLines.text}
+  lines={homepage.travelLines.lines}
 />
 
 <News
   news={homepage.blog}
 />
 
-<!-- <code class="silver">{JSON.stringify(homepage.blog, null, 2)}</code> -->
+  <!-- <code class="silver">{JSON.stringify(homepage.blog, null, 2)}</code> -->
 
 <!-- <Row bg="bg-spa">
   <ul class="list pl0">

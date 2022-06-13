@@ -53,86 +53,83 @@
   payoff={trip.hero.payoff}
   title={trip.hero.title}
   location={trip.hero.location}
+  overlayImage={trip.hero.overlayImage}
 />
 
 <div class="bg-gold">
-
   <code>{trip.price.title}</code>
-  <code>{trip.price.starting_price}</code>
+  <code>{trip.price.startingPrice}</code>
   <code>{trip.price.cta}</code>
+</div>
 
+<div class="bg-meadow">
   <code>{trip.gallery.title}</code>
 
   {#each trip.gallery.images as {image, location}, i}
     <code>{image}</code>
     <code>{location}</code>
   {/each}
+</div>
 
-
+<div class="bg-caribbean">
   <code>{trip.departures.title}</code>
   <code>{trip.departures.length}</code>
-
-  <!-- fix: `{trip.departures['nr-pax']}` breaks convention with what we normally use. -->
-  <!-- learn: while `underscore_name` is acceptable, in future Python, Java/Kotlin & Javascript projects could benefit from OOTB Swift compatability -->
-  <!-- learn: EG: `camelCaseKeyNames` in this Swift5 tutorial: youtu.be/xVj5xEEwTEk?t=414 -->
-  <!-- note: we should maximise compatability now as it may hurt when we need to build the string in Apple's Swift: softwareengineering.stackexchange.com/questions/319698/is-it-bad-practice-to-use-hyphens-in-json-keys/422030#422030 -->
-  <!-- note: this is obviously better than having to use a decoder/encoder: javatpoint.com/swiftyjson -->
-
-  <code class="bg-red">{trip.departures['nr-pax']}</code>
-  <code class="bg-red">{trip.departures['nr-pax-max']}</code>
+  <code>{trip.departures.nrPax}</code>
+  <code>{trip.departures.nrPaxMax}</code>
   <code>{@html sanitiseText(`${trip.departures.text}`)}</code>
-
 
   <!-- learn: `trip.departures.dates.leave` and `return` is more acceptable -->
   <!-- learn: ...especially considering we have the overhead of including structured data -->
-<!-- fix: `return` is a reserved keyword in JS -->
-<!-- note: suggest replacing occurrences of `departure` with: `trip.departures.dates.inbound` and `return` with: `trip.departures.dates.outbound`, these are semantically accurate too. -->
-<p>
+  <!-- fix: `return` is a reserved keyword in JS -->
+  <!-- note: suggest replacing occurrences of `departure` with: `trip.departures.dates.inbound` and `return` with: `trip.departures.dates.outbound`, these are semantically accurate too. -->
   {#each trip.departures.dates as date, i}
-    <code>{date.departure} with: `dates.inbound`</code>
-    <code>{date.return}  with: `dates.outbound`</code>
+    <code>{date.departure}</code>
+    <code>{date.return}</code>
   {/each}
-</p>
+</div>
 
+<div class="bg-raspberry">
+{#each trip.tourLeaders.experts as { name, title, image, socialLinks, nextDeparture }, i }
+  <code>{name.replace(' ', ', ')}</code>
+  <code>{title}</code>
+  <code>{image}</code>
 
-<p>
-  {#each trip.tour_leaders.experts as { name, title, image, social_links }, i }
-    <code>{name.replace(' ', ', ')}</code>
-    <code>{title}</code>
-    <code>{image}</code>
-
-    <!-- fix: `social_links`, probably more robust as `platforms` email, twitter, instagram, linkedIn, whatsApp -->
-    {#each social_links as platform, i }
-      <code>{platform}</code>
-    {/each}
-
-    <!-- fix: key contains a problematic `space` character -->
-    <code class="bg-white">{trip.tour_leaders.experts[i]['next departure']}, note: this key contains a problematic `space` character: `trip.tour_leaders.experts[i][<span class="red">'next&nbsp;departure'</span>]`</code>
+  <!-- fix: `social_links`, probably more robust as `platforms` email, twitter, instagram, linkedIn, whatsApp -->
+  {#each socialLinks as platform, i }
+    <code>{platform}</code>
   {/each}
-</p>
 
-{#each trip.day_by_day as {day, title, description_title, description}, i }
+  <!-- fix: key contains a problematic `space` character -->
+  <code>{nextDeparture}</code>
+
+{/each}
+</div>
+
+<div class="bg-mexicano">
+{#each trip.dayByDay as {day, title, descriptionTitle, description, images, services }, i }
 
   <code>{day}</code>
 
   <code>{title}</code>
 
-  <code>{description_title}</code>
+  <code>{descriptionTitle}</code>
 
-  <code class="bg-green">{@html sanitiseText(`${description}`)}</code>
+  <code class="bg-black-10">{@html sanitiseText(`${description}`)}</code>
+
+  {#each images as image, i}
+    <code>{image}</code>
+  {/each}
+
+
+
+  {#each services as {title, cta, address, images}, i}
+    <code>{title}</code>
+    <code>{address}</code>
+    <code>{cta}</code>
+    <code>{images}</code>
+  {/each}
 
 {/each}
-
-
-
-
-
-  <!-- <code>{trip.departures.dates.departure ? trip.departures.dates.departure : '' }</code> -->
-  <!-- <code>{trip.departures.dates.return ? trip.departures.dates.return : '' }</code> -->
-
-
-
-  <!-- tour_leaders.experts -->
 </div>
 
 <style>
@@ -141,6 +138,3 @@
 		padding-bottom: 2.5rem;
 	}
 </style>
-
-<!-- <code>{trip.title}</code><br>
-<code>{trip.body}</code> -->

@@ -1,8 +1,9 @@
 import { c as create_ssr_component, a as add_attribute, e as escape, v as validate_component, b as each } from "../../chunks/index-38784e15.js";
-import { D as Defs, i as items } from "../../chunks/Defs-82001979.js";
-import { p as paginate, Z as Zed, L as LightPaginationNav, H as Hero } from "../../chunks/Zed-2b386329.js";
-import { R as Row } from "../../chunks/Row-a399cf4d.js";
-import { S as SwapMontage } from "../../chunks/SwapMontage-ad87b83b.js";
+import { D as Defs, i as items } from "../../chunks/Defs-ea13bdb6.js";
+import { p as paginate, Z as Zed, L as LightPaginationNav } from "../../chunks/Zed-07f61016.js";
+import { R as Row } from "../../chunks/Row-8144bead.js";
+import { H as Hero } from "../../chunks/index-58e99bcb.js";
+import { S as SwapMontage } from "../../chunks/SwapMontage-4b762ff3.js";
 var Anchor_svelte_svelte_type_style_lang = "";
 const css$3 = {
   code: ".ttt.svelte-w7xbkg:first-letter{text-transform:capitalize }.snap-start.svelte-w7xbkg{scroll-snap-align:start /* .snap-center `scroll-snap-align: center` */\n}.always-stop.svelte-w7xbkg{scroll-snap-stop:always}@media all and (orientation:portrait){.portrait-vh-75.svelte-w7xbkg{height:75vh}}@media all and (orientation:landscape){.landscape-vh-50.svelte-w7xbkg{height:50vh}}@media all and (orientation:portrait){@media screen and (min-width:30em) and (max-width:60em){.portrait-vh-50-m.svelte-w7xbkg{height:50vh}}@media screen and (min-width:60em){.portrait-vh-50-l.svelte-w7xbkg{height:50vh}}}",
@@ -38,8 +39,14 @@ const Anchor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	
 	
 	
+
+
+
+
+
+
 	<div class="${"w-100 snap-start always-stop svelte-w7xbkg"}">
-		<svg style="${"transform: scale(150%)"}" class="${"portrait-vh-75 landscape-vh-50 portrait-vh-50-m portrait-vh-50-l w-100 pa0 ma0 s--accent sw2 transparent no-select svelte-w7xbkg"}"><use xlink:href="${"#" + escape(id)}"></use></svg>
+		<svg style="${"transform: scale(150%)"}" class="${"portrait-vh-75 landscape-vh-50 portrait-vh-50-m portrait-vh-50-l w-100 pa0 ma0 s--accent sw2 transparent no-select svelte-w7xbkg"}">${!id ? `<use xlink:href="${"#artide-e-antartide"}"></use>` : `<use xlink:href="${"#" + escape(id)}"></use>`}</svg>
 	<div class="${"flex items-center w-100 f5 f4-ns f3-m f3-l measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pv0 mv0"}"><span class="${"dark-beige tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f6-l fw5 ttu tc mv0"}"${add_attribute("data-en", headingEn, 0)}><!-- HTML_TAG_START -->${headingIt}<!-- HTML_TAG_END --></span>
 			
 			<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid fraunces"}"><!-- HTML_TAG_START -->${title2}<!-- HTML_TAG_END --></h2>
@@ -62,7 +69,7 @@ const Anchor = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 var Snapper_svelte_svelte_type_style_lang = "";
 const css$2 = {
-  code: ".touch-scroll.svelte-sbg52c{-webkit-overflow-scrolling:touch}.x-mandatory.svelte-sbg52c{-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory}:root{--time:0.6s\n	}@media all and (orientation:landscape){@media screen and (min-width:30em) and (max-width:60em){.landscape-vh-100-m.svelte-sbg52c{height:100vh}}}@media all and (orientation:portrait){@media screen and (min-width:30em) and (max-width:60em){.portrait-vh-75-m.svelte-sbg52c{height:75vh}}}aside.svelte-sbg52c::-webkit-scrollbar{display:none}aside.svelte-sbg52c{-ms-overflow-style:none;scrollbar-width:none}",
+  code: ".touch-scroll.svelte-sbg52c{-webkit-overflow-scrolling:touch}.x-mandatory.svelte-sbg52c{-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory}:root{--time:0.6s\n	}@media all and (orientation:landscape){@media screen and (min-width:30em) and (max-width:60em){}}@media all and (orientation:portrait){@media screen and (min-width:30em) and (max-width:60em){}}aside.svelte-sbg52c::-webkit-scrollbar{display:none}aside.svelte-sbg52c{-ms-overflow-style:none;scrollbar-width:none}",
   map: null
 };
 const Snapper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -71,7 +78,9 @@ const Snapper = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 
-	<aside class="${"vh-100 vh-100-ns landscape-vh-100-m portrait-vh-75-m vh-75-m vh-75-l flex items-center x-mandatory overflow-x-auto overflow-y-hidden touch-scroll w-100 ma0 pa0 backface-hidden charcoal system svelte-sbg52c"}">${each(items, ({ id, title: title2, src, headingEn, headingIt, figCaption, slug }) => {
+
+
+	<aside class="${"flex items-center x-mandatory overflow-x-auto overflow-y-hidden touch-scroll w-100 ma0 pa0 backface-hidden charcoal system svelte-sbg52c"}">${each(items, ({ id, title: title2, src, headingEn, headingIt, figCaption, slug }) => {
     return `${validate_component(Anchor, "Anchor").$$render($$result, {
       id,
       title: title2,
@@ -92,12 +101,6 @@ const TripSpotlight = create_ssr_component(($$result, $$props, $$bindings, slots
   let { headline } = $$props;
   let { serp } = $$props;
   let { nurture } = $$props;
-  let { length } = $$props;
-  let { title: title2 } = $$props;
-  let { excerpt } = $$props;
-  let { cta } = $$props;
-  let { image } = $$props;
-  let { starting_price } = $$props;
   let { items: items2 } = $$props;
   let currentPage = 1;
   if ($$props.payoff === void 0 && $$bindings.payoff && payoff !== void 0)
@@ -108,18 +111,6 @@ const TripSpotlight = create_ssr_component(($$result, $$props, $$bindings, slots
     $$bindings.serp(serp);
   if ($$props.nurture === void 0 && $$bindings.nurture && nurture !== void 0)
     $$bindings.nurture(nurture);
-  if ($$props.length === void 0 && $$bindings.length && length !== void 0)
-    $$bindings.length(length);
-  if ($$props.title === void 0 && $$bindings.title && title2 !== void 0)
-    $$bindings.title(title2);
-  if ($$props.excerpt === void 0 && $$bindings.excerpt && excerpt !== void 0)
-    $$bindings.excerpt(excerpt);
-  if ($$props.cta === void 0 && $$bindings.cta && cta !== void 0)
-    $$bindings.cta(cta);
-  if ($$props.image === void 0 && $$bindings.image && image !== void 0)
-    $$bindings.image(image);
-  if ($$props.starting_price === void 0 && $$bindings.starting_price && starting_price !== void 0)
-    $$bindings.starting_price(starting_price);
   if ($$props.items === void 0 && $$bindings.items && items2 !== void 0)
     $$bindings.items(items2);
   paginated = paginate({ items: items2, pageSize: pageSize$1, currentPage });
@@ -129,15 +120,16 @@ const TripSpotlight = create_ssr_component(($$result, $$props, $$bindings, slots
 		<header><h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">${escape(payoff)}</small>
 				<span class="${"fraunces"}"><!-- HTML_TAG_START -->${headline.replace("<i", '<span class="fraunces-i"').replace("</i>", "</span>")}<!-- HTML_TAG_END --></span></h4>
 			<p class="${"mt0 fw4 measure lh-copy"}">${escape(serp)}</p>
-			<a${add_attribute("href", nurture, 0)} class="${"link pointer br-pill ba bw1 pv2 ph4 bg-transparent b--golden-brown golden-brown hover-bg-white-50 ts1-white transition-bg db tc f5 f5-ns f7-m f5-l ttu tracked w-third w-third-ns w-30-m w-20-l"}">esplora</a></header>
-		<ul class="${"items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l"}">${each(paginated, ({ cta: cta2, excerpt: excerpt2, image: image2, length: length2, starting_price: starting_price2, title: title3 }, i) => {
+			<a${add_attribute("href", nurture, 0)} class="${"link pointer br-pill ba bw1 pv2 ph4 bg-transparent b--golden-brown golden-brown hover-bg-white-50 ts1-white transition-bg tc f5 f5-ns f7-m f5-l ttu tracked "}">esplora</a>
+			</header>
+		<ul class="${"items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l"}">${each(paginated, ({ cta, excerpt, image, length, startingPrice, title: title2 }, i) => {
         return `${validate_component(Zed, "Zed").$$render($$result, {
-          length: length2,
-          title: title3,
-          excerpt: excerpt2,
-          cta: cta2,
-          image: image2,
-          starting_price: starting_price2
+          length,
+          title: title2,
+          excerpt,
+          cta,
+          image,
+          startingPrice
         }, {}, {})}`;
       })}</ul>
 
@@ -178,16 +170,17 @@ const DepartingSoon = create_ssr_component(($$result, $$props, $$bindings, slots
 		<header><h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">${escape(payoff)}</small>
 				<span class="${"fraunces"}"><!-- HTML_TAG_START -->${headline.replace("<i", '<span class="fraunces-i"').replace("</i>", "</span>")}<!-- HTML_TAG_END --></span></h4>
 			<p class="${"mt0 fw4 measure lh-copy"}">${escape(serp)}</p>
-			<a${add_attribute("href", nurture, 0)} class="${"link pointer br-pill ba bw1 pv2 ph4 bg-transparent b--golden-brown golden-brown hover-bg-white-50 ts1-white transition-bg db tc f5 f5-ns f7-m f5-l ttu tracked w-third w-third-ns w-30-m w-20-l"}">esplora</a></header>
+			<a${add_attribute("href", nurture, 0)} class="${"link pointer br-pill ba bw1 pv2 ph4 bg-transparent b--golden-brown golden-brown hover-bg-white-50 ts1-white transition-bg tc f5 f5-ns f7-m f5-l ttu tracked "}">esplora</a>
+			</header>
 
-		<ul class="${"items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l"}">${each(paginated, ({ cta, excerpt, image, length, starting_price, title: title2 }, i) => {
+		<ul class="${"items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l"}">${each(paginated, ({ cta, excerpt, image, length, startingPrice, title: title2 }, i) => {
         return `${validate_component(Zed, "Zed").$$render($$result, {
           length,
           title: title2,
           excerpt,
           cta,
           image,
-          starting_price
+          startingPrice
         }, {}, {})}`;
       })}</ul>
 
@@ -234,7 +227,7 @@ const Mission = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 			<div><!-- HTML_TAG_START -->${transformText(`${text}`)}<!-- HTML_TAG_END --></div></div>
 
 		
-		<blockquote class="${"golden-brown fraunces f2 f2-ns f1-m f1-l fw4 w-70 lh-solid tc ml-auto mr-auto"}"><!-- HTML_TAG_START -->${transformMotto(`${motto}`)}<!-- HTML_TAG_END --></blockquote></article>`;
+		<blockquote class="${"golden-brown fraunces f2 f2-ns f1-m f1-l w-70 lh-solid tc ml-auto mr-auto"}"><!-- HTML_TAG_START -->${transformMotto(`${motto}`)}<!-- HTML_TAG_END --></blockquote></article>`;
     }
   })}`;
 });
@@ -257,7 +250,13 @@ const Bespoke = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.lines === void 0 && $$bindings.lines && lines !== void 0)
     $$bindings.lines(lines);
   $$result.css.add(css$1);
-  return `
+  return `<div class="${"bg-cobalt white-60"}">Bespoke = <br>
+  IL TUO ESSERE<br>
+  Linee<br>
+  di viaggio<br>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br></div>
+
+
 
 ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
     default: () => {
@@ -265,11 +264,11 @@ ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
 	<code class="${"svelte-17y75eh"}">${escape(title2 ? title2 : "")}</code>
 	<code class="${"svelte-17y75eh"}">${escape(text ? text : "")}</code>
 
-	${each(lines, (itinerary) => {
-        return `<code class="${"svelte-17y75eh"}">${escape(itinerary.title)}</code>
-		<code class="${"svelte-17y75eh"}">${escape(itinerary.cta)}</code>
-		<code class="${"svelte-17y75eh"}">${escape(itinerary.image)}
-		</code>`;
+	
+	${each(lines, ({ title: title3, cta, image }, i) => {
+        return `<code class="${"svelte-17y75eh"}">${escape(title3)}</code>
+		<code class="${"svelte-17y75eh"}">${escape(cta)}</code>
+		<code class="${"svelte-17y75eh"}">${escape(image)}</code>`;
       })}`;
     }
   })}`;
@@ -284,7 +283,11 @@ const News = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   if ($$props.news === void 0 && $$bindings.news && news !== void 0)
     $$bindings.news(news);
   $$result.css.add(css);
-  return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-cocoa linen" }, {}, {
+  return `<div class="${"bg-cocoa linen"}">NEWS = <br>
+  Care Viaggiatrici<br>
+  cari Viaggiatori.<br></div>
+
+${validate_component(Row, "Row").$$render($$result, { bg: "bg-cocoa linen" }, {}, {
     default: () => {
       return `${each(news, ({ image, text, cta }) => {
         return `<code class="${"svelte-17y75eh"}">${escape(cta ? cta : "")}</code>
@@ -299,9 +302,9 @@ const prerender = true;
 let title = "Maurizio Levi";
 const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { homepage } = $$props;
-  let tripSpotlight = Object.values(homepage.travels_in_evidence.travels);
+  let tripSpotlight = Object.values(homepage.inEvidence.travels);
   let tripSpotlightItems = tripSpotlight;
-  let departingSoon = Object.values(homepage.departing_travels.travels);
+  let departingSoon = Object.values(homepage.departing.travels);
   let departingSoonItems = departingSoon;
   if ($$props.homepage === void 0 && $$bindings.homepage && homepage !== void 0)
     $$bindings.homepage(homepage);
@@ -313,7 +316,7 @@ ${validate_component(Hero, "Hero").$$render($$result, {
     payoff: homepage.hero.payoff,
     title: homepage.hero.title,
     location: homepage.hero.location,
-    overlay_image: homepage.hero.overlay_image
+    overlayImage: homepage.hero.overlayImage
   }, {}, {})}
 
 ${validate_component(Mission, "Mission").$$render($$result, {
@@ -326,18 +329,18 @@ ${validate_component(Mission, "Mission").$$render($$result, {
 ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
     default: () => {
       return `${validate_component(TripSpotlight, "TripSpotlight").$$render($$result, {
-        payoff: homepage.travels_in_evidence.payoff,
-        headline: homepage.travels_in_evidence.title,
-        serp: homepage.travels_in_evidence.text,
-        nurture: homepage.travels_in_evidence.cta,
+        payoff: homepage.inEvidence.payoff,
+        headline: homepage.inEvidence.title,
+        serp: homepage.inEvidence.text,
+        nurture: homepage.inEvidence.cta,
         items: tripSpotlightItems
       }, {}, {})}
 
   ${validate_component(DepartingSoon, "DepartingSoon").$$render($$result, {
-        payoff: homepage.departing_travels.payoff,
-        headline: homepage.departing_travels.title,
-        serp: homepage.departing_travels.text,
-        nurture: homepage.departing_travels.cta,
+        payoff: homepage.departing.payoff,
+        headline: homepage.departing.title,
+        serp: homepage.departing.text,
+        nurture: homepage.departing.cta,
         items: departingSoonItems
       }, {}, {})}
   <hr>`;
@@ -345,18 +348,20 @@ ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
   })}
 
 
+
+
 ${validate_component(Snapper, "Snapper").$$render($$result, {}, {}, {})}
 
 ${validate_component(Bespoke, "Bespoke").$$render($$result, {
-    payoff: homepage.travel_lines.payoff,
-    title: homepage.travel_lines.title,
-    text: homepage.travel_lines.text,
-    lines: homepage.travel_lines.lines
+    payoff: homepage.travelLines.payoff,
+    title: homepage.travelLines.title,
+    text: homepage.travelLines.text,
+    lines: homepage.travelLines.lines
   }, {}, {})}
 
 ${validate_component(News, "News").$$render($$result, { news: homepage.blog }, {}, {})}
 
-
+  
 
 
 

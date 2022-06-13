@@ -4,7 +4,7 @@ export let payoff;
 export let title;
 export let location;
 // fix: unused
-export let overlay_image;
+export let overlayImage;
 
 // fix: this component reqs: `export let cta;`
 
@@ -34,6 +34,6 @@ function transformTitle(title) {
 		<ScrollIndicator />
 		<span class="tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray mv0">{location ? location : '' }</span>
 
-		<code class="bg-charcoal top0 absolute z-1 f8 o-0">{!overlay_image ? '' : overlay_image }</code>
+		<code class="bg-charcoal top0 absolute z-1 f8 o-0">{!overlayImage ? '' : overlayImage }</code>
 	</figcaption>
 </figure>

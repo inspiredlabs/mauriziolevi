@@ -35,7 +35,7 @@
   /********* PAGINATION **********/
   import { paginate, LightPaginationNav } from 'svelte-paginate';
   import Zed from '$lib/Pagination/Zed.svelte';
-  let suggestedTrips = Object.values(destinations.suggested_trips.trips);
+  let suggestedTrips = Object.values(destinations.suggested.trips);
 
   // note: while `destinations.suggested_trips.trips` is acceptable, for parsing quickly: `destinations.suggested.trips` wouldn't hurt.
   // learn: medial capitals, or `camelCase` has a lowercase first letter. It's generally written as `iPhone`, `eBay and almost NEVER as `MacOs`.
@@ -55,41 +55,41 @@
   payoff={destinations.hero.payoff}
   title={destinations.hero.title}
   location={destinations.hero.location}
-  overlay_image={destinations.hero.overlay_image}
+  imageOverlay={destinations.hero.imageOverlay}
 />
 
 <Row bg="bg-linen">
   <!-- learn: this is a paginator: `DECIDI DI PARTIRE Proposte di viaggio` -->
   <aside class="highlight db black-70 f5 f4-ns f3-m f3-l pv5 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto">
     <heading class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">
-      <small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">{destinations.suggested_trips.payoff}</small>
+      <small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">{destinations.suggested.payoff}</small>
       <h4 class="fraunces">
-        {#if destinations.suggested_trips.title.includes('di viaggio')}
-          {destinations.suggested_trips.title.replace(/di viaggio/g, '')}<span class="fraunces-i">di&nbsp;viaggio</span>
+        {#if destinations.suggested.title.includes('di viaggio')}
+          {destinations.suggested.title.replace(/di viaggio/g, '')}<span class="fraunces-i">di&nbsp;viaggio</span>
         {:else}
-          {destinations.suggested_trips.title}
+          {destinations.suggested.title}
         {/if}
       </h4>
-      <p class="charcoal o-80 db f7 f7-ns f5-m f4-l fw4 mv0 pb2 lh-copy">{destinations.suggested_trips.text}</p>
+      <p class="charcoal o-80 db f7 f7-ns f5-m f4-l fw4 mv0 pb2 lh-copy">{destinations.suggested.text}</p>
     </heading>
 
 
     <Row bg="bg-linen">
       <ul class="items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l">
 
-        {#each paginatedItems as  {cta, excerpt, image, length, starting_price, title}, i}
+        {#each paginatedItems as  {cta, excerpt, image, length, startingPrice, title}, i}
           <Zed
             length={length}
             title={title}
             excerpt={excerpt}
             cta={cta}
             image={image}
-            starting_price={starting_price}
+            startingPrice={startingPrice}
           />
         {/each}
 
         </ul>
-        <nav>
+        <nav class="mw-100 overflow-x-scroll">
           <LightPaginationNav
             totalItems="{items.length}"
             pageSize="{pageSize}"

@@ -29,13 +29,24 @@ background-image:
 	<!-- x -->
 	<!-- Note: see: palettes.imfeld.dev/ -->
 	<!-- background-position: 0% 80%; // horizontal, vertical from: developer.mozilla.org/en-US/docs/Web/CSS/background-position-x-->
+
+
+
+
+
+
 	<div class="w-100 snap-start always-stop">
 		<!-- overflow-x-scroll smooth-scroll h-100 vh-100 -->
 		<svg
 		style="transform: scale(150%)"
 		class="portrait-vh-75 landscape-vh-50 portrait-vh-50-m portrait-vh-50-l w-100 pa0 ma0 s--accent sw2 transparent no-select">
 			<!-- vh-50 style="height: 33%;max-height: 33%" -->
-		<use xlink:href="#{id}"></use>
+			{#if !id}
+				<use xlink:href="#artide-e-antartide"></use>
+				{:else}
+				<use xlink:href="#{id}"></use>
+			{/if}
+
 	</svg>
 	<div class="flex items-center w-100 f5 f4-ns f3-m f3-l measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
 		<div class="flex flex-column w-100 pv0 mv0">

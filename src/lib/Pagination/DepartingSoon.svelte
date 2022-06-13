@@ -30,14 +30,14 @@
 		</header>
 
 		<ul class="items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l">
-			{#each paginated as {cta, excerpt, image, length, starting_price, title}, i}
+			{#each paginated as {cta, excerpt, image, length, startingPrice, title}, i}
 					<Zed
 						length={length}
 						title={title}
 						excerpt={excerpt}
 						cta={cta}
 						image={image}
-						starting_price={starting_price}
+						startingPrice={startingPrice}
 					/>
 			{/each}
 		</ul>

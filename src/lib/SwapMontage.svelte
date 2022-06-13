@@ -18,13 +18,14 @@ cf relative top-0 mr-auto ml-auto"
 style="height:100vh">
 <!-- fix: MAY req. `overflow-hidden` -->
 <!-- learn: serve images correctly -->
+<!-- note: pass `background-image` with an empty image string -->
 {#each images as image}
 	<img
 		alt={image}
     title={image}
 		src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 		class="shadow-5 mr-auto ml-auto"
-		style="background-image: url('')"
+		style="background-image: url('{image}')"
 	/>
 	<!-- w3 h4  -->
 	{/each}

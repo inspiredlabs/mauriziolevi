@@ -4,7 +4,7 @@
 	export let excerpt;
 	export let cta; // fix: req. `/${id}`
 	export let image;
-	export let starting_price;
+	export let startingPrice;
 
 
 	// learn: Helper functions: dev.to/rlc900/using-helper-functions-in-javascript-5eal
@@ -34,7 +34,7 @@
 
 
 
-	let truncate = 29; /* try `Slovacchia` */
+	let truncate = 37; /* note: try 29 w/ `Slovacchia` */
 
 	// learn: `map` transformation: freecodecamp.org/news/how-to-capitalize-words-in-javascript/
 	function transformTitle(title) {
@@ -111,7 +111,7 @@
 				{@html transformExcerpt(`${excerpt}`)}
 			</p>
 			<div class="flex items-center h4">
-				<h6 class="ts mv0 fraunces fw4 f1 f1-ns f2-m f1-l"><small>€&nbsp;</small><span class="pt0 fw5">{@html starting_price}</span><small class="pt0 f6 f5-l system">&nbsp;p.p</small>
+				<h6 class="ts mv0 fraunces fw4 f1 f1-ns f2-m f1-l"><small>€&nbsp;</small><span class="pt0 fw5">{@html startingPrice}</span><small class="pt0 f6 f5-l system">&nbsp;p.p</small>
 				</h6>
 			</div>
 		</figurecap>

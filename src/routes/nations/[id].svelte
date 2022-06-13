@@ -34,7 +34,7 @@
   import { paginate, LightPaginationNav } from 'svelte-paginate';
   import Zed from '$lib/Pagination/Zed.svelte';
 
-  let suggestedTrips = Object.values(nations.suggested_trips.trips);
+  let suggestedTrips = Object.values(nations.suggested.trips);
 
   let items = suggestedTrips;
   let currentPage = 1;
@@ -43,25 +43,16 @@
 </script>
 
 <!-- <pre class="bg-silver white">{JSON.stringify(nations, null, 2)}</pre> -->
-
-<!-- fix: image={nations.hero.image} -->
 <Hero
   image={nations.hero.image}
   payoff={nations.hero.payoff}
   title={nations.hero.title}
   location={nations.hero.location}
+  overlayImage={nations.hero.overlayImage}
 />
-
-<!-- <code class="bg-car">
-  {nations.hero.image}<br>
-  {nations.hero.payoff}<br>
-  {nations.hero.title}<br>
-  {nations.hero.location}<br>
-</code> -->
 
 <Row bg="bg-solitaire" id={`${nations.description.title.toLowerCase().replace(/&amp;/g, '').replace(/&nbsp;/g, '-').replace(/\s/g, '-').replace(/\,/g, '').replace(/(&gt;)(?:&nbsp;|&#8209;|<br>)+(\s?&lt;)/g,'$1$2').replace(/--/g, '-')}`}>
   <article class="ph2 ph0-ns ph0-m ph0-l">
-    <!-- learn: Slot nesting, do you need clear-fix/`cf`? -->
 
     <h4 class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">
       <small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">{nations.description.nation}</small>
@@ -109,29 +100,29 @@
   <!-- learn: this is a paginator: `DECIDI DI PARTIRE Proposte di viaggio` -->
   <aside class="highlight db black-70 f5 f4-ns f3-m f3-l pv5 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto">
     <heading class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">
-      <small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">{nations.suggested_trips.payoff}</small>
+      <small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">{nations.suggested.payoff}</small>
       <h4 class="fraunces">
-        {#if nations.suggested_trips.title.includes('di viaggio')}
-          {nations.suggested_trips.title.replace(/di viaggio/g, '')}<span class="fraunces-i">di&nbsp;viaggio</span>
+        {#if nations.suggested.title.includes('di viaggio')}
+          {nations.suggested.title.replace(/di viaggio/g, '')}<span class="fraunces-i">di&nbsp;viaggio</span>
         {:else}
-          {nations.suggested_trips.title}
+          {nations.suggested.title}
         {/if}
       </h4>
-      <p class="charcoal o-80 db f7 f7-ns f5-m f4-l fw4 mv0 pb2 lh-copy">{nations.suggested_trips.text}</p>
+      <p class="charcoal o-80 db f7 f7-ns f5-m f4-l fw4 mv0 pb2 lh-copy">{nations.suggested.text}</p>
     </heading>
 
 
     <Row bg="bg-linen">
       <!-- debug: bg-red import Row from '$lib/Row.svelte'; -->
       <ul class="items list pl0 w-100 flex justify-between flex-column flex-column-ns flex-row-m flex-row-l">
-          {#each paginatedItems as  {cta, excerpt, image, length, starting_price, title}, i}
+          {#each paginatedItems as  {cta, excerpt, image, length, startingPrice, title}, i}
             <Zed
               length={length}
               title={title}
               excerpt={excerpt}
               cta={cta}
               image={image}
-              starting_price={starting_price}
+              starting_price={startingPrice}
             />
           {/each}
         </ul>

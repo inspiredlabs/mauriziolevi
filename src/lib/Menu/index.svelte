@@ -129,10 +129,6 @@ landscape-dn-l flex tc "><!-- bg-red -->
 
 /**** MENU ****/
 
-.ttt {
-	text-transform: capitalize
-}
-
 .visually-hidden {
 	/* Contain text within 1px box */
 	height: 1px;
@@ -155,6 +151,11 @@ landscape-dn-l flex tc "><!-- bg-red -->
 	backdrop-filter: blur(8px);
 	/*  .backdrop-blur */
 }
+
+.ttt {
+	text-transform: capitalize
+}
+
 
 /*
 orientation, is NOT integrated into Tachyonshower.
