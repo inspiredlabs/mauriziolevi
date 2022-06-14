@@ -51,7 +51,8 @@ import { goto } from '$app/navigation';
 		  </svg>
 			<!-- <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">Call</span> -->
 		  <span class="dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces pl0 ml0">
-				<span class="o-80 fw4 bw1 bw2-l bb b--transparent hover-b--inherit hover-o-100">+39&thinsp;02&thinsp;3493&thinsp;4528</span>
+				<span class="fw4">+</span>
+				<span class="fw4 bb b--transparent hover-b--inherit">39&thinsp;02&thinsp;3493&thinsp;4528</span>
 			</span>
 			<!-- debug: `fraunces fw4` style="letter-spacing:-0.0125em" -->
 		</a>
@@ -66,7 +67,7 @@ import { goto } from '$app/navigation';
 		  </svg>
 			<!-- <span class="dn dn-ns dn-m flex-l w-100 h-100 nowrap items-center f5 pl2">Call</span> -->
 			<span class="dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap">
-				<span class="o-80 fw4 bb b--transparent hover-b--inherit hover-o-100">info&hellip;</span>
+				<span class="fw4 bb b--transparent hover-b--inherit">info&hellip;</span>
 			</span>
 			<!-- h-100 truncate items-center  -->
 		</a>
@@ -131,7 +132,7 @@ landscape-dn-l flex tc "><!-- bg-red -->
 
 .hover-b--inherit {
 	border: 2px solid inherit;
-	transition: all 0.4s ease 0s!important;
+	transition: border 0.4s ease 0s!important;
 	transform: translateZ(0);
 }
 

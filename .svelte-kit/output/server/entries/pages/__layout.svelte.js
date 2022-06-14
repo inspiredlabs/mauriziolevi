@@ -1,6 +1,6 @@
 import { c as create_ssr_component, v as validate_component, e as escape, a as add_attribute, b as each } from "../../chunks/index-38784e15.js";
 import { R as Row } from "../../chunks/Row-8144bead.js";
-import { i as items, D as Defs } from "../../chunks/Defs-ea13bdb6.js";
+import { i as items, D as Defs } from "../../chunks/Defs-87d248ff.js";
 var Fraunces_svelte_svelte_type_style_lang = "";
 const css$4 = {
   code: "i{font-style:normal}body{font-family:sans-serif;margin:0;padding:0}.fraunces-i{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable Italic', serif;font-variation-settings:'wght' 336,\n	  'opsz' 100,\n	  'SOFT' 48,\n	  'WONK' 1}.fraunces{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable', serif;font-variation-settings:'wght' 366,\n		'opsz' 96,\n		'SOFT' 16,\n		'WONK' 0}.fw1{font-weight:100;font-variation-settings:'wght' 100}.fw2{font-weight:200;font-variation-settings:'wght' 200}.fw3{font-weight:300;font-variation-settings:'wght' 300}.fw4{font-weight:400;font-variation-settings:'wght' 400}.fw5{font-weight:500;font-variation-settings:'wght' 500}.fw6{font-weight:600;font-variation-settings:'wght' 600}.fw7{font-weight:700;font-variation-settings:'wght' 700}.fw8{font-weight:800;font-variation-settings:'wght' 800}.fw9{font-weight:900;font-variation-settings:'wght' 900}.hover-fw1:hover{font-variation-settings:'wght' 100}.hover-fw2:hover{font-variation-settings:'wght' 200}.hover-fw3:hover{font-variation-settings:'wght' 300}.hover-fw4:hover{font-variation-settings:'wght' 400}.hover-fw5:hover{font-variation-settings:'wght' 500}.hover-fw6:hover{font-variation-settings:'wght' 600}.hover-fw7:hover{font-variation-settings:'wght' 700}.hover-fw8:hover{font-variation-settings:'wght' 800}.hover-fw9:hover{font-variation-settings:'wght' 900}",
@@ -156,36 +156,37 @@ ${validate_component(Terms, "Terms").$$render($$result, {}, {}, {})}`;
 });
 var index_svelte_svelte_type_style_lang = "";
 const css$1 = {
-  code: ".link.svelte-1oso3ct:hover span.svelte-1oso3ct{text-decoration:underline /* note: similar to: `CONTATTACI` */\n}.visually-hidden.svelte-1oso3ct.svelte-1oso3ct{height:1px;overflow:hidden;width:1px;position:absolute;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);white-space:nowrap}.levi-nav.svelte-1oso3ct.svelte-1oso3ct{--alpha:0.9;background-color:hsla(30,28.95%,14.9%,var(--alpha));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}.ttt.svelte-1oso3ct.svelte-1oso3ct{text-transform:capitalize\n}@media screen and (min-width:30em) and (max-width:60em){.w-45-m.svelte-1oso3ct.svelte-1oso3ct{width:45%}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.landscape-dn-m.svelte-1oso3ct.svelte-1oso3ct{display:none}.landscape-flex-m.svelte-1oso3ct.svelte-1oso3ct{display:flex}}@media screen and (min-width:60em){.landscape-top-0-l.svelte-1oso3ct.svelte-1oso3ct{top:0}.landscape-dn-l.svelte-1oso3ct.svelte-1oso3ct{display:none}.landscape-flex-l.svelte-1oso3ct.svelte-1oso3ct{display:flex}}}",
+  code: ".hover-b--inherit.svelte-15feash{border:2px solid inherit;transition:border 0.4s ease 0s!important;transform:translateZ(0)}.hover-b--inherit.svelte-15feash:hover{border-color:inherit\n}.visually-hidden.svelte-15feash{height:1px;overflow:hidden;width:1px;position:absolute;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);white-space:nowrap}.levi-nav.svelte-15feash{--alpha:0.9;background-color:hsla(30,28.95%,14.9%,var(--alpha));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}.ttt.svelte-15feash{text-transform:capitalize\n}@media screen and (min-width:30em) and (max-width:60em){.w-45-m.svelte-15feash{width:45%}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.landscape-dn-m.svelte-15feash{display:none}.landscape-flex-m.svelte-15feash{display:flex}}@media screen and (min-width:60em){.landscape-top-0-l.svelte-15feash{top:0}.landscape-dn-l.svelte-15feash{display:none}.landscape-flex-l.svelte-15feash{display:flex}}}.hover-saturate.svelte-15feash:hover{filter:saturate(1.8)}",
   map: null
 };
 const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$1);
-  return `<nav class="${"levi-nav fixed z-max w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system svelte-1oso3ct"}"><div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy pv0 pa2 measure ph4-ns measure-ns ph2-m measure-m pa0-l measure-wide-l mr-auto ml-auto"}"><h1 class="${"tl w-50 w-50-ns w-25-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0"}"><img class="${"w4"}" src="${"https://viaggilevi.vercel.app/images/levi-logo.svg"}" alt="${"Levi"}">
-		<span class="${"visually-hidden svelte-1oso3ct"}">I Vaggi di Maurizio Levi</span></h1>
+  return `<nav class="${"levi-nav fixed z-max w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system svelte-15feash"}"><div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy pv0 pa2 measure ph4-ns measure-ns ph2-m measure-m pa0-l measure-wide-l mr-auto ml-auto"}"><h1 class="${"tl w-50 w-50-ns w-25-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0"}"><a href="${"/"}" class="${"link pointer transition hover-saturate svelte-15feash"}"><img class="${"w4"}" src="${"https://viaggilevi.vercel.app/images/levi-logo.svg"}" alt="${"Levi"}">
+			<span class="${"visually-hidden svelte-15feash"}">I Vaggi di Maurizio Levi</span></a></h1>
 
 	
-	<div class="${"dn dn-ns w-45-m landscape-flex-m w-40-l justify-between landscape-flex-l svelte-1oso3ct"}">
+	<div class="${"dn dn-ns w-45-m landscape-flex-m w-40-l justify-between landscape-flex-l svelte-15feash"}">
 
-		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-1oso3ct"}">partenze</button>
+		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-15feash"}">partenze</button>
 
-		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-1oso3ct"}">viaggi</button>
+		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-15feash"}">viaggi</button>
 
-	  <button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 nowrap svelte-1oso3ct"}">chi siamo</button>
+	  <button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 nowrap svelte-15feash"}">chi siamo</button>
 
-		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-1oso3ct"}">News</button></div>
+		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-15feash"}">News</button></div>
 
   <div class="${"w-80 w-80-ns w-40-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around"}">
-		<a href="${"tel:+390234934528"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2 svelte-1oso3ct"}">
+		<a href="${"tel:+390234934528"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2"}">
 		  <svg viewBox="${"0 0 24 24"}" class="${"no-select h1 ph2 pv2 pr0-l pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-phone"}"></use></svg>
 			
-		  <span class="${"dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces fw4 pl0 ml0 svelte-1oso3ct"}">+39\u200902\u20093493\u20094528</span>
+		  <span class="${"dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces pl0 ml0"}"><span class="${"fw4"}">+</span>
+				<span class="${"fw4 bb b--transparent hover-b--inherit svelte-15feash"}">39\u200902\u20093493\u20094528</span></span>
 			</a>
 
-		<a href="${"mailto:info@viaggilevi.com"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2  svelte-1oso3ct"}">
+		<a href="${"mailto:info@viaggilevi.com"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2 "}">
 		  <svg viewBox="${"0 0 24 24"}" class="${"no-select h1 pa2 pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-open"}"></use></svg>
 			
-		  <span class="${"dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap  svelte-1oso3ct"}">info\u2026</span>
+			<span class="${"dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap"}"><span class="${"fw4 bb b--transparent hover-b--inherit svelte-15feash"}">info\u2026</span></span>
 			</a>
 
 
@@ -200,13 +201,13 @@ const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 
-<nav class="${"levi-nav fixed z-9999 w-100 bottom-0 landscape-dn-m landscape-dn-l flex tc  svelte-1oso3ct"}">
+<nav class="${"levi-nav fixed z-9999 w-100 bottom-0 landscape-dn-m landscape-dn-l flex tc  svelte-15feash"}">
 	<div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy pa2 measure pa4-ns measure-ns pa2-m measure-m pa0-l measure-wide-l mr-auto ml-auto"}">
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-1oso3ct"}"><span class="${"bb bw2 b--transparent"}">partenze</span></button>
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-1oso3ct"}"><span class="${"bb bw2 b--transparent"}">viaggi</span></button>
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-1oso3ct"}"><span class="${"bb bw2 b--transparent"}">chi siamo</span>
+		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">partenze</span></button>
+		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">viaggi</span></button>
+		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">chi siamo</span>
 			</button>
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-1oso3ct"}"><span class="${"bb bw2 b--transparent"}">news</span></button></div>
+		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">news</span></button></div>
 	</nav>`;
 });
 var app = "";

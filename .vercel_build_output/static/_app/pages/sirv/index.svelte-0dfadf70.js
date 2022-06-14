@@ -1,4 +1,4 @@
-import{S as z,i as D,s as F,e as s,t as l,k as H,c as n,a as G,h as a,d as c,m as I,g as q,G as r,n as C}from"../../chunks/index-28618d1b.js";function J(j){let p,v,b,e,d,u,m,f,h,R,_,k,B,g,w,x,S,y,E,P,A;return{c(){p=s("pre"),v=l('`"start": "sirv...",` is SPA mode, thus consumes `/#hash` differently'),b=H(),e=s("pre"),d=l(`
+import{S as z,i as D,s as F,e as s,t as l,k as H,c as n,a as G,h as a,d as c,m as I,g as q,G as r,n as C}from"../../chunks/index-5fa3773a.js";function J(j){let p,v,b,e,d,u,m,f,h,R,_,k,B,g,w,x,S,y,E,P,A;return{c(){p=s("pre"),v=l('`"start": "sirv...",` is SPA mode, thus consumes `/#hash` differently'),b=H(),e=s("pre"),d=l(`
 "scripts": { `),u=s("br"),m=l(`
   "start": "sirv public --single",`),f=s("br"),h=l(`
   "dev": "svelte-kit dev",`),R=s("br"),_=l(`

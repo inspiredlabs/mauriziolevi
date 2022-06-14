@@ -13,7 +13,8 @@
     //, upcomingDepartures; // viaggi partenza
 
 
-  import Snapper from '$lib/Snapper.svelte';
+  // fix: import Snapper from '$lib/Snapper.svelte'; usage: `<Snapper />`
+  import Discover from '$lib/Discover/index.svelte';
   //import PaginateBasic from '$lib/PaginateBasic.svelte'; //<PaginateBasic />
   let title = 'Maurizio Levi';
 
@@ -60,13 +61,13 @@
 
 <!-- <code class="silver">{JSON.stringify(homepage.mission, null, 2)}</code> -->
 
-<!-- fix: pass a boolean into `overlay_image`, w. `<Hero />` conditional -->
+<!-- fix: JSON boolean req. imageOverlay={homepage.hero.imageOverlay} -->
 <Hero
   image={homepage.hero.image}
   payoff={homepage.hero.payoff}
   title={homepage.hero.title}
   location={homepage.hero.location}
-  overlayImage={homepage.hero.overlayImage}
+  imageOverlay={true}
 />
 
 <Mission
@@ -102,7 +103,10 @@ destinationsSlider.image
 destinationsSlider.location
 destinationsSlider.payoff
 destinationsSlider.overlayImage -->
-<Snapper />
+
+<Discover imageOverlay={true} />
+
+
 
 <!-- fix: imageOverlay={homepage.travelLines.imageOverlay} -->
 <Ways
@@ -110,6 +114,7 @@ destinationsSlider.overlayImage -->
   title={homepage.travelLines.title}
   text={homepage.travelLines.text}
   lines={homepage.travelLines.lines}
+  imageOverlay={true}
 />
 
 <News

@@ -4,7 +4,7 @@ export let payoff;
 export let title;
 export let location;
 // fix: unused
-export let overlayImage;
+export let imageOverlay; // note: this instance is a top to bottom gradient
 
 
 // fix: this component reqs: `export let cta;`
@@ -22,9 +22,8 @@ function transformTitle(title) {
 <!-- note: req. ternarary operator
 	background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, 0.5) 100%) -->
 <!-- note: cocoa:hsla(30,28.95%,14.9%, 1); -->
-
 <figure class="ma0 flex flex-column vh-75 w-100 cover"
-style="background-position: center 40%; background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, 0.5) 100%), url('{image ? image : '' }')"
+style="background-position: center 40%; background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, {imageOverlay === true ? `0.555` : `0`}) 100%), url('{image ? image : '' }')"
 title={location ? location : '' }>
 <!-- base64'd: onlinejpgtools.com/convert-jpg-to-base64 -->
 
@@ -43,6 +42,5 @@ title={location ? location : '' }>
 		<ScrollIndicator />
 		<span class="tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray mv0">{location ? location : '' }</span>
 
-		<code class="bg-charcoal top0 absolute z-1 f8 o-0">{!overlayImage ? '' : overlayImage }</code>
 	</figcaption>
 </figure>
