@@ -16,9 +16,9 @@ onMount(() => {
 	loaded = true;
 });
 
-// learn: this is insufficent (as prerendered paged appear onload): youtube.com/watch?v=G3KFXKawy7Y
 
-import { browser } from '$app/env';
+
+//import { browser } from '$app/env';
 
 //$: if (browser && loaded) {	container.classList.remove("o-0") }
 
@@ -30,50 +30,15 @@ function rm() {
 
 </script>
 
-<div class="grid">
+<!-- learn: prerendered pages are insufficent: youtube.com/watch?v=G3KFXKawy7Y -->
+<!-- learn: wrapped in a `grid`, prevents firing paint 2x: practicaldev-herokuapp-com.freetls.fastly.net/evanwinter/page-transitions-with-svelte-kit-35o6 -->
+<div style="display: inline-grid">
   {#key url}
-    <div class="area"
+    <div style="width: 100vw"
 			in:fade={{ duration: duration, delay: duration }}
 			out:fade={{ duration: duration }}>
+			<!-- note: using `<slot />` can break the transition -->
 			<slot></slot>
   </div>
   {/key}
 </div>
-
-<style>
-  .grid {
-		display: inline-grid;
-  }
-  .area {
-    width: 100vw;
-  }
-</style>
-
-
-
-<!-- {#if browser && loaded}
-	{#key url}
-		<div
-			style="will-change:opacity"
-			in:fade={{  duration: 360, delay: 1000 }}
-			out:fade={{ duration: 180, delay: 0 }}>
-			<!-- note: using `<slot />` breaks the transition ->
-			<slot />
-		</div>
-	{/key}
-{:else}
-	<div class="o-0">
-		<slot />
-	</div>
-{/if} -->
-
-<!-- {#if !loaded && $page.url.pathname === url || !loaded && $page.url.pathname != url }
-INVISIBLE
-{:else}
-FADE IN
-{/if} -->
-
-<!-- { !loaded && $page.url.pathname === url || !loaded && $page.url.pathname != url ? `opacity:0` : '' } -->
-
-
-
