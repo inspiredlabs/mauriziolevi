@@ -34,7 +34,7 @@ export default [
 		id: 'americhe',
 		title: 'Americhe',
 		bg: 'bg-light-blue',
-		src: './images/Tineye.Torres.del.Paine.National.Park.jpeg',
+		src: './images/Tineye.Torres.del.Paine.National.Park.webp',
 		headingEn: "I want to travel",
 		headingIt: "voglio viaggiare",
 		figCaption: "Lago Grey, Torres del Paine National Park - Cile, South Westerly tip of South America",

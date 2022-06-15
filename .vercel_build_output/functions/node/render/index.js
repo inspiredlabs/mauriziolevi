@@ -5608,7 +5608,7 @@ var init_Defs_87d248ff = __esm({
         id: "americhe",
         title: "Americhe",
         bg: "bg-light-blue",
-        src: "./images/Tineye.Torres.del.Paine.National.Park.jpeg",
+        src: "./images/Tineye.Torres.del.Paine.National.Park.webp",
         headingEn: "I want to travel",
         headingIt: "voglio viaggiare",
         figCaption: "Lago Grey, Torres del Paine National Park - Cile, South Westerly tip of South America",
@@ -5710,7 +5710,7 @@ var init_layout_svelte = __esm({
 	<article id="${"viaggi-di-scoperta"}"><h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">i viaggi di maurizio levi</small>
 			<span class="${"fraunces"}">Viaggi </span><span class="${"fraunces-i"}">di\xA0scoperta</span></h4>
 
-		
+
 		<figure class="${"montage " + escape("") + " cf relative top-0 w-100 mr-auto ml-auto svelte-1it2a4k"}"><img class="${"absolute shadow-5 svelte-1it2a4k"}" src="${escape(imagesBaseUrl) + "MaurizioLevi_Anteprima.webp"}"${add_attribute("alt", alt$1, 0)}>
 			<img class="${"absolute shadow-5 svelte-1it2a4k"}" src="${escape(imagesBaseUrl) + "Levi-Maurizio-768x510.webp"}"${add_attribute("alt", alt$1, 0)}>
 			<img class="${"absolute shadow-5 svelte-1it2a4k"}" src="${escape(imagesBaseUrl) + "Maurizio_Levi.webp"}"${add_attribute("alt", alt$1, 0)}></figure>
@@ -5743,7 +5743,7 @@ var init_layout_svelte = __esm({
 
 	<p>Resta aggiornato e ricevi le nostre comunicazioni sui viaggi, sulle promozioni e sulle numerose novit\xE0.</p>
 
-	
+
 
 		</div>`;
         }
@@ -5772,7 +5772,7 @@ var init_layout_svelte = __esm({
 			<span class="${"fraunces"}">Seguici</span></h4>
 
 		<div class="${"flex justify-between w-100"}">
-			
+
 			<a class="${"link inherit pointer transition hover-golden-brown o-80 w-10 w3-ns h3-ns w-10-m w3-l h3-l"}" href="${"https://www.facebook.com/I-Viaggi-di-Maurizio-Levi-207083192654850/"}" title="${"Facebook"}"><svg viewBox="${"0 0 16 16"}" class="${"no-select"}"><use xlink:href="${"#fb"}"></use></svg></a>
 
 			<a class="${"link inherit pointer transition hover-golden-brown o-80 w-10 w3-ns h3-ns w-10-m w3-l h3-l"}" href="${"https://twitter.com/viaggilevi"}" title="${"Twitter"}"><svg viewBox="${"0 0 16 16"}" class="${"no-select"}"><use xlink:href="${"#twitter"}"></use></svg></a>
@@ -5801,7 +5801,7 @@ var init_layout_svelte = __esm({
 			<hr class="${"inherit b--golden-brown"}">
 			<ul class="${"list pl0 fraunces pr1 pr4-ns pr4-m pr1-l"}">${each(items, ({ title: title3, slug }) => {
             return `<li class="${"truncate"}"><a${add_attribute("href", `#${slug}`, 0)} class="${"link inherit o-80 fw4 hover-fw6 hover-o-100 hover-o-100 "}">${escape(title3)}</a>
-						
+
 					</li>`;
           })}</ul></div>
 
@@ -5878,14 +5878,14 @@ ${validate_component(Terms, "Terms").$$render($$result, {}, {}, {})}`;
 <div class="${"w-80 w-80-ns w-40-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around"}">
 	<a href="${"tel:+390234934528"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2"}">
 		<svg viewBox="${"0 0 24 24"}" class="${"no-select h1 ph2 pv2 pr0-l pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-phone"}"></use></svg>
-		
+
 		<span class="${"dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces pl0 ml0"}"><span class="${"fw4"}">+</span>
 			<span class="${"fw4 bb b--transparent hover-b--inherit svelte-1j0w8fz"}">39\u200902\u20093493\u20094528</span></span>
 		</a>
 
 	<a href="${"mailto:info@viaggilevi.com"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2 "}">
 		<svg viewBox="${"0 0 24 24"}" class="${"no-select h1 pa2 pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-open"}"></use></svg>
-		
+
 		<span class="${"dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap"}"><span class="${"fw4 bb b--transparent hover-b--inherit svelte-1j0w8fz"}">info\u2026</span></span>
 		</a>
 
@@ -5893,10 +5893,10 @@ ${validate_component(Terms, "Terms").$$render($$result, {}, {}, {})}`;
 
 	<aside class="${"pl2 w-60 w-60-ns w-100-m w-100-l"}"><div class="${"flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l hover-bg-near-white bg-charcoal pointer transition "}">
 		<input id="${"search"}" type="${"search"}" name="${"search"}" placeholder="${"Search"}" data-placeholder="${"Cerca"}" class="${"charcoal bg-transition input-reset br0 bb bw0 bg-transparent b--black f5 f5-ns f5-m f5-l tl items-center pv3 w-100 mr0 pr0 pl1 pl2-ns pl3-m pl3-l"}">
-		
-		
+
+
 		<button class="${"inherit bg-near-black hover-bg-golden-brown pointer br-pill bn aspect-ratio--object relative w2 w3-l pr0 pl0 pv2"}" style="${"border-radius: 0px 9999px 9999px 0px"}">
-		
+
 		<svg viewBox="${"0 0 24 24"}" class="${"no-select h2 relative left-0"}"><use xlink:href="${"#icon-search"}"></use></svg></button></div></aside></div></div></nav>
 
 
@@ -5905,7 +5905,7 @@ ${validate_component(Terms, "Terms").$$render($$result, {}, {}, {})}`;
 <div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy measure measure-ns measure-m measure-wide-l mr-auto ml-auto h3"}">
 
 
-						
+
 
 	${validate_component(Buttons, "Buttons").$$render($$result, {}, {}, {})}</div>
 </nav>`;
@@ -6283,13 +6283,13 @@ var init_Zed_b368652f = __esm({
       return `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}">
 <a${add_attribute("title", title3, 0)}${add_attribute("href", cta.replace("http://kel12.therebelwatchtower.net/levi-single", "../trip").replace("destinations", ""), 0)} class="${"link svelte-bafr6a"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden svelte-bafr6a"}" style="${"background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url('https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp')"}"${add_attribute("title", image, 0)}>
 
-	
+
 
 	<figurecap class="${"white ts1-dark-gray flex flex-column lh-solid"}">
-		
+
 		<time class="${"f5 f6-ns f7-m f6-l fw7 ttu tracked flex-auto"}"><!-- HTML_TAG_START -->${length}<!-- HTML_TAG_END --> giorni</time>
 
-			
+
 
 			<h5 class="${"ts fraunces mv0 ttc f1 f1-ns f2-m f1-l fw5 h5 flex-auto"}"><!-- HTML_TAG_START -->${transformTitle2(`${title3}`)}<!-- HTML_TAG_END --></h5>
 
@@ -6489,15 +6489,15 @@ ${validate_component(Row, "Row").$$render($$result, {
     <aside class="${"fl w-100 w-50-m w-50-l lh-copy measure "}">
 			<p class="${"pr4 fw5"}">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna\xA0aliqua.</p>
 
-      
+
       ${validate_component(SwapMontage, "SwapMontage").$$render($$result, { images: nations.description.images }, {}, {})}</aside>
 
 		<div class="${"fw4 fl w-100 w-50-m w-50-l lh-copy measure"}"><p class="${"pb3"}">${escape(nations.description.text)}</p></div>
 
 
-    
-    
-    
+
+
+
     <h5 class="${"f3 f2-ns f2-m f2-l fw5"}"><span class="${"fraunces"}">${nations.infos.title.includes("utili") ? `${escape(nations.infos.title.replace(/utili/g, ""))}<span class="${"fraunces-i"}">utili</span>` : `${escape(nations.infos.title)}`}
       </span></h5>
     ${each(nations.infos.info, (column) => {
@@ -6670,10 +6670,10 @@ ${validate_component(Hero, "Hero").$$render($$result, {
   <code class="${"svelte-17y75eh"}">${escape(trip.departures.nrPaxMax)}</code>
   <code class="${"svelte-17y75eh"}"><!-- HTML_TAG_START -->${sanitiseText(`${trip.departures.text}`)}<!-- HTML_TAG_END --></code>
 
-  
-  
-  
-  
+
+
+
+
   ${each(trip.departures.dates, (date, i2) => {
         return `<code class="${"svelte-17y75eh"}">${escape(date.departure)}</code>
     <code class="${"svelte-17y75eh"}">${escape(date.return)}</code>`;
@@ -6684,12 +6684,12 @@ ${validate_component(Hero, "Hero").$$render($$result, {
   <code class="${"svelte-17y75eh"}">${escape(title3)}</code>
   <code class="${"svelte-17y75eh"}">${escape(image)}</code>
 
-  
+
   ${each(socialLinks, (platform, i22) => {
           return `<code class="${"svelte-17y75eh"}">${escape(platform)}</code>`;
         })}
 
-  
+
   <code class="${"svelte-17y75eh"}">${escape(nextDeparture)}</code>`;
       })}</div>
 
