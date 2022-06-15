@@ -30,9 +30,9 @@ function rm() {
 
 </script>
 
-<div class="container">
+<div class="grid">
   {#key url}
-    <div class="cell"
+    <div class="area"
 			in:fade={{ duration: duration, delay: duration }}
 			out:fade={{ duration: duration }}>
 			<slot></slot>
@@ -70,12 +70,11 @@ FADE IN
 
 
 <style>
-  .container {
-    display: grid;
-    grid-template: 1fr 1fr;
+  .grid {
+		display: grid;
+		grid-template-areas: 'main';
   }
-  .cell {
-    grid-row: 1;
-    grid-column: 1;
+  .area {
+    grid-area: main
   }
 </style>

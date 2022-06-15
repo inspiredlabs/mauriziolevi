@@ -12,7 +12,11 @@ export const load = async ({ url, params }) => ({
 
 <script context="module">
 	//export const prerender = false;
-  export const load = async ({ url }) => ({ props: { url } });
+	export const load = async ({ url }) => ({
+	props: {
+		url: url.href
+	}
+});
 </script>
 
 <script>
