@@ -1,6 +1,7 @@
 <script context="module">
   //export const prerender = true;
-
+  // learn: data loading: youtube.com/watch?v=El4B-2fOHCA
+  // learn: fetch/promise advantages: youtube.com/watch?v=0jcEluMNy5A
   export const load = async ({ params, fetch }) => {
     let id = params.id;
 

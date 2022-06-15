@@ -11,6 +11,7 @@ export const load = async ({ url, params }) => ({
 </script> -->
 
 <script context="module">
+	// learn: youtube.com/watch?v=_atyihzXVuI
 	//export const prerender = false;
 	export const load = async ({ url }) => ({
 	props: {

@@ -13,7 +13,7 @@
 
 <script context="module">
   //export const prerender = true;
-
+  // learn: how to access params: youtube.com/watch?v=IEfcf-QNR-U
   // learn: `load(context)`: `context.params.id` from: youtu.be/Z8r8JTgJyj4?t=484x
   export async function load(url) {
     let slug = url.params.slug;
