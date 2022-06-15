@@ -11,11 +11,11 @@ let imagesBaseUrl = `${import.meta.env.VITE_BASEURL}/images/` // usage: `{images
 			<span class="fraunces">I nostri</span><span class="fraunces-i">&nbsp;partner</span>
 		</h4>
 		<div class="flex justify-between w-100">
-			<img class="h3 db no-select" src="{imagesBaseUrl}fai.png" alt={alt}>
-			<img class="h2 db no-select" src="{imagesBaseUrl}fto.png" alt={alt}>
-			<img class="h3 db no-select" src="{imagesBaseUrl}tri.png" alt={alt}>
-			<img class="h3 db no-select" src="{imagesBaseUrl}unesco.png" alt={alt}>
-			<img class="h3 db no-select" src="{imagesBaseUrl}asc.png" alt={alt}>
+			<img class="h3 db no-select" src="{imagesBaseUrl}fai.webp" alt={alt}>
+			<img class="h2 db no-select" src="{imagesBaseUrl}fto.webp" alt={alt}>
+			<img class="h3 db no-select" src="{imagesBaseUrl}tri.webp" alt={alt}>
+			<img class="h3 db no-select" src="{imagesBaseUrl}unesco.webp" alt={alt}>
+			<img class="h3 db no-select" src="{imagesBaseUrl}asc.webp" alt={alt}>
 		</div>
 		<!--
 			Golden Donor
