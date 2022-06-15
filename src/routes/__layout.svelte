@@ -1,25 +1,65 @@
-<script context="module">
+<!-- <script context="module">
 //export const prerender = true;
 // note: just `import '../app.css'`: stackoverflow.com/questions/63637662/add-js-css-files-to-svelte-component
+
+// learn: github.com/GiorgosK/svelte-page-transitions/blob/main/src/routes/__layout.svelte
+export const load = async ({ url, params }) => ({
+	props: {
+		key: page.params
+	},
+})
+</script> -->
+
+<script context="module">
+	//export const prerender = false;
+  export const load = async ({ url }) => ({ props: { url } });
 </script>
 
 <script>
+	import PageTransition from '$lib/Menu/PageTransition.svelte';
+	import { page } from '$app/stores';
+
 	import Fraunces from '$lib/Fraunces.svelte';
 	import Outro from '$lib/Outro/index.svelte';
 	import Defs from '$lib/Defs.svelte';
 	import Menu from '$lib/Menu/index.svelte';
 	import '../app.css';
+
+import { onMount } from 'svelte';
+let loaded = false;
+	onMount(() => {
+		loaded = true;
+		// learn: usage: class="{ !loaded ? `visually-hidden` : `` }"
+});
+
+export let url;
 </script>
 
-<Menu />
+<Menu/>
 
-<main class="system backface-hidden charcoal">
+<div class="z-max absolute top-0 bg-gold">
+<!-- <button
+class="h5"
+on:click={rm}>Click</button> -->
+
+	{$page.url.pathname}
+</div>
+
+<main
+class="system backface-hidden charcoal">
 	<!-- debug: y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 fixed -->
-	<slot />
-	<Outro />
-	<Defs />
+	<PageTransition url={url}>
+		<!-- note: using `<slot />` breaks the transition -->
+		<slot />
+		<Outro />
+	</PageTransition>
+
 </main>
+
+<Defs />
 <Fraunces />
+
+
 
 <style>
 /* @use '../app.css'; */
@@ -30,6 +70,22 @@
 /* fix: bump global styles issue: github.com/sveltejs/kit/issues/3127 */
 /* note: kit.svelte.dev/docs/assets */
 /* learn: preprocessor runs before compilation: windicss.org/integrations/svelte.html */
+
+:global(.visually-hidden) {
+	/* Contain text within 1px box */
+	height: 1px;
+	overflow: hidden;
+	width: 1px;
+	/* Keep the layout */
+	position: absolute;
+	/* Remove any visible trace (e.g. background color) */
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%); /* browsers in the future */
+	/* Prevent the screen reader to skip spaces between words */
+	white-space: nowrap;
+	/* snook: medium.com/web-dev-survey-from-kyoto/the-visually-hidden-technique-303f8e2bd409 */
+}
 
 /***** PAGINATE *****/
 :global(.light-pagination-nav span.option.prev > svg path) {
@@ -110,39 +166,39 @@
 
 
 
-	:global(svg) {
-			/* fill: inherit; */
-			stroke-width: inherit;
-			vector-effect: non-scaling-stroke;
-			/* seanrice.net/code/design-system/2018/10/12/styling-svg-icons-with-css.html */
-		}
-
-		:global(:root) {
-			--stroke-accent: white;
-		}
-
-	/* .sw1{ stroke-width: .125rem } */
-	:global(.sw2) { stroke-width: .25rem }
-	/* .sw3{ stroke-width: .5rem }
-	.sw4{ stroke-width: 1rem }
-	.sw5{ stroke-width: 2rem }
-
-	.s--black {
-		stroke: black;
-	}
-	.s--white {
-		stroke: white;
-	} */
-
-	:global(.s--accent) {
-		stroke: var(--stroke-accent);
+:global(svg) {
+		/* fill: inherit; */
+		stroke-width: inherit;
+		vector-effect: non-scaling-stroke;
+		/* seanrice.net/code/design-system/2018/10/12/styling-svg-icons-with-css.html */
 	}
 
-	:global(.transparent) {
-		color: transparent;
-		fill: transparent;
+	:global(:root) {
+		--stroke-accent: white;
 	}
-	</style>
+
+/* .sw1{ stroke-width: .125rem } */
+:global(.sw2) { stroke-width: .25rem }
+/* .sw3{ stroke-width: .5rem }
+.sw4{ stroke-width: 1rem }
+.sw5{ stroke-width: 2rem }
+
+.s--black {
+	stroke: black;
+}
+.s--white {
+	stroke: white;
+} */
+
+:global(.s--accent) {
+	stroke: var(--stroke-accent);
+}
+
+:global(.transparent) {
+	color: transparent;
+	fill: transparent;
+}
+</style>
 
 <!-- <style>
 	main {

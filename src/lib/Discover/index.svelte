@@ -67,8 +67,6 @@ let truncateMedium = 108; // ideal: tachyons.io/docs/typography/measure/
 			hsla(30,28.95%,14.9%, {imageOverlay === true ? `0.555` : `0`}) 0,
 			hsla(30,28.95%,14.9%, {imageOverlay === true ? `0.555` : `0`}) 100%),
 			url({JSON.stringify(src)})">
-
-			<!-- fix: scoped variables should not be global?! -->
 			<!-- Note: see: palettes.imfeld.dev/ -->
 			<!-- background-position: 0% 80%; // horizontal, vertical from: developer.mozilla.org/en-US/docs/Web/CSS/background-position-x-->
 
