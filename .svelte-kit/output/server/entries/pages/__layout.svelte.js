@@ -1,24 +1,34 @@
-import { c as create_ssr_component, v as validate_component, e as escape, a as add_attribute, b as each } from "../../chunks/index-38784e15.js";
+import { c as create_ssr_component, v as validate_component, e as escape, a as add_attribute, b as each, d as subscribe } from "../../chunks/index-38784e15.js";
+import { p as page } from "../../chunks/stores-3acf7a4b.js";
 import { R as Row } from "../../chunks/Row-8144bead.js";
 import { i as items, D as Defs } from "../../chunks/Defs-87d248ff.js";
+const PageTransition = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { url = "" } = $$props;
+  if ($$props.url === void 0 && $$bindings.url && url !== void 0)
+    $$bindings.url(url);
+  return `
+
+<div style="${"display: inline-grid"}"><div style="${"width: 100vw"}">
+			${slots.default ? slots.default({}) : ``}</div></div>`;
+});
 var Fraunces_svelte_svelte_type_style_lang = "";
-const css$4 = {
+const css$5 = {
   code: "i{font-style:normal}body{font-family:sans-serif;margin:0;padding:0}.fraunces-i{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable Italic', serif;font-variation-settings:'wght' 336,\n	  'opsz' 100,\n	  'SOFT' 48,\n	  'WONK' 1}.fraunces{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable', serif;font-variation-settings:'wght' 366,\n		'opsz' 96,\n		'SOFT' 16,\n		'WONK' 0}.fw1{font-weight:100;font-variation-settings:'wght' 100}.fw2{font-weight:200;font-variation-settings:'wght' 200}.fw3{font-weight:300;font-variation-settings:'wght' 300}.fw4{font-weight:400;font-variation-settings:'wght' 400}.fw5{font-weight:500;font-variation-settings:'wght' 500}.fw6{font-weight:600;font-variation-settings:'wght' 600}.fw7{font-weight:700;font-variation-settings:'wght' 700}.fw8{font-weight:800;font-variation-settings:'wght' 800}.fw9{font-weight:900;font-variation-settings:'wght' 900}.hover-fw1:hover{font-variation-settings:'wght' 100}.hover-fw2:hover{font-variation-settings:'wght' 200}.hover-fw3:hover{font-variation-settings:'wght' 300}.hover-fw4:hover{font-variation-settings:'wght' 400}.hover-fw5:hover{font-variation-settings:'wght' 500}.hover-fw6:hover{font-variation-settings:'wght' 600}.hover-fw7:hover{font-variation-settings:'wght' 700}.hover-fw8:hover{font-variation-settings:'wght' 800}.hover-fw9:hover{font-variation-settings:'wght' 900}",
   map: null
 };
 const Fraunces = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$4);
+  $$result.css.add(css$5);
   return ``;
 });
 var LeviMontage_svelte_svelte_type_style_lang = "";
-const css$3 = {
+const css$4 = {
   code: ":root{--montage-img:240px;--montage-duration:1.6s}.montage.svelte-1it2a4k.svelte-1it2a4k{width:var(--montage-img);height:var(--montage-img)}.montage.svelte-1it2a4k img.svelte-1it2a4k{will-change:transform;width:var(--montage-img);transition:all var(--montage-duration) cubic-bezier( 0.28, -0.07, 0.67, 2.00);transition-delay:calc(var(--montage-duration)/0.8);z-index:4;transform:scale(1.0) rotate(4.3deg)}.montage.svelte-1it2a4k img.svelte-1it2a4k:nth-child(1){z-index:3;left:calc(var(--montage-img)*0.53);transform:scale(0.7) rotate(3.5deg)}.montage.svelte-1it2a4k img.svelte-1it2a4k:nth-child(2){z-index:2;right:calc(var(--montage-img)*0.59);transform:scale(0.8) rotate(-5.5deg)}.montage.visible.svelte-1it2a4k img.svelte-1it2a4k{transform:scale(0.9) rotate(0deg)}.montage.visible.svelte-1it2a4k img.svelte-1it2a4k:nth-child(1){transform:scale(1.0) rotate(12deg);left:calc(var(--montage-img)*0.7)}.montage.visible.svelte-1it2a4k img.svelte-1it2a4k:nth-child(2){transform:scale(1.0) rotate(-9.5deg);right:calc(var(--montage-img)*0.7)}.diamond.svelte-1it2a4k.svelte-1it2a4k{background:currentColor;transform:rotate(45deg)}",
   map: null
 };
 let alt$1 = "Presentazione di Maurizio Levi";
 const LeviMontage = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const imagesBaseUrl = `${"https://viaggilevi.vercel.app"}/images/`;
-  $$result.css.add(css$3);
+  $$result.css.add(css$4);
   return `${validate_component(Row, "Row").$$render($$result, {
     bg: "bg-linen",
     id: `${alt$1.toLowerCase().replace(/&amp;/g, "").replace(/&nbsp;/g, "-").replace(/\s/g, "-").replace(/\,/g, "").replace(/(&gt;)(?:&nbsp;|&#8209;|<br>)+(\s?&lt;)/g, "$1$2").replace(/--/g, "-")}`
@@ -106,12 +116,12 @@ const Social = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 `;
 });
 var index_svelte_svelte_type_style_lang$1 = "";
-const css$2 = {
+const css$3 = {
   code: ".hover-b--inherit.svelte-1qtd8c1{transition:all 0.4s ease 0s!important}.hover-b--inherit.svelte-1qtd8c1:hover{border-color:inherit}",
   map: null
 };
 const Contact = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$2);
+  $$result.css.add(css$3);
   return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-solitaire" }, {}, {
     default: () => {
       return `
@@ -154,80 +164,126 @@ ${validate_component(Social, "Social").$$render($$result, {}, {}, {})}
 ${validate_component(Contact, "Contact").$$render($$result, {}, {}, {})}
 ${validate_component(Terms, "Terms").$$render($$result, {}, {}, {})}`;
 });
+var Buttons_svelte_svelte_type_style_lang = "";
+const css$2 = {
+  code: "a.svelte-1obr2tm{line-height:2rem}.active.svelte-1obr2tm{opacity:1 }@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.portrait-f5-m.svelte-1obr2tm{font-size:1rem}}@media screen and (min-width:60em){}}",
+  map: null
+};
+const Buttons = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let pageUrl;
+  let $page, $$unsubscribe_page;
+  $$unsubscribe_page = subscribe(page, (value) => $page = value);
+  const buttons = [
+    { name: "Partenze", route: "/partenze" },
+    { name: "Viaggi", route: "/viaggi" },
+    { name: "Chi Siamo", route: "/chi-siamo" },
+    { name: "News", route: "/news" }
+  ];
+  $$result.css.add(css$2);
+  pageUrl = $page.url.pathname;
+  $$unsubscribe_page();
+  return `${each(buttons, ({ route, name }, i) => {
+    return `<a${add_attribute("href", route, 0)} sveltekit:prefetch${add_attribute("style", `width: calc( 100% / ${buttons.length})`, 0)} class="${[
+      "h-100 nowrap link pv0 pv2 pv3-m pv3-l ttt bg-transparent f6 f4-ns f6-m portrait-f5-m f5-l pointer hover-o-100 transition white bn bb b--white ph0 o-80 svelte-1obr2tm",
+      (route !== "/" ? pageUrl.match(route) : route === pageUrl) ? "active" : ""
+    ].join(" ").trim()}">${escape(name)}</a>`;
+  })}`;
+});
 var index_svelte_svelte_type_style_lang = "";
 const css$1 = {
-  code: ".hover-b--inherit.svelte-15feash{border:2px solid inherit;transition:border 0.4s ease 0s!important;transform:translateZ(0)}.hover-b--inherit.svelte-15feash:hover{border-color:inherit\n}.visually-hidden.svelte-15feash{height:1px;overflow:hidden;width:1px;position:absolute;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);white-space:nowrap}.levi-nav.svelte-15feash{--alpha:0.9;background-color:hsla(30,28.95%,14.9%,var(--alpha));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}.ttt.svelte-15feash{text-transform:capitalize\n}@media screen and (min-width:30em) and (max-width:60em){.w-45-m.svelte-15feash{width:45%}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.landscape-dn-m.svelte-15feash{display:none}.landscape-flex-m.svelte-15feash{display:flex}}@media screen and (min-width:60em){.landscape-top-0-l.svelte-15feash{top:0}.landscape-dn-l.svelte-15feash{display:none}.landscape-flex-l.svelte-15feash{display:flex}}}.hover-saturate.svelte-15feash:hover{filter:saturate(1.8)}",
+  code: ".hover-b--inherit.svelte-1j0w8fz{border:2px solid inherit;transition:border 0.4s ease 0s!important;transform:translateZ(0)}.hover-b--inherit.svelte-1j0w8fz:hover{border-color:inherit\n}.levi-nav.svelte-1j0w8fz{--alpha:0.9;background-color:hsla(30,28.95%,14.9%,var(--alpha));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}@media screen and (min-width:30em) and (max-width:60em){.w-45-m.svelte-1j0w8fz{width:45%}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.landscape-dn-m.svelte-1j0w8fz{display:none}.landscape-flex-m.svelte-1j0w8fz{display:flex}}@media screen and (min-width:60em){.landscape-top-0-l.svelte-1j0w8fz{top:0}.landscape-dn-l.svelte-1j0w8fz{display:none}.landscape-flex-l.svelte-1j0w8fz{display:flex}}}.hover-saturate.svelte-1j0w8fz:hover{filter:saturate(1.8)}",
   map: null
 };
 const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $page, $$unsubscribe_page;
+  $$unsubscribe_page = subscribe(page, (value) => $page = value);
   $$result.css.add(css$1);
-  return `<nav class="${"levi-nav fixed z-max w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system svelte-15feash"}"><div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy pv0 pa2 measure ph4-ns measure-ns ph2-m measure-m pa0-l measure-wide-l mr-auto ml-auto"}"><h1 class="${"tl w-50 w-50-ns w-25-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0"}"><a href="${"/"}" class="${"link pointer transition hover-saturate svelte-15feash"}"><img class="${"w4"}" src="${"https://viaggilevi.vercel.app/images/levi-logo.svg"}" alt="${"Levi"}">
-			<span class="${"visually-hidden svelte-15feash"}">I Vaggi di Maurizio Levi</span></a></h1>
+  $$unsubscribe_page();
+  return `<nav class="${"levi-nav fixed z-max w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system svelte-1j0w8fz"}"><div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy pv0 pa2 measure ph4-ns measure-ns ph2-m measure-m pa0-l measure-wide-l mr-auto ml-auto"}"><h1 class="${"tl w-50 w-50-ns w-25-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0"}"><a href="${"/"}"${add_attribute("style", !$page.url.pathname.includes("") ? `filter: saturate(1.8)` : "", 0)} class="${"link pointer transition hover-saturate svelte-1j0w8fz"}"><img class="${"w4"}" src="${"https://viaggilevi.vercel.app/images/levi-logo.svg"}" alt="${"Levi"}">
+		<span class="${"visually-hidden"}">I Vaggi di Maurizio Levi</span></a></h1>
 
-	
-	<div class="${"dn dn-ns w-45-m landscape-flex-m w-40-l justify-between landscape-flex-l svelte-15feash"}">
 
-		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-15feash"}">partenze</button>
+<div class="${"dn dn-ns w-45-m landscape-flex-m w-40-l justify-between landscape-flex-l items-center svelte-1j0w8fz"}">
+	${validate_component(Buttons, "Buttons").$$render($$result, {}, {}, {})}</div>
 
-		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-15feash"}">viaggi</button>
+<div class="${"w-80 w-80-ns w-40-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around"}">
+	<a href="${"tel:+390234934528"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2"}">
+		<svg viewBox="${"0 0 24 24"}" class="${"no-select h1 ph2 pv2 pr0-l pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-phone"}"></use></svg>
+		
+		<span class="${"dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces pl0 ml0"}"><span class="${"fw4"}">+</span>
+			<span class="${"fw4 bb b--transparent hover-b--inherit svelte-1j0w8fz"}">39\u200902\u20093493\u20094528</span></span>
+		</a>
 
-	  <button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 nowrap svelte-15feash"}">chi siamo</button>
-
-		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-15feash"}">News</button></div>
-
-  <div class="${"w-80 w-80-ns w-40-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around"}">
-		<a href="${"tel:+390234934528"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2"}">
-		  <svg viewBox="${"0 0 24 24"}" class="${"no-select h1 ph2 pv2 pr0-l pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-phone"}"></use></svg>
-			
-		  <span class="${"dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces pl0 ml0"}"><span class="${"fw4"}">+</span>
-				<span class="${"fw4 bb b--transparent hover-b--inherit svelte-15feash"}">39\u200902\u20093493\u20094528</span></span>
-			</a>
-
-		<a href="${"mailto:info@viaggilevi.com"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2 "}">
-		  <svg viewBox="${"0 0 24 24"}" class="${"no-select h1 pa2 pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-open"}"></use></svg>
-			
-			<span class="${"dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap"}"><span class="${"fw4 bb b--transparent hover-b--inherit svelte-15feash"}">info\u2026</span></span>
-			</a>
+	<a href="${"mailto:info@viaggilevi.com"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2 "}">
+		<svg viewBox="${"0 0 24 24"}" class="${"no-select h1 pa2 pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-open"}"></use></svg>
+		
+		<span class="${"dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap"}"><span class="${"fw4 bb b--transparent hover-b--inherit svelte-1j0w8fz"}">info\u2026</span></span>
+		</a>
 
 
 
-    <aside class="${"pl2 w-60 w-60-ns w-100-m w-100-l"}"><div class="${"flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l hover-bg-near-white bg-charcoal pointer transition "}">
-  		<input id="${"search"}" type="${"search"}" name="${"search"}" placeholder="${"Search"}" data-placeholder="${"Cerca"}" class="${"charcoal bg-transition input-reset br0 bb bw0 bg-transparent b--black f5 f5-ns f5-m f5-l tl items-center pv3 w-100 mr0 pr0 pl1 pl2-ns pl3-m pl3-l"}">
-			
-			
-  		<button class="${"inherit bg-near-black hover-bg-golden-brown pointer br-pill bn aspect-ratio--object relative w2 w3-l pr0 pl0 pv2"}" style="${"border-radius: 0px 9999px 9999px 0px"}">
-			
-	    <svg viewBox="${"0 0 24 24"}" class="${"no-select h2 relative left-0"}"><use xlink:href="${"#icon-search"}"></use></svg></button></div></aside></div></div></nav>
+	<aside class="${"pl2 w-60 w-60-ns w-100-m w-100-l"}"><div class="${"flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l hover-bg-near-white bg-charcoal pointer transition "}">
+		<input id="${"search"}" type="${"search"}" name="${"search"}" placeholder="${"Search"}" data-placeholder="${"Cerca"}" class="${"charcoal bg-transition input-reset br0 bb bw0 bg-transparent b--black f5 f5-ns f5-m f5-l tl items-center pv3 w-100 mr0 pr0 pl1 pl2-ns pl3-m pl3-l"}">
+		
+		
+		<button class="${"inherit bg-near-black hover-bg-golden-brown pointer br-pill bn aspect-ratio--object relative w2 w3-l pr0 pl0 pv2"}" style="${"border-radius: 0px 9999px 9999px 0px"}">
+		
+		<svg viewBox="${"0 0 24 24"}" class="${"no-select h2 relative left-0"}"><use xlink:href="${"#icon-search"}"></use></svg></button></div></aside></div></div></nav>
 
 
 
-<nav class="${"levi-nav fixed z-9999 w-100 bottom-0 landscape-dn-m landscape-dn-l flex tc  svelte-15feash"}">
-	<div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy pa2 measure pa4-ns measure-ns pa2-m measure-m pa0-l measure-wide-l mr-auto ml-auto"}">
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">partenze</span></button>
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">viaggi</span></button>
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">chi siamo</span>
-			</button>
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">news</span></button></div>
-	</nav>`;
+<nav class="${"levi-nav fixed z-9999 w-100 bottom-0 landscape-dn-m landscape-dn-l flex tc  svelte-1j0w8fz"}">
+<div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy measure measure-ns measure-m measure-wide-l mr-auto ml-auto h3"}">
+
+
+						
+
+	${validate_component(Buttons, "Buttons").$$render($$result, {}, {}, {})}</div>
+</nav>`;
 });
 var app = "";
 var __layout_svelte_svelte_type_style_lang = "";
 const css = {
-  code: ".light-pagination-nav span.option.prev > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.next > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.prev{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:9999px 0px 0px 9999px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem;border-right:none}.light-pagination-nav span.option.next{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:0px 9999px 9999px 0px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem}.light-pagination-nav .option{border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none;text-shadow:0px 0.125rem 0.125rem white;color:hsla(30,28.95%,14.9%, 0.7)!important}.light-pagination-nav .option:hover{background-color:rgba(255,255,255, 0.8)!important;color:var(--cocoa)!important;border:solid 0.125rem var(--golden-brown);border-right:none}.light-pagination-nav .pagination-nav{background:transparent!important;box-shadow:none}.option.active{text-shadow:0px 0.125rem 0.125rem black;color:white!important;background-color:var(--golden-brown)!important;border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none}.option.active:hover{background-color:var(--golden-brown)!important;cursor:auto!important;color:white!important}svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
+  code: ".visually-hidden{height:1px;overflow:hidden;width:1px;position:absolute;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);white-space:nowrap}.light-pagination-nav span.option.prev > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.next > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.prev{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:9999px 0px 0px 9999px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem;border-right:none}.light-pagination-nav span.option.next{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:0px 9999px 9999px 0px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem}.light-pagination-nav .option{border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none;text-shadow:0px 0.125rem 0.125rem white;color:hsla(30,28.95%,14.9%, 0.7)!important}.light-pagination-nav .option:hover{background-color:rgba(255,255,255, 0.8)!important;color:var(--cocoa)!important;border:solid 0.125rem var(--golden-brown);border-right:none}.light-pagination-nav .pagination-nav{background:transparent!important;box-shadow:none}.option.active{text-shadow:0px 0.125rem 0.125rem black;color:white!important;background-color:var(--golden-brown)!important;border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none}.option.active:hover{background-color:var(--golden-brown)!important;cursor:auto!important;color:white!important}svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
   map: null
 };
+const load = async ({ url }) => ({ props: { url: url.href } });
 const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $page, $$unsubscribe_page;
+  $$unsubscribe_page = subscribe(page, (value) => $page = value);
+  let { url } = $$props;
+  if ($$props.url === void 0 && $$bindings.url && url !== void 0)
+    $$bindings.url(url);
   $$result.css.add(css);
-  return `${validate_component(Menu, "Menu").$$render($$result, {}, {}, {})}
+  $$unsubscribe_page();
+  return `
+
+
+
+
+
+${validate_component(Menu, "Menu").$$render($$result, {}, {}, {})}
+
+<div class="${"z-max absolute top-0 bg-gold"}">
+
+	${escape($page.url.pathname)}</div>
 
 <main class="${"system backface-hidden charcoal"}">
-	${slots.default ? slots.default({}) : ``}
-	${validate_component(Outro, "Outro").$$render($$result, {}, {}, {})}
-	${validate_component(Defs, "Defs").$$render($$result, {}, {}, {})}</main>
+	${validate_component(PageTransition, "PageTransition").$$render($$result, { url }, {}, {
+    default: () => {
+      return `
+		${slots.default ? slots.default({}) : ``}
+		${validate_component(Outro, "Outro").$$render($$result, {}, {}, {})}`;
+    }
+  })}</main>
+
+${validate_component(Defs, "Defs").$$render($$result, {}, {}, {})}
 ${validate_component(Fraunces, "Fraunces").$$render($$result, {}, {}, {})}
+
+
 
 
 
 `;
 });
-export { _layout as default };
+export { _layout as default, load };

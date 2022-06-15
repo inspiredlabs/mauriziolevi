@@ -5528,6 +5528,39 @@ var init_hooks_1c45ba0b = __esm({
   }
 });
 
+// .svelte-kit/output/server/chunks/stores-3acf7a4b.js
+var getStores, page;
+var init_stores_3acf7a4b = __esm({
+  ".svelte-kit/output/server/chunks/stores-3acf7a4b.js"() {
+    init_index_38784e15();
+    getStores = () => {
+      const stores = getContext("__svelte__");
+      return {
+        page: {
+          subscribe: stores.page.subscribe
+        },
+        navigating: {
+          subscribe: stores.navigating.subscribe
+        },
+        get preloading() {
+          console.error("stores.preloading is deprecated; use stores.navigating instead");
+          return {
+            subscribe: stores.navigating.subscribe
+          };
+        },
+        session: stores.session,
+        updated: stores.updated
+      };
+    };
+    page = {
+      subscribe(fn) {
+        const store = getStores().page;
+        return store.subscribe(fn);
+      }
+    };
+  }
+});
+
 // .svelte-kit/output/server/chunks/Row-8144bead.js
 var Row;
 var init_Row_8144bead = __esm({
@@ -5633,30 +5666,41 @@ var init_Defs_87d248ff = __esm({
 // .svelte-kit/output/server/entries/pages/__layout.svelte.js
 var layout_svelte_exports = {};
 __export(layout_svelte_exports, {
-  default: () => _layout
+  default: () => _layout,
+  load: () => load
 });
-var css$4, Fraunces, css$3, alt$1, LeviMontage, Subscribe, alt, Partners, Social, css$2, Contact, Terms, Outro, css$1, Menu, css, _layout;
+var PageTransition, css$5, Fraunces, css$4, alt$1, LeviMontage, Subscribe, alt, Partners, Social, css$3, Contact, Terms, Outro, css$2, Buttons, css$1, Menu, css, load, _layout;
 var init_layout_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/__layout.svelte.js"() {
     init_index_38784e15();
+    init_stores_3acf7a4b();
     init_Row_8144bead();
     init_Defs_87d248ff();
-    css$4 = {
+    PageTransition = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let { url = "" } = $$props;
+      if ($$props.url === void 0 && $$bindings.url && url !== void 0)
+        $$bindings.url(url);
+      return `
+
+<div style="${"display: inline-grid"}"><div style="${"width: 100vw"}">
+			${slots.default ? slots.default({}) : ``}</div></div>`;
+    });
+    css$5 = {
       code: "i{font-style:normal}body{font-family:sans-serif;margin:0;padding:0}.fraunces-i{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable Italic', serif;font-variation-settings:'wght' 336,\n	  'opsz' 100,\n	  'SOFT' 48,\n	  'WONK' 1}.fraunces{transition:font-variation-settings .4s ease 0s!important;font-family:'Fraunces Variable', serif;font-variation-settings:'wght' 366,\n		'opsz' 96,\n		'SOFT' 16,\n		'WONK' 0}.fw1{font-weight:100;font-variation-settings:'wght' 100}.fw2{font-weight:200;font-variation-settings:'wght' 200}.fw3{font-weight:300;font-variation-settings:'wght' 300}.fw4{font-weight:400;font-variation-settings:'wght' 400}.fw5{font-weight:500;font-variation-settings:'wght' 500}.fw6{font-weight:600;font-variation-settings:'wght' 600}.fw7{font-weight:700;font-variation-settings:'wght' 700}.fw8{font-weight:800;font-variation-settings:'wght' 800}.fw9{font-weight:900;font-variation-settings:'wght' 900}.hover-fw1:hover{font-variation-settings:'wght' 100}.hover-fw2:hover{font-variation-settings:'wght' 200}.hover-fw3:hover{font-variation-settings:'wght' 300}.hover-fw4:hover{font-variation-settings:'wght' 400}.hover-fw5:hover{font-variation-settings:'wght' 500}.hover-fw6:hover{font-variation-settings:'wght' 600}.hover-fw7:hover{font-variation-settings:'wght' 700}.hover-fw8:hover{font-variation-settings:'wght' 800}.hover-fw9:hover{font-variation-settings:'wght' 900}",
       map: null
     };
     Fraunces = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      $$result.css.add(css$4);
+      $$result.css.add(css$5);
       return ``;
     });
-    css$3 = {
+    css$4 = {
       code: ":root{--montage-img:240px;--montage-duration:1.6s}.montage.svelte-1it2a4k.svelte-1it2a4k{width:var(--montage-img);height:var(--montage-img)}.montage.svelte-1it2a4k img.svelte-1it2a4k{will-change:transform;width:var(--montage-img);transition:all var(--montage-duration) cubic-bezier( 0.28, -0.07, 0.67, 2.00);transition-delay:calc(var(--montage-duration)/0.8);z-index:4;transform:scale(1.0) rotate(4.3deg)}.montage.svelte-1it2a4k img.svelte-1it2a4k:nth-child(1){z-index:3;left:calc(var(--montage-img)*0.53);transform:scale(0.7) rotate(3.5deg)}.montage.svelte-1it2a4k img.svelte-1it2a4k:nth-child(2){z-index:2;right:calc(var(--montage-img)*0.59);transform:scale(0.8) rotate(-5.5deg)}.montage.visible.svelte-1it2a4k img.svelte-1it2a4k{transform:scale(0.9) rotate(0deg)}.montage.visible.svelte-1it2a4k img.svelte-1it2a4k:nth-child(1){transform:scale(1.0) rotate(12deg);left:calc(var(--montage-img)*0.7)}.montage.visible.svelte-1it2a4k img.svelte-1it2a4k:nth-child(2){transform:scale(1.0) rotate(-9.5deg);right:calc(var(--montage-img)*0.7)}.diamond.svelte-1it2a4k.svelte-1it2a4k{background:currentColor;transform:rotate(45deg)}",
       map: null
     };
     alt$1 = "Presentazione di Maurizio Levi";
     LeviMontage = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       const imagesBaseUrl = `${"https://viaggilevi.vercel.app"}/images/`;
-      $$result.css.add(css$3);
+      $$result.css.add(css$4);
       return `${validate_component(Row, "Row").$$render($$result, {
         bg: "bg-linen",
         id: `${alt$1.toLowerCase().replace(/&amp;/g, "").replace(/&nbsp;/g, "-").replace(/\s/g, "-").replace(/\,/g, "").replace(/(&gt;)(?:&nbsp;|&#8209;|<br>)+(\s?&lt;)/g, "$1$2").replace(/--/g, "-")}`
@@ -5743,12 +5787,12 @@ var init_layout_svelte = __esm({
 
 `;
     });
-    css$2 = {
+    css$3 = {
       code: ".hover-b--inherit.svelte-1qtd8c1{transition:all 0.4s ease 0s!important}.hover-b--inherit.svelte-1qtd8c1:hover{border-color:inherit}",
       map: null
     };
     Contact = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      $$result.css.add(css$2);
+      $$result.css.add(css$3);
       return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-solitaire" }, {}, {
         default: () => {
           return `
@@ -5791,74 +5835,119 @@ ${validate_component(Social, "Social").$$render($$result, {}, {}, {})}
 ${validate_component(Contact, "Contact").$$render($$result, {}, {}, {})}
 ${validate_component(Terms, "Terms").$$render($$result, {}, {}, {})}`;
     });
+    css$2 = {
+      code: "a.svelte-1obr2tm{line-height:2rem}.active.svelte-1obr2tm{opacity:1 }@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.portrait-f5-m.svelte-1obr2tm{font-size:1rem}}@media screen and (min-width:60em){}}",
+      map: null
+    };
+    Buttons = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let pageUrl;
+      let $page, $$unsubscribe_page;
+      $$unsubscribe_page = subscribe(page, (value) => $page = value);
+      const buttons = [
+        { name: "Partenze", route: "/partenze" },
+        { name: "Viaggi", route: "/viaggi" },
+        { name: "Chi Siamo", route: "/chi-siamo" },
+        { name: "News", route: "/news" }
+      ];
+      $$result.css.add(css$2);
+      pageUrl = $page.url.pathname;
+      $$unsubscribe_page();
+      return `${each(buttons, ({ route, name }, i2) => {
+        return `<a${add_attribute("href", route, 0)} sveltekit:prefetch${add_attribute("style", `width: calc( 100% / ${buttons.length})`, 0)} class="${[
+          "h-100 nowrap link pv0 pv2 pv3-m pv3-l ttt bg-transparent f6 f4-ns f6-m portrait-f5-m f5-l pointer hover-o-100 transition white bn bb b--white ph0 o-80 svelte-1obr2tm",
+          (route !== "/" ? pageUrl.match(route) : route === pageUrl) ? "active" : ""
+        ].join(" ").trim()}">${escape(name)}</a>`;
+      })}`;
+    });
     css$1 = {
-      code: ".hover-b--inherit.svelte-15feash{border:2px solid inherit;transition:border 0.4s ease 0s!important;transform:translateZ(0)}.hover-b--inherit.svelte-15feash:hover{border-color:inherit\n}.visually-hidden.svelte-15feash{height:1px;overflow:hidden;width:1px;position:absolute;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);white-space:nowrap}.levi-nav.svelte-15feash{--alpha:0.9;background-color:hsla(30,28.95%,14.9%,var(--alpha));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}.ttt.svelte-15feash{text-transform:capitalize\n}@media screen and (min-width:30em) and (max-width:60em){.w-45-m.svelte-15feash{width:45%}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.landscape-dn-m.svelte-15feash{display:none}.landscape-flex-m.svelte-15feash{display:flex}}@media screen and (min-width:60em){.landscape-top-0-l.svelte-15feash{top:0}.landscape-dn-l.svelte-15feash{display:none}.landscape-flex-l.svelte-15feash{display:flex}}}.hover-saturate.svelte-15feash:hover{filter:saturate(1.8)}",
+      code: ".hover-b--inherit.svelte-1j0w8fz{border:2px solid inherit;transition:border 0.4s ease 0s!important;transform:translateZ(0)}.hover-b--inherit.svelte-1j0w8fz:hover{border-color:inherit\n}.levi-nav.svelte-1j0w8fz{--alpha:0.9;background-color:hsla(30,28.95%,14.9%,var(--alpha));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}@media screen and (min-width:30em) and (max-width:60em){.w-45-m.svelte-1j0w8fz{width:45%}}@media all and (orientation:portrait){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){}@media screen and (min-width:60em){}}@media all and (orientation:landscape){@media screen and (min-width:30em){}@media screen and (min-width:30em) and (max-width:60em){.landscape-dn-m.svelte-1j0w8fz{display:none}.landscape-flex-m.svelte-1j0w8fz{display:flex}}@media screen and (min-width:60em){.landscape-top-0-l.svelte-1j0w8fz{top:0}.landscape-dn-l.svelte-1j0w8fz{display:none}.landscape-flex-l.svelte-1j0w8fz{display:flex}}}.hover-saturate.svelte-1j0w8fz:hover{filter:saturate(1.8)}",
       map: null
     };
     Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let $page, $$unsubscribe_page;
+      $$unsubscribe_page = subscribe(page, (value) => $page = value);
       $$result.css.add(css$1);
-      return `<nav class="${"levi-nav fixed z-max w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system svelte-15feash"}"><div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy pv0 pa2 measure ph4-ns measure-ns ph2-m measure-m pa0-l measure-wide-l mr-auto ml-auto"}"><h1 class="${"tl w-50 w-50-ns w-25-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0"}"><a href="${"/"}" class="${"link pointer transition hover-saturate svelte-15feash"}"><img class="${"w4"}" src="${"https://viaggilevi.vercel.app/images/levi-logo.svg"}" alt="${"Levi"}">
-			<span class="${"visually-hidden svelte-15feash"}">I Vaggi di Maurizio Levi</span></a></h1>
+      $$unsubscribe_page();
+      return `<nav class="${"levi-nav fixed z-max w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system svelte-1j0w8fz"}"><div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy pv0 pa2 measure ph4-ns measure-ns ph2-m measure-m pa0-l measure-wide-l mr-auto ml-auto"}"><h1 class="${"tl w-50 w-50-ns w-25-m w-20-l pv0 h3 f5 f4-ns fs-m f5-l mv0"}"><a href="${"/"}"${add_attribute("style", !$page.url.pathname.includes("") ? `filter: saturate(1.8)` : "", 0)} class="${"link pointer transition hover-saturate svelte-1j0w8fz"}"><img class="${"w4"}" src="${"https://viaggilevi.vercel.app/images/levi-logo.svg"}" alt="${"Levi"}">
+		<span class="${"visually-hidden"}">I Vaggi di Maurizio Levi</span></a></h1>
 
-	
-	<div class="${"dn dn-ns w-45-m landscape-flex-m w-40-l justify-between landscape-flex-l svelte-15feash"}">
 
-		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-15feash"}">partenze</button>
+<div class="${"dn dn-ns w-45-m landscape-flex-m w-40-l justify-between landscape-flex-l items-center svelte-1j0w8fz"}">
+	${validate_component(Buttons, "Buttons").$$render($$result, {}, {}, {})}</div>
 
-		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-15feash"}">viaggi</button>
+<div class="${"w-80 w-80-ns w-40-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around"}">
+	<a href="${"tel:+390234934528"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2"}">
+		<svg viewBox="${"0 0 24 24"}" class="${"no-select h1 ph2 pv2 pr0-l pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-phone"}"></use></svg>
+		
+		<span class="${"dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces pl0 ml0"}"><span class="${"fw4"}">+</span>
+			<span class="${"fw4 bb b--transparent hover-b--inherit svelte-1j0w8fz"}">39\u200902\u20093493\u20094528</span></span>
+		</a>
 
-	  <button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 nowrap svelte-15feash"}">chi siamo</button>
-
-		<button class="${"w-25 pv0 pv2 pv2-l ttt bg-transparent f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white ph0 svelte-15feash"}">News</button></div>
-
-  <div class="${"w-80 w-80-ns w-40-m w-50-l f5 f4-ns fs-m f5-l flex items-center justify-around"}">
-		<a href="${"tel:+390234934528"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2"}">
-		  <svg viewBox="${"0 0 24 24"}" class="${"no-select h1 ph2 pv2 pr0-l pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-phone"}"></use></svg>
-			
-		  <span class="${"dn dn-ns dn-m flex-l w-100 h-100 truncate items-center f7 pv2-l fraunces pl0 ml0"}"><span class="${"fw4"}">+</span>
-				<span class="${"fw4 bb b--transparent hover-b--inherit svelte-15feash"}">39\u200902\u20093493\u20094528</span></span>
-			</a>
-
-		<a href="${"mailto:info@viaggilevi.com"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2 "}">
-		  <svg viewBox="${"0 0 24 24"}" class="${"no-select h1 pa2 pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-open"}"></use></svg>
-			
-			<span class="${"dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap"}"><span class="${"fw4 bb b--transparent hover-b--inherit svelte-15feash"}">info\u2026</span></span>
-			</a>
+	<a href="${"mailto:info@viaggilevi.com"}" class="${"link flex items-center justify-center-l justify-bettween-m br-pill charcoal bg-solitaire hover-bg-linen pointer transition mr2 "}">
+		<svg viewBox="${"0 0 24 24"}" class="${"no-select h1 pa2 pa2-ns h2-m pa2-m h2-l"}"><use xlink:href="${"#icon-open"}"></use></svg>
+		
+		<span class="${"dn dn-ns dn-m flex-l w-100 f7 pv2-l fraunces fw4 nowrap"}"><span class="${"fw4 bb b--transparent hover-b--inherit svelte-1j0w8fz"}">info\u2026</span></span>
+		</a>
 
 
 
-    <aside class="${"pl2 w-60 w-60-ns w-100-m w-100-l"}"><div class="${"flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l hover-bg-near-white bg-charcoal pointer transition "}">
-  		<input id="${"search"}" type="${"search"}" name="${"search"}" placeholder="${"Search"}" data-placeholder="${"Cerca"}" class="${"charcoal bg-transition input-reset br0 bb bw0 bg-transparent b--black f5 f5-ns f5-m f5-l tl items-center pv3 w-100 mr0 pr0 pl1 pl2-ns pl3-m pl3-l"}">
-			
-			
-  		<button class="${"inherit bg-near-black hover-bg-golden-brown pointer br-pill bn aspect-ratio--object relative w2 w3-l pr0 pl0 pv2"}" style="${"border-radius: 0px 9999px 9999px 0px"}">
-			
-	    <svg viewBox="${"0 0 24 24"}" class="${"no-select h2 relative left-0"}"><use xlink:href="${"#icon-search"}"></use></svg></button></div></aside></div></div></nav>
+	<aside class="${"pl2 w-60 w-60-ns w-100-m w-100-l"}"><div class="${"flex items-center br-pill bg-meadow f6 f4-ns f6-m f5-l hover-bg-near-white bg-charcoal pointer transition "}">
+		<input id="${"search"}" type="${"search"}" name="${"search"}" placeholder="${"Search"}" data-placeholder="${"Cerca"}" class="${"charcoal bg-transition input-reset br0 bb bw0 bg-transparent b--black f5 f5-ns f5-m f5-l tl items-center pv3 w-100 mr0 pr0 pl1 pl2-ns pl3-m pl3-l"}">
+		
+		
+		<button class="${"inherit bg-near-black hover-bg-golden-brown pointer br-pill bn aspect-ratio--object relative w2 w3-l pr0 pl0 pv2"}" style="${"border-radius: 0px 9999px 9999px 0px"}">
+		
+		<svg viewBox="${"0 0 24 24"}" class="${"no-select h2 relative left-0"}"><use xlink:href="${"#icon-search"}"></use></svg></button></div></aside></div></div></nav>
 
 
 
-<nav class="${"levi-nav fixed z-9999 w-100 bottom-0 landscape-dn-m landscape-dn-l flex tc  svelte-15feash"}">
-	<div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy pa2 measure pa4-ns measure-ns pa2-m measure-m pa0-l measure-wide-l mr-auto ml-auto"}">
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">partenze</span></button>
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">viaggi</span></button>
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">chi siamo</span>
-			</button>
-		<button class="${"w-25 ttt bg-transparent h3 f6 f4-ns f6-m f5-l pointer o-80 hover-o-100 transition white bn bb b--white svelte-15feash"}"><span class="${"bb bw2 b--transparent"}">news</span></button></div>
-	</nav>`;
+<nav class="${"levi-nav fixed z-9999 w-100 bottom-0 landscape-dn-m landscape-dn-l flex tc  svelte-1j0w8fz"}">
+<div class="${"w-100 flex justify-between f5 f4-ns f3-m f3-l lh-copy measure measure-ns measure-m measure-wide-l mr-auto ml-auto h3"}">
+
+
+						
+
+	${validate_component(Buttons, "Buttons").$$render($$result, {}, {}, {})}</div>
+</nav>`;
     });
     css = {
-      code: ".light-pagination-nav span.option.prev > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.next > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.prev{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:9999px 0px 0px 9999px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem;border-right:none}.light-pagination-nav span.option.next{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:0px 9999px 9999px 0px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem}.light-pagination-nav .option{border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none;text-shadow:0px 0.125rem 0.125rem white;color:hsla(30,28.95%,14.9%, 0.7)!important}.light-pagination-nav .option:hover{background-color:rgba(255,255,255, 0.8)!important;color:var(--cocoa)!important;border:solid 0.125rem var(--golden-brown);border-right:none}.light-pagination-nav .pagination-nav{background:transparent!important;box-shadow:none}.option.active{text-shadow:0px 0.125rem 0.125rem black;color:white!important;background-color:var(--golden-brown)!important;border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none}.option.active:hover{background-color:var(--golden-brown)!important;cursor:auto!important;color:white!important}svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
+      code: ".visually-hidden{height:1px;overflow:hidden;width:1px;position:absolute;clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);white-space:nowrap}.light-pagination-nav span.option.prev > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.next > svg path{fill:var(--golden-brown)!important}.light-pagination-nav span.option.prev{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:9999px 0px 0px 9999px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem;border-right:none}.light-pagination-nav span.option.next{color:transparent;transition:background 0.4s ease 0s;-webkit-transition:background 0.4s ease 0s;border:solid 0.125rem var(--golden-brown);border-radius:0px 9999px 9999px 0px;font-size:1rem;padding-left:2rem;padding-right:2rem;padding-top:0.5rem;padding-bottom:0.5rem}.light-pagination-nav .option{border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none;text-shadow:0px 0.125rem 0.125rem white;color:hsla(30,28.95%,14.9%, 0.7)!important}.light-pagination-nav .option:hover{background-color:rgba(255,255,255, 0.8)!important;color:var(--cocoa)!important;border:solid 0.125rem var(--golden-brown);border-right:none}.light-pagination-nav .pagination-nav{background:transparent!important;box-shadow:none}.option.active{text-shadow:0px 0.125rem 0.125rem black;color:white!important;background-color:var(--golden-brown)!important;border-top:solid 0.125rem var(--golden-brown);border-left:solid 0.125rem var(--golden-brown);border-bottom:solid 0.125rem var(--golden-brown);border-right:none}.option.active:hover{background-color:var(--golden-brown)!important;cursor:auto!important;color:white!important}svg{stroke-width:inherit;vector-effect:non-scaling-stroke}:root{--stroke-accent:white}.sw2{stroke-width:.25rem }.s--accent{stroke:var(--stroke-accent)}.transparent{color:transparent;fill:transparent}",
       map: null
     };
+    load = async ({ url }) => ({ props: { url: url.href } });
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+      let $page, $$unsubscribe_page;
+      $$unsubscribe_page = subscribe(page, (value) => $page = value);
+      let { url } = $$props;
+      if ($$props.url === void 0 && $$bindings.url && url !== void 0)
+        $$bindings.url(url);
       $$result.css.add(css);
-      return `${validate_component(Menu, "Menu").$$render($$result, {}, {}, {})}
+      $$unsubscribe_page();
+      return `
+
+
+
+
+
+${validate_component(Menu, "Menu").$$render($$result, {}, {}, {})}
+
+<div class="${"z-max absolute top-0 bg-gold"}">
+
+	${escape($page.url.pathname)}</div>
 
 <main class="${"system backface-hidden charcoal"}">
-	${slots.default ? slots.default({}) : ``}
-	${validate_component(Outro, "Outro").$$render($$result, {}, {}, {})}
-	${validate_component(Defs, "Defs").$$render($$result, {}, {}, {})}</main>
+	${validate_component(PageTransition, "PageTransition").$$render($$result, { url }, {}, {
+        default: () => {
+          return `
+		${slots.default ? slots.default({}) : ``}
+		${validate_component(Outro, "Outro").$$render($$result, {}, {}, {})}`;
+        }
+      })}</main>
+
+${validate_component(Defs, "Defs").$$render($$result, {}, {}, {})}
 ${validate_component(Fraunces, "Fraunces").$$render($$result, {}, {}, {})}
+
+
 
 
 
@@ -5879,9 +5968,9 @@ var entry, js, css2;
 var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
-    entry = "pages/__layout.svelte-e4c7ed52.js";
-    js = ["pages/__layout.svelte-e4c7ed52.js", "chunks/index-5fa3773a.js", "chunks/useViewportAction-c4bd98f4.js", "chunks/Row-79f68e94.js", "chunks/Defs-c2e5407d.js", "chunks/singletons-d1fb5791.js"];
-    css2 = ["assets/pages/__layout.svelte-4a152b57.css"];
+    entry = "pages/__layout.svelte-57d774ff.js";
+    js = ["pages/__layout.svelte-57d774ff.js", "chunks/index-a2b011d9.js", "chunks/stores-ac1eebd3.js", "chunks/useViewportAction-c4bd98f4.js", "chunks/Row-483fb03f.js", "chunks/Defs-81c5f9dd.js", "chunks/singletons-d1fb5791.js"];
+    css2 = ["assets/pages/__layout.svelte-9885a0f9.css"];
   }
 });
 
@@ -5889,9 +5978,9 @@ var init__ = __esm({
 var error_svelte_exports = {};
 __export(error_svelte_exports, {
   default: () => Error2,
-  load: () => load
+  load: () => load2
 });
-function load({ error: error2, status }) {
+function load2({ error: error2, status }) {
   return { props: { error: error2, status } };
 }
 var Error2;
@@ -5929,52 +6018,19 @@ var entry2, js2, css3;
 var init__2 = __esm({
   ".svelte-kit/output/server/nodes/1.js"() {
     init_error_svelte();
-    entry2 = "error.svelte-7bcc4f97.js";
-    js2 = ["error.svelte-7bcc4f97.js", "chunks/index-5fa3773a.js"];
+    entry2 = "error.svelte-5a1e68aa.js";
+    js2 = ["error.svelte-5a1e68aa.js", "chunks/index-a2b011d9.js"];
     css3 = [];
   }
 });
 
-// .svelte-kit/output/server/chunks/stores-3acf7a4b.js
-var getStores, page;
-var init_stores_3acf7a4b = __esm({
-  ".svelte-kit/output/server/chunks/stores-3acf7a4b.js"() {
-    init_index_38784e15();
-    getStores = () => {
-      const stores = getContext("__svelte__");
-      return {
-        page: {
-          subscribe: stores.page.subscribe
-        },
-        navigating: {
-          subscribe: stores.navigating.subscribe
-        },
-        get preloading() {
-          console.error("stores.preloading is deprecated; use stores.navigating instead");
-          return {
-            subscribe: stores.navigating.subscribe
-          };
-        },
-        session: stores.session,
-        updated: stores.updated
-      };
-    };
-    page = {
-      subscribe(fn) {
-        const store = getStores().page;
-        return store.subscribe(fn);
-      }
-    };
-  }
-});
-
-// .svelte-kit/output/server/chunks/index-18c0342e.js
+// .svelte-kit/output/server/chunks/index-b367c062.js
 function transformTitle(title3) {
   return title3.replace(/(\<(h1|h2)\>|\<\/(h1|h2)\>)/g, "").replace(/\<(i|em)\>/g, '<span class="fraunces-i">').replace(/\<\/(i|em)\>/g, "<span>").toLowerCase();
 }
 var css4, ScrollIndicator, Hero;
-var init_index_18c0342e = __esm({
-  ".svelte-kit/output/server/chunks/index-18c0342e.js"() {
+var init_index_b367c062 = __esm({
+  ".svelte-kit/output/server/chunks/index-b367c062.js"() {
     init_index_38784e15();
     css4 = {
       code: ".direction-indicator.svelte-grd4gw{display:block;margin:0 0 0 -4px;position:absolute;top:0px;left:50%;width:8px;height:8px;border-radius:50%;background:white;-webkit-animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none;animation:svelte-grd4gw-scroll 5.4s linear 0s infinite normal none}@-webkit-keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}@keyframes svelte-grd4gw-scroll{0%{transform:translate3d(0,0px,0);opacity:0;background:transparent}5%{opacity:1;background:white}13%{transform:translate3d(0,0.8rem,0);opacity:1;background:white}62%{transform:translate3d(0,1.8rem,0);opacity:0;background:transparent}100%{transform:translate3d(0,0px,0);opacity:0;background:transparent}}",
@@ -6004,7 +6060,8 @@ var init_index_18c0342e = __esm({
       return `
 
 
-<figure class="${"ma0 flex flex-column vh-75 w-100 cover"}" style="${"background-position: center 40%; background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 100%), url('" + escape(image ? image : "") + "')"}"${add_attribute("title", location ? location : "", 0)}>
+<figure class="${"ma0 flex flex-column vh-75 w-100 cover"}" style="${"background-position: center 40%; background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 100%), url('https://viaggilevi.vercel.app/images/king-lewanika-lodge-liuwa-plain-national-park.webp')"}"${add_attribute("title", location ? location : "", 0)}>
+
 
 <div class="${"vh-75 flex items-center white w-100 f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pt5 pt6-l"}">
 			<h3 class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ts1-dark-gray ttu tc mv0"}">${escape(payoff ? payoff : "")}</h3>
@@ -6017,7 +6074,7 @@ var init_index_18c0342e = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/Zed-1169df9c.js
+// .svelte-kit/output/server/chunks/Zed-b368652f.js
 function paginate({ items: items2, pageSize: pageSize3, currentPage }) {
   return items2.slice((currentPage - 1) * pageSize3, (currentPage - 1) * pageSize3 + pageSize3);
 }
@@ -6140,8 +6197,8 @@ function transformTitle2(title3) {
   return title3.length > truncate ? title3.toLowerCase().substring(0, truncate) + "&hellip;" : title3.toLowerCase();
 }
 var PREVIOUS_PAGE, NEXT_PAGE, ELLIPSIS, PaginationNav, css$12, LightPaginationNav, css5, truncate, Zed;
-var init_Zed_1169df9c = __esm({
-  ".svelte-kit/output/server/chunks/Zed-1169df9c.js"() {
+var init_Zed_b368652f = __esm({
+  ".svelte-kit/output/server/chunks/Zed-b368652f.js"() {
     init_index_38784e15();
     PREVIOUS_PAGE = "PREVIOUS_PAGE";
     NEXT_PAGE = "NEXT_PAGE";
@@ -6224,7 +6281,7 @@ var init_Zed_1169df9c = __esm({
         $$bindings.startingPrice(startingPrice);
       $$result.css.add(css5);
       return `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}">
-<a${add_attribute("title", title3, 0)}${add_attribute("href", cta.replace("http://kel12.therebelwatchtower.net/levi-single", "../trip").replace("destinations", ""), 0)} class="${"link svelte-bafr6a"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden svelte-bafr6a"}" style="${"background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url(https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp)"}"${add_attribute("title", image, 0)}>
+<a${add_attribute("title", title3, 0)}${add_attribute("href", cta.replace("http://kel12.therebelwatchtower.net/levi-single", "../trip").replace("destinations", ""), 0)} class="${"link svelte-bafr6a"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 pt5 cover shadow-5-hover transition-bs overflow-hidden svelte-bafr6a"}" style="${"background-position: 50% 0; background-image: linear-gradient( rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.50) 100%), url('https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp')"}"${add_attribute("title", image, 0)}>
 
 	
 
@@ -6250,17 +6307,17 @@ var init_Zed_1169df9c = __esm({
 var id_svelte_exports = {};
 __export(id_svelte_exports, {
   default: () => U5Bidu5D,
-  load: () => load2
+  load: () => load3
 });
-var load2, title, pageSize, U5Bidu5D;
+var load3, title, pageSize, U5Bidu5D;
 var init_id_svelte = __esm({
   ".svelte-kit/output/server/entries/pages/destinations/_id_.svelte.js"() {
     init_index_38784e15();
     init_stores_3acf7a4b();
     init_Row_8144bead();
-    init_index_18c0342e();
-    init_Zed_1169df9c();
-    load2 = async ({ params, fetch: fetch3 }) => {
+    init_index_b367c062();
+    init_Zed_b368652f();
+    load3 = async ({ params, fetch: fetch3 }) => {
       let id = params.id;
       const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-destinations/${id}`);
       const destinations = await response.json();
@@ -6343,16 +6400,16 @@ var entry3, js3, css6;
 var init__3 = __esm({
   ".svelte-kit/output/server/nodes/3.js"() {
     init_id_svelte();
-    entry3 = "pages/destinations/_id_.svelte-6260ab6c.js";
-    js3 = ["pages/destinations/_id_.svelte-6260ab6c.js", "chunks/index-5fa3773a.js", "chunks/stores-871ab25f.js", "chunks/Row-79f68e94.js", "chunks/index-b35c0570.js", "chunks/Zed-2a31cc43.js"];
+    entry3 = "pages/destinations/_id_.svelte-9a6752fa.js";
+    js3 = ["pages/destinations/_id_.svelte-9a6752fa.js", "chunks/index-a2b011d9.js", "chunks/stores-ac1eebd3.js", "chunks/Row-483fb03f.js", "chunks/index-5f86e961.js", "chunks/Zed-9acc04f8.js"];
     css6 = ["assets/index-b12d75c8.css", "assets/Zed-a33945b5.css"];
   }
 });
 
-// .svelte-kit/output/server/chunks/SwapMontage-4b762ff3.js
+// .svelte-kit/output/server/chunks/SwapMontage-efa0ee9d.js
 var css7, SwapMontage;
-var init_SwapMontage_4b762ff3 = __esm({
-  ".svelte-kit/output/server/chunks/SwapMontage-4b762ff3.js"() {
+var init_SwapMontage_efa0ee9d = __esm({
+  ".svelte-kit/output/server/chunks/SwapMontage-efa0ee9d.js"() {
     init_index_38784e15();
     css7 = {
       code: ":root{--width:24vh;--height:48vh;--distance:6rem;--speed:1.666s;--jaunt:2deg}.swap.svelte-bvi8mn.svelte-bvi8mn{padding:calc(0.1 * var(--height)) /* top */\n	calc(0.333 * var(--width)) /* right */\n	0  /* bottom */\n	calc(0.333 * var(--width))}.swap.svelte-bvi8mn img.svelte-bvi8mn{width:var(--width);height:var(--height);background-repeat:no-repeat;background-position:center center;background-size:cover}.swap.svelte-bvi8mn img.svelte-bvi8mn:nth-child(1){z-index:2;position:absolute;transform:translateX(0)\n    translateY(-1rem)\n    rotate(calc(-1 * var(--jaunt)))\n    scale(1);transition:transform var(--speed) cubic-bezier(0,1.69,1,1.41)\n    0s}.swap.svelte-bvi8mn img.svelte-bvi8mn:nth-child(2){z-index:1;position:absolute;transform:translateX(var(--distance))\n    translateY(1rem)\n    rotate(var(--jaunt))\n    scale(0.8);transition:transform var(--speed) cubic-bezier(0,1.69,1,1.41) 0s}.swap.svelte-bvi8mn.svelte-bvi8mn{will-change:transform}.swap.visible.svelte-bvi8mn img.svelte-bvi8mn:nth-child(1){transform:translateX(var(--distance))\n    translateY(10px)\n    rotate(var(--jaunt))\n    scale(0.8)}.swap.visible.svelte-bvi8mn img.svelte-bvi8mn:nth-child(2){transform:translateX(0)\n    translateY(-10px)\n    rotate(calc(-1 * var(--jaunt)))\n    scale(1)}",
@@ -6367,7 +6424,7 @@ var init_SwapMontage_4b762ff3 = __esm({
 
 
 ${each(images, (image) => {
-        return `<img${add_attribute("alt", image, 0)}${add_attribute("title", image, 0)} src="${"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"}" class="${"shadow-5 mr-auto ml-auto svelte-bvi8mn"}" style="${"background-image: url('" + escape(image) + "')"}">
+        return `<img${add_attribute("alt", image, 0)}${add_attribute("title", image, 0)} src="${"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"}" class="${"shadow-5 mr-auto ml-auto svelte-bvi8mn"}" style="${"background-image: url('https://viaggilevi.vercel.app/images/king-lewanika-lodge-liuwa-plain-national-park.webp')"}">
 	`;
       })}
 </figure>`;
@@ -6379,18 +6436,18 @@ ${each(images, (image) => {
 var id_svelte_exports2 = {};
 __export(id_svelte_exports2, {
   default: () => U5Bidu5D2,
-  load: () => load3
+  load: () => load4
 });
-var load3, title2, pageSize2, U5Bidu5D2;
+var load4, title2, pageSize2, U5Bidu5D2;
 var init_id_svelte2 = __esm({
   ".svelte-kit/output/server/entries/pages/nations/_id_.svelte.js"() {
     init_index_38784e15();
     init_stores_3acf7a4b();
     init_Row_8144bead();
-    init_index_18c0342e();
-    init_SwapMontage_4b762ff3();
-    init_Zed_1169df9c();
-    load3 = async ({ params, fetch: fetch3 }) => {
+    init_index_b367c062();
+    init_SwapMontage_efa0ee9d();
+    init_Zed_b368652f();
+    load4 = async ({ params, fetch: fetch3 }) => {
       let id = params.id;
       const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-nations/${id}`);
       const nations = await response.json();
@@ -6504,8 +6561,8 @@ var entry4, js4, css8;
 var init__4 = __esm({
   ".svelte-kit/output/server/nodes/5.js"() {
     init_id_svelte2();
-    entry4 = "pages/nations/_id_.svelte-c78b3799.js";
-    js4 = ["pages/nations/_id_.svelte-c78b3799.js", "chunks/index-5fa3773a.js", "chunks/stores-871ab25f.js", "chunks/Row-79f68e94.js", "chunks/index-b35c0570.js", "chunks/SwapMontage-3bdd6129.js", "chunks/useViewportAction-c4bd98f4.js", "chunks/Zed-2a31cc43.js"];
+    entry4 = "pages/nations/_id_.svelte-58677257.js";
+    js4 = ["pages/nations/_id_.svelte-58677257.js", "chunks/index-a2b011d9.js", "chunks/stores-ac1eebd3.js", "chunks/Row-483fb03f.js", "chunks/index-5f86e961.js", "chunks/SwapMontage-0fd83bb5.js", "chunks/useViewportAction-c4bd98f4.js", "chunks/Zed-9acc04f8.js"];
     css8 = ["assets/index-b12d75c8.css", "assets/SwapMontage-9e36f6e2.css", "assets/Zed-a33945b5.css"];
   }
 });
@@ -6514,9 +6571,9 @@ var init__4 = __esm({
 var slug_svelte_exports = {};
 __export(slug_svelte_exports, {
   default: () => U5Bslugu5D,
-  load: () => load4
+  load: () => load5
 });
-async function load4(url) {
+async function load5(url) {
   let slug = url.params.slug;
   return { props: { slug } };
 }
@@ -6552,8 +6609,8 @@ var entry5, js5, css9;
 var init__5 = __esm({
   ".svelte-kit/output/server/nodes/6.js"() {
     init_slug_svelte();
-    entry5 = "pages/sirv/_slug_.svelte-3eb607da.js";
-    js5 = ["pages/sirv/_slug_.svelte-3eb607da.js", "chunks/index-5fa3773a.js"];
+    entry5 = "pages/sirv/_slug_.svelte-55776e19.js";
+    js5 = ["pages/sirv/_slug_.svelte-55776e19.js", "chunks/index-a2b011d9.js"];
     css9 = [];
   }
 });
@@ -6562,21 +6619,21 @@ var init__5 = __esm({
 var id_svelte_exports3 = {};
 __export(id_svelte_exports3, {
   default: () => U5Bidu5D3,
-  load: () => load5
+  load: () => load6
 });
 function sanitiseText(text) {
   return text.replace(/(style[\w\W](\:|\;|\"))/g, "").replace(/(text-[\w\W](\:|\;|\"))/g, "").replace(/(font-family[\w\W](':'|';'|'"'|'>'))/g, "").replace(/(-aw-[\w\W](\:|\;|\"))/g, "").replace(/(Arial|Times New Roman|12pt)/g, "").replace(/(\\r|\\n|\\\"|style=\|'\\\"'|'style=\\\"'|margin\-(left|right)\:|text\-align\:justify\\"|0cm(;|)|1\.1pt\;)/g, "").replace(/(font-family:|style=)/g, "").replace(/(margin-top:0pt;|margin-bottom:0pt;)/g, "").replace(/; font-style: italic/g, "").replace(/-aw-import:ignore/g, "").replace(/(margin[\w\W]|bottom[\w\W]|0pt)/g, "").replace(/(<span ;[\w\W]+span>)/g, "").replace(/<[^/>][^>]*><\/[^>]+>/gim, "");
 }
-var css10, load5, U5Bidu5D3;
+var css10, load6, U5Bidu5D3;
 var init_id_svelte3 = __esm({
   ".svelte-kit/output/server/entries/pages/trip/_id_.svelte.js"() {
     init_index_38784e15();
-    init_index_18c0342e();
+    init_index_b367c062();
     css10 = {
       code: "code.svelte-17y75eh{display:block;padding-bottom:2.5rem}",
       map: null
     };
-    load5 = async ({ params, fetch: fetch3 }) => {
+    load6 = async ({ params, fetch: fetch3 }) => {
       let id = params.id;
       const response = await fetch3(`http://kel12.therebelwatchtower.net/levi-single/${id}`);
       const trip = await response.json();
@@ -6675,8 +6732,8 @@ var entry6, js6, css11;
 var init__6 = __esm({
   ".svelte-kit/output/server/nodes/9.js"() {
     init_id_svelte3();
-    entry6 = "pages/trip/_id_.svelte-2a7d045d.js";
-    js6 = ["pages/trip/_id_.svelte-2a7d045d.js", "chunks/index-5fa3773a.js", "chunks/index-b35c0570.js"];
+    entry6 = "pages/trip/_id_.svelte-383f188b.js";
+    js6 = ["pages/trip/_id_.svelte-383f188b.js", "chunks/index-a2b011d9.js", "chunks/index-5f86e961.js"];
     css11 = ["assets/pages/trip/_id_.svelte-079c3aee.css", "assets/index-b12d75c8.css"];
   }
 });
@@ -6685,9 +6742,9 @@ var init__6 = __esm({
 var slug_svelte_exports2 = {};
 __export(slug_svelte_exports2, {
   default: () => U5Bslugu5D2,
-  load: () => load6
+  load: () => load7
 });
-async function load6(url) {
+async function load7(url) {
   let slug = url.params.slug;
   return { props: { slug } };
 }
@@ -6722,8 +6779,8 @@ var entry7, js7, css12;
 var init__7 = __esm({
   ".svelte-kit/output/server/nodes/2.js"() {
     init_slug_svelte2();
-    entry7 = "pages/_slug_.svelte-3858017e.js";
-    js7 = ["pages/_slug_.svelte-3858017e.js", "chunks/index-5fa3773a.js"];
+    entry7 = "pages/_slug_.svelte-fff485db.js";
+    js7 = ["pages/_slug_.svelte-fff485db.js", "chunks/index-a2b011d9.js"];
     css12 = [];
   }
 });
@@ -9135,7 +9192,7 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([".DS_Store", "favicon.ico", "favicon.png", "fonts/Fraunces--latin_basic.woff2", "fonts/Fraunces-Italic--latin_basic.woff2", "images/.DS_Store", "images/Levi-Maurizio-768x510.jpg", "images/Levi-Maurizio-768x510.webp", "images/Marshall-Islands-coral-reef.jpeg", "images/Marshall-Islands-coral-reef.webp", "images/MaurizioLevi_Anteprima.jpg", "images/MaurizioLevi_Anteprima.webp", "images/Maurizio_Levi.jpg", "images/Maurizio_Levi.webp", "images/Tineye.Torres.del.Paine.National.Park.jpeg", "images/Tineye.Torres.del.Paine.National.Park.webp", "images/Torres.del.Paine.National.Park.original.3288.jpg", "images/adobestock-255750571.webp", "images/alba10.webp", "images/asc.png", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.jpeg", "images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.webp", "images/boingboing-moon.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.jpeg", "images/eu-largest-lake-skadar-national-park-montenegro-and-albania.webp", "images/fai.png", "images/fto-landscape.png", "images/fto.png", "images/kaluahine-falls-waipio-valley-hawaii.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.jpeg", "images/king-lewanika-lodge-liuwa-plain-national-park.webp", "images/lagune-altiplaniche-1.jpeg", "images/lake-urmia-south-caspian-sea-iran.jpeg", "images/lake-urmia-south-caspian-sea-iran.webp", "images/levi-logo.svg", "images/levi-stamp.svg", "images/levi_logo.png", "images/logo.png", "images/oceania_map_southeast_asia.jpeg", "images/russia-largest-freshwater-lake-ladoga.jpeg", "images/russia-largest-freshwater-lake-ladoga.webp", "images/tri.png", "images/unesco.png", "images/ungheria-repubblica-slovacca-adobestock-177932056.jpeg", "images/usa-banner-01.webp", "images/waipio-valley-akaka-falls.jpeg", "images/waipio-valley-original.jpg", "levi.favicon.png", "logo.favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".woff2": "font/woff2", ".jpg": "image/jpeg", ".webp": "image/webp", ".jpeg": "image/jpeg", ".svg": "image/svg+xml", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-f7424025.js", "js": ["start-f7424025.js", "chunks/index-5fa3773a.js", "chunks/singletons-d1fb5791.js"], "css": [] },
+    entry: { "file": "start-55be24fc.js", "js": ["start-55be24fc.js", "chunks/index-a2b011d9.js", "chunks/singletons-d1fb5791.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),

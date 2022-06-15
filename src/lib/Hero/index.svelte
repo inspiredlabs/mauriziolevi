@@ -23,8 +23,9 @@ function transformTitle(title) {
 	background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, 0.5) 100%) -->
 <!-- note: cocoa:hsla(30,28.95%,14.9%, 1); -->
 <figure class="ma0 flex flex-column vh-75 w-100 cover"
-style="background-position: center 40%; background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, {imageOverlay === true ? `0.555` : `0`}) 100%), url('{image ? image : '' }')"
+style="background-position: center 40%; background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, {imageOverlay === true ? `0.555` : `0`}) 100%), url('https://viaggilevi.vercel.app/images/king-lewanika-lodge-liuwa-plain-national-park.webp')"
 title={location ? location : '' }>
+<!-- {image ? image : '' } -->
 <!-- base64'd: onlinejpgtools.com/convert-jpg-to-base64 -->
 
 <div class="vh-75 flex items-center white w-100 f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">

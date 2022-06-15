@@ -1,9 +1,9 @@
 import { c as create_ssr_component, v as validate_component, a as add_attribute, b as each, e as escape } from "../../chunks/index-38784e15.js";
 import { D as Defs, i as items } from "../../chunks/Defs-87d248ff.js";
-import { p as paginate, Z as Zed, L as LightPaginationNav } from "../../chunks/Zed-1169df9c.js";
+import { p as paginate, Z as Zed, L as LightPaginationNav } from "../../chunks/Zed-b368652f.js";
 import { R as Row } from "../../chunks/Row-8144bead.js";
-import { H as Hero } from "../../chunks/index-18c0342e.js";
-import { S as SwapMontage } from "../../chunks/SwapMontage-4b762ff3.js";
+import { H as Hero } from "../../chunks/index-b367c062.js";
+import { S as SwapMontage } from "../../chunks/SwapMontage-efa0ee9d.js";
 var index_svelte_svelte_type_style_lang$1 = "";
 const css$1 = {
   code: ".grid.svelte-mdoe6m{display:grid;place-items:center}button.active.svelte-mdoe6m{opacity:1\n	}.x-mandatory.svelte-mdoe6m{-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory\n	}.snap-start.svelte-mdoe6m{scroll-snap-align:start }@media all and (orientation:landscape){@media screen and (min-width:30em) and (max-width:60em){}}@media all and (orientation:portrait){@media screen and (min-width:30em) and (max-width:60em){}}",
@@ -26,7 +26,6 @@ const Discover = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     return `
 	
 	<figure${add_attribute("id", id, 0)} class="${"snap-start flex-column flex flex-shrink-0 grid white cover ma0 svelte-mdoe6m"}" style="${"--alpha:0.6; min-width: 100%; background-position-x: center; background-image: linear-gradient( hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 0, hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 100%), url(" + escape(JSON.stringify(src)) + ")"}">
-			
 			
 
 			<div class="${"w-100 snap-start always-stop svelte-mdoe6m"}">

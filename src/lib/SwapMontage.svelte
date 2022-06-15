@@ -25,9 +25,9 @@ style="height:100vh">
     title={image}
 		src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 		class="shadow-5 mr-auto ml-auto"
-		style="background-image: url('{image}')"
+		style="background-image: url('https://viaggilevi.vercel.app/images/king-lewanika-lodge-liuwa-plain-national-park.webp')"
 	/>
-	<!-- w3 h4  -->
+	<!-- {image} -->
 	{/each}
 </figure>
 
