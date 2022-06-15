@@ -40,6 +40,14 @@ function rm() {
   {/key}
 </div>
 
+<style>
+  .grid {
+		display: inline-grid;
+  }
+  .area {
+    width: 100vw;
+  }
+</style>
 
 
 
@@ -69,12 +77,3 @@ FADE IN
 
 
 
-<style>
-  .grid {
-		display: grid;
-		grid-template-areas: 'main';
-  }
-  .area {
-    grid-area: main
-  }
-</style>
