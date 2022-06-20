@@ -42,13 +42,7 @@ export let url;
 
 <Menu/>
 
-<div class="z-max absolute top-0 bg-gold">
-<!-- <button
-class="h5"
-on:click={rm}>Click</button> -->
-
-	{$page.url.pathname}
-</div>
+<!-- learn: debug route/transitions `<div class="z-max absolute top-0 bg-gold">{$page.url.pathname}</div>` -->
 
 <main
 class="system backface-hidden charcoal">
@@ -239,3 +233,11 @@ class="system backface-hidden charcoal">
 		display: block;
 	}
 </style> -->
+
+
+
+<!-- learn: `<svelte:head>...</svelte:head>` "Schema is now sufficiently well-supported" Aggregate Reviews schema is potentially very valuable for category or index pages that contain more than one item. For instance, the main category page for “Thin Screen TVs” on a retailer site, or the listings page for “Hotels” on a local accommodations website. Main category pages often are challenging to get ranking well because they’re navigational or interstitial types of pages, and they frequently don’t have rich snippet markup. Aggregate Reviews could be one schema that would work really well for them. -->
+<!-- mauw: dev.to/tonyfrenzy/seo-for-web-developers-to-use-json-ld-or-microdata-2d4p -->
+<!-- note: test: google.com/webmasters/markup-helper/u/0/ -->
+<!-- note: test: search.google.com/structured-data/testing-tool -->
+<!-- learn: , "media search is way too ignored for what it’s capable of doing for publishers, so we’re throwing more engineers at it as well as more outreach.” from: inspiredlabs.co.uk/zen/seo-periodic-table-2019.pdf -->

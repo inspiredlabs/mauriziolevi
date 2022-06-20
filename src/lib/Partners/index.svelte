@@ -10,12 +10,14 @@ let imagesBaseUrl = `${import.meta.env.VITE_BASEURL}/images/` // usage: `{images
 			<small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">I viaggi di maurizio levi</small>
 			<span class="fraunces">I nostri</span><span class="fraunces-i">&nbsp;partner</span>
 		</h4>
-		<div class="flex justify-between w-100">
-			<img class="h3 db no-select" src="{imagesBaseUrl}fai.webp" alt={alt}>
-			<img class="h2 db no-select" src="{imagesBaseUrl}fto.webp" alt={alt}>
-			<img class="h3 db no-select" src="{imagesBaseUrl}tri.webp" alt={alt}>
-			<img class="h3 db no-select" src="{imagesBaseUrl}unesco.webp" alt={alt}>
-			<img class="h3 db no-select" src="{imagesBaseUrl}asc.webp" alt={alt}>
+		<div class="flex flex-wrap items-center justify-around justify-between-m justify-between-l">
+			<!-- w-100 -->
+			<img class="h3 db no-select pb3 mr2" src="{imagesBaseUrl}fai.webp" alt={alt}>
+			<img class="h3 db no-select pb3 mr2" src="{imagesBaseUrl}tri.webp" alt={alt}>
+			<img class="h3 db no-select pb3 mr2" src="{imagesBaseUrl}unesco.webp" alt={alt}>
+			<img class="h3 db no-select pb3 mr2" src="{imagesBaseUrl}asc.webp" alt={alt}>
+
+			<img class="h3 db no-select pb3" src="{imagesBaseUrl}fto.webp" alt={alt}>
 		</div>
 		<!--
 			Golden Donor

@@ -9,6 +9,7 @@ export const components = [
 	() => import("../../src/routes/nations/[id].svelte"),
 	() => import("../../src/routes/sirv/[slug].svelte"),
 	() => import("../../src/routes/sirv/index.svelte"),
+	() => import("../../src/routes/table/index.svelte"),
 	() => import("../../src/routes/terms/index.svelte"),
 	() => import("../../src/routes/trip/[id].svelte")
 ];
@@ -16,10 +17,11 @@ export const components = [
 export const dictionary = {
 	"": [[0, 4], [1], 1],
 	"sirv": [[0, 7], [1]],
-	"terms": [[0, 8], [1], 1],
+	"table": [[0, 8], [1]],
+	"terms": [[0, 9], [1], 1],
 	"destinations/[id]": [[0, 3], [1]],
 	"nations/[id]": [[0, 5], [1]],
 	"sirv/[slug]": [[0, 6], [1]],
-	"trip/[id]": [[0, 9], [1]],
+	"trip/[id]": [[0, 10], [1]],
 	"[slug]": [[0, 2], [1]]
 };

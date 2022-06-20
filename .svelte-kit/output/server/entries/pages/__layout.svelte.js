@@ -1,7 +1,7 @@
 import { c as create_ssr_component, v as validate_component, e as escape, a as add_attribute, b as each, d as subscribe } from "../../chunks/index-38784e15.js";
-import { p as page } from "../../chunks/stores-3acf7a4b.js";
 import { R as Row } from "../../chunks/Row-8144bead.js";
-import { i as items, D as Defs } from "../../chunks/Defs-87d248ff.js";
+import { D as Defs } from "../../chunks/Defs-e3600b17.js";
+import { p as page } from "../../chunks/stores-3acf7a4b.js";
 const PageTransition = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { url = "" } = $$props;
   if ($$props.url === void 0 && $$bindings.url && url !== void 0)
@@ -84,11 +84,13 @@ const Partners = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     default: () => {
       return `<article class="${"highlight db black-70 f5 f4-ns f3-m f3-l lh-copy pv4 measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto"}"><h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">I viaggi di maurizio levi</small>
 			<span class="${"fraunces"}">I nostri</span><span class="${"fraunces-i"}">\xA0partner</span></h4>
-		<div class="${"flex justify-between w-100"}"><img class="${"h3 db no-select"}" src="${escape(imagesBaseUrl) + "fai.png"}"${add_attribute("alt", alt, 0)}>
-			<img class="${"h2 db no-select"}" src="${escape(imagesBaseUrl) + "fto.png"}"${add_attribute("alt", alt, 0)}>
-			<img class="${"h3 db no-select"}" src="${escape(imagesBaseUrl) + "tri.png"}"${add_attribute("alt", alt, 0)}>
-			<img class="${"h3 db no-select"}" src="${escape(imagesBaseUrl) + "unesco.png"}"${add_attribute("alt", alt, 0)}>
-			<img class="${"h3 db no-select"}" src="${escape(imagesBaseUrl) + "asc.png"}"${add_attribute("alt", alt, 0)}></div>
+		<div class="${"flex flex-wrap items-center justify-around justify-between-m justify-between-l"}">
+			<img class="${"h3 db no-select pb3 mr2"}" src="${escape(imagesBaseUrl) + "fai.webp"}"${add_attribute("alt", alt, 0)}>
+			<img class="${"h3 db no-select pb3 mr2"}" src="${escape(imagesBaseUrl) + "tri.webp"}"${add_attribute("alt", alt, 0)}>
+			<img class="${"h3 db no-select pb3 mr2"}" src="${escape(imagesBaseUrl) + "unesco.webp"}"${add_attribute("alt", alt, 0)}>
+			<img class="${"h3 db no-select pb3 mr2"}" src="${escape(imagesBaseUrl) + "asc.webp"}"${add_attribute("alt", alt, 0)}>
+
+			<img class="${"h3 db no-select pb3"}" src="${escape(imagesBaseUrl) + "fto.webp"}"${add_attribute("alt", alt, 0)}></div>
 		</article>`;
     }
   })}`;
@@ -115,6 +117,81 @@ const Social = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 `;
 });
+var items = [
+  {
+    id: "africa",
+    title: "Africa",
+    bg: "bg-gray",
+    src: "./images/king-lewanika-lodge-liuwa-plain-national-park.webp",
+    imageCredit: "",
+    headingEn: "I want to travel",
+    headingIt: "voglio viaggiare",
+    figCaption: "King Lewanika Lodge, Liuwa Plain National Park \u2013 Zambia, Africa",
+    slug: "africa"
+  },
+  {
+    id: "lontano-oriente",
+    title: "Lontano Oriente",
+    bg: "bg-light-pink",
+    src: "./images/lake-urmia-south-caspian-sea-iran.webp",
+    headingEn: "I want to travel",
+    headingIt: "voglio viaggiare",
+    figCaption: "Lake Urmia, East Azerbaijan &amp; West Azerbaijan - South of the Caspian Sea, Iran",
+    slug: "lontano-oriente"
+  },
+  {
+    id: "americhe",
+    title: "Americhe",
+    bg: "bg-light-blue",
+    src: "./images/Tineye.Torres.del.Paine.National.Park.webp",
+    headingEn: "I want to travel",
+    headingIt: "voglio viaggiare",
+    figCaption: "Lago Grey, Torres del Paine National Park - Cile, South Westerly tip of South America",
+    slug: "americhe"
+  },
+  {
+    id: "oceania",
+    title: "Oceania",
+    bg: "bg-light-red",
+    src: "./images/Marshall-Islands-coral-reef.webp",
+    imageCredit: "This image is from: http://www.logicum.co/wp-content/uploads/2016/04/Marshall-Islands-coral-reef.jpg",
+    headingEn: "I want to travel",
+    headingIt: "voglio viaggiare",
+    figCaption: "The Marshall Islands, slightly west of the International Date Line, Micronesia",
+    slug: "oceania"
+  },
+  {
+    id: "europa",
+    title: "Europa",
+    bg: "bg-light-yellow",
+    src: "./images/eu-largest-lake-skadar-national-park-montenegro-and-albania.webp",
+    headingEn: "I want to travel",
+    headingIt: "voglio viaggiare",
+    figCaption: "Lake Skadar National Park - Albania, South East Europe",
+    slug: "europa"
+  },
+  {
+    id: "vicino-oriente-asia-centrale",
+    title: "Vicino Oriente - Asia Centrale",
+    bg: "bg-light-red",
+    src: "./images/bodgaya-island-tun-sakaran-marine-park-sulu-sea.webp",
+    imageCredit: "This image is from: https://www.molon.de/galleries/Malaysia/Sabah/Islands/",
+    headingEn: "I want to travel",
+    headingIt: "voglio viaggiare",
+    figCaption: "Bodgaya Island, Tun Sakaran Marine Park \u2013 Sulu Sea, Malaysia",
+    slug: "vicino-oriente-asia-centrale"
+  },
+  {
+    id: "artide-e-antartide",
+    title: "Artide e Antartide",
+    bg: "bg-red",
+    src: "./images/russia-largest-freshwater-lake-ladoga.webp",
+    headingEn: "I want to travel",
+    headingIt: "voglio viaggiare",
+    figCaption: "Freshwater Lake Ladoga \u2013 Russia, &amp; Finland's boarder",
+    slug: "artide-e-antartide"
+  }
+];
 var index_svelte_svelte_type_style_lang$1 = "";
 const css$3 = {
   code: ".hover-b--inherit.svelte-1qtd8c1{transition:all 0.4s ease 0s!important}.hover-b--inherit.svelte-1qtd8c1:hover{border-color:inherit}",
@@ -249,13 +326,10 @@ const css = {
 };
 const load = async ({ url }) => ({ props: { url: url.href } });
 const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let $page, $$unsubscribe_page;
-  $$unsubscribe_page = subscribe(page, (value) => $page = value);
   let { url } = $$props;
   if ($$props.url === void 0 && $$bindings.url && url !== void 0)
     $$bindings.url(url);
   $$result.css.add(css);
-  $$unsubscribe_page();
   return `
 
 
@@ -264,9 +338,7 @@ const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 ${validate_component(Menu, "Menu").$$render($$result, {}, {}, {})}
 
-<div class="${"z-max absolute top-0 bg-gold"}">
 
-	${escape($page.url.pathname)}</div>
 
 <main class="${"system backface-hidden charcoal"}">
 	${validate_component(PageTransition, "PageTransition").$$render($$result, { url }, {}, {
@@ -279,6 +351,14 @@ ${validate_component(Menu, "Menu").$$render($$result, {}, {}, {})}
 
 ${validate_component(Defs, "Defs").$$render($$result, {}, {}, {})}
 ${validate_component(Fraunces, "Fraunces").$$render($$result, {}, {}, {})}
+
+
+
+
+
+
+
+
 
 
 

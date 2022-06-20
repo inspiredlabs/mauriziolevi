@@ -26,9 +26,9 @@
     "isEntry": true,
     "imports": [
       "_index-38784e15.js",
-      "_stores-3acf7a4b.js",
       "_Row-8144bead.js",
-      "_Defs-87d248ff.js"
+      "_Defs-e3600b17.js",
+      "_stores-3acf7a4b.js"
     ],
     "css": [
       "assets/entries/pages/__layout.svelte-7bb12fd9.css"
@@ -68,14 +68,14 @@
     "isEntry": true,
     "imports": [
       "_index-38784e15.js",
-      "_Defs-87d248ff.js",
+      "_Defs-e3600b17.js",
       "_Zed-b368652f.js",
       "_Row-8144bead.js",
       "_index-b367c062.js",
-      "_SwapMontage-efa0ee9d.js"
+      "_SwapMontage-56333ef2.js"
     ],
     "css": [
-      "assets/entries/pages/index.svelte-c25f0ae8.css"
+      "assets/entries/pages/index.svelte-a8461255.css"
     ]
   },
   "src/routes/nations/[id].svelte": {
@@ -87,7 +87,7 @@
       "_stores-3acf7a4b.js",
       "_Row-8144bead.js",
       "_index-b367c062.js",
-      "_SwapMontage-efa0ee9d.js",
+      "_SwapMontage-56333ef2.js",
       "_Zed-b368652f.js"
     ]
   },
@@ -105,6 +105,17 @@
     "isEntry": true,
     "imports": [
       "_index-38784e15.js"
+    ]
+  },
+  "src/routes/table/index.svelte": {
+    "file": "entries/pages/table/index.svelte.js",
+    "src": "src/routes/table/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-38784e15.js"
+    ],
+    "css": [
+      "assets/entries/pages/table/index.svelte-606fa983.css"
     ]
   },
   "src/routes/terms/index.svelte": {
@@ -130,14 +141,14 @@
   "_index-38784e15.js": {
     "file": "chunks/index-38784e15.js"
   },
-  "_stores-3acf7a4b.js": {
-    "file": "chunks/stores-3acf7a4b.js",
+  "_Defs-e3600b17.js": {
+    "file": "chunks/Defs-e3600b17.js",
     "imports": [
       "_index-38784e15.js"
     ]
   },
-  "_Defs-87d248ff.js": {
-    "file": "chunks/Defs-87d248ff.js",
+  "_stores-3acf7a4b.js": {
+    "file": "chunks/stores-3acf7a4b.js",
     "imports": [
       "_index-38784e15.js"
     ]
@@ -166,13 +177,13 @@
       "assets/Zed-df0e187c.css"
     ]
   },
-  "_SwapMontage-efa0ee9d.js": {
-    "file": "chunks/SwapMontage-efa0ee9d.js",
+  "_SwapMontage-56333ef2.js": {
+    "file": "chunks/SwapMontage-56333ef2.js",
     "imports": [
       "_index-38784e15.js"
     ],
     "css": [
-      "assets/SwapMontage-5cae0ba9.css"
+      "assets/SwapMontage-a509f655.css"
     ]
   },
   ".svelte-kit/build/hooks.js": {

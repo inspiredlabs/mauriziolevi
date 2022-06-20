@@ -1,20 +1,17 @@
-<script context="module">
-  export const prerender = true;
-</script>
-
 <script>
   // note: CHECK THIS IS COMPLETE: consider a helper function inside `index.js`: stackoverflow.com/questions/25921319/escape-new-lines-with-js#25921448
   // learn: `shadowendpoints` syntax: youtube.com/watch?v=j-9D5UDyVOM&t=133s
 
 
   export let homepage;
+  export let destinations;
+  import DestinationSlider from '$lib/DestinationSlider.svelte';
   //export let spotLight; // viaggi in evidenza
-    //continents, // areas e nations
-    //, upcomingDepartures; // viaggi partenza
+  //continents, // areas e nations
+  //, upcomingDepartures; // viaggi partenza
 
 
-  // fix: import Snapper from '$lib/Snapper.svelte'; usage: `<Snapper />`
-  import Discover from '$lib/Discover/index.svelte';
+  // fix: rm `import Discover from '$lib/Discover/index.svelte';`
   //import PaginateBasic from '$lib/PaginateBasic.svelte'; //<PaginateBasic />
   let title = 'Maurizio Levi';
 
@@ -57,6 +54,8 @@
   //let pageSize = 3;
   //$: paginateDepartingSoon = paginate({items, pageSize, currentPage});
   //$: paginateTripSpotlight = paginate({ tripSpotlightItems, pageSize, currentPage });
+
+
 </script>
 
 <!-- <code class="silver">{JSON.stringify(homepage.mission, null, 2)}</code> -->
@@ -96,17 +95,9 @@
   <hr />
 </Row>
 
-<!-- fix: keyboard access not integrated onto `routes`/`<Menu />` -->
-<!-- note: turn `destinationsSlider.title` into `title.replace(&urlize)`. -->
-<!-- destinationsSlider.title
-destinationsSlider.image
-destinationsSlider.location
-destinationsSlider.payoff
-destinationsSlider.overlayImage -->
 
-<Discover imageOverlay={true} />
-
-
+<!-- learn: `DestinationSlider/index.svelte`, is `'isSelfAccepting'` -->
+<DestinationSlider destinations={destinations} />
 
 <!-- fix: imageOverlay={homepage.travelLines.imageOverlay} -->
 <Ways
@@ -117,9 +108,9 @@ destinationsSlider.overlayImage -->
   imageOverlay={true}
 />
 
-<News
-  news={homepage.blog}
-/>
+
+<!-- fix: this is an empty component -->
+<!-- <News news={homepage.blog} /> -->
 
   <!-- <code class="silver">{JSON.stringify(homepage.blog, null, 2)}</code> -->
 
@@ -135,6 +126,8 @@ destinationsSlider.overlayImage -->
     {/each}
   </ul>
 </Row> -->
+
+
 
 <svelte:head>
   <title>{title}</title>

@@ -1,65 +1,73 @@
-import { c as create_ssr_component, v as validate_component, a as add_attribute, b as each, e as escape } from "../../chunks/index-38784e15.js";
-import { D as Defs, i as items } from "../../chunks/Defs-87d248ff.js";
+import { c as create_ssr_component, b as each, a as add_attribute, e as escape, v as validate_component } from "../../chunks/index-38784e15.js";
+import { D as Defs } from "../../chunks/Defs-e3600b17.js";
 import { p as paginate, Z as Zed, L as LightPaginationNav } from "../../chunks/Zed-b368652f.js";
 import { R as Row } from "../../chunks/Row-8144bead.js";
 import { H as Hero } from "../../chunks/index-b367c062.js";
-import { S as SwapMontage } from "../../chunks/SwapMontage-efa0ee9d.js";
-var index_svelte_svelte_type_style_lang$1 = "";
-const css$1 = {
-  code: ".grid.svelte-mdoe6m{display:grid;place-items:center}button.active.svelte-mdoe6m{opacity:1\n	}.x-mandatory.svelte-mdoe6m{-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory\n	}.snap-start.svelte-mdoe6m{scroll-snap-align:start }@media all and (orientation:landscape){@media screen and (min-width:30em) and (max-width:60em){}}@media all and (orientation:portrait){@media screen and (min-width:30em) and (max-width:60em){}}",
+import { S as SwapMontage } from "../../chunks/SwapMontage-56333ef2.js";
+var DestinationSlider_svelte_svelte_type_style_lang = "";
+const css = {
+  code: ".active.svelte-r4q1gt{opacity:1;font-variation-settings:'wght' 600}.x-mandatory.svelte-r4q1gt{-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory\n    }.snap-start.svelte-r4q1gt{scroll-snap-align:start }@media all and (orientation:landscape){@media screen and (min-width:30em) and (max-width:60em){}}@media all and (orientation:portrait){@media screen and (min-width:30em) and (max-width:60em){}}",
   map: null
 };
 let truncate = 48;
 let truncateNS = 66;
 let truncateMedium = 108;
-const Discover = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { imageOverlay } = $$props;
+const DestinationSlider = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { destinations } = $$props;
   let activeIndex = 0;
-  let container;
-  if ($$props.imageOverlay === void 0 && $$bindings.imageOverlay && imageOverlay !== void 0)
-    $$bindings.imageOverlay(imageOverlay);
-  $$result.css.add(css$1);
-  return `${validate_component(Defs, "Defs").$$render($$result, {}, {}, {})}
+  if ($$props.destinations === void 0 && $$bindings.destinations && destinations !== void 0)
+    $$bindings.destinations(destinations);
+  $$result.css.add(css);
+  return `
+  
+  
 
-
-<aside class="${"bg-gold flex items-center x-mandatory overflow-x-auto overflow-y-hidden touch-scroll backface-hidden w-100 tc svelte-mdoe6m"}"${add_attribute("this", container, 0)}>${each(items, ({ id, title: title2, src, headingEn, headingIt, figCaption, slug }, i) => {
+  <section class="${"w-100 tc overflow-hidden bg-linen "}"><aside class="${"overflow-y-hidden x-mandatory flex w-100 overflow-x-auto smooth-scroll vh-75 vh-50 vh-75-m vh-75-l svelte-r4q1gt"}">
+      ${each(destinations, ({ id, title: title2, bg, src, imageCredit, headingEn, headingIt, figCaption, slug }, i) => {
     return `
-	
-	<figure${add_attribute("id", id, 0)} class="${"snap-start flex-column flex flex-shrink-0 grid white cover ma0 svelte-mdoe6m"}" style="${"--alpha:0.6; min-width: 100%; background-position-x: center; background-image: linear-gradient( hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 0, hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 100%), url(" + escape(JSON.stringify(src)) + ")"}">
-			
+      <figure${add_attribute("id", id, 0)} class="${"w-100 h-100 justify-around snap-start flex flex-column f4 white items-center pv2 ma0 cover  svelte-r4q1gt"}" style="${"--cocoa: 30,28.95%,14.9%; --alpha:0.6; min-width: 100vw; background-position-x: center; background-image: linear-gradient( hsla(var(--cocoa), " + escape(`0.555`) + ") 0, hsla(var(--cocoa), " + escape(`0.555`) + ") 100%), url(" + escape(JSON.stringify(src)) + ")"}">
+          
+          
 
-			<div class="${"w-100 snap-start always-stop svelte-mdoe6m"}">
-				<svg style="${"transform: scale(150%)"}" class="${"portrait-vh-75 landscape-vh-50 portrait-vh-50-m portrait-vh-50-l w-100 pa0 ma0 s--accent sw2 transparent no-select"}">${!id ? `<use xlink:href="${"#compass"}"></use>` : `${id == "globe" ? `<use xlink:href="${"#globe"}"></use>` : `<use xlink:href="${"#" + escape(id)}"></use>`}`}</svg>
-			<div class="${"flex items-center w-100 f5 f4-ns f3-m f3-l measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto"}"><div class="${"flex flex-column w-100 pv0 mv0"}"><span class="${"dark-beige tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f6-l fw5 ttu tc mv0"}"${add_attribute("data-en", headingEn, 0)}><!-- HTML_TAG_START -->${headingIt}<!-- HTML_TAG_END --></span>
-					
-					<h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid fraunces"}"><!-- HTML_TAG_START -->${title2}<!-- HTML_TAG_END --></h2>
-					
-					<a href="${"#" + escape(slug)}" class="${"transition link pointer br-pill b--white ba bw1 ph4 ph3-ns ph5-m ph4-l pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc ts1-dark-gray f5 f5-ns f7-m f5-l bg-transparent ttt mv3"}" en="${"Discover The Americas"}" lang="${"it"}">scopri le destinazioni</a>
-					
-				</div></div>
+          <svg style="${"transform: scale(150%)"}" class="${"h-50 w-100 pa0 ma0 s--accent sw2 transparent no-select pt2 pt0-ns pt4-m pt5-l"}">${!id ? `<use xlink:href="${"#sketch-compass"}"></use>` : `${id == "sketch-globe" ? `<use xlink:href="${"#sketch-globe"}"></use>` : `<use xlink:href="${"#sketch-" + escape(id)}"></use>`}`}</svg>
+
+           
 
 
-			</div>
-			<figcaption class="${"flex w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto vh-05 landscape-vh-15-l"}"><div class="${"flex flex-column w-100 pb0 pb0-l"}">
-						<span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3 db dn-ns dn-m dn-l"}"><!-- HTML_TAG_START -->${figCaption.length > truncate ? figCaption.substring(0, truncate) + "&hellip;" : figCaption}<!-- HTML_TAG_END --></span>
+            <span class="${"dark-beige tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f6-l fw5 ttu tc mv0"}"${add_attribute("data-en", headingEn, 0)}><!-- HTML_TAG_START -->${headingIt}<!-- HTML_TAG_END --></span>
 
-						
-						<span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3 dn db-ns dn-m dn-l"}"><!-- HTML_TAG_START -->${figCaption.length > truncateNS ? figCaption.substring(0, truncateNS) + "&hellip;" : figCaption}<!-- HTML_TAG_END --></span>
+            
+            <h2 class="${"w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid fraunces"}"><!-- HTML_TAG_START -->${title2}<!-- HTML_TAG_END --></h2>
+              
 
-						
-						<span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3 dn dn-ns db-m db-l"}"><!-- HTML_TAG_START -->${figCaption.length > truncateMedium ? figCaption.substring(0, truncateMedium) + "&hellip;" : figCaption}<!-- HTML_TAG_END --></span>
-				</div></figcaption>
-		</figure>`;
+            <a href="${"#" + escape(slug)}" class="${"transition link pointer br-pill b--white ba bw1 ph4 ph3-ns ph5-m ph4-l pv2 bg-black-10 white hover-bg-black-50 transition-bg mr-auto ml-auto db tc ts1-dark-gray f5 f5-ns f7-m f5-l bg-transparent ttt mv3"}" en="${"Discover This Place"}" lang="${"it"}">scopri le destinazioni</a>
+
+            <figcaption class="${"white flex w-100 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto h1"}">
+            
+
+            
+            <span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3 db dn-ns dn-m dn-l"}"><!-- HTML_TAG_START -->${figCaption.length > truncate ? figCaption.substring(0, truncate) + "&hellip;" : figCaption}<!-- HTML_TAG_END --></span>
+
+            
+            <span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3 dn db-ns dn-m dn-l"}"><!-- HTML_TAG_START -->${figCaption.length > truncateNS ? figCaption.substring(0, truncateNS) + "&hellip;" : figCaption}<!-- HTML_TAG_END --></span>
+
+            
+            <span class="${"tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f6-m f5-l fw3 mv0 pb3 dn dn-ns db-m db-l"}"><!-- HTML_TAG_START -->${figCaption.length > truncateMedium ? figCaption.substring(0, truncateMedium) + "&hellip;" : figCaption}<!-- HTML_TAG_END --></span></figcaption>
+
+        </figure>`;
   })}</aside>
 
-<div class="${"db black-70 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto"}"><nav class="${"fl w-100 cf flex justify-center"}">${each(items, ({ title: title2 }, i) => {
-    return `<button style="${"width:calc(100% / " + escape(items.length) + ")"}" class="${[
-      "o-50 f7 inline-flex items-center justify-center pv1 bg-transparent bn golden-brown svelte-mdoe6m",
+  <div class="${"db black-70 f5 f4-ns f3-m f3-l lh-copy measure ph2 measure-ns ph4-ns measure-m ph2-m measure-wide-l ph0-l mr-auto ml-auto"}"><nav class="${"fl w-100 flex flex-wrap items-center justify-around f7 fraunces"}">
+      ${each(destinations, ({ title: title2, id }, i) => {
+    return `<a href="${"#" + escape(id)}" class="${[
+      "pointer link inherit o-70 fw4 hover-fw6 hover-o-100 transition justify-between items-center pv1 golden-brown truncate pv2 svelte-r4q1gt",
       i === activeIndex ? "active" : ""
-    ].join(" ").trim()}">${escape(title2)}</button>`;
-  })}</nav>
+    ].join(" ").trim()}">${escape(title2)}</a>
+        `;
+  })}</nav></div></section>
 
-</div>`;
+  
+  ${validate_component(Defs, "Defs").$$render($$result, {}, {}, {})}`;
 });
 let pageSize$1 = 3;
 const TripSpotlight = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -68,7 +76,7 @@ const TripSpotlight = create_ssr_component(($$result, $$props, $$bindings, slots
   let { headline } = $$props;
   let { serp } = $$props;
   let { nurture } = $$props;
-  let { items: items2 } = $$props;
+  let { items } = $$props;
   let currentPage = 1;
   if ($$props.payoff === void 0 && $$bindings.payoff && payoff !== void 0)
     $$bindings.payoff(payoff);
@@ -78,9 +86,9 @@ const TripSpotlight = create_ssr_component(($$result, $$props, $$bindings, slots
     $$bindings.serp(serp);
   if ($$props.nurture === void 0 && $$bindings.nurture && nurture !== void 0)
     $$bindings.nurture(nurture);
-  if ($$props.items === void 0 && $$bindings.items && items2 !== void 0)
-    $$bindings.items(items2);
-  paginated = paginate({ items: items2, pageSize: pageSize$1, currentPage });
+  if ($$props.items === void 0 && $$bindings.items && items !== void 0)
+    $$bindings.items(items);
+  paginated = paginate({ items, pageSize: pageSize$1, currentPage });
   return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
     default: () => {
       return `<article>
@@ -101,7 +109,7 @@ const TripSpotlight = create_ssr_component(($$result, $$props, $$bindings, slots
       })}</ul>
 
 		${validate_component(LightPaginationNav, "LightPaginationNav").$$render($$result, {
-        totalItems: items2.length,
+        totalItems: items.length,
         pageSize: pageSize$1,
         currentPage,
         limit: 1,
@@ -117,7 +125,7 @@ const DepartingSoon = create_ssr_component(($$result, $$props, $$bindings, slots
   let { headline } = $$props;
   let { serp } = $$props;
   let { nurture } = $$props;
-  let { items: items2 } = $$props;
+  let { items } = $$props;
   let currentPage = 1;
   if ($$props.payoff === void 0 && $$bindings.payoff && payoff !== void 0)
     $$bindings.payoff(payoff);
@@ -127,9 +135,9 @@ const DepartingSoon = create_ssr_component(($$result, $$props, $$bindings, slots
     $$bindings.serp(serp);
   if ($$props.nurture === void 0 && $$bindings.nurture && nurture !== void 0)
     $$bindings.nurture(nurture);
-  if ($$props.items === void 0 && $$bindings.items && items2 !== void 0)
-    $$bindings.items(items2);
-  paginated = paginate({ items: items2, pageSize, currentPage });
+  if ($$props.items === void 0 && $$bindings.items && items !== void 0)
+    $$bindings.items(items);
+  paginated = paginate({ items, pageSize, currentPage });
   return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
     default: () => {
       return `
@@ -152,7 +160,7 @@ const DepartingSoon = create_ssr_component(($$result, $$props, $$bindings, slots
       })}</ul>
 
 		${validate_component(LightPaginationNav, "LightPaginationNav").$$render($$result, {
-        totalItems: items2.length,
+        totalItems: items.length,
         pageSize,
         currentPage,
         limit: 1,
@@ -247,40 +255,18 @@ const Ways = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 </section>`;
 });
 var index_svelte_svelte_type_style_lang = "";
-const css = {
-  code: "code.svelte-17y75eh{display:block;padding-bottom:2.5rem}",
-  map: null
-};
-const News = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let { news } = $$props;
-  if ($$props.news === void 0 && $$bindings.news && news !== void 0)
-    $$bindings.news(news);
-  $$result.css.add(css);
-  return `<div class="${"bg-cocoa linen"}">NEWS = <br>
-  Care Viaggiatrici<br>
-  cari Viaggiatori.<br></div>
-
-${validate_component(Row, "Row").$$render($$result, { bg: "bg-cocoa linen" }, {}, {
-    default: () => {
-      return `${each(news, ({ image, text, cta }) => {
-        return `<code class="${"svelte-17y75eh"}">${escape(cta ? cta : "")}</code>
-		<code class="${"svelte-17y75eh"}">${escape(text ? text : "")}</code>
-		<code class="${"svelte-17y75eh"}">${escape(image ? image : "")}
-		</code>`;
-      })}`;
-    }
-  })}`;
-});
-const prerender = true;
 let title = "Maurizio Levi";
 const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { homepage } = $$props;
+  let { destinations } = $$props;
   let tripSpotlight = Object.values(homepage.inEvidence.travels);
   let tripSpotlightItems = tripSpotlight;
   let departingSoon = Object.values(homepage.departing.travels);
   let departingSoonItems = departingSoon;
   if ($$props.homepage === void 0 && $$bindings.homepage && homepage !== void 0)
     $$bindings.homepage(homepage);
+  if ($$props.destinations === void 0 && $$bindings.destinations && destinations !== void 0)
+    $$bindings.destinations(destinations);
   return `
 
 
@@ -322,11 +308,7 @@ ${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
 
 
 
-
-
-${validate_component(Discover, "Discover").$$render($$result, { imageOverlay: true }, {}, {})}
-
-
+${validate_component(DestinationSlider, "DestinationSlider").$$render($$result, { destinations }, {}, {})}
 
 
 ${validate_component(Ways, "Ways").$$render($$result, {
@@ -337,9 +319,13 @@ ${validate_component(Ways, "Ways").$$render($$result, {
     imageOverlay: true
   }, {}, {})}
 
-${validate_component(News, "News").$$render($$result, { news: homepage.blog }, {}, {})}
+
+
+
 
   
+
+
 
 
 
@@ -348,4 +334,4 @@ ${$$result.head += `${$$result.title = `<title>${escape(title)}</title>`, ""}`, 
 
 `;
 });
-export { Routes as default, prerender };
+export { Routes as default };
