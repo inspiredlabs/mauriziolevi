@@ -27,7 +27,9 @@
     {/each}
   </figure>
   <style>
-  /****** $ BREAKOUT MONTAGE $ *******/
+    /* learn: animated: codepen.io/gametroll/pen/rNMggoO */
+    /* fix: breakout this component w. natural motion: css-tricks.com/making-css-animations-feel-natural */
+  /****** $ fix:BREAKOUT MONTAGE $ *******/
 
   .swap {
     /* learn: padding: t r b l; */

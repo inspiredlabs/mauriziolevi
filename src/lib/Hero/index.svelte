@@ -29,7 +29,7 @@ title={location ? location : '' }>
 <!-- base64'd: onlinejpgtools.com/convert-jpg-to-base64 -->
 
 <div class="vh-75 flex items-center white w-100 f5 f4-ns f3-m f3-l lh-copy measure pa2 measure-ns pa4-ns measure-m pa2-m measure-wide-l pa0-l mr-auto ml-auto">
-	<div class="flex flex-column w-100 pt5 pt6-l">
+	<div class="flex flex-column w-90 pt5 pt6-l mr-auto ml-auto">
 		<!--
 			<h1 class="tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu tc mv0">Gallo Bike Park, Narni, Umbria</h1>
 			<h2 class="w-100 mv0 ph3 f2 f2-ns f1-m f1-l tc lh-solid">Join the good times</h2>

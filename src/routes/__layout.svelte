@@ -70,6 +70,18 @@ class="system backface-hidden charcoal">
 /* note: kit.svelte.dev/docs/assets */
 /* learn: preprocessor runs before compilation: windicss.org/integrations/svelte.html */
 
+/*
+`.hover-b--transparent`, is NOT integrated into Tachyonshower.
+*/
+/* debug: basic only below... */
+:global(.hover-b--inherit) {
+  transition: all 0.4s ease 0s!important;
+}
+:global(.hover-b--inherit:hover) {
+  border-color: inherit;
+  /* usage: `bw1 bw2-l bb b--transparent hover-b--inherit hover-o-100 transition` */
+}
+
 :global(.visually-hidden) {
 	/* Contain text within 1px box */
 	height: 1px;

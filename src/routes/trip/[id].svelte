@@ -7,6 +7,7 @@
 
     // fix: http://localhost:7777/trip/25070 || 25640 || 25660
     const response = await fetch(`http://kel12.therebelwatchtower.net/levi-single/${id}`);
+    /* learn: https://kel12.therebelwatchtower.net/levi-single/${id} */
     // from: youtube.com/watch?v=6lNrvFSRmwY
     // learn: alt. approach: youtube.com/watch?v=q-MN5eejZ1k
     // learn: launch ext. link: stackoverflow.com/questions/69378392/sveltekit-base-url-for-subdirectory-throws-404
@@ -26,6 +27,7 @@
 <script>
   import Row from '$lib/Row.svelte';
   import Hero from '$lib/Hero/index.svelte';
+  import FakeDataTable from '$lib/FakeDataTable.svelte';
 
   export let trip;
   let title = 'I Viaggi di Maurizio Levi';
@@ -48,6 +50,8 @@
   */
 </script>
 
+
+
 <!-- fix: image={nations.hero.image} -->
 <Hero
   image={trip.hero.image}
@@ -57,85 +61,135 @@
   overlayImage={trip.hero.overlayImage}
 />
 
-<div class="bg-gold">
-  <code>{trip.price.title}</code>
-  <code>{trip.price.startingPrice}</code>
-  <code>{trip.price.cta}</code>
-</div>
+<Row bg="bg-cocoa">
+  <div class="flex items-center f5 f4-ns f3-m f3-l">
+    <div class="solitaire w-two-thirds pv3 self-end">
+      <div class="w-100 fraunces ttc pb2">
+        <!-- learn: titlecase: stackoverflow.com/questions/42755664/capitalize-first-letter-of-each-word-in-js -->
+        <!-- fix: <span>{[at]]html transformTitle(`${trip.price.title}`)}</span> -->
+        <span>{@html trip.price.title.toLowerCase() }</span>
+        <!-- <span>Special Capodanno -Patagonia e Deserto Atacama</span> -->
+      </div>
+      <div class="tracked-none tracked-ns tracked-m tracked-mega-l system fw4 f5 f5-ns f4-m f4-l ">
+        <small class="o-80">Starting from&thinsp;</small>
+        <span class="fraunces 0-100">€&thinsp;{trip.price.startingPrice}</span>
+        <small class="o-80">pp</small>
+        <!-- <span>a partire da € 5.700pp</span> -->
+      </div>
+    </div>
+    <div class="w-third items-center">
+      <!-- learn:  `self-start` is cleaner w. `pt5 pb0` -->
+      <a href="/{trip.price.cta}" class="fr link pointer br-pill ph3 ba bw2 pv2 bg-black-10 white bg-hover-solitaire-20 transition ts1-dark-gray f5 f5-ns f7-m f5-l" >
+        <span>Get a Quote</span>
+        <!-- <span>richiedi preventivo</span> -->
+      </a>
+    </div>
+  </div>
+</Row>
 
-<div class="bg-meadow">
-  <code>{trip.gallery.title}</code>
+<!-- debug: `<ImageComponent />` -->
+<FakeDataTable />
 
-  {#each trip.gallery.images as {image, location}, i}
-    <code>{image}</code>
-    <code>{location}</code>
+<!-- debug: `<ExpertGuideComponent />` || `<Row bg="bg-white">test</Row>` -->
+
+<ul class="list pl0 mv0">
+  {#each trip.dayByDay as {day, title, descriptionTitle, description, images, services }, i }
+    <li class="stripe-custom" id="giorni-{i + 1}">
+      <Row bg="bg-transparent">
+
+        <h5 class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">
+          <small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">Giorni &mdash; {day}</small>
+          <span class="fraunces">{@html !title ? 'Santiago <span class="fraunces-i">del</span> Cile' : title }</span>
+        </h5>
+
+        <h6 class="mv0 pa0 f4 f4-ns f3-m f3-l fw3 golden-brown">{descriptionTitle}</h6>
+        <!-- debug: bg-black-10 -->
+        <p class="fw2">{@html sanitiseText(`${description}`)}</p>
+      </Row>
+
+
+
+      <ul class="list pl0">
+        {#each images as image, i}
+
+          {#if i == 0}
+            <li
+              id="image-{i}"
+              class="ma0 flex flex-column vh-75 w-100 cover"
+              style="background-position: center center; background-image:url('https://viaggilevi.vercel.app/images/king-lewanika-lodge-liuwa-plain-national-park.webp')"
+            ></li>
+          {:else}
+            <li id="image-{i}" class="dn">
+              <Row bg="bg-cobalt">{@html !image ? 'https://viaggilevi.vercel.app/images/king-lewanika-lodge-liuwa-plain-national-park.webp' : image }</Row>
+            </li>
+          {/if}
+
+        {/each}
+      </ul>
+
+      <!-- learn: EMPTY ROW -->
+      <!-- <Row bg="bg-transparent">
+        {#each services as {title, cta, address, images}, i}
+          <code>{title}</code>
+          <code>{address}</code>
+          <code>{cta}</code>
+          <code>{images}</code>
+        {/each}
+      </Row> -->
+
+    </li>
   {/each}
-</div>
 
-<div class="bg-caribbean">
-  <code>{trip.departures.title}</code>
-  <code>{trip.departures.length}</code>
-  <code>{trip.departures.nrPax}</code>
-  <code>{trip.departures.nrPaxMax}</code>
-  <code>{@html sanitiseText(`${trip.departures.text}`)}</code>
+</ul>
 
-  <!-- learn: `trip.departures.dates.leave` and `return` is more acceptable -->
-  <!-- learn: ...especially considering we have the overhead of including structured data -->
-  <!-- fix: `return` is a reserved keyword in JS -->
-  <!-- note: suggest replacing occurrences of `departure` with: `trip.departures.dates.inbound` and `return` with: `trip.departures.dates.outbound`, these are semantically accurate too. -->
-  {#each trip.departures.dates as date, i}
-    <code>{date.departure}</code>
-    <code>{date.return}</code>
-  {/each}
-</div>
-
-<div class="bg-raspberry">
-{#each trip.tourLeaders.experts as { name, title, image, socialLinks, nextDeparture }, i }
-  <code>{name.replace(' ', ', ')}</code>
-  <code>{title}</code>
-  <code>{image}</code>
-
-  <!-- fix: `social_links`, probably more robust as `platforms` email, twitter, instagram, linkedIn, whatsApp -->
-  {#each socialLinks as platform, i }
-    <code>{platform}</code>
-  {/each}
-
-  <!-- fix: key contains a problematic `space` character -->
-  <code>{nextDeparture}</code>
-
-{/each}
-</div>
-
-<div class="bg-mexicano">
-{#each trip.dayByDay as {day, title, descriptionTitle, description, images, services }, i }
-
-  <code>{day}</code>
-
-  <code>{title}</code>
-
-  <code>{descriptionTitle}</code>
-
-  <code class="bg-black-10">{@html sanitiseText(`${description}`)}</code>
-
-  {#each images as image, i}
-    <code>{image}</code>
-  {/each}
-
-
-
-  {#each services as {title, cta, address, images}, i}
-    <code>{title}</code>
-    <code>{address}</code>
-    <code>{cta}</code>
-    <code>{images}</code>
-  {/each}
-
-{/each}
-</div>
 
 <style>
-	code {
+
+
+
+  .bg-hover-solitaire-20:hover {
+    --alpha: 0.2;
+    background: hsla(34,47%,85%,var(--alpha));
+  }
+
+  code {
 		display: block;
 		padding-bottom: 2.5rem;
 	}
+
+  .stripe-custom:nth-child(odd) {
+    background-color: var(--solitaire);
+    /* learn: custom color scheme: coolors.co/5a5353-a07178-e4ceb4-776274-c8cc92 */
+    /* debug: rapidtables.com/convert/color/hsl-to-rgb.html */
+    /* learn: 215°, 47%, 85% || 4°, 49%, 86% || 125°, 21%, 81% */
+
+  }
+  .stripe-custom:nth-child(even) {
+    background-color: var(--linen);
+  }
+
+  /* .stripe-light:nth-child(odd) {
+    --alpha: 1;
+    background-color: var(--solitaire);
+  }
+
+  .stripe-light:nth-child(even) {
+    --alpha: 1;
+    background-color: var(--linen);
+  } */
+
+  /* learn: */
+  /* .stripe-dark:nth-child(odd) {
+    --alpha: 1;
+    background-color: var(--cocoa);
+  }
+
+  .stripe-dark:nth-child(even) {
+    --alpha: 1;
+    background-color: var(--golden-brown);
+  } */
+
+
 </style>
+
+

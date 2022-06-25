@@ -1,8 +1,5 @@
 <script>
   // note: reset form input: codepen.io/inspiredlabs/pen/BgYooY
-
-import { claim_component } from "svelte/internal";
-
   // note: codepen.io/inspiredlabs/pen/wvyOwBp?editors=1100
   let title = 'Maurizio Levi';
 </script>

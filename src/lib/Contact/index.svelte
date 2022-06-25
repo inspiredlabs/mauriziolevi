@@ -98,16 +98,4 @@ let baseUrl = `${import.meta.env.VITE_BASEURL}/`;
 	opacity: 0.9;
 	font-variation-settings: 'wght' 600;
 }
-
-/*
-`.hover-b--transparent`, is NOT integrated into Tachyonshower.
-*/
-/* debug: basic only below... */
-.hover-b--inherit {
-  transition: all 0.4s ease 0s!important;
-}
-.hover-b--inherit:hover {
-  border-color: inherit;
-  /* usage: `bw1 bw2-l bb b--transparent hover-b--inherit hover-o-100 transition` */
-}
 </style>
