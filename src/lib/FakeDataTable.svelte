@@ -92,184 +92,48 @@
 /* learn: golden-brown, solitaire, linen, cocoa */
 /* learn `:root{...}` spacing fragment: tachyons.io/docs/layout/spacing */
 
-
-.sticky {
-  position: -webkit-sticky;
-  position: sticky; /* req. `top-0` */
-}
-
-/* .col-1 ~ .col-2 ~ .col-3 { color: white } */
-
-/* Tables, why not grid?: caniuse.com/css-grid */
-.grid { display: grid }
-
-@media screen and (min-width: 30em) {
-  .grid-ns {
-    display: grid
-  }
-}
-
-@media screen and (min-width: 30em) and (max-width: 60em) {
-  .grid-m {
-    display: grid
-  }
-}
-
-@media screen and (min-width: 60em) {
-  .grid-l {
-    display: grid
-  }
-}
-/* learn: spacing: tachyons.io/docs/layout/spacing */
-/*
-.gg0 { grid-gap: 0 }
-.gg1 { grid-gap: 0.25rem }
-.gg2 { grid-gap: 0.5rem }
-.gg3 { grid-gap: 1rem }
-*/
-
-.grid-fr1-auto-auto { grid-template-columns: [title] fr1 [col-2] auto [col-3] auto }
-
-.grid-auto-auto-auto { grid-template-columns: [title] auto [col-2] auto [col-3] auto }
-
+.grid-fr1-auto-auto { grid-template-columns: fr1 auto auto }
+.grid-auto-auto-auto { grid-template-columns: auto auto auto }
 .grid-repeat-3-1fr { grid-template-columns: repeat(3, 1fr) }
 .grid-repeat-5-1fr { grid-template-columns: repeat(5, 1fr) }
 
+/* .col-1 ~ .col-2 ~ .col-3 { color: white } */
 .col { grid-column: auto }
-.col-1{ grid-column: 1 }
-.col-2{ grid-column: 2 }
-.col-3{ grid-column: 3 }
+/* .col-1{ grid-column: 1 } */
+/* .col-2{ grid-column: 2 } */
+/* .col-3{ grid-column: 3 } */
 
-.col-span-3 { grid-column: span 3 }
+.row { display: contents }
+/* simplicity is the ultimate: stackoverflow.com/questions/56902735/css-grid-how-to-select-row-to-add-hover-effect */
 
-@media screen and (min-width: 30em) {
-  .col-span-3-ns {
-    grid-column: span 3
-  }
+.row [class *= 'col'] {
+transition: background-color 1s ease;
 }
 
-@media screen and (min-width: 30em) and (max-width: 60em) {
-  .col-span-3-m {
-    grid-column: span 3
-  }
+.row:hover [class *= 'col']:not(h1, h2, h3, h4, h5, h6) {
+  background-color: rgba(255,255,255, 1);
+  cursor: default;
+  /* mauw: w3docs.com/tools/editor/7415 */
 }
 
-@media screen and (min-width: 60em) {
-  .col-span-3-l {
-    grid-column: span 3
-  }
+/* table a { padding: initial }
+
+.stripe-light:nth-child(odd) {
+background-color: rgba(255,255,255, 0.8);
+}
+.stripe-dark:nth-child(odd) {
+background-color: var(--solitaire);
+} */
+
+/* .stripe-dark:nth-child(odd) {
+  --alpha: 1;
+  background-color: var(--cocoa);
 }
 
-.col-span-2 { grid-column: span 2 }
-
-@media screen and (min-width: 30em) {
-  .col-span-2-ns {
-    grid-column: span 2
-  }
-}
-
-@media screen and (min-width: 30em) and (max-width: 60em) {
-  .col-span-2-m {
-    grid-column: span 2
-  }
-}
-
-@media screen and (min-width: 60em) {
-  .col-span-2-l {
-    grid-column: span 2
-  }
-}
-
-.col-span-1 { grid-column: span 1 }
-
-@media screen and (min-width: 30em) {
-  .col-span-1-ns {
-    grid-column: span 1
-  }
-}
-
-@media screen and (min-width: 30em) and (max-width: 60em) {
-  .col-span-1-m {
-    grid-column: span 1
-  }
-}
-
-@media screen and (min-width: 60em) {
-  .col-span-1-l {
-    grid-column: span 1
-  }
-}
-
-
-.col-span-0 { grid-column: span 1 }
-
-@media screen and (min-width: 30em) {
-  .col-span-0-ns {
-    grid-column: span 1
-  }
-}
-
-@media screen and (min-width: 30em) and (max-width: 60em) {
-  .col-span-0-m {
-    grid-column: span 0
-  }
-}
-
-@media screen and (min-width: 60em) {
-  .col-span-0-l {
-    grid-column: span 0
-  }
-}
-
-	.grid { display:grid }
-
-	.row { display: contents }
-	/* simplicity is the ultimate: stackoverflow.com/questions/56902735/css-grid-how-to-select-row-to-add-hover-effect */
-
-	.row [class *= 'col'] {
-		transition: background-color 1s ease;
-	}
-
-	.row:hover [class *= 'col']:not(h1, h2, h3, h4, h5, h6) {
-		background-color: rgba(255,255,255, 1);
-		cursor: default;
-		/* mauw: w3docs.com/tools/editor/7415 */
-	}
-
-  table a { padding: initial }
-
-  .stripe-light:nth-child(odd) {
-    background-color: rgba(255,255,255, 0.8);
-  }
-  .stripe-dark:nth-child(odd) {
-    background-color: var(--solitaire);
-  }
-
-.o-80 { opacity: .8 }
-
-@media screen and (min-width: 30em) {
-  .o-80-ns {
-    opacity: .8
-  }
-}
-
-@media screen and (min-width: 30em) and (max-width: 60em) {
-  .o-80-m {
-    opacity: .8
-  }
-}
-
-@media screen and (min-width: 60em) {
-  .o-80-l {
-    opacity: .8
-  }
-}
-
-@media screen and (min-width: 30em) and (max-width: 60em) {
-  .o-100-m {
-    opacity: 1
-  }
-}
+.stripe-dark:nth-child(even) {
+  --alpha: 1;
+  background-color: var(--golden-brown);
+} */
 
 /* learn: css-tricks.com/almanac/properties/l/list-style/ */
 .custom-list > li::marker { color: var(--golden-brown) }
@@ -481,6 +345,7 @@
         <section class="row fw5 fraunces">
           <div class="f4 f4-ns f3-m o-100-m f2-l "></div>
           <div class="pa1 pv1-l ph3-l col-span-3 col-span-3-ns col-span-3-m col-span-2-l mt0 mb3">
+            <!-- <profile>https://www.viaggilevi.com/content/uploads/2016/06/Cecilia_Tour_Leader-e1624287662165.jpg</profile> -->
             <a
               href="/esperti/#cecilia-bechstein"
               title="Cecilia Bechstein, Specialist Adventure"
@@ -502,6 +367,7 @@
         <section class="row fw5 fraunces">
           <div class="f4 f4-ns f3-m o-100-m f2-l "></div>
           <div class="pa1 pv1-l ph3-l col-span-3 col-span-3-ns col-span-3-m col-span-2-l mt0 mb3">
+            <!-- <profile>https://www.viaggilevi.com/content/uploads/2021/10/Paolo_Ghirelli..jpg</profile> -->
             <a
               href="/esperti/#paolo-ghirelli"
               title="Paolo Ghirelli, Specialist Adventure"

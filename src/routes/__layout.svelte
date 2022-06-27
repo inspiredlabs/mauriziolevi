@@ -70,6 +70,194 @@ class="system backface-hidden charcoal">
 /* note: kit.svelte.dev/docs/assets */
 /* learn: preprocessor runs before compilation: windicss.org/integrations/svelte.html */
 
+/* fix: Grid, is NOT integrated into Tachyonshower */
+/* learn: fractional units: vgpena.github.io/using-css-grid-the-right-way*/
+/* learn: golden-brown, solitaire, linen, cocoa */
+/* learn `:root{...}` spacing fragment: tachyons.io/docs/layout/spacing */
+
+/* fix: `sticky`, is NOT integrated into Tachyonshower */
+:global(.sticky) {
+  position: -webkit-sticky;
+  position: sticky; /* learn: req. `top-0` */
+}
+
+/* Tables, why not grid?: caniuse.com/css-grid */
+:global(.dg, .grid) { display: grid }
+
+@media screen and (min-width: 30em) {
+  :global(.dg-ns, .grid-ns) {
+    display: grid
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  :global(.dg-m, .grid-m) {
+    display: grid
+  }
+}
+
+@media screen and (min-width: 60em) {
+  :global(.dg-l, .grid-l) {
+    display: grid
+  }
+}
+
+/* fix: `grid-items-start`, etc, is NOT integrated into Tachyonshower... */
+/* learn: see: ~/Users/scottphillips/Documents/GitHub/mauriziolevi/support/tables/grid-vs-flexbox.html */
+:global(.grid-items-start) { justify-items: start }
+:global(.grid-items-center) { justify-items: center }
+:global(.grid-items-end) { justify-items: end }
+
+:global(.grid-align-start) { align-items: start }
+:global(.grid-align-center) { align-items: center }
+:global(.grid-align-end) { align-items: end }
+
+/* fix: important `:root{...}` spacing fragment to all */
+/* learn: spacing: tachyons.io/docs/layout/spacing */
+
+:global(:root) {
+  --spacing-none: 0;
+  --spacing-extra-small: .25rem;
+  --spacing-small: .5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  --spacing-extra-large: 4rem;
+  --spacing-extra-extra-large: 8rem;
+  --spacing-extra-extra-extra-large: 16rem;
+}
+
+:global(.gg0, .gap-0) { grid-gap: var(--spacing-none) }
+:global(.gg1, .gap-1) { grid-gap: var(--spacing-extra-small) }
+:global(.gg2, .gap-2) { grid-gap: var(--spacing-small) }
+:global(.gg3, .gap-3) { grid-gap: var(--spacing-medium) }
+:global(.gg4, .gap-4) { grid-gap: var(--spacing-large) }
+:global(.gg5, .gap-5) { grid-gap: var(--spacing-extra-large) }
+:global(.gg6, .gap-6) { grid-gap: var(--spacing-extra-extra-large) }
+:global(.gg7, .gap-7) { grid-gap: var(--spacing-extra-extra-extra-large) }
+
+:global(.grid-fr1-auto-auto) { grid-template-columns: fr1 auto auto }
+:global(.grid-repeat-3-1fr) { grid-template-columns: repeat(3, 1fr) }
+:global(.grid-repeat-5-1fr) { grid-template-columns: repeat(5, 1fr) }
+
+:global(.col) { grid-column: auto }
+
+:global(.col-span-3) { grid-column: span 3 }
+
+@media screen and (min-width: 30em) {
+  :global(.col-span-3-ns) {
+    grid-column: span 3
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  :global(.col-span-3-m) {
+    grid-column: span 3
+  }
+}
+
+@media screen and (min-width: 60em) {
+  :global(.col-span-3-l) {
+    grid-column: span 3
+  }
+}
+
+:global(.col-span-2) { grid-column: span 2 }
+
+@media screen and (min-width: 30em) {
+  :global(.col-span-2-ns) {
+    grid-column: span 2
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  :global(.col-span-2-m) {
+    grid-column: span 2
+  }
+}
+
+@media screen and (min-width: 60em) {
+  :global(.col-span-2-l) {
+    grid-column: span 2
+  }
+}
+
+:global(.col-span-1) { grid-column: span 1 }
+
+@media screen and (min-width: 30em) {
+  :global(.col-span-1-ns) {
+    grid-column: span 1
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  :global(.col-span-1-m) {
+    grid-column: span 1
+  }
+}
+
+@media screen and (min-width: 60em) {
+  :global(.col-span-1-l) {
+    grid-column: span 1
+  }
+}
+
+:global(.col-span-0) { grid-column: span 1 }
+
+@media screen and (min-width: 30em) {
+  :global(.col-span-0-ns) {
+    grid-column: span 1
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  :global(.col-span-0-m) {
+    grid-column: span 0
+  }
+}
+
+@media screen and (min-width: 60em) {
+  :global(.col-span-0-l) {
+    grid-column: span 0
+  }
+}
+
+:global(.row-h-33) { grid-auto-rows: minmax(33%, auto) }
+:global(.row-h-25vh) { grid-auto-rows: minmax(25vh, auto) }
+:global(.row-h-third) { grid-auto-rows: minmax(33.333vh, auto) }
+
+:global(.row-span-2) { grid-row: span 2 }
+:global(.row-span-3) { grid-row: span 3 }
+
+:global(.row) { display: contents }
+/* learn: simplicity is the ultimate: stackoverflow.com/questions/56902735/css-grid-how-to-select-row-to-add-hover-effect */
+
+:global(.o-80) { opacity: .8 }
+
+@media screen and (min-width: 30em) {
+  :global(.o-80-ns) {
+    opacity: .8
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  :global(.o-80-m) {
+    opacity: .8
+  }
+}
+
+@media screen and (min-width: 60em) {
+  :global(.o-80-l) {
+    opacity: .8
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  :global(.o-100-m) {
+    opacity: 1
+  }
+}
+
+
 /*
 `.hover-b--transparent`, is NOT integrated into Tachyonshower.
 */

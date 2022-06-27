@@ -27,6 +27,8 @@
 <script>
   import Row from '$lib/Row.svelte';
   import Hero from '$lib/Hero/index.svelte';
+  import ImageExpose from '$lib/ImageExpose.svelte';
+  import ImageDayPerDay from '$lib/ImageDayPerDay.svelte';
   import FakeDataTable from '$lib/FakeDataTable.svelte';
 
   export let trip;
@@ -79,7 +81,8 @@
     </div>
     <div class="w-third items-center">
       <!-- learn:  `self-start` is cleaner w. `pt5 pb0` -->
-      <a href="/{trip.price.cta}" class="fr link pointer br-pill ph3 ba bw2 pv2 bg-black-10 white bg-hover-solitaire-20 transition ts1-dark-gray f5 f5-ns f7-m f5-l" >
+      <a href="/{trip.price.cta}" class="fr link pointer br-pill ph3 ba bw2 pv2 bg-black-10 white bg-hover-solitaire-20 transition ts1-dark-gray
+      f7 f5-ns f7-m f5-l" >
         <span>Get a Quote</span>
         <!-- <span>richiedi preventivo</span> -->
       </a>
@@ -87,7 +90,32 @@
   </div>
 </Row>
 
-<!-- debug: `<ImageComponent />` -->
+<style>
+/* debug: code { display: block; padding-bottom: 2.5rem } */
+
+.bg-hover-solitaire-20:hover {
+  --alpha: 0.2;
+  background: hsla(34,47%,85%,var(--alpha));
+}
+
+.stripe-custom:nth-child(odd) {
+  background-color: var(--solitaire);
+  /* learn: custom color scheme: coolors.co/5a5353-a07178-e4ceb4-776274-c8cc92 */
+  /* debug: rapidtables.com/convert/color/hsl-to-rgb.html */
+  /* learn: 215°, 47%, 85% || 4°, 49%, 86% || 125°, 21%, 81% */
+}
+.stripe-custom:nth-child(even) {
+  background-color: var(--linen);
+}
+
+</style>
+
+<ImageExpose
+  title={trip.gallery.title}
+  images={trip.gallery.images}
+  location={trip.gallery.images.location}
+/>
+
 <FakeDataTable />
 
 <!-- debug: `<ExpertGuideComponent />` || `<Row bg="bg-white">test</Row>` -->
@@ -107,89 +135,25 @@
         <p class="fw2">{@html sanitiseText(`${description}`)}</p>
       </Row>
 
+      <ImageDayPerDay images={images} />
 
 
-      <ul class="list pl0">
-        {#each images as image, i}
 
-          {#if i == 0}
-            <li
-              id="image-{i}"
-              class="ma0 flex flex-column vh-75 w-100 cover"
-              style="background-position: center center; background-image:url('https://viaggilevi.vercel.app/images/king-lewanika-lodge-liuwa-plain-national-park.webp')"
-            ></li>
-          {:else}
-            <li id="image-{i}" class="dn">
-              <Row bg="bg-cobalt">{@html !image ? 'https://viaggilevi.vercel.app/images/king-lewanika-lodge-liuwa-plain-national-park.webp' : image }</Row>
-            </li>
-          {/if}
 
-        {/each}
-      </ul>
 
-      <!-- learn: EMPTY ROW -->
-      <!-- <Row bg="bg-transparent">
+      <!-- learn: EMPTY ROW
+      <Row bg="bg-meadow">
         {#each services as {title, cta, address, images}, i}
           <code>{title}</code>
           <code>{address}</code>
           <code>{cta}</code>
           <code>{images}</code>
         {/each}
-      </Row> -->
+      </Row>-->
 
     </li>
   {/each}
 
 </ul>
-
-
-<style>
-
-
-
-  .bg-hover-solitaire-20:hover {
-    --alpha: 0.2;
-    background: hsla(34,47%,85%,var(--alpha));
-  }
-
-  code {
-		display: block;
-		padding-bottom: 2.5rem;
-	}
-
-  .stripe-custom:nth-child(odd) {
-    background-color: var(--solitaire);
-    /* learn: custom color scheme: coolors.co/5a5353-a07178-e4ceb4-776274-c8cc92 */
-    /* debug: rapidtables.com/convert/color/hsl-to-rgb.html */
-    /* learn: 215°, 47%, 85% || 4°, 49%, 86% || 125°, 21%, 81% */
-
-  }
-  .stripe-custom:nth-child(even) {
-    background-color: var(--linen);
-  }
-
-  /* .stripe-light:nth-child(odd) {
-    --alpha: 1;
-    background-color: var(--solitaire);
-  }
-
-  .stripe-light:nth-child(even) {
-    --alpha: 1;
-    background-color: var(--linen);
-  } */
-
-  /* learn: */
-  /* .stripe-dark:nth-child(odd) {
-    --alpha: 1;
-    background-color: var(--cocoa);
-  }
-
-  .stripe-dark:nth-child(even) {
-    --alpha: 1;
-    background-color: var(--golden-brown);
-  } */
-
-
-</style>
 
 
