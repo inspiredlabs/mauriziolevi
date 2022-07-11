@@ -4,16 +4,16 @@ import Form from '$lib/Subscribe/Form.svelte';
 </script>
 
 <!-- fix: filter: blur(0px) alt to: `"free" "royalty free" "photos"` -->
-<!-- fix:https://viaggilevi.vercel.app/images/160x60-horizon.webp  -->
+<!-- fix:  -->
 <figure
-	style="box-shadow: inset 0 0 42px 42px var(--linen);background: url('./images/160x60-horizon.webp') center center;"
+	style="box-shadow: inset 0 0 42px 42px var(--linen);background: url('https://viaggilevi.vercel.app/images/160x60-horizon.webp') center center;"
 	class="cover ma0 pa0 ">
 	<!-- learn: `bg-solitaire` || `hsl(34,47%,85%)` && filter: blur(1px) -->
 
 	<!-- <Row bg="bg-transparent"> -->
 	<div class="mr-auto ml-auto w-100 w-100-ns w-100-m w-40-l">
 		<!-- fix: header component -->
-		<header class="ph2 ph2-ns ph2-m ph0-l tc">
+		<header class="ph2 ph2-ns ph2-m ph0-l tc" id="sottoscrivere">
 			<h5 class="mv0 pv4 f3 f3-ns f2-m f2-l fw2 lh-solid">
 				<small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">Newsletter</small>
 				<!-- Sottoscrivere -->
@@ -24,8 +24,7 @@ import Form from '$lib/Subscribe/Form.svelte';
 		</header>
 
 		<div
-		class="ph2 ph2-ns ph2-m ph0-l ml-auto mr-auto w-100 w-100-ns w-two-thirds-m w-100-l"
-		id="sottoscrivere">
+		class="ph2 ph2-ns ph2-m ph0-l ml-auto mr-auto w-100 w-100-ns w-two-thirds-m w-100-l">
 			<Form />
 		</div>
 	</div>
