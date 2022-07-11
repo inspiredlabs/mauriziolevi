@@ -18,7 +18,7 @@ bg="bg-linen"
 id={`${alt.toLowerCase().replace(/&amp;/g, '').replace(/&nbsp;/g, '-').replace(/\s/g, '-').replace(/\,/g, '').replace(/(&gt;)(?:&nbsp;|&#8209;|<br>)+(\s?&lt;)/g,'$1$2').replace(/--/g, '-')}`}>
 
 	<!-- note: previously <section class="cf bg-linen" id="viaggi-di-scoperta"></section> -->
-	<article id="viaggi-di-scoperta">
+	<article class="ph2" id="viaggi-di-scoperta">
 		<h4 class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">
 			<small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">i viaggi di maurizio levi</small>
 			<span class="fraunces">Viaggi </span><span class="fraunces-i">di&nbsp;scoperta</span>
@@ -30,11 +30,14 @@ id={`${alt.toLowerCase().replace(/&amp;/g, '').replace(/&nbsp;/g, '-').replace(/
 			on:enterViewport={() => visible = true }
 			on:exitViewport={() => visible = false }
 			class="montage { visible ? 'visible' : '' }
-			cf relative top-0 w-100 mr-auto ml-auto"
+			relative cf top-0 w-50 mr-auto ml-auto z-0 db "
 		>
-			<img class="absolute shadow-5" src="{imagesBaseUrl}MaurizioLevi_Anteprima.webp" alt={alt}>
-			<img class="absolute shadow-5" src="{imagesBaseUrl}Levi-Maurizio-768x510.webp" alt={alt}>
-			<img class="absolute shadow-5" src="{imagesBaseUrl}Maurizio_Levi.webp" alt={alt}>
+			<div class="flex items-reverse">
+				<!-- learn: dev.to/m4rrc0/lazy-loading-images-so-easy-you-wont-believe-it-a-native-strategy-2pcp -->
+				<img loading="lazy" class="absolute shadow-5" src="{imagesBaseUrl}MaurizioLevi_Anteprima.webp" alt={alt}>
+				<img loading="lazy" class="absolute shadow-5" src="{imagesBaseUrl}Levi-Maurizio-768x510.webp" alt={alt}>
+				<img loading="lazy" class="absolute shadow-5" src="{imagesBaseUrl}Maurizio_Levi.webp" alt={alt}>
+			</div>
 		</figure>
 
 		<div class="fl w-100 w-50-m w-50-l lh-copy measure ">
@@ -103,7 +106,7 @@ This req. prevent horizontal scroll css: `overflow-x-hidden`
 }
 
 .montage img {
-  z-index: 4;
+  /* learn: flex-reverse negates: `z-index: 2;` */
 /*   -webkit-transform: scale(1.0) rotate(4.3deg);
   -moz-transform: scale(1.0) rotate(4.3deg);
   -ms-transform: scale(1.0) rotate(4.3deg);
@@ -113,7 +116,7 @@ This req. prevent horizontal scroll css: `overflow-x-hidden`
 
 /* reduction class: css-tricks.com/almanac/selectors/n/nth-last-child/ */
 .montage img:nth-child(1) {
-  z-index: 3;
+  /* learn: flex-reverse negates: `z-index: 1;` */
   left: calc(var(--montage-img)*0.53);
 /*   -webkit-transform: scale(0.7) rotate(3.5deg);
   -moz-transform: scale(0.7) rotate(3.5deg);
@@ -123,7 +126,7 @@ This req. prevent horizontal scroll css: `overflow-x-hidden`
 }
 
 .montage img:nth-child(2) {
-  z-index: 2;
+  /* learn: flex-reverse negates: `z-index: 0;` */
   right: calc(var(--montage-img)*0.59);
 /*   -webkit-transform: scale(0.8) rotate(-5.5deg);
   -moz-transform: scale(0.8) rotate(-5.5deg);

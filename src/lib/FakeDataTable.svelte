@@ -136,25 +136,60 @@ background-color: var(--solitaire);
 } */
 
 /* learn: css-tricks.com/almanac/properties/l/list-style/ */
+.custom-list {
+  /* learn: `list-style-position: inside` from: tutorialspoint.com/changing-the-position-of-list-markers-in-css */
+}
 .custom-list > li::marker { color: var(--golden-brown) }
+
+@media all and (orientation:portrait) {
+	.top-2-portrait {
+    top: 2rem;
+  }
+}
+
+@media all and (orientation:landscape) {
+
+  .top-0-landscape {
+    top: 0;
+  }
+
+  @media screen and (min-width:30em) {
+    .top-2-landscape-ns {
+      top: 2rem;
+    }
+  }
+  @media screen and (min-width:30em) and (max-width:60em) {
+    .top-2-landscape-m {
+      top: 2rem;
+    }
+  }
+
+  @media screen and (min-width:60em) {
+
+    .top-1-landscape-l {
+      top: 1rem;
+    }
+  }
+
+}
 
 </style>
 
 <!-- learn: wrap `sticky` and maintain the document flow -->
 <article class="bg-linen">
-  <header class="sticky top-2 z-1">
+  <header class="sticky top-0-landscape top-2-portrait top-1-landscape-l z-1 ">
     <Row bg="bg-solitaire">
 
       <!-- <h3 class="fw5 fraunces tl f4 f4-ns f3-m o-100-m f2-l golden-brown mv3">
         Patagonia e Deserto Atacama
       </h3> -->
-      <h3 class="fw5 fraunces tl f3 f3-ns f2-m f1-l golden-brown mv3 pt5">
+      <h3 class="ph2 fw5 fraunces tl f3 f3-ns f2-m f1-l golden-brown mv3 pt5">
         Patagonia e Deserto Atacama
       </h3>
     </Row>
   </header>
 
-  <section class="w-100 flex flex-row-ns flex-column-reverse fw6 f4 f3-ns f3-m f3-l measure measure-ns measure-m measure-wide-l mr-auto ml-auto pt4">
+  <section class="ph2 w-100 flex flex-row-ns flex-column-reverse fw6 f4 f3-ns f3-m f3-l measure measure-ns measure-m measure-wide-l mr-auto ml-auto pt4">
 
     <figure class="w-100 w-third-ns w-50-m w-third-l flex-column flex-grow-1 ma0">
       <!-- debug: ./images/placeholder.gif || https://viaggilevi.vercel.app/images/placeholder.gif -->

@@ -64,7 +64,7 @@
 />
 
 <Row bg="bg-cocoa">
-  <div class="flex items-center f5 f4-ns f3-m f3-l">
+  <div class="flex items-center f5 f4-ns f3-m f3-l ph2">
     <div class="solitaire w-two-thirds pv3 self-end">
       <div class="w-100 fraunces ttc pb2">
         <!-- learn: titlecase: stackoverflow.com/questions/42755664/capitalize-first-letter-of-each-word-in-js -->
@@ -83,32 +83,15 @@
       <!-- learn:  `self-start` is cleaner w. `pt5 pb0` -->
       <a href="/{trip.price.cta}" class="fr link pointer br-pill ph3 ba bw2 pv2 bg-black-10 white bg-hover-solitaire-20 transition ts1-dark-gray
       f7 f5-ns f7-m f5-l" >
-        <span>Get a Quote</span>
-        <!-- <span>richiedi preventivo</span> -->
+        <span class="db db-ns db-m dn-l">Preventivo</span>
+        <span class="dn dn-ns dn-m db-l">Richiedi&nbsp;Preventivo</span>
+        <!-- <span class="db db-ns dn-m dn-l">Quote</span>
+        <span class="dn dn-ns db-m dn-l">Get&nbsp;Quote</span>
+        <span class="dn dn-ns dn-m db-l">Get a&nbsp;Quote</span> -->
       </a>
     </div>
   </div>
 </Row>
-
-<style>
-/* debug: code { display: block; padding-bottom: 2.5rem } */
-
-.bg-hover-solitaire-20:hover {
-  --alpha: 0.2;
-  background: hsla(34,47%,85%,var(--alpha));
-}
-
-.stripe-custom:nth-child(odd) {
-  background-color: var(--solitaire);
-  /* learn: custom color scheme: coolors.co/5a5353-a07178-e4ceb4-776274-c8cc92 */
-  /* debug: rapidtables.com/convert/color/hsl-to-rgb.html */
-  /* learn: 215°, 47%, 85% || 4°, 49%, 86% || 125°, 21%, 81% */
-}
-.stripe-custom:nth-child(even) {
-  background-color: var(--linen);
-}
-
-</style>
 
 <ImageExpose
   title={trip.gallery.title}
@@ -120,19 +103,23 @@
 
 <!-- debug: `<ExpertGuideComponent />` || `<Row bg="bg-white">test</Row>` -->
 
-<ul class="list pl0 mv0">
+<ul class="list pl0 mv0 ">
   {#each trip.dayByDay as {day, title, descriptionTitle, description, images, services }, i }
     <li class="stripe-custom" id="giorni-{i + 1}">
       <Row bg="bg-transparent">
 
-        <h5 class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">
-          <small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">Giorni &mdash; {day}</small>
-          <span class="fraunces">{@html !title ? 'Santiago <span class="fraunces-i">del</span> Cile' : title }</span>
-        </h5>
+        <article class="ph2">
 
-        <h6 class="mv0 pa0 f4 f4-ns f3-m f3-l fw3 golden-brown">{descriptionTitle}</h6>
-        <!-- debug: bg-black-10 -->
-        <p class="fw2">{@html sanitiseText(`${description}`)}</p>
+          <h5 class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">
+            <small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">Giorni &mdash; {day}</small>
+            <span class="fraunces">{@html !title ? 'Santiago <span class="fraunces-i">del</span> Cile' : title }</span>
+          </h5>
+
+          <h6 class="mv0 pa0 f4 f4-ns f3-m f3-l fw3 golden-brown">{descriptionTitle}</h6>
+          <!-- debug: bg-black-10 -->
+          <p class="fw2">{@html sanitiseText(`${description}`)}</p>
+
+        </article>
       </Row>
 
       <ImageDayPerDay images={images} />
@@ -157,3 +144,22 @@
 </ul>
 
 
+<style>
+  /* debug: code { display: block; padding-bottom: 2.5rem } */
+
+  .bg-hover-solitaire-20:hover {
+    --alpha: 0.2;
+    background: hsla(34,47%,85%,var(--alpha));
+  }
+
+  .stripe-custom:nth-child(odd) {
+    background-color: var(--solitaire);
+    /* learn: custom color scheme: coolors.co/5a5353-a07178-e4ceb4-776274-c8cc92 */
+    /* debug: rapidtables.com/convert/color/hsl-to-rgb.html */
+    /* learn: 215°, 47%, 85% || 4°, 49%, 86% || 125°, 21%, 81% */
+  }
+  .stripe-custom:nth-child(even) {
+    background-color: var(--linen);
+  }
+
+</style>

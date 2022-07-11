@@ -60,7 +60,8 @@ Bespoke itineraries
 					<!-- fix: style="background-position: 50% 0; background-image: linear-gradient( hsla(30,28.95%,14.9%, 0) 30%, hsla(30,28.95%,14.9%, 0.5) 100%), url('{image ? image : '' }')" -->
 
 					<figure class="ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 cover shadow-5-hover transition overflow-hidden"
-					style="background-position: 50% 0; background-image: linear-gradient( hsla(30,28.95%,14.9%, {imageOverlay === true ? `0.555` : `0`}) 0, hsla(30,28.95%,14.9%, {imageOverlay === true ? `0.555` : `0`}) 100%), url({!image ? `https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp` : image})" title={title}>
+					style="background-position: 50% 0; background-image: linear-gradient( hsla(30,28.95%,14.9%, {imageOverlay === true ? `0.555` : `0`}) 0, hsla(30,28.95%,14.9%, {imageOverlay === true ? `0.555` : `0`}) 100%), url('https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp')" title={title}>
+					<!-- fix: {image} {!image ? `URL` : image} -->
 						<img class="w-50 relative z-1" src="https://viaggilevi.vercel.app/images/levi-logo.svg" alt="Levi" />
 
 							<figurecap class="h5 white ts1-dark-gray flex flex-column lh-solid items-center">
@@ -72,6 +73,8 @@ Bespoke itineraries
 				</li>
 				{/if}
 			{/each}
+			<!-- learn: fake padding... -->
+			<li class="w-100 w-100-ns w-30-m w5-l pb3"></li>
 		</ul>
 	</article>
 </section>

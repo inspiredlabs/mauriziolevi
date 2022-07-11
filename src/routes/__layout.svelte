@@ -11,6 +11,7 @@ export const load = async ({ url, params }) => ({
 </script> -->
 
 <script context="module">
+  // learn: flush cache: `chrome://serviceworker-internals`
 	// learn: youtube.com/watch?v=_atyihzXVuI
 	//export const prerender = false;
 	export const load = async ({ url }) => ({
@@ -46,12 +47,12 @@ export let url;
 
 <main
 class="system backface-hidden charcoal">
-	<!-- debug: y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 fixed -->
-	<PageTransition url={url}>
-		<!-- note: using `<slot />` breaks the transition -->
-		<slot />
-		<Outro />
-	</PageTransition>
+  <!-- debug: y-mandatory overflow-x-hidden w-100 h-100 ma0 pa0 fixed -->
+  <PageTransition url={url}>
+    <!-- note: using `<slot />` breaks the transition -->
+    <slot />
+    <Outro />
+  </PageTransition>
 
 </main>
 
@@ -63,6 +64,7 @@ class="system backface-hidden charcoal">
 <style>
 /* @use '../app.css'; */
 /* "purge" "unused css" from "global style" in "sveltekit" */
+/* learn: HSL colour schemes: smashingmagazine.com/2021/07/hsl-colors-css/ */
 /* learn: `%svelte.assets%`: closingtags.com/global-css-in-sveltekit */
 /* learn: preprocessor: github.com/bluwy/svelte-preprocess-import-assets */
 /* learn: preprocessor: npmjs.com/package/svelte-assets-preprocessor */
@@ -71,9 +73,95 @@ class="system backface-hidden charcoal">
 /* learn: preprocessor runs before compilation: windicss.org/integrations/svelte.html */
 
 /* fix: Grid, is NOT integrated into Tachyonshower */
+/* learn: Grumpy's cheatsheet: rachelandrew.co.uk/css/cheatsheets/box-alignment */
+/* learn: examples & how CSS Grid is different "No need for rows and other extraneous markup hacks to make it all work": github.com/tachyons-css/tachyons/issues/372#issuecomment-330592004 */
+/* learn: mauw */
+/* learn: another convention emerging: github.com/tachyons-css/tachyons/issues/692 */
+/* learn: by example: https://codepen.io/cannedqualia/pen/GRQEjKG */
+
+
+
 /* learn: fractional units: vgpena.github.io/using-css-grid-the-right-way*/
 /* learn: golden-brown, solitaire, linen, cocoa */
 /* learn `:root{...}` spacing fragment: tachyons.io/docs/layout/spacing */
+
+
+:global(:root) {
+    /* --content-active: cyan; */
+    /* --accent: var(--golden-brown); */
+    --content-inactive: rgba(0,0,0, 0.01);
+    --alpha: 1;
+    --bw2: 0.25rem;
+    --pick: var(--golden-brown);
+    --success: hsla(120, 100%, 19.6%, var(--alpha));
+    --error: darkred; /*firebrick*/
+    --warning: var(--golden-brown); /* learn: hsl(316, 54%, 58%) */
+  }
+
+:global(.accent) { font-family: 'Fraunces Variable Italic', serif; }
+/* color: var(--accent);
+fill: var(--accent) */
+
+
+:global(.outline-3-highlight) {
+  outline: 0 solid var(--golden-brown);
+  /* transition: all 0.333s ease; */
+}
+
+
+
+
+/* Prompt example: https://codepen.io/inspiredlabs/pen/BaLRXaN */
+
+:global(.form-checkbox.retry) {
+  animation:retry .5s linear 0.8s;
+  -webkit-animation:retry .5s linear 0.8s;
+}
+
+:global(.form-input.retry) {
+  animation:retry .5s linear 0.8s;
+  -webkit-animation:retry .5s linear 0.8s;
+}
+
+/* keyframes */
+/* -moz-keyframes */
+/* -webkit-keyframes */
+@keyframes retry {
+
+  8%,
+  41% {
+    transform: translateX(-10px);
+  }
+
+  25%,
+  58% {
+    transform: translateX(10px);
+  }
+
+  72% {
+    transform: translateX(-5px);
+  }
+  86% {
+    transform: translateX(5px);
+  }
+
+
+  92% {
+    transform: translateX(-2px);
+  }
+  98% {
+    transform: translateX(2px);
+  }
+
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+
 
 /* fix: `sticky`, is NOT integrated into Tachyonshower */
 :global(.sticky) {
@@ -116,10 +204,10 @@ class="system backface-hidden charcoal">
 /* learn: spacing: tachyons.io/docs/layout/spacing */
 
 :global(:root) {
-  --spacing-none: 0;
-  --spacing-extra-small: .25rem;
-  --spacing-small: .5rem;
-  --spacing-medium: 1rem;
+  --spacing-none: 0; /* bw0 */
+  --spacing-extra-small: .25rem; /* bw1 */
+  --spacing-small: .5rem; /* bw2 */
+  --spacing-medium: 1rem; /* bw3 */
   --spacing-large: 2rem;
   --spacing-extra-large: 4rem;
   --spacing-extra-extra-large: 8rem;
@@ -135,13 +223,16 @@ class="system backface-hidden charcoal">
 :global(.gg6, .gap-6) { grid-gap: var(--spacing-extra-extra-large) }
 :global(.gg7, .gap-7) { grid-gap: var(--spacing-extra-extra-extra-large) }
 
-:global(.grid-fr1-auto-auto) { grid-template-columns: fr1 auto auto }
-:global(.grid-repeat-3-1fr) { grid-template-columns: repeat(3, 1fr) }
-:global(.grid-repeat-5-1fr) { grid-template-columns: repeat(5, 1fr) }
+
+:global(.cols-fr1) { grid-template-columns: 1fr }
+:global(.rows-fr1) { grid-template-rows: 1fr }
+:global(.col-fr1-auto-auto, .grid-fr1-auto-auto) { grid-template-columns: fr1 auto auto }
+:global(.col-3x1fr, .grid-repeat-3-1fr) { grid-template-columns: repeat(3, 1fr) }
+:global(.col-5x1fr, .grid-repeat-5-1fr) { grid-template-columns: repeat(5, 1fr) }
 
 :global(.col) { grid-column: auto }
 
-:global(.col-span-3) { grid-column: span 3 }
+:global(.col-s3, .col-span-3) { grid-column: span 3 }
 
 @media screen and (min-width: 30em) {
   :global(.col-span-3-ns) {
@@ -270,6 +361,7 @@ class="system backface-hidden charcoal">
   /* usage: `bw1 bw2-l bb b--transparent hover-b--inherit hover-o-100 transition` */
 }
 
+
 :global(.visually-hidden) {
 	/* Contain text within 1px box */
 	height: 1px;
@@ -342,7 +434,7 @@ class="system backface-hidden charcoal">
 
 :global(.light-pagination-nav .pagination-nav) {
 	background: transparent!important;
-	box-shadow: none;
+	box-shadow: none!important;
 }
 
 :global(.option.active) {
@@ -366,28 +458,29 @@ class="system backface-hidden charcoal">
 
 
 :global(svg) {
-		/* fill: inherit; */
-		stroke-width: inherit;
-		vector-effect: non-scaling-stroke;
-		/* seanrice.net/code/design-system/2018/10/12/styling-svg-icons-with-css.html */
-	}
-
-	:global(:root) {
-		--stroke-accent: white;
-	}
-
-/* .sw1{ stroke-width: .125rem } */
-:global(.sw2) { stroke-width: .25rem }
-/* .sw3{ stroke-width: .5rem }
-.sw4{ stroke-width: 1rem }
-.sw5{ stroke-width: 2rem }
-
-.s--black {
-	stroke: black;
+  /* fill: inherit; */
+  stroke-width: inherit;
+  vector-effect: non-scaling-stroke;
+  /* seanrice.net/code/design-system/2018/10/12/styling-svg-icons-with-css.html */
 }
-.s--white {
-	stroke: white;
-} */
+
+:global(:root) {
+  --stroke-accent: white;
+}
+
+/* learn: tachyons.io/docs/layout/spacing/ */
+/* .sw1{ stroke-width: .125rem calc( var(--spacing-extra-small) * 0.5 ) } */
+:global(.sw2) { stroke-width: var(--spacing-extra-small) }
+/* .sw3{ stroke-width: var(--spacing-small) }
+.sw4{ stroke-width: var(--spacing-medium) }
+.sw5{ stroke-width: var(--spacing-large) }
+*/
+
+/* learn: `currentColor vs inherit`: stackoverflow.com/questions/65591442/whats-the-difference-between-color-inherit-vs-color-currentcolor
+.s--current { stroke-color: currentColor }
+.s--inherit { stroke-color: inherit }
+.s--black { stroke: black }
+.s--white { stroke: white } */
 
 :global(.s--accent) {
 	stroke: var(--stroke-accent);

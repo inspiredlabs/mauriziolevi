@@ -1,0 +1,40 @@
+<!-- note: official syntax: schema.org/Person -->
+<!-- learn: json-ld.org/playground/ -->
+<!-- learn: search.google.com/test/rich-results/result?id=GhZBzSyAVxfWCXZRVSK9yQ -->
+<!-- learn: how to pas the frag into `<svelte:head>...</svelte:head>` navillus.dev/blog/json-ld-in-sveltekit -->
+<!-- fix: missing: `"url": "https://www.viaggilevi.com/accompagnatore/cecilia-bechstein"` -->
+<!-- fix: missing: `"@id": "https://viaggilevi.vercel.app/expert/cecilia-bechstein"` -->
+<script type="application/ld+json">
+"@context": "https://schema.org",
+"@type": "Person",
+"name": "Cecilia Bechstein",
+"gender": "Female",
+"Description": "Tour Leader",
+"disambiguatingDescription": "Adventure Specialist",
+"jobTitle": "Tour Leader",
+"worksFor": [
+  {
+    "@type": "Organization",
+    "name": "I Viaggi di Maurizio Levi",
+    "sameAs": [
+      "https://twitter.com/viaggilevi",
+      "https://www.facebook.com/I-Viaggi-di-Maurizio-Levi-207083192654850/",
+      "https://www.youtube.com/user/viaggidimauriziolevi",
+      "https://www.instagram.com/p/BKVQ5cvAvht/",
+      "https://za.pinterest.com/iviaggidimauriz/"
+    ]
+  }
+],
+"url": "https://www.viaggilevi.com/",
+"image": "https://www.viaggilevi.com/content/uploads/2016/06/Cecilia_Tour_Leader-e1624287662165.jpg",
+"address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Via Londonio, 4 – 20154",
+  "addressRegion": "Milano",
+  "addressCountry": "Italia"
+},
+"sameAs": [
+  "https://kel12.com/tourleader/cecilia-bechstein/",
+  "https://www.nationalgeographicexpeditions.it/tourleader/cecilia-bechstein/"
+]
+</script>

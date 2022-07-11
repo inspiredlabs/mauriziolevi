@@ -110,7 +110,12 @@
 
 
 <!-- fix: this is an empty component -->
-<!-- <News news={homepage.blog} /> -->
+<News
+  payoff={homepage.blog.payoff}
+  title={homepage.blog.title}
+  text={homepage.blog.text}
+  contents={homepage.blog.contents}
+/>
 
   <!-- <code class="silver">{JSON.stringify(homepage.blog, null, 2)}</code> -->
 

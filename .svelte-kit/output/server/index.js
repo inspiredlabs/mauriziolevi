@@ -29,7 +29,7 @@ var __objRest = (source, exclude) => {
     }
   return target;
 };
-import { c as create_ssr_component, s as setContext, v as validate_component, m as missing_component } from "./chunks/index-38784e15.js";
+import { c as create_ssr_component, s as setContext, v as validate_component, m as missing_component } from "./chunks/index-7b9d2833.js";
 function afterUpdate() {
 }
 const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -2296,7 +2296,7 @@ class Server {
       hooks: null,
       hydrate: true,
       manifest,
-      method_override: { "parameter": "_method", "allowed": [] },
+      method_override: { "parameter": "_method", "allowed": ["POST"] },
       paths: { base, assets },
       prefix: assets + "/_app/",
       prerender: true,

@@ -25,7 +25,7 @@
 </script>
 
 <Row bg="bg-linen">
-	<article>
+	<article class="ph2">
 		<!-- fix: populate w. SEO relevant data: -->
 		<header>
 			<h4 class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">

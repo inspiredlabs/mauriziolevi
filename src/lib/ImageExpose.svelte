@@ -18,24 +18,24 @@
 <div class="dg vh-two-thirds col-repeat-6-1fr gg3 bg-solitaire">
   <figure
     style="background-position: center center; background-image:url({images[0].image})"
-    class="grid grid-items-start grid-align-end col-span-3 row-span-3 pa3 mh0 mv0">
+    class="overflow-hidden grid grid-items-start grid-align-end col-span-3 row-span-3 pa3 mh0 mv0">
     <p class="white f7 mv0 ts1-dark-gray">{@html images[0].location === '' ? title : location }</p>
     <!-- <p class="white">{@html images[0].location == '' ? title : location }</p> -->
   </figure>
   <figure
     style="background-position: center center; background-image:url({images[1].image})"
-    class="grid grid-items-start grid-align-end col-span-3 row-span-2 pa3 mh0 mv0">
+    class="overflow-hidden grid grid-items-start grid-align-end col-span-3 row-span-2 pa3 mh0 mv0">
     <p class="white f7 mv0 ts1-dark-gray">{@html images[1].location === '' ? title : location }</p>
   </figure>
   <figure
     style="background-position: center center; background-image:url({images[2].image})"
-    class="grid grid-items-start grid-align-end pa3 mh0 mv0">
+    class="overflow-hidden grid grid-items-start grid-align-end pa3 mh0 mv0">
     <p class="white f7 mv0 ts1-dark-gray">{@html images[2].location === '' ? title : location }</p>
   </figure>
 
   <figure
     style="background-position: center center; background-image:url({images[3].image})"
-    class="grid col-span-2 grid-items-start grid-align-end pa3 mh0 mv0">
+    class="overflow-hidden grid col-span-2 grid-items-start grid-align-end pa3 mh0 mv0">
     <p class="white f7 mv0 ts1-dark-gray">{@html images[3].location === '' ? title : location }</p>
   </figure>
 </div>

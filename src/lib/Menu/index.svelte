@@ -14,9 +14,7 @@ import { page } from '$app/stores';
 
 </script>
 
-
-
-<nav class="levi-nav fixed z-max w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system">
+<nav class="levi-nav fixed z-5 w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system">
 
 <div class="w-100 flex justify-between
 					f5 f4-ns f3-m f3-l lh-copy

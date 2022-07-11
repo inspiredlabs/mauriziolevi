@@ -4,6 +4,11 @@ import path from 'path'; // dev.to/brittneypostma/make-pathing-easier-with-alias
 import preprocess from 'svelte-preprocess';
 
 const config = {
+  experimental: {
+    inspector: true,
+    holdMode: true
+    // have you flushed the cache??? `brave://serviceworker-internals`
+  },
   preprocess: [
     preprocess({
       postcss: true,
@@ -25,6 +30,8 @@ const config = {
       fallback: 'index.html',
       // fallback: null,
 		}),
+    // Override: ['PATCH', 'DELETE']
+		methodOverride: { allowed: ['POST'] },
 
     // paths: {
     //   assets: '',

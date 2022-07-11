@@ -1,9 +1,9 @@
-import { c as create_ssr_component, b as each, a as add_attribute, e as escape, v as validate_component } from "../../chunks/index-38784e15.js";
-import { D as Defs } from "../../chunks/Defs-e3600b17.js";
-import { p as paginate, Z as Zed, L as LightPaginationNav } from "../../chunks/Zed-b368652f.js";
-import { R as Row } from "../../chunks/Row-8144bead.js";
-import { H as Hero } from "../../chunks/index-b367c062.js";
-import { S as SwapMontage } from "../../chunks/SwapMontage-56333ef2.js";
+import { c as create_ssr_component, b as each, a as add_attribute, e as escape, v as validate_component } from "../../chunks/index-7b9d2833.js";
+import { D as Defs } from "../../chunks/Defs-00394b96.js";
+import { p as paginate, Z as Zed, L as LightPaginationNav } from "../../chunks/Zed-d5ac8ee4.js";
+import { R as Row } from "../../chunks/Row-b62db77e.js";
+import { H as Hero } from "../../chunks/index-0510ada9.js";
+import { S as SwapMontage } from "../../chunks/SwapMontage-fa1ee084.js";
 var DestinationSlider_svelte_svelte_type_style_lang = "";
 const css = {
   code: ".active.svelte-r4q1gt{opacity:1;font-variation-settings:'wght' 600}.x-mandatory.svelte-r4q1gt{-ms-scroll-snap-type:x mandatory;scroll-snap-type:x mandatory\n    }.snap-start.svelte-r4q1gt{scroll-snap-align:start }@media all and (orientation:landscape){@media screen and (min-width:30em) and (max-width:60em){}}@media all and (orientation:portrait){@media screen and (min-width:30em) and (max-width:60em){}}",
@@ -91,7 +91,7 @@ const TripSpotlight = create_ssr_component(($$result, $$props, $$bindings, slots
   paginated = paginate({ items, pageSize: pageSize$1, currentPage });
   return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
     default: () => {
-      return `<article>
+      return `<article class="${"ph2"}">
 		<header><h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">${escape(payoff)}</small>
 				<span class="${"fraunces"}"><!-- HTML_TAG_START -->${headline.replace("<i", '<span class="fraunces-i"').replace("</i>", "</span>")}<!-- HTML_TAG_END --></span></h4>
 			<p class="${"mt0 fw4 measure lh-copy"}">${escape(serp)}</p>
@@ -141,7 +141,7 @@ const DepartingSoon = create_ssr_component(($$result, $$props, $$bindings, slots
   return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-linen" }, {}, {
     default: () => {
       return `
-	<article>
+	<article class="${"ph2"}">
 		<header><h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">${escape(payoff)}</small>
 				<span class="${"fraunces"}"><!-- HTML_TAG_START -->${headline.replace("<i", '<span class="fraunces-i"').replace("</i>", "</span>")}<!-- HTML_TAG_END --></span></h4>
 			<p class="${"mt0 fw4 measure lh-copy"}">${escape(serp)}</p>
@@ -245,16 +245,55 @@ const Ways = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 			${each(lines, ({ title: title3, cta, image }, i) => {
     return `${!title3 ? `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"></li>` : `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"><a${add_attribute("title", title3, 0)}${add_attribute("href", cta, 0)} class="${"link"}">
 
-					<figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 cover shadow-5-hover transition overflow-hidden"}" style="${"background-position: 50% 0; background-image: linear-gradient( hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 0, hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 100%), url(" + escape(!image ? `https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp` : image) + ")"}"${add_attribute("title", title3, 0)}><img class="${"w-50 relative z-1"}" src="${"https://viaggilevi.vercel.app/images/levi-logo.svg"}" alt="${"Levi"}">
+					<figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 cover shadow-5-hover transition overflow-hidden"}" style="${"background-position: 50% 0; background-image: linear-gradient( hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 0, hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 100%), url('https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp')"}"${add_attribute("title", title3, 0)}>
+						<img class="${"w-50 relative z-1"}" src="${"https://viaggilevi.vercel.app/images/levi-logo.svg"}" alt="${"Levi"}">
 
 							<figurecap class="${"h5 white ts1-dark-gray flex flex-column lh-solid items-center"}"><h6 class="${"pv5 tc fraunces mv0 ttc f2 f2-ns f3-m f2-l fw4 items-center"}"><!-- HTML_TAG_START -->${`${title3.toLowerCase()}`}<!-- HTML_TAG_END --></h6></figurecap>
 							<div class="${"pointer br-pill ba bw2 ph2 pv2 bg-black-10 white hover-bg-black-50 transition mr-auto ml-auto tc ts1-dark-gray f5 f5-ns f7-m f5-l"}">Scopri i viaggi</div>
 					</figure></a>
 				</li>`}`;
-  })}</ul></article>
+  })}
+			
+			<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"></li></ul></article>
 </section>`;
 });
-var index_svelte_svelte_type_style_lang = "";
+const News = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { payoff } = $$props;
+  let { title: title2 } = $$props;
+  let { text } = $$props;
+  let { imageOverlay } = $$props;
+  let { contents } = $$props;
+  if ($$props.payoff === void 0 && $$bindings.payoff && payoff !== void 0)
+    $$bindings.payoff(payoff);
+  if ($$props.title === void 0 && $$bindings.title && title2 !== void 0)
+    $$bindings.title(title2);
+  if ($$props.text === void 0 && $$bindings.text && text !== void 0)
+    $$bindings.text(text);
+  if ($$props.imageOverlay === void 0 && $$bindings.imageOverlay && imageOverlay !== void 0)
+    $$bindings.imageOverlay(imageOverlay);
+  if ($$props.contents === void 0 && $$bindings.contents && contents !== void 0)
+    $$bindings.contents(contents);
+  return `${validate_component(Row, "Row").$$render($$result, { bg: "bg-solitaire pv2" }, {}, {
+    default: () => {
+      return `<article class="${"ph2"}" id="${"viaggi-di-scoperta"}"><h4 class="${"mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid"}"><small class="${"golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0"}">${escape(payoff)}</small>
+			<span class="${"fraunces"}"><!-- HTML_TAG_START -->${title2}<!-- HTML_TAG_END --></span>
+			</h4>
+
+
+		<ul class="${"mv0 items list pl0 w-100 flex flex-wrap justify-between flex-column flex-column-ns flex-row-m flex-row-l"}">${each(contents, ({ image, text: text2, cta }, i) => {
+        return `<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"><a${add_attribute("title", text2, 0)}${add_attribute("href", cta, 0)} class="${"link"}"><figure class="${"ma0 w-100 f6 mh0 ph3 ph3-ns ph1-m ph3-l pb4 cover shadow-5-hover transition overflow-hidden h5"}" style="${"background-position: 50% 0; background-image: linear-gradient( hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 0, hsla(30,28.95%,14.9%, " + escape(imageOverlay === true ? `0.555` : `0`) + ") 100%), url('https://viaggilevi.vercel.app/images/Tineye.Torres.del.Paine.National.Park.webp')"}"${add_attribute("title", text2, 0)}></figure>
+
+						<figurecap class="${"flex flex-column lh-copy items-center charcoal f5 f5-ns f7-m f5-l fw4"}"><span class="${"pv3 tc mv0 ttc items-center "}"><!-- HTML_TAG_START -->${`${text2.toLowerCase()}`}<!-- HTML_TAG_END --></span>
+
+							<span class="${"pointer br-pill b--golden-brown ba bw2 ph4 pv2 bg-transparent golden-brown hover-white hover-bg-golden-brown transition mr-auto ml-auto tc f5 f5-ns f7-m f5-l"}">Scopri di pi\xF9</span>
+						</figurecap></a>
+					</li>`;
+      })}
+				
+				<li class="${"w-100 w-100-ns w-30-m w5-l pb3"}"></li></ul></article>`;
+    }
+  })}`;
+});
 let title = "Maurizio Levi";
 const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { homepage } = $$props;
@@ -321,7 +360,12 @@ ${validate_component(Ways, "Ways").$$render($$result, {
 
 
 
-
+${validate_component(News, "News").$$render($$result, {
+    payoff: homepage.blog.payoff,
+    title: homepage.blog.title,
+    text: homepage.blog.text,
+    contents: homepage.blog.contents
+  }, {}, {})}
 
   
 
