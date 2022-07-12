@@ -57,8 +57,8 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
         <p class="f8 silver mb0">Fare <span>clic</span> per chiudere</p>
 
       </article>
-      <div class="flex flex-auto envelope z-2 absolute top-0"></div>
-      <div class="flap absolute top-0 no-select"></div>
+      <div class="flex flex-auto envelope z-3 absolute top-0"></div>
+      <div class="flap absolute top-0 no-select" ></div>
     </section>
 
   </aside>
@@ -75,7 +75,7 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
   /* scuzzy: codepen.io/bedekelly/pen/VzyjRP?editors=1100 */
   article {
     animation: onEnter calc(0.5 * var(--duration)) ease-in-out 1s forwards;
-    z-index:1;
+    z-index: 2;
   }
 
   section:hover article {
@@ -122,17 +122,17 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
     }
     100% {
       transform: rotateX(160deg);
-      z-index: 0;
+      z-index: 1;
     }
   }
   @keyframes closeFlap {
     0% {
       transform: rotateX(160deg);
-      z-index: 0;
+      z-index: 1;
     }
     50% {
       transform: rotateX(160deg);
-      z-index: 0;
+      z-index: 1;
     }
     100% {
       transform: rotateX(0);

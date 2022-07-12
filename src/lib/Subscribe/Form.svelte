@@ -33,16 +33,13 @@ import { browser } from "$app/env";
 	import ButtonSubmit from "$lib/Subscribe/ButtonSubmit.svelte";
 	import classnames from "vest/classnames";
 
-	// learn how to load this as an object rather than explicit values:
+	// learn how to load `console.log(formState)` as an object rather than explicit values:
 	let formState = {
 		nome: $token_nome,
 		_replyto: $token_replyto,
 		terms: $token_terms == 'false' || false ? '' : $token_terms
 	};
 
-
-
-	console.log(formState)
 
 	// learn: validation result
 	let res = suite.get();
@@ -128,7 +125,7 @@ import { token_nome, token_replyto, token_terms } from "$lib/stores.js";
 /*********** LOCALSTORAGE ************/
 </script>
 
-{#if submitted}
+{#if !submitted}
 	<Modal modalOpen on:openModal={openModal} on:closeModal={closeModal} />
 {/if}
 
