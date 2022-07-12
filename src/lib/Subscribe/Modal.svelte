@@ -58,7 +58,7 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
 
       </article>
       <div class="flex flex-auto envelope z-3 absolute top-0"></div>
-      <div class="flap absolute top-0 no-select" ></div>
+      <div class="flap absolute top-0 no-select" style="z-index:0"></div>
     </section>
 
   </aside>
