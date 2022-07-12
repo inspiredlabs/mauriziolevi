@@ -25,7 +25,7 @@
 
 <dialoge
 on:click={closeModal}
-class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
+class="zed top-0 left-0 {modalOpen ? 'db' : 'dn'}"
 >
 
 	<aside class="z-1 flex justify-center vh-100 fixed bg-black-80 top-0 right-0 btm-0 left-0 dg cols-fr1">
@@ -48,7 +48,7 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
 
     </div>
 
-    <section class="pointer relative bg-solitaire w5 h4 ml-auto mr-auto">
+    <section class="pointer relative w5 h4 ml-auto mr-auto bg-solitaire">
       <article class="absolute tc system f5 text fw3 top-0 pa2 w5 no-select">
         <div class="bg-white pb4 shadow-0">
           <span class="bg-semichevron tc f4 fw5 db pt2"></span>
@@ -57,8 +57,10 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
         <p class="f8 silver mb0">Fare <span>clic</span> per chiudere</p>
 
       </article>
-      <div class="flex flex-auto envelope z-3 absolute top-0"></div>
-      <div class="flap absolute top-0 no-select" style="z-index:0"></div>
+      <div class="flex flex-auto envelope z-5 absolute top-0"></div>
+      <div class="flap absolute top-0 no-select"></div>
+      <!-- <div class="omega absolute top-0 no-select"></div> -->
+
     </section>
 
   </aside>
@@ -75,17 +77,12 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
   /* scuzzy: codepen.io/bedekelly/pen/VzyjRP?editors=1100 */
   article {
     animation: onEnter calc(0.5 * var(--duration)) ease-in-out 1s forwards;
-    z-index: 2;
+    z-index: 4;
   }
 
   section:hover article {
     /* as we're using the same animation for each instance, call it here so we're not repeating it */
-    animation: mouseOver var(--duration) ease-in-out calc(1 * var(--duration)) 1s forwards
-  }
-
-  @keyframes onEnter {
-    from { transform: translateY(0px) }
-    to { transform: translateY(-100px) }
+    animation: mouseOver 1s ease 0s forwards
   }
 
   @keyframes mouseOver {
@@ -93,7 +90,15 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
     to { transform: translateY(0px) }
   }
 
+  @keyframes onEnter {
+    from { transform: translateY(0px) }
+    to { transform: translateY(-100px) }
+  }
+
+
+
   .flap {
+    position: relative;
     border-top: 4rem solid var(--solitaire);
     border-left:  8rem solid transparent;
     border-right: 8rem solid transparent;
@@ -104,38 +109,48 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
   }
 
 
-
-  section:hover .flap {
-    /* ENTER */
-    animation: closeFlap calc(0.7 * var(--duration)) ease-in-out 0s forwards;
-  }
-
   /* debug: speed, just add: `border-color:cyan` */
   @keyframes openFlap {
     0% {
       transform: rotateX(0);
+      /* background:firebrick; */
+      position: relative;
       z-index: 9;
     }
     50% {
       transform: rotateX(0);
+      /* background:forestgreen; */
+      position: relative;
       z-index: 9;
     }
     100% {
       transform: rotateX(160deg);
-      z-index: 1;
+      /* background:skyblue; */
+      position: relative!important;
+      z-index: -1;
     }
   }
+
+
+  section:hover .flap {
+    animation: closeFlap calc(0.7 * var(--duration)) ease-in-out 0s forwards;
+  }
+
+
   @keyframes closeFlap {
     0% {
       transform: rotateX(160deg);
-      z-index: 1;
+      position: relative;
+      z-index: 3;
     }
     50% {
       transform: rotateX(160deg);
-      z-index: 1;
+      position: relative;
+      z-index: 3;
     }
     100% {
-      transform: rotateX(0);
+      transform: rotateX(0deg);
+      position: relative;
       z-index: 9;
     }
   }
@@ -166,6 +181,20 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
     }
 
   .shadow-0 { box-shadow: 0px 0.3rem 0.3rem rgba(0,0,0, 0.2) }
+
+
+
+  /* @keyframes closeFlap {
+    0% {
+      transform: rotateX(160deg);
+    }
+    50% {
+      transform: rotateX(160deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  } */
 </style>
 
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: none;">
@@ -182,6 +211,6 @@ class="z-9 top-0 left-0 {modalOpen ? 'db' : 'dn'}"
 <!-- learn: hack-around will probably stay: github.com/sveltejs/svelte/issues/3105 -->
 <svelte:head>
   {#if modalOpen}
-    <style> html, body { overflow: hidden!important } </style>
+    <style> html, body { overflow: hidden!important } dialoge.zed{ position:relative; z-index:2 }</style>
   {/if}
 </svelte:head>
