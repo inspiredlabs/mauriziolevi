@@ -1,6 +1,6 @@
 <script>
   export let name = "";
-  export let checked = false;
+  export let checked = "";
   export let label = "";
   export let onChange = () => {};
   export let validityClass;

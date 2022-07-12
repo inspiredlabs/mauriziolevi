@@ -19,6 +19,11 @@
 /*********** DONE ************/
 
 
+/*********** LOCALSTORAGE ************/
+import { writable } from "svelte/store";
+import { browser } from "$app/env";
+/*********** LOCALSTORAGE ************/
+
 
 
 /*********** VEST ************/
@@ -28,13 +33,43 @@
 	import ButtonSubmit from "$lib/Subscribe/ButtonSubmit.svelte";
 	import classnames from "vest/classnames";
 
-	let formState = {};
+	// learn how to load this as an object rather than explicit values:
+	let formState = {
+		nome: $token_nome,
+		_replyto: $token_replyto,
+		terms: $token_terms == 'false' || false ? '' : $token_terms
+	};
+
+
+
+	console.log(formState)
 
 	// learn: validation result
 	let res = suite.get();
 
-	const handleChange = ({ target: { nome, email } }) => {
+	const handleChange = ({ target: { nome, _replyto, terms } }) => {
     res = suite(formState);
+
+		//debug: console.log(formState.nome);
+		//debug: console.log(formState._replyto);
+		//debug: console.log(formState.terms);
+
+		//////////// NAME ////////////
+		let token_nome = writable(
+			(browser && localStorage.setItem("token_nome", formState.nome))
+		);
+
+		//////////// EMAIL ////////////
+		let token_replyto = writable(
+			(browser && localStorage.setItem("token_replyto", formState._replyto))
+		);
+
+		//////////// TERMS ////////////
+		let token_terms = writable(
+			(browser && localStorage.setItem("token_terms", formState.terms))
+		);
+
+
   };
 
 	$: cn = classnames(res, {
@@ -84,6 +119,13 @@ async function handleSubmit(event) {
 };
 /*********** FORMSPREE ************/
 
+
+
+/*********** LOCALSTORAGE ************/
+
+import { token_nome, token_replyto, token_terms } from "$lib/stores.js";
+
+/*********** LOCALSTORAGE ************/
 </script>
 
 {#if submitted}
@@ -136,3 +178,4 @@ async function handleSubmit(event) {
 		<ButtonSubmit {disabled} value={'Iscriviti'} />
 	</div>
 </form>
+

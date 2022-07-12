@@ -19,7 +19,7 @@
   </label>
   <input
     style="border-top:0 solid transparent;border-right:0 solid transparent;border-left:0 solid transparent;"
-    class="inherit outline-3-highlight transition w-100 br0 ba bw2 bg-white-80 f6 f5-ns pv3 ph3 mb4"
+    class="inherit outline-3-highlight transition w-100 br0 ba bw2 bg-white-80 f5 f5-ns pv3 ph3 mb4"
     id={name}
     name={name}
     bind:value
