@@ -125,7 +125,7 @@ import { token_nome, token_replyto, token_terms } from "$lib/stores.js";
 /*********** LOCALSTORAGE ************/
 </script>
 
-{#if !submitted}
+{#if submitted}
 	<Modal modalOpen on:openModal={openModal} on:closeModal={closeModal} />
 {/if}
 
