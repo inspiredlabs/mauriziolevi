@@ -33,6 +33,16 @@ import { browser } from "$app/env";
 	import ButtonSubmit from "$lib/Subscribe/ButtonSubmit.svelte";
 	import classnames from "vest/classnames";
 
+	const cleanse = () => {
+    suite.reset();
+    res = suite.get();
+    errors = {};
+    warnings = {};
+    //formState = suite(formState);
+		// learn: `46`: codesandbox.io/s/svelte-vest-form-validation-example-kf185?file=/AuthForm.svelte
+		// learn: from: codechips.me/form-validation-svelte-vest/
+  };
+
 	// learn how to load `console.log(formState)` as an object rather than explicit values:
 	let formState = {
 		nome: $token_nome,
@@ -108,6 +118,7 @@ async function handleSubmit(event) {
 			console.log("It works!");
 			// xxx. alert('Ciaonne');
 			form.reset();
+			cleanse();
 		})
 		.catch((error) => {
 			console.log(error);
@@ -171,7 +182,8 @@ import { token_nome, token_replyto, token_terms } from "$lib/stores.js";
 	/>
 
 
-	<div class="flex ml-auto justify-end w-100 w-50-m w-two-thirds-l pb3 pb6-ns pb5-m pb5-l { isSubmitting ? 'no-select' : 'pointer' }">
+	<div class="flex ml-auto justify-end pb3 pb6-ns pb5-m pb5-l { isSubmitting ? 'no-select' : 'pointer' }">
+		<!-- w-100 w-50-m w-two-thirds-l -->
 		<ButtonSubmit {disabled} value={'Iscriviti'} />
 	</div>
 </form>

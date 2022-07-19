@@ -14,7 +14,7 @@
 <button
   type="submit"
   class="submit-button no-clutter
-  system input-reset b db tc br-pill f6 f5-ns b ph4 pv3 ba bw2 b--transparent white ttu tracked-mega transition { online ? 'pointer' : 'disabled no-select' }"
+  system input-reset b db tc br-pill f6 f5-ns b ph4 ph5-l pv3 ba bw2 b--transparent white ttu tracked-mega transition { online ? 'pointer' : 'disabled no-select' }"
   disabled={disabled}
 >{ online ? value : 'Nessun segnale' }</button>
 

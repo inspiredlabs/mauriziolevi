@@ -6,7 +6,7 @@ import Form from '$lib/Subscribe/Form.svelte';
 <!-- fix: filter: blur(0px) alt to: `"free" "royalty free" "photos"` -->
 <!-- fix:  -->
 <figure
-	style="box-shadow: inset 0 0 42px 42px var(--linen);background: url('https://viaggilevi.vercel.app/images/160x60-horizon.webp') center center;"
+	style="box-shadow: inset 0 0 42px 42px var(--linen);background: url('https://viaggilevi.vercel.app/images/160x60-horizon.webp') center center; background-color:var(--linen);"
 	class="cover ma0 pa0 ">
 	<!-- learn: `bg-solitaire` || `hsl(34,47%,85%)` && filter: blur(1px) -->
 

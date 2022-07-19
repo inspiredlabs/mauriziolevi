@@ -152,7 +152,7 @@ landscape-dn-l flex tc "><!-- bg-red -->
 .levi-nav {
 	--alpha: 0.9;
 	background-color: hsla(30,28.95%,14.9%,var(--alpha));
-	backdrop-filter: blur(8px);
+	/* fix: rm due to performance concern: backdrop-filter: blur(8px); */
 	/*  .backdrop-blur */
 }
 
