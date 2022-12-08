@@ -10,10 +10,10 @@ import { goto } from '$app/navigation';
 import { page } from '$app/stores';
 
 const buttons = [
-	{name: "Partenze", route: "/partenze"},
-	{name: "Viaggi", route: "/viaggi"},
-	{name: "Chi Siamo", route: "/chi-siamo"},
-	{name: "News", route: "/news"},
+	{name: "Partenze", route: "https://viaggilevi.vercel.app/destinations"},
+	{name: "Viaggi", route: "https://viaggilevi.vercel.app/trip"},
+	{name: "Chi Siamo", route: "https://viaggilevi.vercel.app/#viaggi-di-scoperta"},
+	{name: "News", route: "https://viaggilevi.vercel.app/#news"},
 ]
 
 $: pageUrl = $page.url.pathname; // learn: reactive highlight: webjeda.com/blog/sveltekit-highlight-menu
