@@ -20,8 +20,8 @@ let baseUrl = `${import.meta.env.VITE_BASEURL}/`;
 			<ul class="list pl0 fraunces pr1 pr4-ns pr4-m pr1-l">
 				{#each items as { title, slug }}
 					<li class="truncate">
-						<a href="{`#${slug}`}" class="link inherit o-80 fw4 hover-fw6 hover-o-100 hover-o-100 ">{title}</a>
-						<!-- title={title} -->
+						<a href="https://viaggilevi.vercel.app/trip" class="link inherit o-80 fw4 hover-fw6 hover-o-100 hover-o-100 ">{title}</a>
+						<!-- href="{`#${slug}`}"  -->
 					</li>
 				{/each}
 		</ul>
