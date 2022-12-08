@@ -1,22 +1,21 @@
 <script>
-  // note: CHECK THIS IS COMPLETE: consider a helper function inside `index.js`: stackoverflow.com/questions/25921319/escape-new-lines-with-js#25921448
-  // learn: `shadowendpoints` syntax: youtube.com/watch?v=j-9D5UDyVOM&t=133s
-
+// note: CHECK THIS IS COMPLETE: consider a helper function inside `index.js`: stackoverflow.com/questions/25921319/escape-new-lines-with-js#25921448
+// learn: `shadowendpoints` syntax: youtube.com/watch?v=j-9D5UDyVOM&t=133s
 
   export let homepage;
-  export let destinations;
+
+  // export let homepage;
+
+
+
+  //export let destinations;
   import DestinationSlider from '$lib/DestinationSlider.svelte';
-  //export let spotLight; // viaggi in evidenza
-  //continents, // areas e nations
-  //, upcomingDepartures; // viaggi partenza
 
 
-  // fix: rm `import Discover from '$lib/Discover/index.svelte';`
-  //import PaginateBasic from '$lib/PaginateBasic.svelte'; //<PaginateBasic />
+  // learn: `npm install -D svelte-paginate` from: github.com/TahaSh/svelte-paginate needs destructuring.
+  // usage: `<PaginateBasic />` import PaginateBasic from '$lib/PaginateBasic.svelte';
+
   let title = 'Maurizio Levi';
-
-// learn: `npm install -D svelte-paginate` from: github.com/TahaSh/svelte-paginate needs destructuring.
-  import { paginate, LightPaginationNav } from 'svelte-paginate';
 
   import TripSpotlight from '$lib/Pagination/TripSpotlight.svelte';
   import DepartingSoon from '$lib/Pagination/DepartingSoon.svelte';
@@ -25,15 +24,6 @@
   import Mission from '$lib/Mission/index.svelte';
   import Ways from '$lib/Ways/index.svelte';
   import News from '$lib/News/index.svelte';
-
-  // learn: usage: `<DepartingSoon items={tripSpotlightItems} />`
-  let tripSpotlight = Object.values(homepage.inEvidence.travels);
-  let tripSpotlightItems = tripSpotlight;
-
-
-  // learn: usage: `<TripSpotlight items={departingSoonItems} />`
-  let departingSoon = Object.values(homepage.departing.travels);
-  let departingSoonItems = departingSoon;
 
   //let items = Object.keys(spotLight);
   //let items = Object.values(spotLight);
@@ -55,11 +45,9 @@
   //$: paginateDepartingSoon = paginate({items, pageSize, currentPage});
   //$: paginateTripSpotlight = paginate({ tripSpotlightItems, pageSize, currentPage });
 
-
 </script>
 
-<!-- <code class="silver">{JSON.stringify(homepage.mission, null, 2)}</code> -->
-
+<!-- usage: <code class="silver">{JSON.stringify(homepage, null, 2)}</code> -->
 <!-- fix: JSON boolean req. imageOverlay={homepage.hero.imageOverlay} -->
 <Hero
   image={homepage.hero.image}
@@ -82,22 +70,20 @@
     headline={homepage.inEvidence.title}
     serp={homepage.inEvidence.text}
     nurture={homepage.inEvidence.cta}
-    items={tripSpotlightItems}
+    items={homepage.inEvidence.travels}
   />
-
   <DepartingSoon
     payoff={homepage.departing.payoff}
     headline={homepage.departing.title}
     serp={homepage.departing.text}
     nurture={homepage.departing.cta}
-    items={departingSoonItems}
+    items={homepage.departing.travels}
   />
   <hr />
 </Row>
 
-
 <!-- learn: `DestinationSlider/index.svelte`, is `'isSelfAccepting'` -->
-<DestinationSlider destinations={destinations} />
+<DestinationSlider destinations={homepage.destinationsSlider} />
 
 <!-- fix: imageOverlay={homepage.travelLines.imageOverlay} -->
 <Ways
@@ -108,30 +94,13 @@
   imageOverlay={true}
 />
 
-
-<!-- fix: this is an empty component -->
+<!-- fix: `Kel12 middle-ware` empty component at the time of writing -->
 <News
   payoff={homepage.blog.payoff}
   title={homepage.blog.title}
   text={homepage.blog.text}
   contents={homepage.blog.contents}
 />
-
-  <!-- <code class="silver">{JSON.stringify(homepage.blog, null, 2)}</code> -->
-
-<!-- <Row bg="bg-spa">
-  <ul class="list pl0">
-    {#each spotLight as featuredDestination, i}
-      <li>{i}:
-        {@html featuredDestination.titolo_viaggio.replace(/\\r/g, '').replace(/\\n/g, '').replace(/\\"/g, '') }
-        <p>
-          {@html featuredDestination.testo_per_sito.replace(/\\r/g, '').replace(/\\n/g, '').replace(/\\"/g, '') }
-        </p>
-      </li>
-    {/each}
-  </ul>
-</Row> -->
-
 
 
 <svelte:head>
@@ -146,3 +115,16 @@
     {/each}
   </ul>
 </pre> -->
+
+<!-- <Row bg="bg-spa">
+  <ul class="list pl0">
+    {#each spotLight as featuredDestination, i}
+      <li>{i}:
+        {@html featuredDestination.titolo_viaggio.replace(/\\r/g, '').replace(/\\n/g, '').replace(/\\"/g, '') }
+        <p>
+          {@html featuredDestination.testo_per_sito.replace(/\\r/g, '').replace(/\\n/g, '').replace(/\\"/g, '') }
+        </p>
+      </li>
+    {/each}
+  </ul>
+</Row> -->

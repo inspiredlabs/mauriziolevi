@@ -1,4 +1,11 @@
 <script>
+/* learn: stackoverflow.com/questions/68187584/how-to-route-programmatically-in-sveltekit
+function routeToPage(route: string, replaceState: boolean) {
+	goto(`/${route}`, { replaceState })
+}
+learn: `import { goto } from '$app/navigation';`
+*/
+
 import { goto } from '$app/navigation';
 import { page } from '$app/stores';
 

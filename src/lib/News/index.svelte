@@ -10,7 +10,7 @@
 <Row bg="bg-solitaire pv2">
 	<article class="ph2" id="viaggi-di-scoperta">
 		<h4 class="mv0 pv4 f2 f2-ns f1-m f1-l fw2 lh-solid">
-			<small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">{payoff}</small>
+			<small class="golden-brown db tracked-none tracked-ns tracked-m tracked-mega-l f7 f7-ns f5-m f4-l fw5 ttu mv0">{@html payoff}</small>
 			<span class="fraunces">{@html title}</span>
 			<!-- <span class="fraunces-i"> -->
 		</h4>

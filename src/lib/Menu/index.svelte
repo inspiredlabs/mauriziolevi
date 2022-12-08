@@ -1,17 +1,6 @@
 <script>
-
-/*
-learn: stackoverflow.com/questions/68187584/how-to-route-programmatically-in-sveltekit
-function routeToPage(route: string, replaceState: boolean) {
-	goto(`/${route}`, { replaceState })
-}
-
-*/
-
 import Buttons from '$lib/Menu/Buttons.svelte';
-import { goto } from '$app/navigation';
 import { page } from '$app/stores';
-
 </script>
 
 <nav class="levi-nav fixed z-2 w-100 top-0 landscape-top-0-ns landscape-top-0-m landscape-top-0-l flex tc white system">
