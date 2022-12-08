@@ -41,7 +41,7 @@ const nations = {
         "length": "8",
         "title": "LE CITTA ROMANE DEL NORD AFRICA",
         "excerpt": "<p style=\\\"margin-left:0cm; margin-right:0cm; text-align:justify\\\"><em>L&rsquo;Algeria del nord: una regione interessantissima ma che &egrave; stata chiusa molti anni per ragioni di sicurezza. Ora &egrave; tranquilla e sicura e si possono cos&igrave; visitare alcuni dei siti archeologici romani tra i pi&ugrave; belli del Nord Africa che non hanno nulla da invidiare alla famosa Sabratha o a Leptis Magna in Libia. Numerosissimi sono i siti archeologici che si ha la possibilit&agrave; di visitare senza la fastidiosa presenza di altri gruppi di turisti: Djemila in uno scenario splendido tra le montagne con edifici molto ben conservati. Pi&ugrave; a sud Tazoult, l&rsquo;antica Lambaesis romana e quindi la famosa Timgad, forse il pi&ugrave; bel sito dell&rsquo;Algeria romana, fondata dall&rsquo;imperatore Traiano nel primo sec d.C. e dominata dell&rsquo;imponente arco a lui dedicato; Cherchell, con lo splendido museo; Tipasa, sulla costa, con i resti che lambiscono le acque del Mediterraneo; Constantine, la citt&agrave; dai &ldquo;cento ponti&rdquo;. Il viaggio si conclude con la visita di Algeri, la bella citt&agrave; &ldquo;bianca&rdquo; sul Mediterraneo, con la famosa casbah, un labirinto di vicoli e case pittoresche, e con il suo museo archeologico. Tutti i gruppi saranno accompagnati da una guida locale e da un nostro accompagnatore</em></p>",
-        "cta": "http://kel12.therebelwatchtower.net/levi-single/26026",
+        "cta": "https://viaggilevi.vercel.app/trip",
         "image": "placeorder",
         "startingPrice": "2450"
       }
