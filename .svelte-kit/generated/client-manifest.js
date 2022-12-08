@@ -26,7 +26,7 @@ export const dictionary = {
 	"nations": [[0, 8], [1], 1],
 	"sirv": [[0, 10], [1]],
 	"table": [[0, 12], [1]],
-	"terms": [[0, 13], [1], 1],
+	"terms": [[0, 13], [1]],
 	"trip": [[0, 15], [1], 1],
 	"table/grid": [[0, 11], [1]],
 	"destinations/[id]": [[0, 3], [1]],
