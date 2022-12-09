@@ -93,9 +93,9 @@ let baseUrl = `${import.meta.env.VITE_BASEURL}/`;
 
 </Row>
 
-<style>
+<!-- <style>
 .active {
 	opacity: 0.9;
 	font-variation-settings: 'wght' 600;
 }
-</style>
+</style> -->
